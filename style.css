@@ -4,7 +4,7 @@ Theme URI: http://jackusher.co.uk/projects
 Author: Jack Usher
 Author URI: http://jackusher.co.uk/
 Description: This theme is for Jack to learn how to code WP themes from scratch.
-Version: 0.1
+Version: 0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: test, jack, usher
@@ -18,7 +18,7 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Veranda, sans-serif;
+	font-family: 'Muli', sans-serif;
 	font-size: 14px;
 	color: #333;
 }
@@ -38,15 +38,20 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
-/* General layout */
+/* Clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* General container layout. */
 div.container {
-	max-width: 920px;
+	max-width: 1000px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-/* Content area in index.php */
+/* Post content area in index.php (the blog page), and general article styles. */
 article.post {
 	border-bottom: 1px dotted #DDD;
 	margin-bottom: 20px;
@@ -75,7 +80,27 @@ article.post:last-of-type {
 	border-bottom: none;
 }
 
-/* Header */
+/* Post type; gallery styles. */
+article.post-gallery {
+	background-color: #222;
+	color: #FFF;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+article.post-gallery img {
+	border: none!important;
+}
+
+article.post-gallery h2 {
+	text-align: center;
+}
+
+article.post-gallery a {
+	color: #FFF;
+}
+
+/* Header styles. */
 .site-header {
 	border-bottom: 1px solid #DDD;
 	margin-bottom: 20px;
@@ -96,7 +121,7 @@ article.post:last-of-type {
 	font-weight: lighter;
 }
 
-/* Navigation menu general styles */
+/* Navigation menu general styles. */
 .site-nav ul {
 	margin: 0;
 	padding: 0;
@@ -116,13 +141,23 @@ article.post:last-of-type {
 	display: block;
 }
 
-/* Site header menu */
+/* Site header menu styles. */
 .site-header nav {
-	margin-top: 30px;
+	margin-top: 10px;
+}
+
+.menu-top-menu-container { /* Bear in mind this is targeting a WP-created class NOT in our HTML. */
+	display: table;
+	margin: 0 auto;
+}
+
+.site-header nav ul {
+	list-style: none;
 }
 
 .site-header nav ul li {
 	margin-right: 5px;
+	display: inline;
 }
 
 .site-header nav ul li a:link,
@@ -146,14 +181,53 @@ article.post:last-of-type {
 	color: #FFF;
 }
 
-/* Footer */
+/* Main column area proportions. */
+.site-content {
+	display: inline-block;
+}
+
+.main-column {
+	width: 66%;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+/* Side column area proportions. */
+.sidebar-column {
+	width: 32%;
+	float: left;
+}
+
+/* Footer widget area */
+.footer-widget-area {
+	margin-top: 10px;
+	width: 25%;
+	float: left;
+	padding-right: 40px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	border-right: 1px dotted #DDD;
+}
+
+.footer-widget-area ul,
+.footer-widget-area li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-widget-area:last-of-type {
+	border: none;
+}
+
+/* Footer styles. */
 .site-footer {
 	margin-top: 30px;
 	border-top: 1px solid #DDD;
 	font-size: 84%;
 }
 
-/* Site footer menu */
+/* Site footer menu styles. */
 .site-footer nav {
 	margin: 30px 0 10px 0;
 }
@@ -168,16 +242,11 @@ article.post:last-of-type {
 	border-right: none;
 }
 
-/* Page layout */
+/* Specific page layout/styles. */
 article.page h2 {
 	font-size: 225%;
 	margin-bottom: 15px;
 }
-
-/* Clearfix */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
 
 /* Two column title layout for page-contact-us.php */
 div.title-column {
@@ -190,7 +259,7 @@ div.text-column {
 	float: right;
 }
 
-/* Styles for special template */
+/* Styles for special-template.php. */
 div.info-box {
 	width: 30%;
 	float: right;
@@ -207,7 +276,7 @@ div.info-box p {
 	font-size: 100%;
 }
 
-/* Children page links (header menu) */
+/* Children page submenu styles, within header menu. */
 .children-links {
 	margin-bottom: 20px;
 	font-size: 80%;
@@ -247,7 +316,274 @@ div.info-box p {
 	cursor: default;
 }
 
-/* Archive page styles */
-section.cat-archive-title h2 {
+/* Archive page styles. */
+.cat-archive-title h2 {
 	color: #FF0000;
+}
+
+/* Global and featured image styles. */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.post-thumbnail {
+	float: left;
+	margin-right: 20px;
+	padding-bottom: 20px;
+}
+
+.column-thumbnail {
+	float: left;
+	margin-right: 10px;
+}
+
+div.column-thumbnail:first-of-type {
+	margin-bottom: 10px;
+}
+
+/* Search bar styles. */
+div.header-search {
+	float: right;
+}
+
+div.header-search label {
+	position: absolute;
+	left: -9999px;
+}
+
+div.header-search #searchsubmit {
+	background-color: #006ec3;
+	color: #FFF;
+	padding: 5px 14px;
+	border: none;
+	vertical-align: top;
+}
+
+div.header-search #s {
+	vertical-align: top;
+	padding: 3px 0;
+}
+
+/* front-page.php column styles. */
+.home-columns {
+	width: 100%;
+	font-size: 85%;
+	#padding-top: 20px;
+	display: inline-block;
+}
+
+.home-columns h2 {
+	font-size: 2.1em;
+}
+
+.front-section2 h2,
+.front-section3 h2 {
+	border-bottom: 2px solid #DDD;
+}
+
+.home-columns h4 a {
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+.home-columns a {
+	text-decoration: none;
+}
+
+.front-section1 {
+	width: 100%;
+}
+
+.front-section2 {
+	width: 48%;
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.front-section3 {
+	width: 48%;
+	float: left;
+}
+
+.subtle-date,
+.subtle-author,
+.subtle-category {
+	border: 2px solid #d3d3d3;
+	border-radius: 5px;
+	color: #FFF;
+	background-color: #d3d3d3;
+	margin: 0 2px 2px 0;
+	padding: 3px 7px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .33);
+	display: inline-block;
+}
+
+article.column-post {
+	border-bottom: 1px dashed #DDD;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+/*
+.front-section1 article:first-of-type .column-thumbnail {
+	border: 50px solid #d3d3d3;
+}
+*/
+article.column-post:last-of-type {
+	border-bottom: none;
+}
+
+/* Sidebar styling */
+.sidebar-column {
+	font-size: 85%;
+}
+
+.sidebar-widget-title {
+	font-size: 2.1em;
+}
+
+.sidebar-widget-item ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Variable CSS for various browser widths */
+@media (max-width: 797px) {
+	.front-section1,
+	.front-section2,
+	.front-section3,
+	.main-column,
+	.sidebar-column {
+		width: 100%;
+		float: none;
+	}
+	
+	.sidebar-column {
+		padding-top: 15px;
+		border-top: 2px solid #DDD;
+	}
+}
+
+/* Grid CSS for front-page.php latest post grid. */
+
+#ms-wrapper {
+	max-width: 100%;
+	padding: 5px 0 30px 0;
+	border-bottom: 2px solid #DDD;
+	margin: 0 0 25px 0;
+}
+
+#ms-wrapper:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#ms-item {
+	float: left;
+	display: flex; /* Using flexbox to allow vertical centring of .ms-info content. */
+	flex-direction: column;
+	justify-content: center;
+	resize: vertical;
+	margin: 0 5px 5px 0;
+	width: 245px;
+	height: 184px;
+}
+
+#ms-item .ms-thumbnail {
+	background-color: black;
+}
+
+#ms-item .ms-thumbnail {
+	-webkit-transition: all 0.2s ease; /* Safari and Chrome */
+  	-moz-transition: all 0.2s ease; /* Firefox */
+	-o-transition: all 0.2s ease; /* IE 9 */
+	-ms-transition: all 0.2s ease; /* Opera */
+	transition: all 0.2s ease;
+	position: absolute;
+	z-index: 20;
+}
+
+#ms-item:hover > .ms-thumbnail {
+    -webkit-transform:scale(1.02); /* Safari and Chrome */
+	-moz-transform:scale(1.02); /* Firefox */
+	-ms-transform:scale(1.02); /* IE 9 */
+	-o-transform:scale(1.02); /* Opera */
+	transform:scale(1.02);
+}
+
+#ms-item .ms-thumbnail img {
+	-webkit-transition: all 0.2s linear; /* Safari and Chrome */
+  	-moz-transition: all 0.2s linear; /* Firefox */
+	-o-transition: all 0.2s linear; /* IE 9 */
+	-ms-transition: all 0.2s linear; /* Opera */
+	transition: all 0.2s linear;
+}
+
+#ms-item:hover img {
+	opacity: 0.3;
+}
+
+#ms-item .ms-info {
+	resize: vertical;
+	padding: 0 3px 0 3px;
+	z-index: 25;
+	visibility: hidden;
+	text-align: center;
+}
+
+#ms-item .ms-title a {
+	text-decoration: none;
+	color: #DDD;
+	font-size: 1.5em;
+}
+
+#ms-item .subtle-category {
+	font-size: 0.9em;
+}
+
+#ms-item:hover > .ms-info {
+	visibility: visible;
+}
+
+/* Grid-based CSS for tripartite parent category homepage layout (prototype). */
+.creative-title h2 {
+	margin-bottom: 12px;
+}
+
+.creative-wrapper {
+	max-width: 100%;
+	padding: 5px 0 30px 0;
+	border-bottom: 2px solid #DDD;
+	margin: 0 0 25px 0;
+}
+
+.creative-wrapper:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.creative-article {
+	float: left;
+	margin: 0 10px 10px 0;
+	width: 200px;
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #83DDD9;
+	padding: 5px 5px 5px 5px;
+}
+
+.creative-info a {
+	text-decoration: none;
+}
+
+.creative-info h4 {
+	font-size: 1.25em;
+	margin: 2px 0 5px 0;
+}
+
+.creative-info p {
+	font-size: 0.83em;
+	margin-bottom: 5px;
 }

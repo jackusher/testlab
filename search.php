@@ -1,5 +1,5 @@
 <?php
-// The file defines all index page behaviours.
+//search.php defines the content and layout of a search results page. Essentially the output part of seachform.php.
 
 // Grab the header.
 get_header(); ?>
@@ -9,10 +9,14 @@ get_header(); ?>
 
 	<!-- main-column area -->
 	<div class="main-column">
-	
+
 		<?php
-		//  Begin *if* statement to decide what to do with/without posts.
-		if (have_posts()) :
+		if (have_posts()) : ?>
+	
+			<!-- Include an h2 title of the search terms. -->
+			<h2>Search results for: <?php the_search_query(); ?></h2>
+
+			<?php
 			while (have_posts()) : the_post();
 	
 			// Reference to the content.php file. Post layout is pulled from content.php. If there are any special post types, e.g. galleries, the second argument pushes requests to the correct content-*.php file.
@@ -20,15 +24,15 @@ get_header(); ?>
 	
 			endwhile;
 	
-			// What to do when there's no content.
+			// What to do if there's no content.
 			else :
 				echo '<p>No content found!</p>';
 		
-		endif; ?>
-		
+			endif;?>
+			
 	</div><!-- /main-column -->
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 	
 </div><!-- /site-content -->
 
