@@ -28,7 +28,7 @@ function has_children() {
 	return count($pages);
 }
 
-// Theme setup function. This calls all steup functions that are theme pre-requisites.
+// Theme setup function. This implements all functions that are theme pre-requisites on setup.
 function testlab_setup() {
 
 	// Support navigation menus
@@ -50,6 +50,10 @@ function testlab_setup() {
 	
 	// Support for post formats
 	add_theme_support('post-formats', array('gallery'));	
+	
+	// Support for HTML5 elements.
+	add_theme_support('html5', array('search-form'));
+	
 }
 
 add_action('after_setup_theme', 'testlab_setup');

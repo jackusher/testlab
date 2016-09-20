@@ -19,12 +19,6 @@
 		<!-- site-header begins. -->
 		<header class="site-header">
 		
-			<!-- header-search section. -->
-			<div class="header-search">
-				<?php get_search_form(); ?>
-			</div><!-- /header-search end. -->
-			
-			
 			<!-- Behaviour of the text-based site title and tagline. -->		
 			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h5><?php bloginfo('description'); ?> <?php if (is_page('contact-us')) {?>
@@ -36,8 +30,11 @@
 				<?php
 				$args = array(
 					'theme_location' => 'primary'
-				);
-				?>
+				); ?>
+				<!-- header-search section. -->
+				<div class="header-search">
+					<?php get_search_form(); ?>
+				</div><!-- /header-search -->
 				<?php wp_nav_menu(  $args ); ?>
 			</nav>
 			

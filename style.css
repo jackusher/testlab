@@ -122,6 +122,10 @@ article.post-gallery a {
 }
 
 /* Navigation menu general styles. */
+.site-nav {
+	position: relative;
+}
+
 .site-nav ul {
 	margin: 0;
 	padding: 0;
@@ -343,16 +347,23 @@ div.column-thumbnail:first-of-type {
 }
 
 /* Search bar styles. */
-div.header-search {
-	float: right;
+.header-search {
+	position: absolute;
+	right: 0;
 }
 
-div.header-search label {
+.header-search label {
 	position: absolute;
 	left: -9999px;
 }
 
-div.header-search #searchsubmit {
+.header-search,
+.header-search div,
+.header-search form {
+	height: 100%;
+}
+.header-search #searchsubmit {
+	height: 100%;
 	background-color: #006ec3;
 	color: #FFF;
 	padding: 5px 14px;
@@ -360,9 +371,9 @@ div.header-search #searchsubmit {
 	vertical-align: top;
 }
 
-div.header-search #s {
+.header-search #s { /* Maths hack to avoid overflow when setting the height of the search input box to 100%. */
+	height: 85.7%;
 	vertical-align: top;
-	padding: 3px 0;
 }
 
 /* front-page.php column styles. */
@@ -637,7 +648,7 @@ article.column-post:last-of-type {
 }
 
 .creative-cat {
-	background-color: #E0E0E0;
+	background-color: #E9E9E9;
 	text-align: right;
 	padding: 5px 5px 5px 0;
 }
