@@ -600,16 +600,26 @@ article.column-post:last-of-type {
 	margin: 0 8px 8px 0;
 	width: 200px;
 	background-color: #F6F6F6;
-	border-bottom: 1px solid #83DDD9;
-	padding: 0 0 5px 0;
+	padding: 0 0 0 0;
 }
 
 .creative-article:first-of-type {
 	width: 400px;
 }
 
+.creative-thumb { /* Defining fixed image div measurements for hover reveals. */
+	width: 200px;
+	height: 124px;
+}
+
+.creative-article:first-of-type .creative-thumb { /* Defining fixed image div measurements for hover reveals. */
+	width: 400px;
+	height: 400px;
+}
+
 .creative-info {
 	padding: 3px 5px 0 5px;
+	border-bottom: 2px solid #bdbdbd;
 }
 
 .creative-info a {
@@ -624,4 +634,14 @@ article.column-post:last-of-type {
 .creative-info p {
 	font-size: 0.83em;
 	margin-bottom: 5px;
+}
+
+.creative-cat {
+	background-color: #E0E0E0;
+	text-align: right;
+	padding: 5px 5px 5px 0;
+}
+
+.creative-cat span a {
+	text-decoration: none;
 }
