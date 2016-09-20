@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* General container layout. */
 div.container {
-	max-width: 1000px;
+	max-width: 1040px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -548,14 +548,44 @@ article.column-post:last-of-type {
 }
 
 /* Grid-based CSS for tripartite parent category homepage layout (prototype). */
-.creative-title h2 {
-	margin-bottom: 12px;
+.creative-head {
+	margin: 5px 0 5px 0;
+	padding: 0 0 5px 0;
+}
+
+.creative-title h2 { /* Why the hell do we need to specify no margins here? Conflicting h2 standard style somewhere... */
+	margin: 0;
+	font-size: 2.5em;
+}
+
+.creative-title {
+	float: left;
+	display: inline;
+}
+
+.creative-subcats {
+	float: right;
+	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
+}
+
+.creative-subcats li {
+	white-space: nowrap;
+	display: inline;
+	list-style: none;
+	float: left;
+}
+
+.creative-subcats li + li:before {
+	content: ", ";
+}
+
+.creative-subcats li a {
+	text-decoration: none;
 }
 
 .creative-wrapper {
 	max-width: 100%;
 	padding: 5px 0 30px 0;
-	border-bottom: 2px solid #DDD;
 	margin: 0 0 25px 0;
 }
 
@@ -567,11 +597,19 @@ article.column-post:last-of-type {
 
 .creative-article {
 	float: left;
-	margin: 0 10px 10px 0;
+	margin: 0 8px 8px 0;
 	width: 200px;
 	background-color: #F6F6F6;
 	border-bottom: 1px solid #83DDD9;
-	padding: 5px 5px 5px 5px;
+	padding: 0 0 5px 0;
+}
+
+.creative-article:first-of-type {
+	width: 400px;
+}
+
+.creative-info {
+	padding: 3px 5px 0 5px;
 }
 
 .creative-info a {
