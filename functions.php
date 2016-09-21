@@ -49,10 +49,7 @@ function testlab_setup() {
 	add_image_size('left-creative', 400, 400, true);
 	
 	// Support for post formats
-	add_theme_support('post-formats', array('gallery'));	
-	
-	// Support for HTML5 elements.
-	add_theme_support('html5', array('search-form'));
+	add_theme_support('post-formats', array('gallery'));
 	
 }
 
@@ -228,4 +225,12 @@ function testlab_customise_css() { ?>
 
 add_action('wp_head', 'testlab_customise_css');
 
-?>
+// Add support for menu search location (HTML5).
+add_theme_support('html5', array('search-form'));
+add_filter('wp_nav_menu_items', 'add_search_form_to_menu', 10, 2);
+
+function add_search_form_to_menu($items, $args) {
+	if( !($args->theme_location == 'primary') )
+		return $items;
+	return $items . '<li class="my-nav-menu-search">' . get_search_form(false) . '</li>';
+}

@@ -148,6 +148,7 @@ article.post-gallery a {
 /* Site header menu styles. */
 .site-header nav {
 	margin-top: 10px;
+	z-index: 10;
 }
 
 .menu-top-menu-container { /* Bear in mind this is targeting a WP-created class NOT in our HTML. */
@@ -183,6 +184,10 @@ article.post-gallery a {
 	font-weight: bold;
 	background-color: #006ec3;
 	color: #FFF;
+}
+
+.site-header nav ul li:last-of-type {
+	margin-right: 0;
 }
 
 /* Main column area proportions. */
@@ -347,33 +352,45 @@ div.column-thumbnail:first-of-type {
 }
 
 /* Search bar styles. */
-.header-search {
+.my-nav-menu-search {
 	position: absolute;
 	right: 0;
 }
 
-.header-search label {
+.my-nav-menu-search .search-form .screen-reader-text {
 	position: absolute;
 	left: -9999px;
+	overflow: hidden;
 }
 
-.header-search,
-.header-search div,
-.header-search form {
-	height: 100%;
-}
-.header-search #searchsubmit {
-	height: 100%;
-	background-color: #006ec3;
-	color: #FFF;
-	padding: 5px 14px;
+.my-nav-menu-search .search-field {
+	background-color: transparent;
+	background-image: url(/wp-content/themes/testlab/search-icon2.png);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
 	border: none;
-	vertical-align: top;
+	cursor: pointer;
+	height: 38px;
+	margin: 1px 0;
+	padding: 0 0 0 34px;
+	position: relative;
+	-webkit-transition: width 250ms ease, background 250ms ease;
+	transition: width 250ms ease, background 250ms ease;
+	width: 0;
 }
 
-.header-search #s { /* Maths hack to avoid overflow when setting the height of the search input box to 100%. */
-	height: 85.7%;
-	vertical-align: top;
+.my-nav-menu-search .search-field:focus {
+	background-color: #fff;
+	border: 1px solid #008ED6;
+	border-radius: 3px;
+	cursor: text;
+	outline: 0;
+	width: 230px;
+}
+
+.my-nav-menu-search .search-submit { 
+	display:none;
 }
 
 /* front-page.php column styles. */

@@ -31,10 +31,6 @@
 				$args = array(
 					'theme_location' => 'primary'
 				); ?>
-				<!-- header-search section. -->
-				<div class="header-search">
-					<?php get_search_form(); ?>
-				</div><!-- /header-search -->
 				<?php wp_nav_menu(  $args ); ?>
 			</nav>
 			
