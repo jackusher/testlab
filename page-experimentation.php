@@ -54,8 +54,16 @@ $creative_children = get_categories( // Setting the cat as a PARENT cat.
 				</div><!-- /creative-thumb -->
 				
 				<div class="creative-info"><!-- Post titles and excerpts. -->
-					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-					<?php the_excerpt(); ?>
+					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
+					if($counter==5) { // Can we integrate this on to one line (ie. $counter==5&6&7)?
+					
+					} elseif($counter==6) {
+					
+					} elseif($counter==7) {
+					
+					} else {
+						the_excerpt();
+					}?>
 				</div><!-- /creative-info -->
 			
 				<div class="creative-cat"><!-- Post categories. -->
