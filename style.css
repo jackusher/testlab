@@ -654,13 +654,13 @@ article.column-post:last-of-type {
 	text-decoration: none;
 }
 
-.creative-info h4 {
-	font-size: 1.25em;
+.creative-info h4 { /* The title in each masonry brick. */
+	font-size: 1.22em;
 	margin: 2px 0 5px 0;
 }
 
-.creative-info p {
-	font-size: 0.83em;
+.creative-info p { /* The excerpt in each masonry brick. */
+	font-size: 0.80em;
 	margin-bottom: 5px;
 }
 
