@@ -1,8 +1,8 @@
 jQuery(window).load(function() {
 
-var container = document.querySelector('.creative-wrapper');
+var container = document.querySelector('.masonry-wrapper');
 var msnry = new Masonry( container, {
-	itemSelector: '.creative-article',
+	itemSelector: '.masonry-block',
 	columnWidth: 1,
 });
 

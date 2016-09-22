@@ -13,6 +13,7 @@ Tags: test, jack, usher
 html {
 	padding: 0;
 	margin: 0;
+	/* overflow-x: hidden; For the purpose of messing around with full-length color bars. */
 }
 
 body {
@@ -21,6 +22,7 @@ body {
 	font-family: 'Muli', sans-serif;
 	font-size: 14px;
 	color: #333;
+	/* overflow-x: hidden; For the purpose of messing around with full-length color bars. */
 }
 
 a:link,
@@ -579,7 +581,16 @@ article.column-post:last-of-type {
 	visibility: visible;
 }
 
-/* Grid-based CSS for tripartite parent category homepage layout (prototype). */
+/* Beginning of new front-page styles. These are all
+   currently self-contained for ease of reference and
+   manipulation whilst the prototype is in development.
+   They will comprise of 7 main parts; TITLE SECTION
+   1, POPULAR SECTION, TITLE SECTION 2, TITLE SECTION
+   3, NEWS, SPORT, and SIDEBAR OVERFLOW. Check sketches
+   for visual layout.
+*/
+
+/* TITLE SECTION 1: Masonry level 1 layout, with parent category COMMENT. */
 .creative-head {
 	margin: 5px 0 5px 0;
 	padding: 0 0 5px 0;
@@ -615,19 +626,19 @@ article.column-post:last-of-type {
 	text-decoration: none;
 }
 
-.creative-wrapper {
+#creative-wrapper {
 	max-width: 100%;
-	padding: 5px 0 30px 0;
-	margin: 0 0 25px 0;
+	padding: 5px 0 20px 0;
+	border-bottom: 1px solid #DDD;
 }
 
-.creative-wrapper:after {
+#creative-wrapper:after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
-.creative-article {
+#creative-article {
 	float: left;
 	margin: 0 8px 8px 0;
 	width: 200px;
@@ -635,7 +646,7 @@ article.column-post:last-of-type {
 	padding: 0 0 0 0;
 }
 
-.creative-article:first-of-type {
+#creative-article:first-of-type {
 	width: 400px;
 }
 
@@ -644,13 +655,13 @@ article.column-post:last-of-type {
 	height: 124px;
 }
 
-.creative-article:first-of-type .creative-thumb { /* Defining fixed image div measurements for hover reveals. */
+#creative-article:first-of-type .creative-thumb { /* Defining fixed image div measurements for hover reveals. */
 	width: 400px;
 	height: 400px;
 }
 
 .creative-info {
-	padding: 3px 5px 0 5px;
+	padding: 3px 5px 5px 5px;
 	border-bottom: 2px solid #bdbdbd;
 }
 
@@ -663,16 +674,20 @@ article.column-post:last-of-type {
 	margin: 2px 0 5px 0;
 }
 
-.creative-article:first-of-type .creative-info h4 {
+#creative-article:first-of-type .creative-info h4 {
 	font-size: 2em;
 }
 
 .creative-info p { /* The excerpt in each masonry brick. */
 	font-size: 0.80em;
-	margin-bottom: 5px;
+	display: inline;
 }
 
-.creative-article:first-of-type .creative-info p {
+#creative-article p.creative-auth {
+	font-style: italic;
+}
+
+#creative-article:first-of-type .creative-info p {
 	font-size: 1em;
 }
 
@@ -683,5 +698,64 @@ article.column-post:last-of-type {
 }
 
 .creative-cat span a {
+	text-decoration: none;
+}
+
+/* POPULAR SECTION: 5 most popular posts displayed using function in functions.php. */
+.popular-wrapper {
+	max-width: 100%;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #DDD;
+}
+
+.popular-head {
+	padding: 18px 0 10px 0;
+}
+
+.popular-headtit {
+	float: left;
+}
+
+.popular-headtit h2 {
+	font-size: 2.5em;
+	margin: 0; /* Again... standardisation/global style conflict... */
+}
+
+.popular-blurb {
+	float: right;
+	padding: 15px 0 0 0;
+}
+
+ul.popular-list p {
+	margin: 0;
+}
+
+ul.popular-list {
+	list-style: none;
+	padding: 0;
+}
+
+ul.popular-list .popular-item {
+	float: left;
+	max-width: 200px;
+	display: block;
+	margin: 0 8px 0 0;
+}
+
+ul.popular-list .popular-rank {
+	font-size: 2.75em;
+	float: left;
+	width: 28px;
+	text-align: center;
+	border-right: 2px solid #ddd;
+}
+
+ul.popular-list .popular-title {
+	width: 160px;
+	margin-left: 30px;
+	padding: 10px 0 0 10px;
+}
+
+ul.popular-list .popular-title a {
 	text-decoration: none;
 }

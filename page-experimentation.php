@@ -23,7 +23,7 @@ $creative_children = get_categories( // Setting the cat as a PARENT cat.
 	?></div>
 </div><!-- /creative-head -->
 
-<div class="creative-wrapper"><!-- The masonry container. -->
+<div id="creative-wrapper" class="masonry-wrapper"><!-- The masonry container. -->
 
 	<?php $counter=1; // Creating a counter for the foreach loop.
 
@@ -43,7 +43,7 @@ $creative_children = get_categories( // Setting the cat as a PARENT cat.
 	
 		while ( $query->have_posts() ) : $query->the_post(); ?>
 	
-			<div class="creative-article"><!-- Start of looped post content. -->
+			<div id="creative-article" class="masonry-block"><!-- Start of looped post content. -->
 			
 				<div class="creative-thumb"><!-- Thumbnails, including countpost logic. --><?php
 					if($counter==1) { ?>
@@ -55,15 +55,15 @@ $creative_children = get_categories( // Setting the cat as a PARENT cat.
 				
 				<div class="creative-info"><!-- Post titles and excerpts. -->
 					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
-					if($counter==5) { // Can we integrate this on to one line (ie. $counter==5&6&7)?
-					
-					} elseif($counter==6) {
-					
-					} elseif($counter==7) {
-					
+				
+					$checkcount = array(5, 6, 7);
+					if(in_array($counter, $checkcount)){
+						// Display no post excerpt.
 					} else {
-						the_excerpt();
-					}?>
+						the_excerpt(); ?>
+						<p class="creative-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p> <?php
+					} ?>
+					
 				</div><!-- /creative-info -->
 			
 				<div class="creative-cat"><!-- Post categories. -->
@@ -93,11 +93,60 @@ $creative_children = get_categories( // Setting the cat as a PARENT cat.
 
 	$counter++;
 	
-	endforeach; ?>
+	endforeach;
+	
+	wp_reset_postdata(); ?>
 
 </div><!-- /creative-wrapper -->
 
-<?php wp_reset_postdata();
+<div class="popular-wrapper clearfix">
 
+	<div class="popular-head clearfix"><!-- Header for popular section including title and description. -->
+		<span class="popular-headtit"><h2>Most Popular</h2></span><span class="popular-blurb"><h4>The most read posts on the site.</h4></span>
+	</div><!-- /popular-head -->
+
+	<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
+	
+		$argz = array( // The arguments for the popular WP_Query.
+			'posts_per_page'=>5,
+			'meta_key'=>'popular_posts',
+			'orderby'=>'meta_value_num',
+			'order'=>'DESC'
+		);
+	
+		$popular = new WP_Query( $argz );
+		
+		if ( $popular->have_posts() ):
+		
+			$countah=0; while ( $popular->have_posts() ) : $popular->the_post(); $countah++;
+			
+				$checkcountah = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
+				if(in_array($countah, $checkcountah)){ ?>
+					<li class="popular-item">
+						<p class="popular-rank"><?php echo $countah ?></p>
+						<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+					</li><?php
+				} else { ?>
+					<li class="popular-item">
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</li><?php
+				}
+		
+			endwhile;
+			
+			else :
+				echo '<p>Sorry, just loner posts here.</p>';
+		
+		endif;
+		
+		$counter++;		
+			
+		wp_reset_postdata(); ?>
+	
+	</ul><!-- /popular-list -->
+
+</div><!-- /popular-wrapper -->
+
+<?php
 get_footer(); // Load in the WP footer.
 ?>
