@@ -241,6 +241,7 @@ img {
 	background-color: #fff;
 	border: 1px solid #008ED6;
 	border-radius: 3px;
+	border-bottom-right-radius: 0;
 	cursor: text;
 	outline: 0;
 	width: 230px;
