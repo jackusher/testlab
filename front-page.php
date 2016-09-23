@@ -20,7 +20,7 @@ get_header(); ?>
 		<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
 		<div id="section1-subcats" class="front-subcats"><?php
 			wp_list_categories( array( // Creating an li for each of the subcats in the parent.
-				'orderby' => 'id',
+				'orderby' => 'name',
 				'show_count' => false,
 				'title_li' => '',
 				'use_dec_for_title' => false,
@@ -164,7 +164,7 @@ get_header(); ?>
 		<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
 		<div id="section2-subcats" class="front-subcats"><?php
 			wp_list_categories( array( // Creating an li for each of the subcats in the parent.
-				'orderby' => 'id',
+				'orderby' => 'name',
 				'show_count' => false,
 				'title_li' => '',
 				'use_dec_for_title' => false,
@@ -196,9 +196,11 @@ get_header(); ?>
 			<div id="section2-article" class="front-article"><!-- Start of looped post content. -->
 			
 				<div id="section2-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. -->
-					<?php $checkcount = array(1, 2, 3, 4, 5);
+					<?php $checkcount = array(2, 3, 4, 5);
 					if(in_array($sec2_counter, $checkcount)){ ?>
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
+					} elseif ($sec2_counter==1) { ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('left-lifestyle'); ?></a><?php
 					} else {
 						// Display no thumbnail.
 					} ?>
@@ -247,6 +249,93 @@ get_header(); ?>
 		wp_reset_postdata(); ?>		
 	
 	</div><!-- /section2-wrapper -->
+	
+	<?php // Defining <section3> variables.
+	$sec3_parent = get_theme_mod( 'title_section3' ); // Pulling in the parent catgeory set in the WP appearance api.
+	$sec3_parentID = get_cat_ID( $sec3_parent ); // Getting the cat ID from the name we pulled in.
+	$sec3_children = get_categories( // Setting the cat as a PARENT cat.
+		array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
+			'parent' => $sec3_parentID,
+		)
+	); ?>	
+	
+	<div id="section3-head" class="front-head clearfix">
+	
+		<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
+		<div id="section3-subcats" class="front-subcats"><?php
+			wp_list_categories( array( // Creating an li for each of the subcats in the parent.
+				'orderby' => 'name',
+				'show_count' => false,
+				'title_li' => '',
+				'use_dec_for_title' => false,
+				'child_of' => $sec3_parentID
+			) );
+		?></div>		
+	
+	</div><!-- /section3-head -->
+
+	<div id="section3-wrap" class="front-wrapper">
+
+		<?php foreach ( $sec3_children as $sec3_child ) : // foreach loop pulling the latest post in each child cat.
+	
+		$args = array( // args for the WP_Query.
+			'cat' => $sec3_child->term_id,
+			'post_type' => 'post',
+			'posts_per_page' => 1,
+			'no_found_rows' => true,
+			'ignore_sticky_posts' => true,
+		);
+	
+		$query = new WP_Query( $args );
+
+		if ( $query->have_posts() ) :
+	
+			while ( $query->have_posts() ) : $query->the_post(); ?>
+	
+			<div id="section3-article" class="front-article"><!-- Start of looped post content. -->
+			
+				<div id="section3-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. -->
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('title-section3'); ?></a>
+				</div><!-- /section3-thumb -->
+				
+				<div id="section3-info" class="front-info"><!-- Post titles and excerpts. -->
+					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
+					the_excerpt(); ?>
+					<p id="section3-auth" class="front-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
+				</div><!-- /section3-info -->
+			
+				<div id="section3-cat" class="front-artcat"><!-- Post categories. -->
+					<span>
+						<?php
+						$categories = get_the_category();
+						$separator = ", ";
+						$output = '';
+						if ($categories) {
+							foreach ($categories as $category) {
+								$output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
+							}
+							echo trim($output, $separator);
+						}
+						?>
+					</span>
+				</div><!-- /section3-cat -->
+			
+			</div><!-- /section3-article --><?php
+		
+			endwhile;
+	
+			else :
+				echo '<p>No content found!</p>';
+	
+		endif;
+
+		$sec2_counter++;
+	
+		endforeach;
+	
+		wp_reset_postdata(); ?>		
+	
+	</div><!-- /section3-wrap -->
 
 	<!-- main-column area -->
 	<div class="main-column">

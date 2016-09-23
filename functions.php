@@ -47,6 +47,8 @@ function testlab_setup() {
 	add_image_size('banner-image', 920, 210, true);
 	add_image_size('standard-blog-thumbnail', 200, 124, true);
 	add_image_size('left-creative', 400, 400, true);
+	add_image_size('left-lifestyle', 200, 275, true);
+	add_image_size('title-section3', 500, 124, true);
 	
 	// Support for post formats
 	add_theme_support('post-formats', array('gallery'));
@@ -66,27 +68,6 @@ function testlab_widgets() {
 		'before_title' => '<h4 class = "sidebar-widget-title">',
 		'after_title' => '</h4>'
 	));
-	
-	register_sidebar( array(
-		'name' => 'Footer Area 1',
-		'id' => 'footer1'
-	));
-	
-	register_sidebar( array(
-		'name' => 'Footer Area 2',
-		'id' => 'footer2'
-	));
-	
-	register_sidebar( array(
-		'name' => 'Footer Area 3',
-		'id' => 'footer3'
-	));
-	
-	register_sidebar( array(
-		'name' => 'Footer Area 4',
-		'id' => 'footer4'
-	));
-
 }
 
 add_action('widgets_init', 'testlab_widgets');
@@ -137,7 +118,12 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_setting('title_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options'
-	));	
+	));
+	
+	$wp_customize->add_setting('title_section3', array(
+		'default' => 'uncategorized',
+		'capability' => 'edit_theme_options'
+	));		
 	
 	// WP appearance sections.
 	$wp_customize->add_section('tl_standard_colors', array(
@@ -193,7 +179,15 @@ function testlab_customise_register( $wp_customize ) {
 		'section' => 'tl_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
-	));	
+	));
+	
+	$wp_customize->add_control( 'title_section3', array(
+		'settings' => 'title_section3',
+		'label' => 'Title Section 3',
+		'section' => 'tl_front_cats',
+		'type' => 'select',
+		'choices' => get_categories_select()
+	));		
 }
 
 add_action('customize_register', 'testlab_customise_register');

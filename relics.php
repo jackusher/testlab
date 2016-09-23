@@ -4,7 +4,10 @@
 */
 
 /* TABLE OF CONTENTS
-
+	1. Featured image opacity effect rollover grid.
+	2. Full-width recent post loop, with unique styles for first post.
+	3. Loop to bring in WP-Admin-defined text content of isolated pages.
+	4. Old footer widgets.
 */
 
 // 1.a. HTML: Featured image opacity rollover effect grid, capturing all recent posts.?>
@@ -253,5 +256,86 @@ if (have_posts()) :
 	else :
 		echo '<p>No content found!</p>';
 endif;
+
+
+
+// 4.a. HTML: Old footer widget markup (for x4 locations). From footer.php. ?>
+
+<!-- footer-widgets -->
+<div class="footer-widgets clearfix">
+			
+	<?php if (is_active_sidebar('footer1')) : ?>
+		<div class="footer-widget-area">
+			<?php dynamic_sidebar('footer1'); ?>
+		</div>
+	<?php endif; ?>
+			
+	<?php if (is_active_sidebar('footer2')) : ?>
+		<div class="footer-widget-area">
+			<?php dynamic_sidebar('footer2'); ?>
+		</div>
+	<?php endif; ?>
+			
+	<?php if (is_active_sidebar('footer3')) : ?>
+		<div class="footer-widget-area">
+			<?php dynamic_sidebar('footer3'); ?>
+		</div>
+	<?php endif; ?>
+			
+	<?php if (is_active_sidebar('footer4')) : ?>
+		<div class="footer-widget-area">
+			<?php dynamic_sidebar('footer4'); ?>
+		</div>
+	<?php endif; ?>
+		
+</div><!-- /footer-widgets --><?php
+
+// 4.b. CSS: Old footer widget styles. ?>
+
+<style>
+/* VII.c. Footer widget area. */
+.footer-widget-area {
+	margin-top: 10px;
+	width: 25%;
+	float: left;
+	padding-right: 40px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	border-right: 1px dotted #DDD;
+}
+
+.footer-widget-area ul,
+.footer-widget-area li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-widget-area:last-of-type {
+	border: none;
+}
+</style><?php
+
+// 4.c. PHP: Registering footer widget locations in functions.php, for WP customise API.
+
+register_sidebar( array(
+	'name' => 'Footer Area 1',
+	'id' => 'footer1'
+));
+	
+register_sidebar( array(
+	'name' => 'Footer Area 2',
+	'id' => 'footer2'
+));
+	
+register_sidebar( array(
+	'name' => 'Footer Area 3',
+	'id' => 'footer3'
+));
+	
+register_sidebar( array(
+	'name' => 'Footer Area 4',
+	'id' => 'footer4'
+));
 
 ?>

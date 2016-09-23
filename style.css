@@ -260,7 +260,8 @@ img {
 	padding: 0 0 5px 0;
 }
 
-#section2-head {
+#section2-head, /* These class styles are because <section1>'s upper margin is influenced by header menu margins. BUG! */
+#section3-head {
 	margin-top: 20px;
 }
 
@@ -319,6 +320,10 @@ img {
 	width: 400px;
 }
 
+#section3-article {
+	width: 500px;
+}
+
 .front-info {
 	padding: 3px 5px 5px 5px;
 	border-bottom: 2px solid #bdbdbd;
@@ -337,6 +342,10 @@ img {
 	font-size: 2em;
 }
 
+#section2-article:first-of-type #section2-info h4 {
+	font-size: 1.75em;
+}
+
 .front-info p { /* The excerpt in each masonry brick. */
 	font-size: 0.80em;
 	display: inline;
@@ -348,6 +357,10 @@ img {
 
 #section1-article:first-of-type #section1-info p {
 	font-size: 1em;
+}
+
+#section2-article:first-of-type #section2-info p {
+	font-size: 0.95em;
 }
 
 .front-artcat {
@@ -423,7 +436,7 @@ ul.popular-list #popular-title a {
 .home-columns {
 	width: 100%;
 	font-size: 85%;
-	#padding-top: 20px;
+	/* padding-top: 20px; */
 	display: inline-block;
 }
 
@@ -444,6 +457,11 @@ article.column-post {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
+
+article.column-post h4,
+article.column-post p {
+	padding: 0 15px 0 0;
+}
 /*
 .front-section1 article:first-of-type .column-thumbnail {
 	border: 50px solid #d3d3d3;
@@ -458,9 +476,9 @@ article.column-post:last-of-type {
 	font-size: 2.5em;
 }
 
-.front-section2 h2,
-.front-section3 h2 {
-	border-bottom: 2px solid #DDD;
+.front-section2,
+.front-section3 {
+	border-right: 2px solid #DDD;
 }
 
 .home-columns h4 a {
@@ -609,7 +627,6 @@ article.post-gallery a {
 
 .sidebar-widget-title {
 	font-size: 2.5em;
-	border-bottom: 2px solid #DDD;
 }
 
 .sidebar-widget-item ul {
@@ -641,28 +658,6 @@ article.post-gallery a {
 
 .site-footer nav ul li:last-of-type {
 	border-right: none;
-}
-
-/* VII.c. Footer widget area. */
-.footer-widget-area {
-	margin-top: 10px;
-	width: 25%;
-	float: left;
-	padding-right: 40px;
-	padding-left: 10px;
-	box-sizing: border-box;
-	border-right: 1px dotted #DDD;
-}
-
-.footer-widget-area ul,
-.footer-widget-area li {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.footer-widget-area:last-of-type {
-	border: none;
 }
 
 
