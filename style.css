@@ -255,55 +255,59 @@ img {
 /* SECTION III: FRONT PAGE STYLING. */
 /* III.a. Title section 1. */
 /* III.a.i. Title section 1 header (section title and blurb). */
-#section1-head {
+.front-head {
 	margin: 5px 0 5px 0;
 	padding: 0 0 5px 0;
 }
 
-#section1-title h2 {
+#section2-head {
+	margin-top: 20px;
+}
+
+.front-title h2 {
 	margin: 0; /* Exemption from global style. */
 	font-size: 2.5em;
 }
 
-#section1-title {
+.front-title {
 	float: left;
 	display: inline;
 }
 
-#section1-subcats {
+.front-subcats {
 	float: right;
 	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
 }
 
-#section1-subcats li {
+.front-subcats li {
 	white-space: nowrap;
 	display: inline;
 	list-style: none;
 	float: left;
 }
 
-#section1-subcats li + li:before {
+.front-subcats li + li:before {
 	content: ", ";
 }
 
-#section1-subcats li a {
+.front-subcats li a {
 	text-decoration: none;
 }
 
 /* III.a.ii. Title section 1 masonry area. */
-#section1-wrapper {
+.front-wrapper {
 	max-width: 100%;
 	padding: 5px 0 20px 0;
 	border-bottom: 1px solid #DDD;
 }
 
-#section1-wrapper:after {
+.front-wrapper:after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
-#section1-article {
+.front-article {
 	float: left;
 	margin: 0 8px 8px 0;
 	width: 200px;
@@ -315,26 +319,16 @@ img {
 	width: 400px;
 }
 
-#section1-thumb { /* Defining fixed image div measurements for hover reveals. */
-	width: 200px;
-	height: 124px;
-}
-
-#section1-article:first-of-type #section1-thumb { /* Defining fixed image div measurements for hover reveals. */
-	width: 400px;
-	height: 400px;
-}
-
-#section1-info {
+.front-info {
 	padding: 3px 5px 5px 5px;
 	border-bottom: 2px solid #bdbdbd;
 }
 
-#section1-info a {
+.front-info a {
 	text-decoration: none;
 }
 
-#section1-info h4 { /* The title in each masonry brick. */
+.front-info h4 { /* The title in each masonry brick. */
 	font-size: 1.22em;
 	margin: 2px 0 5px 0;
 }
@@ -343,12 +337,12 @@ img {
 	font-size: 2em;
 }
 
-#section1-info p { /* The excerpt in each masonry brick. */
+.front-info p { /* The excerpt in each masonry brick. */
 	font-size: 0.80em;
 	display: inline;
 }
 
-#section1-article p.section1-auth {
+.front-article p.front-auth {
 	font-style: italic;
 }
 
@@ -356,13 +350,13 @@ img {
 	font-size: 1em;
 }
 
-#section1-cat {
+.front-artcat {
 	background-color: #E9E9E9;
 	text-align: right;
 	padding: 5px 5px 5px 0;
 }
 
-#section1-cat span a {
+.front-artcat span a {
 	text-decoration: none;
 }
 

@@ -134,6 +134,11 @@ function testlab_customise_register( $wp_customize ) {
 		'capability' => 'edit_theme_options'
 	));
 	
+	$wp_customize->add_setting('title_section2', array(
+		'default' => 'uncategorized',
+		'capability' => 'edit_theme_options'
+	));	
+	
 	// WP appearance sections.
 	$wp_customize->add_section('tl_standard_colors', array(
 		'title' => __('Standard Colours', 'testlab'),
@@ -181,6 +186,14 @@ function testlab_customise_register( $wp_customize ) {
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
+	
+	$wp_customize->add_control( 'title_section2', array(
+		'settings' => 'title_section2',
+		'label' => 'Title Section 2',
+		'section' => 'tl_front_cats',
+		'type' => 'select',
+		'choices' => get_categories_select()
+	));	
 }
 
 add_action('customize_register', 'testlab_customise_register');
