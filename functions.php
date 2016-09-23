@@ -119,11 +119,6 @@ function testlab_customise_register( $wp_customize ) {
 		'transport' => 'refresh'
 	));
 	
-	$wp_customize->add_setting('front_cat_section1', array(
-		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
-	));
-	
 	$wp_customize->add_setting('front_cat_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options'
@@ -162,14 +157,6 @@ function testlab_customise_register( $wp_customize ) {
 		'section' => 'tl_standard_colors',
 		'settings' => 'tl_button_color'
 	)));
-	
-	$wp_customize->add_control( 'front_cat_section1', array(
-		'settings' => 'front_cat_section1',
-		'label' => 'Section 1',
-		'section' => 'tl_front_cats',
-		'type' => 'select',
-		'choices' => get_categories_select()
-	));
 	
 	$wp_customize->add_control( 'front_cat_section2', array(
 		'settings' => 'front_cat_section2',

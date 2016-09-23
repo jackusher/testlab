@@ -10,10 +10,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: test, jack, usher
 */
 
+/* SECTION I: THEME GLOBAL STYLES, CLASSES, AND PRE-REQUISITES. */
+/* I.a. Container styles and proportions. */
 html {
 	padding: 0;
 	margin: 0;
-	/* overflow-x: hidden; For the purpose of messing around with full-length color bars. */
 }
 
 body {
@@ -22,9 +23,27 @@ body {
 	font-family: 'Muli', sans-serif;
 	font-size: 14px;
 	color: #333;
-	/* overflow-x: hidden; For the purpose of messing around with full-length color bars. */
 }
 
+div.container {
+	max-width: 1040px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* I.a.i. Main column area proportions. NB. These are legacy styles from index.php. */
+.site-content {
+	display: inline-block;
+}
+
+.main-column {
+	width: 66%;
+	float: left;
+	margin: 30px 15px 0 0;
+}
+
+/* I.b. Global element styles. */
 a:link,
 a:visited {
 	color: #006ec3;
@@ -40,94 +59,17 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
-/* Clearfix */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* I.c. Clearfix class for floats. */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
-/* General container layout. */
-div.container {
-	max-width: 1040px;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-/* Post content area in index.php (the blog page), and general article styles. */
-article.post {
-	border-bottom: 1px dotted #DDD;
-	margin-bottom: 20px;
-}
-
-article.post h2 {
-	margin-bottom: 0;
-}
-
-article.post h2 a:link,
-article.post h2 a:visited {
-	text-decoration: none;
-}
-
-p.post-info {
-	font-size: 87%;
-	color: #999;
-}
-
-p.post-info a:link,
-p.post-info a:visited {
-	color: #999;
-}
-
-article.post:last-of-type {
-	border-bottom: none;
-}
-
-/* Post type; gallery styles. */
-article.post-gallery {
-	background-color: #222;
-	color: #FFF;
-	padding: 20px;
-	margin-bottom: 30px;
-}
-
-article.post-gallery img {
-	border: none!important;
-}
-
-article.post-gallery h2 {
-	text-align: center;
-}
-
-article.post-gallery a {
-	color: #FFF;
-}
-
-/* Header styles. */
-.site-header {
-	border-bottom: 1px solid #DDD;
-	margin-bottom: 20px;
-	padding: 30px 0 0 0;
-}
-
-.site-header h1 {
-	margin: 0;
-}
-
-.site-header h1 a:link,
-.site-header h1 a:visited {
-	text-decoration: none;
-}
-
-.site-header h5 {
-	margin: 0;
-	font-weight: lighter;
-}
-
-.site-header .header-login { /* Much work needed here on floating the login buttons to the right. */
-	float: right;
-}
-
-/* Navigation menu general styles. */
+/* I.d. Global menu standards and general styles. */
 .site-nav {
 	position: relative;
 }
@@ -151,7 +93,37 @@ article.post-gallery a {
 	display: block;
 }
 
-/* Site header menu styles. */
+
+
+/* SECTION II: HEADER AND HEADER CHILD ELEMENT STYLES. */
+/* II.a. Header standards and proportions. */
+.site-header {
+	border-bottom: 1px solid #DDD;
+	margin-bottom: 20px;
+	padding: 30px 0 0 0;
+}
+
+/* II.b. Site name and blurb styles. */
+.site-header h1 {
+	margin: 0;
+}
+
+.site-header h1 a:link,
+.site-header h1 a:visited {
+	text-decoration: none;
+}
+
+.site-header h5 {
+	margin: 0;
+	font-weight: lighter;
+}
+
+/* II.c. Login and register buttons. */
+.site-header .header-login { /* Much work needed here on floating the login buttons to the right. */
+	float: right;
+}
+
+/* II.d. Header menu (primary). */
 .site-header nav {
 	margin-top: 10px;
 	z-index: 10;
@@ -196,102 +168,7 @@ article.post-gallery a {
 	margin-right: 0;
 }
 
-/* Main column area proportions. */
-.site-content {
-	display: inline-block;
-}
-
-.main-column {
-	width: 66%;
-	float: left;
-	margin: 0 15px 0 0;
-}
-
-/* Side column area proportions. */
-.sidebar-column {
-	width: 32%;
-	float: left;
-}
-
-/* Footer widget area */
-.footer-widget-area {
-	margin-top: 10px;
-	width: 25%;
-	float: left;
-	padding-right: 40px;
-	padding-left: 10px;
-	box-sizing: border-box;
-	border-right: 1px dotted #DDD;
-}
-
-.footer-widget-area ul,
-.footer-widget-area li {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.footer-widget-area:last-of-type {
-	border: none;
-}
-
-/* Footer styles. */
-.site-footer {
-	margin-top: 30px;
-	border-top: 1px solid #DDD;
-	font-size: 84%;
-}
-
-/* Site footer menu styles. */
-.site-footer nav {
-	margin: 30px 0 10px 0;
-}
-
-.site-footer nav ul li {
-	margin-right: 10px;
-	padding-right: 10px;
-	border-right: 1px solid #DDD;
-}
-
-.site-footer nav ul li:last-of-type {
-	border-right: none;
-}
-
-/* Specific page layout/styles. */
-article.page h2 {
-	font-size: 225%;
-	margin-bottom: 15px;
-}
-
-/* Two column title layout for page-contact-us.php */
-div.title-column {
-	width: 30%;
-	float: left;
-}
-
-div.text-column {
-	width: 70%;
-	float: right;
-}
-
-/* Styles for special-template.php. */
-div.info-box {
-	width: 30%;
-	float: right;
-	margin: 0 0 30px 30px;
-	padding: 20px;
-	background-color: #EEE;
-}
-
-div.info-box h4 {
-	margin-bottom: 6px;
-}
-
-div.info-box p {
-	font-size: 100%;
-}
-
-/* Children page submenu styles, within header menu. */
+/* II.e. Child menu styling (page: Contact Us). */
 .children-links {
 	margin-bottom: 20px;
 	font-size: 80%;
@@ -331,33 +208,7 @@ div.info-box p {
 	cursor: default;
 }
 
-/* Archive page styles. */
-.cat-archive-title h2 {
-	color: #FF0000;
-}
-
-/* Global and featured image styles. */
-img {
-	max-width: 100%;
-	display: block;
-}
-
-.post-thumbnail {
-	float: left;
-	margin-right: 20px;
-	padding-bottom: 20px;
-}
-
-.column-thumbnail {
-	float: left;
-	margin-right: 10px;
-}
-
-div.column-thumbnail:first-of-type {
-	margin-bottom: 10px;
-}
-
-/* Search bar styles. */
+/* II.f. Fluid search box styling. */
 .my-nav-menu-search {
 	position: absolute;
 	right: 0;
@@ -399,7 +250,182 @@ div.column-thumbnail:first-of-type {
 	display:none;
 }
 
-/* front-page.php column styles. */
+
+
+/* SECTION III: FRONT PAGE STYLING. */
+/* III.a. Title section 1. */
+/* III.a.i. Title section 1 header (section title and blurb). */
+#section1-head {
+	margin: 5px 0 5px 0;
+	padding: 0 0 5px 0;
+}
+
+#section1-title h2 {
+	margin: 0; /* Exemption from global style. */
+	font-size: 2.5em;
+}
+
+#section1-title {
+	float: left;
+	display: inline;
+}
+
+#section1-subcats {
+	float: right;
+	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
+}
+
+#section1-subcats li {
+	white-space: nowrap;
+	display: inline;
+	list-style: none;
+	float: left;
+}
+
+#section1-subcats li + li:before {
+	content: ", ";
+}
+
+#section1-subcats li a {
+	text-decoration: none;
+}
+
+/* III.a.ii. Title section 1 masonry area. */
+#section1-wrapper {
+	max-width: 100%;
+	padding: 5px 0 20px 0;
+	border-bottom: 1px solid #DDD;
+}
+
+#section1-wrapper:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#section1-article {
+	float: left;
+	margin: 0 8px 8px 0;
+	width: 200px;
+	background-color: #F6F6F6;
+	padding: 0 0 0 0;
+}
+
+#section1-article:first-of-type {
+	width: 400px;
+}
+
+#section1-thumb { /* Defining fixed image div measurements for hover reveals. */
+	width: 200px;
+	height: 124px;
+}
+
+#section1-article:first-of-type #section1-thumb { /* Defining fixed image div measurements for hover reveals. */
+	width: 400px;
+	height: 400px;
+}
+
+#section1-info {
+	padding: 3px 5px 5px 5px;
+	border-bottom: 2px solid #bdbdbd;
+}
+
+#section1-info a {
+	text-decoration: none;
+}
+
+#section1-info h4 { /* The title in each masonry brick. */
+	font-size: 1.22em;
+	margin: 2px 0 5px 0;
+}
+
+#section1-article:first-of-type #section1-info h4 {
+	font-size: 2em;
+}
+
+#section1-info p { /* The excerpt in each masonry brick. */
+	font-size: 0.80em;
+	display: inline;
+}
+
+#section1-article p.section1-auth {
+	font-style: italic;
+}
+
+#section1-article:first-of-type #section1-info p {
+	font-size: 1em;
+}
+
+#section1-cat {
+	background-color: #E9E9E9;
+	text-align: right;
+	padding: 5px 5px 5px 0;
+}
+
+#section1-cat span a {
+	text-decoration: none;
+}
+
+/* III.b. Popular posts divider section. */
+#popular-wrapper {
+	max-width: 100%;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #DDD;
+}
+
+#popular-head {
+	padding: 18px 0 10px 0;
+}
+
+#popular-headtit {
+	float: left;
+}
+
+#popular-headtit h2 {
+	font-size: 2.5em;
+	margin: 0; /* Again... standardisation/global style conflict... */
+}
+
+#popular-blurb {
+	float: right;
+	padding: 15px 0 0 0;
+}
+
+ul.popular-list p {
+	margin: 0;
+}
+
+ul.popular-list {
+	list-style: none;
+	padding: 0;
+}
+
+ul.popular-list #popular-item {
+	float: left;
+	max-width: 200px;
+	display: block;
+	margin: 0 8px 0 0;
+}
+
+ul.popular-list #popular-rank {
+	font-size: 2.75em;
+	float: left;
+	width: 28px;
+	text-align: center;
+	border-right: 2px solid #ddd;
+}
+
+ul.popular-list #popular-title {
+	width: 160px;
+	margin-left: 30px;
+	padding: 10px 0 0 10px;
+}
+
+ul.popular-list #popular-title a {
+	text-decoration: none;
+}
+
+/* III.a. Container element dimensions and their general styles. */
 .home-columns {
 	width: 100%;
 	font-size: 85%;
@@ -407,8 +433,35 @@ div.column-thumbnail:first-of-type {
 	display: inline-block;
 }
 
+.front-section2 {
+	width: 48%;
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.front-section3 {
+	width: 48%;
+	float: left;
+}
+
+/* III.b. Post elements. */
+article.column-post {
+	border-bottom: 1px dashed #DDD;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+/*
+.front-section1 article:first-of-type .column-thumbnail {
+	border: 50px solid #d3d3d3;
+}
+*/
+article.column-post:last-of-type {
+	border-bottom: none;
+}
+
+/* III.c. Text and titles. */
 .home-columns h2 {
-	font-size: 2.1em;
+	font-size: 2.5em;
 }
 
 .front-section2 h2,
@@ -425,21 +478,7 @@ div.column-thumbnail:first-of-type {
 	text-decoration: none;
 }
 
-.front-section1 {
-	width: 100%;
-}
-
-.front-section2 {
-	width: 48%;
-	float: left;
-	margin: 0 20px 0 0;
-}
-
-.front-section3 {
-	width: 48%;
-	float: left;
-}
-
+/* III.d. Post meta styles. */
 .subtle-date,
 .subtle-author,
 .subtle-category {
@@ -453,27 +492,130 @@ div.column-thumbnail:first-of-type {
 	display: inline-block;
 }
 
-article.column-post {
-	border-bottom: 1px dashed #DDD;
-	padding-bottom: 20px;
+/* III.e. Image dimensions and styling. */
+.column-thumbnail {
+	float: left;
+	margin-right: 10px;
+}
+
+div.column-thumbnail:first-of-type {
+	margin-bottom: 10px;
+}
+
+
+
+/* SECTION IV: PAGE STYLING. */
+/* IV.a. Global page styles. */
+article.page h2 {
+	font-size: 225%;
+	margin-bottom: 15px;
+}
+
+/* IV.b. index.php: The 'blog' page, functioning as a recent posts list. */
+article.post {
+	border-bottom: 1px dotted #DDD;
 	margin-bottom: 20px;
 }
-/*
-.front-section1 article:first-of-type .column-thumbnail {
-	border: 50px solid #d3d3d3;
+
+article.post h2 {
+	margin-bottom: 0;
 }
-*/
-article.column-post:last-of-type {
+
+article.post h2 a:link,
+article.post h2 a:visited {
+	text-decoration: none;
+}
+
+p.post-info {
+	font-size: 87%;
+	color: #999;
+}
+
+p.post-info a:link,
+p.post-info a:visited {
+	color: #999;
+}
+
+article.post:last-of-type {
 	border-bottom: none;
 }
 
-/* Sidebar styling */
+.post-thumbnail {
+	float: left;
+	margin-right: 20px;
+	padding-bottom: 20px;
+}
+
+/* IV.c. page-contact-us.php. */
+div.title-column {
+	width: 30%;
+	float: left;
+}
+
+div.text-column {
+	width: 70%;
+	float: right;
+}
+
+/* IV.d. special-template.php. */
+div.info-box {
+	width: 30%;
+	float: right;
+	margin: 0 0 30px 30px;
+	padding: 20px;
+	background-color: #EEE;
+}
+
+div.info-box h4 {
+	margin-bottom: 6px;
+}
+
+div.info-box p {
+	font-size: 100%;
+}
+
+/* IV.d. Archive page styles. */
+.cat-archive-title h2 {
+	color: #FF0000;
+}
+
+
+
+/* SECTION V: UNIQUE POST TYPE STYLES. */
+/* V.a. Post type: Gallery. */
+article.post-gallery {
+	background-color: #222;
+	color: #FFF;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+article.post-gallery img {
+	border: none!important;
+}
+
+article.post-gallery h2 {
+	text-align: center;
+}
+
+article.post-gallery a {
+	color: #FFF;
+}
+
+
+
+/* SECTION VI: SIDEBAR STYLING. */
+/* VI.a. Global styles. */
 .sidebar-column {
+	margin-top: 30px;
+	width: 32%;
+	float: left;
 	font-size: 85%;
 }
 
 .sidebar-widget-title {
-	font-size: 2.1em;
+	font-size: 2.5em;
+	border-bottom: 2px solid #DDD;
 }
 
 .sidebar-widget-item ul {
@@ -482,9 +624,58 @@ article.column-post:last-of-type {
 	margin: 0;
 }
 
-/* Variable CSS for various browser widths */
+
+
+/* SECTION VII: SITE FOOTER. */
+/* VII.a. Dimensions and general styles. */
+.site-footer {
+	margin-top: 30px;
+	border-top: 1px solid #DDD;
+	font-size: 84%;
+}
+
+/* VII.b. Site footer menu. */
+.site-footer nav {
+	margin: 30px 0 10px 0;
+}
+
+.site-footer nav ul li {
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #DDD;
+}
+
+.site-footer nav ul li:last-of-type {
+	border-right: none;
+}
+
+/* VII.c. Footer widget area. */
+.footer-widget-area {
+	margin-top: 10px;
+	width: 25%;
+	float: left;
+	padding-right: 40px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	border-right: 1px dotted #DDD;
+}
+
+.footer-widget-area ul,
+.footer-widget-area li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-widget-area:last-of-type {
+	border: none;
+}
+
+
+
+/* SECTION ALPHA: MOBILE STYLES. */
+/* alpha.a. Variable CSS for decreasing browser widths */
 @media (max-width: 797px) {
-	.front-section1,
 	.front-section2,
 	.front-section3,
 	.main-column,
@@ -497,265 +688,4 @@ article.column-post:last-of-type {
 		padding-top: 15px;
 		border-top: 2px solid #DDD;
 	}
-}
-
-/* Grid CSS for front-page.php latest post grid. */
-
-#ms-wrapper {
-	max-width: 100%;
-	padding: 5px 0 30px 0;
-	border-bottom: 2px solid #DDD;
-	margin: 0 0 25px 0;
-}
-
-#ms-wrapper:after {
-	content: '';
-	display: block;
-	clear: both;
-}
-
-#ms-item {
-	float: left;
-	display: flex; /* Using flexbox to allow vertical centring of .ms-info content. */
-	flex-direction: column;
-	justify-content: center;
-	resize: vertical;
-	margin: 0 5px 5px 0;
-	width: 245px;
-	height: 184px;
-}
-
-#ms-item .ms-thumbnail {
-	background-color: black;
-}
-
-#ms-item .ms-thumbnail {
-	-webkit-transition: all 0.2s ease; /* Safari and Chrome */
-  	-moz-transition: all 0.2s ease; /* Firefox */
-	-o-transition: all 0.2s ease; /* IE 9 */
-	-ms-transition: all 0.2s ease; /* Opera */
-	transition: all 0.2s ease;
-	position: absolute;
-	z-index: 20;
-}
-
-#ms-item:hover > .ms-thumbnail {
-    -webkit-transform:scale(1.02); /* Safari and Chrome */
-	-moz-transform:scale(1.02); /* Firefox */
-	-ms-transform:scale(1.02); /* IE 9 */
-	-o-transform:scale(1.02); /* Opera */
-	transform:scale(1.02);
-}
-
-#ms-item .ms-thumbnail img {
-	-webkit-transition: all 0.2s linear; /* Safari and Chrome */
-  	-moz-transition: all 0.2s linear; /* Firefox */
-	-o-transition: all 0.2s linear; /* IE 9 */
-	-ms-transition: all 0.2s linear; /* Opera */
-	transition: all 0.2s linear;
-}
-
-#ms-item:hover img {
-	opacity: 0.3;
-}
-
-#ms-item .ms-info {
-	resize: vertical;
-	padding: 0 3px 0 3px;
-	z-index: 25;
-	visibility: hidden;
-	text-align: center;
-}
-
-#ms-item .ms-title a {
-	text-decoration: none;
-	color: #DDD;
-	font-size: 1.5em;
-}
-
-#ms-item .subtle-category {
-	font-size: 0.9em;
-}
-
-#ms-item:hover > .ms-info {
-	visibility: visible;
-}
-
-/* Beginning of new front-page styles. These are all
-   currently self-contained for ease of reference and
-   manipulation whilst the prototype is in development.
-   They will comprise of 7 main parts; TITLE SECTION
-   1, POPULAR SECTION, TITLE SECTION 2, TITLE SECTION
-   3, NEWS, SPORT, and SIDEBAR OVERFLOW. Check sketches
-   for visual layout.
-*/
-
-/* TITLE SECTION 1: Masonry level 1 layout, with parent category COMMENT. */
-.creative-head {
-	margin: 5px 0 5px 0;
-	padding: 0 0 5px 0;
-}
-
-.creative-title h2 { /* Why the hell do we need to specify no margins here? Conflicting h2 standard style somewhere... */
-	margin: 0;
-	font-size: 2.5em;
-}
-
-.creative-title {
-	float: left;
-	display: inline;
-}
-
-.creative-subcats {
-	float: right;
-	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
-}
-
-.creative-subcats li {
-	white-space: nowrap;
-	display: inline;
-	list-style: none;
-	float: left;
-}
-
-.creative-subcats li + li:before {
-	content: ", ";
-}
-
-.creative-subcats li a {
-	text-decoration: none;
-}
-
-#creative-wrapper {
-	max-width: 100%;
-	padding: 5px 0 20px 0;
-	border-bottom: 1px solid #DDD;
-}
-
-#creative-wrapper:after {
-	content: '';
-	display: block;
-	clear: both;
-}
-
-#creative-article {
-	float: left;
-	margin: 0 8px 8px 0;
-	width: 200px;
-	background-color: #F6F6F6;
-	padding: 0 0 0 0;
-}
-
-#creative-article:first-of-type {
-	width: 400px;
-}
-
-.creative-thumb { /* Defining fixed image div measurements for hover reveals. */
-	width: 200px;
-	height: 124px;
-}
-
-#creative-article:first-of-type .creative-thumb { /* Defining fixed image div measurements for hover reveals. */
-	width: 400px;
-	height: 400px;
-}
-
-.creative-info {
-	padding: 3px 5px 5px 5px;
-	border-bottom: 2px solid #bdbdbd;
-}
-
-.creative-info a {
-	text-decoration: none;
-}
-
-.creative-info h4 { /* The title in each masonry brick. */
-	font-size: 1.22em;
-	margin: 2px 0 5px 0;
-}
-
-#creative-article:first-of-type .creative-info h4 {
-	font-size: 2em;
-}
-
-.creative-info p { /* The excerpt in each masonry brick. */
-	font-size: 0.80em;
-	display: inline;
-}
-
-#creative-article p.creative-auth {
-	font-style: italic;
-}
-
-#creative-article:first-of-type .creative-info p {
-	font-size: 1em;
-}
-
-.creative-cat {
-	background-color: #E9E9E9;
-	text-align: right;
-	padding: 5px 5px 5px 0;
-}
-
-.creative-cat span a {
-	text-decoration: none;
-}
-
-/* POPULAR SECTION: 5 most popular posts displayed using function in functions.php. */
-.popular-wrapper {
-	max-width: 100%;
-	padding: 0 0 20px 0;
-	border-bottom: 1px solid #DDD;
-}
-
-.popular-head {
-	padding: 18px 0 10px 0;
-}
-
-.popular-headtit {
-	float: left;
-}
-
-.popular-headtit h2 {
-	font-size: 2.5em;
-	margin: 0; /* Again... standardisation/global style conflict... */
-}
-
-.popular-blurb {
-	float: right;
-	padding: 15px 0 0 0;
-}
-
-ul.popular-list p {
-	margin: 0;
-}
-
-ul.popular-list {
-	list-style: none;
-	padding: 0;
-}
-
-ul.popular-list .popular-item {
-	float: left;
-	max-width: 200px;
-	display: block;
-	margin: 0 8px 0 0;
-}
-
-ul.popular-list .popular-rank {
-	font-size: 2.75em;
-	float: left;
-	width: 28px;
-	text-align: center;
-	border-right: 2px solid #ddd;
-}
-
-ul.popular-list .popular-title {
-	width: 160px;
-	margin-left: 30px;
-	padding: 10px 0 0 10px;
-}
-
-ul.popular-list .popular-title a {
-	text-decoration: none;
 }
