@@ -18,7 +18,9 @@
 	
 	</footer>
 
-</div><!-- container -->
+</div><!-- /container -->
+
+</div><!-- /back -->
 
 <?php wp_footer(); ?>
 

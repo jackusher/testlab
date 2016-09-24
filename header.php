@@ -12,7 +12,10 @@
 	</head>
 	
 <body <?php body_class(); ?>>
-
+	
+	<!-- This is solely a hack div for the purposes of getting a limited-height background color. -->
+	<div class="back">
+	
 	<!-- The div 'container' includes all visible site content inside the margins. -->
 	<div class="container">
 	
