@@ -22,7 +22,7 @@ body {
 	margin: 0;
 	font-family: 'Muli', sans-serif;
 	font-size: 14px;
-	/* color: #333; */
+	color: #333;
 }
 
 .back { /* Hacked styling for the fixed-height, non-straying background color outside the container. */
@@ -230,9 +230,13 @@ img {
 
 .my-nav-menu-search .search-field {
 	background-color: transparent;
-	background-image: url(/wp-content/themes/testlab/search-icon2.png);
+	background-image: url("/wp-content/themes/testlab/search-icon2.png");
 	background-position: 5px center;
 	background-repeat: no-repeat;
+	-webkit-background-size: 24px 24px;
+	-moz-background-size: 24px 24px;
+	-o-background-size: 24px 24px;
+	-ms-background-size: 24px 24px;
 	background-size: 24px 24px;
 	border: none;
 	cursor: pointer;
@@ -241,6 +245,9 @@ img {
 	padding: 0 0 0 34px;
 	position: relative;
 	-webkit-transition: width 250ms ease, background 250ms ease;
+	-moz-transition: width 250ms ease, background 250ms ease;
+	-o-transition: width 250ms ease, background 250ms ease;
+	-ms-transition: width 250ms ease, background 250ms ease;
 	transition: width 250ms ease, background 250ms ease;
 	width: 0;
 }

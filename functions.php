@@ -223,7 +223,7 @@ add_action('wp_head', 'testlab_customise_css');
 add_theme_support('html5', array('search-form'));
 add_filter('wp_nav_menu_items', 'add_search_form_to_menu', 10, 2);
 
-function add_search_form_to_menu($items, $args) {
+function add_search_form_to_menu($items, $args) { // Note that this function MAY be causing issues in Safari. Consider replacing with static searchform.php.
 	if( !($args->theme_location == 'primary') )
 		return $items;
 	return $items . '<li class="my-nav-menu-search">' . get_search_form(false) . '</li>';
