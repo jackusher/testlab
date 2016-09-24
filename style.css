@@ -31,7 +31,7 @@ body {
 	background-color: #ddd;
 }
 
-.container {
+.container { /* FIREFOX: Heights need to be sorted (probably @<html>) so that they extend to full viewport height. */
 	height: 100%;
 	max-width: 1040px;
 	margin: 0 auto;
