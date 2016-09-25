@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	padding: 0;
+    padding: 0;
 	margin: 0;
 	font-family: 'Muli', sans-serif;
 	font-size: 14px;
@@ -27,17 +27,16 @@ body {
 
 .back { /* Hacked styling for the fixed-height, non-straying background color outside the container. */
 	width: 100%;
-	height: 100%;
 	background-color: #ddd;
 }
 
-.container { /* FIREFOX: Heights need to be sorted (probably @<html>) so that they extend to full viewport height. */
-	height: 100%;
+.container {
 	max-width: 1040px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #fff;
+    overflow: hidden;
 }
 
 /* I.a.i. Main column area proportions. NB. These are legacy styles from index.php. */
