@@ -232,10 +232,6 @@ img {
 	background-image: url("/wp-content/themes/testlab/search-icon2.png");
 	background-position: 5px center;
 	background-repeat: no-repeat;
-	-webkit-background-size: 24px 24px;
-	-moz-background-size: 24px 24px;
-	-o-background-size: 24px 24px;
-	-ms-background-size: 24px 24px;
 	background-size: 24px 24px;
 	border: none;
 	cursor: pointer;
