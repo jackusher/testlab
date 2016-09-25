@@ -20,8 +20,6 @@
 
 </div><!-- /container -->
 
-</div><!-- /back -->
-
 <?php wp_footer(); ?>
 
 </body>
