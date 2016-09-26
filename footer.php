@@ -2,6 +2,7 @@
 	<footer class="site-footer">
 		
 		<div class="footer-widgets clearfix"><?php
+			// Wonderful code from SimonStaton@stackexchange.
 			$args = array(
 				'orderby' => 'name',
 				'parent' => 0
