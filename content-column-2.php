@@ -10,7 +10,7 @@ $the_query = new WP_Query( $args );
 
 if ($the_query->have_posts()) :
 				
-echo "<h2> Latest " . get_category_by_slug($args['category_name'])->name . "</h2>"; // Outputting the title of the active category, as per the $wp_customize setting, as <h2>.
+echo "<h2>" . get_category_by_slug($args['category_name'])->name . "</h2>"; // Outputting the title of the active category, as per the $wp_customize setting, as <h2>.
 					
 	$countposts=0; while ($the_query->have_posts()) : $the_query->the_post(); $countposts++; ?> <!-- Using countposts to allow identification of first posts. -->
 
