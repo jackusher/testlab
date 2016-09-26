@@ -200,6 +200,12 @@ img {
 	border-radius: 2px;
 }
 
+.site-header nav ul li.current-cat a:link,
+.site-header nav ul li.current-cat a:visited {
+	background-color: #6e6e6e;
+	border-radius: 2px;
+}
+
 .site-header nav ul li:last-of-type {
 	margin-right: 0;
 }

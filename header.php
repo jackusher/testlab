@@ -44,34 +44,28 @@
 				wp_nav_menu( $args ); ?>
 			</nav><?php
 			
-			$term = get_queried_object();
-			$children = get_terms( $term->taxonomy, array(
-				'parent'    => $term->term_id,
-				'hide_empty' => false
-			) );
-			// print_r($children); // Uncomment for debugging.
-			if($children && is_category() ) { ?>
+			if ( is_category() ) {
+				if ( is_category() ) {
+    				$this_category = get_category($cat);
+    				} 
+    				if($this_category->category_parent)
+    				$this_category = wp_list_categories('orderby=name&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->category_parent."&echo=0");
+    				else
+    				$this_category = wp_list_categories('orderby=name&depth=1&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->cat_ID."&echo=0");
+    				if ($this_category) { ?>
+						<nav id="site-subnav" class="site-nav">
+						
+							<ul>
+								<?php echo $this_category; ?>
+							</ul>
+					
+						</nav> <?php
+					}
 			
-    			<nav id="site-subnav" class="site-nav">
-					<ul><?php
-						wp_list_categories(
-   							array(
-    							'child_of' => get_queried_object_id(), // this will be ID of current category in a category archive
-  		  						'style' => 'none',
-  		  						'depth' => 2,
-  		  						'title_li' => '',
-    							'orderby' => 'name',
-    							'show_option_none' => '',
-    							'style' => 'list'
-    						)
-						); ?>
-					</ul>
-				</nav> <?php
-				
 			} else {
 			
 				echo '<style type="text/css">
-					.site-subnav {
+					#site-subnav {
 						display: none;
 					}
 					</style>';
