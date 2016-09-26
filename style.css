@@ -123,7 +123,7 @@ img {
 	border-left: 600rem solid #484848;
 	border-right: 600rem solid #484848;
 	color: white;
-	font-size: 1.125rem;
+	font-size: 1.2em;
 }
 
 /* II.b. Site name and blurb styles. */
@@ -717,7 +717,6 @@ article.post-gallery a {
   border-left: 600rem solid #484848;
   border-right: 600rem solid #484848;
   color: white;
-  font-size: 1.125rem;
 }
 
 .meta-list li,
@@ -741,12 +740,12 @@ article.post-gallery a {
 
 .meta-list h2 {
 	margin: 0 20px 0 0;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 }
 
 .meta-list ul li {
-	padding: 10px 15px 0 0;
-	font-size: 0.8em;
+	padding: 9px 15px 0 0;
+	font-size: 0.875rem;
 }
 
 /* VII.b. Site footer menu. */
