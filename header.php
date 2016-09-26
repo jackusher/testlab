@@ -38,9 +38,10 @@
 			<nav class="site-nav">
 				<?php
 				$args = array(
-					'theme_location' => 'primary'
-				); ?>
-				<?php wp_nav_menu( $args ); ?>
+					'theme_location' => 'primary',
+					'walker' => new CSS_Menu_Walker()
+				);
+				wp_nav_menu( $args ); ?>
 			</nav>
 			
 		</header><!-- /site-header -->

@@ -184,21 +184,93 @@ img {
 	border-bottom: none;
 }
 
-.site-header nav ul li a:hover {
-	background-color: #ECECEC;
-}
-
-.site-header nav ul li.current-menu-item a:link,
+/* .site-header nav ul li.current-menu-item a:link,
 .site-header nav ul li.current-menu-item a:visited, 
-.site-header nav ul li.current-page-ancestor a:link,
-.site-header nav ul li.current-page-ancestor a:visited {
+.site-header nav ul li.current-category-ancestor a:link,
+.site-header nav ul li.current-category-ancestor a:visited {
 	font-weight: bold;
 	background-color: #006ec3;
 	color: #FFF;
-}
+} */
 
 .site-header nav ul li:last-of-type {
 	margin-right: 0;
+}
+
+.site-header nav ul li a {
+	color: #ffffff;
+}
+
+.site-header nav ul li.has-sub:hover > a:after {
+	top: 0;
+	bottom: 0;
+}
+
+.site-header nav > ul > li.has-sub > a:before {
+	content: '';
+	position: absolute;
+	border: 5px solid transparent;
+	border-top: 5px solid #ffffff;
+}
+
+.site-header nav ul li.has-sub:hover > a {
+	background: #3f3f3f;
+	border-color: #3f3f3f;
+	top: -1px;
+	z-index: 999;
+}
+
+.site-header nav ul li.has-sub:hover > ul,
+.site-header nav ul li.has-sub:hover > div {
+	display: block;
+}
+
+.site-header nav ul li.has-sub > a:hover {
+	background: #3f3f3f;
+	border-color: #3f3f3f;
+}
+
+.site-header nav ul li > ul,
+.site-header nav ul li > div {
+	display: none;
+	width: auto;
+	position: absolute;
+	top: 45px; /* Distance of submenu div from main menu. */
+	padding: 10px 10px; /* Padding between <li>s and outside of submenu div. */
+	background: #3f3f3f;
+	z-index: 999;
+}
+
+.site-header nav ul li > ul {
+	width: auto; /* Width of the submenus. */
+}
+
+.site-header nav ul li > ul li {
+	display: block;
+	list-style: inside none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.site-header nav ul li > ul li a {
+	outline: none;
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 8px 20px;
+	font-size: 0.8em;
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.site-header nav ul ul a:hover {
+	color: #ffffff;
+}
+
+.site-header nav > ul > li.has-sub > a:hover:before {
+	border-top: 5px solid #ffffff;
 }
 
 /* II.e. Child menu styling (page: Contact Us). */
