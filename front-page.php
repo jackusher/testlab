@@ -196,7 +196,7 @@ get_header(); ?>
 			<div id="section2-article" class="front-article"><!-- Start of looped post content. -->
 			
 				<div id="section2-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. -->
-					<?php $checkcount = array(2, 3, 4, 5);
+					<?php $checkcount = array(2, 3, 4, 5, 6);
 					if(in_array($sec2_counter, $checkcount)){ ?>
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
 					} elseif ($sec2_counter==1) { ?>
@@ -207,7 +207,7 @@ get_header(); ?>
 				</div><!-- /section2-thumb -->
 				
 				<div id="section2-info" class="front-info"><!-- Post titles and excerpts. -->
-					<?php $checkcount = array(1, 2, 3, 4, 5);
+					<?php $checkcount = array(1, 2, 3);
 					if(in_array($sec2_counter, $checkcount)){ ?>
 						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 						the_excerpt(); ?>

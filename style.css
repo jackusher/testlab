@@ -178,7 +178,7 @@ img {
 	display: inline;
 }
 
-.site-header nav ul li:hover {
+.site-header nav ul li:hover { /* Universal hover li colour. */
 	background-color: #6e6e6e;
 	border-radius: 2px;
 }
@@ -209,9 +209,9 @@ img {
 }
 
 #site-subnav {
-	background-color: #6f6f6f;
-	border-left: 600rem solid #6f6f6f;
-	border-right: 600rem solid #6f6f6f;
+	background-color: #9a9a9a;
+	border-left: 600rem solid #9a9a9a;
+	border-right: 600rem solid #9a9a9a;
 	font-size: 1em;
 }
 
