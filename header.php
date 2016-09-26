@@ -42,6 +42,39 @@
 					'walker' => new CSS_Menu_Walker()
 				);
 				wp_nav_menu( $args ); ?>
-			</nav>
+			</nav><?php
+			
+			$term = get_queried_object();
+			$children = get_terms( $term->taxonomy, array(
+				'parent'    => $term->term_id,
+				'hide_empty' => false
+			) );
+			// print_r($children); // Uncomment for debugging.
+			if($children && is_category() ) { ?>
+			
+    			<nav id="site-subnav" class="site-nav">
+					<ul><?php
+						wp_list_categories(
+   							array(
+    							'child_of' => get_queried_object_id(), // this will be ID of current category in a category archive
+  		  						'style' => 'none',
+  		  						'depth' => 2,
+  		  						'title_li' => '',
+    							'orderby' => 'name',
+    							'show_option_none' => '',
+    							'style' => 'list'
+    						)
+						); ?>
+					</ul>
+				</nav> <?php
+				
+			} else {
+			
+				echo '<style type="text/css">
+					.site-subnav {
+						display: none;
+					}
+					</style>';
+			} ?>
 			
 		</header><!-- /site-header -->

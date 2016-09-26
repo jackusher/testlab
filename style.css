@@ -46,7 +46,7 @@ body {
 .main-column {
 	width: 66%;
 	float: left;
-	margin: 30px 15px 0 0;
+	margin: 0px 15px 0 0;
 }
 
 /* I.b. Global element styles. */
@@ -151,7 +151,8 @@ img {
 	z-index: 10;
 }
 
-.menu-top-menu-container { /* Bear in mind this is targeting a WP-created class NOT in our HTML. */
+.menu-top-menu-container,
+#site-subnav { /* Bear in mind this is targeting a WP-created class NOT in our HTML. */
 	display: table;
 	margin: 0 auto;
 	/* add in section padding (1.5rem) */
@@ -177,6 +178,11 @@ img {
 	display: inline;
 }
 
+.site-header nav ul li:hover {
+	background-color: #6e6e6e;
+	border-radius: 2px;
+}
+
 .site-header nav ul li a:link,
 .site-header nav ul li a:visited {
 	padding: 10px 17px;
@@ -184,14 +190,15 @@ img {
 	border-bottom: none;
 }
 
-/* .site-header nav ul li.current-menu-item a:link,
+.site-header nav ul li.current-menu-item a:link,
 .site-header nav ul li.current-menu-item a:visited, 
 .site-header nav ul li.current-category-ancestor a:link,
 .site-header nav ul li.current-category-ancestor a:visited {
 	font-weight: bold;
-	background-color: #006ec3;
+	background-color: #9a9a9a;
 	color: #FFF;
-} */
+	border-radius: 2px;
+}
 
 .site-header nav ul li:last-of-type {
 	margin-right: 0;
@@ -201,76 +208,16 @@ img {
 	color: #ffffff;
 }
 
-.site-header nav ul li.has-sub:hover > a:after {
-	top: 0;
-	bottom: 0;
+#site-subnav {
+	background-color: #6f6f6f;
+	border-left: 600rem solid #6f6f6f;
+	border-right: 600rem solid #6f6f6f;
+	font-size: 1em;
 }
 
-.site-header nav > ul > li.has-sub > a:before {
-	content: '';
-	position: absolute;
-	border: 5px solid transparent;
-	border-top: 5px solid #ffffff;
-}
-
-.site-header nav ul li.has-sub:hover > a {
-	background: #3f3f3f;
-	border-color: #3f3f3f;
-	top: -1px;
-	z-index: 999;
-}
-
-.site-header nav ul li.has-sub:hover > ul,
-.site-header nav ul li.has-sub:hover > div {
-	display: block;
-}
-
-.site-header nav ul li.has-sub > a:hover {
-	background: #3f3f3f;
-	border-color: #3f3f3f;
-}
-
-.site-header nav ul li > ul,
-.site-header nav ul li > div {
-	display: none;
-	width: auto;
-	position: absolute;
-	top: 45px; /* Distance of submenu div from main menu. */
-	padding: 10px 10px; /* Padding between <li>s and outside of submenu div. */
-	background: #3f3f3f;
-	z-index: 999;
-}
-
-.site-header nav ul li > ul {
-	width: auto; /* Width of the submenus. */
-}
-
-.site-header nav ul li > ul li {
-	display: block;
-	list-style: inside none;
-	padding: 0;
-	margin: 0;
-	position: relative;
-}
-
-.site-header nav ul li > ul li a {
-	outline: none;
-	display: block;
-	position: relative;
-	margin: 0;
-	padding: 8px 20px;
-	font-size: 0.8em;
-	color: #ffffff;
-	text-decoration: none;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-}
-
-.site-header nav ul ul a:hover {
-	color: #ffffff;
-}
-
-.site-header nav > ul > li.has-sub > a:hover:before {
-	border-top: 5px solid #ffffff;
+#site-subnav ul li a:link,
+#site-subnav ul li a:visited {
+	padding: 10px 10px;
 }
 
 /* II.e. Child menu styling (page: Contact Us). */
@@ -480,6 +427,10 @@ img {
 
 .front-artcat span a {
 	text-decoration: none;
+}
+
+#section3-wrap { /* This is a bit of a hack to move the 3column area down, to avoid top-margin styles on them that interfere on single pages. */
+	margin-bottom: 25px;
 }
 
 /* III.b. Popular posts divider section. */
@@ -728,7 +679,6 @@ article.post-gallery a {
 /* SECTION VI: SIDEBAR STYLING. */
 /* VI.a. Global styles. */
 .sidebar-column {
-	margin-top: 30px;
 	width: 32%;
 	float: left;
 	font-size: 85%;
