@@ -109,6 +109,10 @@ img {
 }
 
 /* II.b. Site name and blurb styles. */
+.header-info {
+	margin: 0 0 30px 0;
+}
+
 .site-header h1 {
 	margin: 0;
 }
@@ -124,7 +128,7 @@ img {
 }
 
 /* II.c. Login and register buttons. */
-.site-header .header-login { /* Much work needed here on floating the login buttons to the right. */
+.header-login { /* Much work needed here on floating the login buttons to the right. */
 	float: right;
 }
 

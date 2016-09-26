@@ -9,6 +9,7 @@
 		<title><?php bloginfo('name'); ?></title>
 		<?php wp_head(); ?>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/masonry-properties.js"></script><!-- The external masonry properies file. -->
+		<!-- <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/sliding-mainmenu.js"></script> -->
 	</head>
 	
 <body <?php body_class(); ?>>
@@ -17,7 +18,7 @@
 	<div class="container">
 	
 		<!-- site-header begins. -->
-		<header class="site-header">
+		<header class="site-header clearfix">
 		
 			<!-- Behaviour of the text-based site title and tagline. -->		
 			<div class="header-info">
@@ -38,7 +39,7 @@
 				$args = array(
 					'theme_location' => 'primary'
 				); ?>
-				<?php wp_nav_menu(  $args ); ?>
+				<?php wp_nav_menu( $args ); ?>
 			</nav>
 			
 		</header><!-- /site-header -->
