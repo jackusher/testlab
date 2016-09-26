@@ -108,6 +108,24 @@ img {
 	padding: 30px 0 0 0;
 }
 
+.menu-top-menu-container, /* Bear in mind this is targeting a WP-created class NOT in our HTML. Also, both divs are targeted to make floats work. */
+#site-subnav { 
+	display: table;
+	margin: 0 auto;
+	/* add in section padding (1.5rem) */
+	margin: 0 -601.5rem;
+	/* match section padding (1.5rem) */
+	padding: .25rem 1.5rem;
+	background: #484848;
+	/* border solid, not RGBa (Safari bug) */
+	/* 9600px or 10240px to avoid Chrome bug */
+	/* or equivalent in ems or rems (9600/16) */
+	border-left: 600rem solid #484848;
+	border-right: 600rem solid #484848;
+	color: white;
+	font-size: 1.125rem;
+}
+
 /* II.b. Site name and blurb styles. */
 .header-info {
 	margin: 0 0 30px 0;
@@ -145,28 +163,10 @@ img {
 	font-size: 1.05em;
 }
 
-/* II.d. Header menu (primary). */
+/* II.d. Header menu general styles. */
 .site-header nav {
 	margin-top: 10px;
 	z-index: 10;
-}
-
-.menu-top-menu-container,
-#site-subnav { /* Bear in mind this is targeting a WP-created class NOT in our HTML. */
-	display: table;
-	margin: 0 auto;
-	/* add in section padding (1.5rem) */
-	margin: 0 -601.5rem;
-	/* match section padding (1.5rem) */
-	padding: .25rem 1.5rem;
-	background: #484848;
-	/* border solid, not RGBa (Safari bug) */
-	/* 9600px or 10240px to avoid Chrome bug */
-	/* or equivalent in ems or rems (9600/16) */
-	border-left: 600rem solid #484848;
-	border-right: 600rem solid #484848;
-	color: white;
-	font-size: 1.125rem;
 }
 
 .site-header nav ul {
@@ -214,6 +214,7 @@ img {
 	color: #ffffff;
 }
 
+/* II.e. Unique child category submenu styles. */
 #site-subnav {
 	background-color: #9a9a9a;
 	border-left: 600rem solid #9a9a9a;
@@ -226,7 +227,7 @@ img {
 	padding: 10px 10px;
 }
 
-/* II.e. Child menu styling (page: Contact Us). */
+/* II.f. Child menu styling (page: Contact Us). */
 .children-links {
 	margin-bottom: 20px;
 	font-size: 80%;
@@ -266,7 +267,7 @@ img {
 	cursor: default;
 }
 
-/* II.f. Fluid search box styling. */
+/* II.g. Fluid search box styling. */
 .my-nav-menu-search {
 	position: absolute;
 	right: 0;
