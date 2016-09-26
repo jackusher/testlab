@@ -18,20 +18,21 @@
 	<div class="container">
 	
 		<!-- site-header begins. -->
-		<header class="site-header clearfix">
+		<header class="site-header">
 		
 			<!-- Behaviour of the text-based site title and tagline. -->		
-			<div class="header-info">
-				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-				<h5><?php bloginfo('description'); ?> <?php if (is_page('contact-us')) {?>
-					- Learn how to contact me!
-				<?php }?></h5>
+			<div class="header-info clearfix">
+				<div class="header-title">	
+					<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+					<h5><?php bloginfo('description'); ?> <?php if (is_page('contact-us')) {?>
+						- Learn how to contact me!
+					<?php }?></h5>
+				</div><!-- /header-title -->
+				
+				<div class="header-login">
+					<span class="subtle-login"><a href="<?php echo get_home_url() . '/wp-login.php' ?>">Login</a></span>
+				</div><!-- /header-login -->
 			</div><!-- /header-info -->
-			
-			<!-- <div class="header-login">
-				<span class="subtle-login"><a href="<?php echo get_home_url() . '/wp-login.php?action=register' ?>">Register!</a></span>
-				<span class="subtle-register"><a href="<?php echo get_home_url() . '/wp-login.php' ?>">Login!</a></span>
-			</div> -->
 			
 			<!-- Putting the main menu in place, and defining a WP admin menu location. --> 
 			<nav class="site-nav">

@@ -113,23 +113,36 @@ img {
 	margin: 0 0 30px 0;
 }
 
-.site-header h1 {
+.header-title {
+	float: left;
+}
+
+.header-info h1 {
 	margin: 0;
 }
 
-.site-header h1 a:link,
-.site-header h1 a:visited {
+.header-info h1 a:link,
+.header-info h1 a:visited {
 	text-decoration: none;
 }
 
-.site-header h5 {
+.header-info h5 {
 	margin: 0;
 	font-weight: lighter;
 }
 
 /* II.c. Login and register buttons. */
-.header-login { /* Much work needed here on floating the login buttons to the right. */
+.header-login {
 	float: right;
+	padding: 16px 0 16px 0;
+}
+
+.header-login a {
+	text-decoration: none;
+}
+
+.subtle-login {
+	font-size: 1.05em;
 }
 
 /* II.d. Header menu (primary). */
