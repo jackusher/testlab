@@ -397,7 +397,7 @@ img {
 }
 
 .front-info h4 { /* The title in each masonry brick. */
-	font-size: 1.22em;
+	font-size: 1.3em;
 	margin: 2px 0 5px 0;
 }
 
@@ -410,7 +410,7 @@ img {
 }
 
 .front-info p { /* The excerpt in each masonry brick. */
-	font-size: 0.80em;
+	font-size: 0.84em;
 	display: inline;
 }
 
