@@ -31,22 +31,27 @@ body {
 }
 
 .container {
-	max-width: 1040px;
+	max-width: 1140px;
 	margin: 0 auto;
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #fff;
 }
 
+.clearer {
+	clear: both;
+}
+
 /* I.a.i. Main column area proportions. NB. These are legacy styles from index.php. */
 .site-content {
 	display: inline-block;
+	width: 100%;
 }
 
 .main-column {
 	width: 66%;
 	float: left;
-	margin: 0px 15px 0 0;
+	margin: 20px 15px 0 0;
 }
 
 /* I.b. Global element styles. */
@@ -323,68 +328,39 @@ img {
 	padding: 0 0 5px 0;
 }
 
-#section2-head, /* These class styles are because <section1>'s upper margin is influenced by header menu margins. BUG! */
-#section3-head {
-	margin-top: 20px;
-}
-
 .front-title h2 {
 	margin: 0; /* Exemption from global style. */
 	font-size: 2.5em;
-}
-
-.front-title {
-	float: left;
-	display: inline;
-}
-
-.front-subcats {
-	float: right;
-	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
-}
-
-.front-subcats li {
-	white-space: nowrap;
-	display: inline;
-	list-style: none;
-	float: left;
-}
-
-.front-subcats li + li:before {
-	content: ", ";
-}
-
-.front-subcats li a {
-	text-decoration: none;
+	text-align: center;
 }
 
 /* III.a.ii. Title section 1 masonry area. */
 .front-wrapper {
-	max-width: 100%;
-	padding: 5px 0 20px 0;
-	border-bottom: 1px solid #DDD;
+	float: left;
+	width: 358px;
+	padding: 5px 15px 0 15px;
+	border-right: 2px solid #DDD;
 }
 
-.front-wrapper:after {
-	content: '';
-	display: block;
-	clear: both;
+.front-wrapper:first-of-type {
+	padding-left: 0;
+}
+
+#section3-wrap {
+	border-right: none;
+	padding-right: 0;
 }
 
 .front-article {
-	float: left;
+	width: 100%;
 	margin: 0 8px 8px 0;
-	width: 200px;
 	background-color: #F6F6F6;
 	padding: 0 0 0 0;
 }
 
-#section1-article:first-of-type {
-	width: 400px;
-}
-
-#section3-article {
-	width: 500px;
+.front-article.small {
+	width: 170px;
+	float: left;
 }
 
 .front-info {
@@ -401,12 +377,8 @@ img {
 	margin: 2px 0 5px 0;
 }
 
-#section1-article:first-of-type #section1-info h4 {
+.front-article:first-of-type .front-info h4 {
 	font-size: 2em;
-}
-
-#section2-article:first-of-type #section2-info h4 {
-	font-size: 1.75em;
 }
 
 .front-info p { /* The excerpt in each masonry brick. */
@@ -418,12 +390,8 @@ img {
 	font-style: italic;
 }
 
-#section1-article:first-of-type #section1-info p {
+.front-article:first-of-type .front-info p {
 	font-size: 1em;
-}
-
-#section2-article:first-of-type #section2-info p {
-	font-size: 0.95em;
 }
 
 .front-artcat {
@@ -434,10 +402,6 @@ img {
 
 .front-artcat span a {
 	text-decoration: none;
-}
-
-#section3-wrap { /* This is a bit of a hack to move the 3column area down, to avoid top-margin styles on them that interfere on single pages. */
-	margin-bottom: 25px;
 }
 
 /* III.b. Popular posts divider section. */
@@ -689,6 +653,7 @@ article.post-gallery a {
 	width: 32%;
 	float: left;
 	font-size: 85%;
+	margin-top: 20px;
 }
 
 .sidebar-widget-title {
