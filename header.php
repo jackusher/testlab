@@ -9,7 +9,6 @@
 		<title><?php bloginfo('name'); ?></title>
 		<?php wp_head(); ?>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/masonry-properties.js"></script><!-- The external masonry properies file. -->
-		<!-- <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/sliding-mainmenu.js"></script> -->
 	</head>
 	
 <body <?php body_class(); ?>>
