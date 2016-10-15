@@ -45,10 +45,8 @@ function testlab_setup() {
 	add_image_size('title-list-thumbnail', 163, 123, true);
 	add_image_size('column-thumbnail', 120, 100, true);
 	add_image_size('banner-image', 920, 210, true);
-	add_image_size('standard-blog-thumbnail', 200, 124, true);
-	add_image_size('left-creative', 400, 400, true);
-	add_image_size('left-lifestyle', 200, 275, true);
-	add_image_size('title-section3', 500, 124, true);
+	add_image_size('standard-blog-thumbnail', 170, 124, true);
+	add_image_size('front-latest', 358, 240, true);
 	
 	// Support for post formats
 	add_theme_support('post-formats', array('gallery'));
