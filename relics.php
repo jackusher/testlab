@@ -338,4 +338,37 @@ register_sidebar( array(
 	'id' => 'footer4'
 ));
 
-?>
+
+
+// 5.a. HTML: Listing the subcategories of a parent category, with pre-defined variables. ?>
+<div id="section1-subcats" class="front-subcats"><?php
+	wp_list_categories( array( // Creating an li for each of the subcats in the parent.
+		'orderby' => 'name',
+		'show_count' => false,
+		'title_li' => '',
+		'use_dec_for_title' => false,
+		'child_of' => $sec1_parentID
+	) );
+?></div> <?php
+
+// 5.b. CSS: Styles for subcats in a comma-separated list. ?>
+<style>
+.front-subcats {
+	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
+}
+
+.front-subcats li {
+	white-space: nowrap;
+	display: inline;
+	list-style: none;
+	float: left;
+}
+
+.front-subcats li + li:before {
+	content: ", ";
+}
+
+.front-subcats li a {
+	text-decoration: none;
+}
+</style> <?php
