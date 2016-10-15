@@ -493,6 +493,10 @@ article.column-post h4,
 article.column-post p {
 	padding: 0 15px 0 0;
 }
+
+article.column-post h4 {
+	clear: both;
+}
 /*
 .front-section1 article:first-of-type .column-thumbnail {
 	border: 50px solid #d3d3d3;
