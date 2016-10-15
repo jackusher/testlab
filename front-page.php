@@ -24,11 +24,11 @@ get_header(); ?>
 				<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
 			</div><!-- /section1-head -->
 		
-			<div id="section1-content">
+			<div id="section1-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4);
-				$img = array(5, 6, 7, 8);
+				$noimg = array(2, 3, 4, 9, 10);
+				$img = array(5, 6, 7, 8, 11, 12);
 				$sec1_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec1_children as $sec1_child ) : // foreach loop pulling the latest post in each child cat.
@@ -45,7 +45,13 @@ get_header(); ?>
 
 				if ( $query->have_posts() ) :
 	
-					while ( $query->have_posts() ) : $query->the_post(); ?>
+					while ( $query->have_posts() ) : $query->the_post();
+					
+					if ( $sec1_counter == 9 ) { ?>
+						<div class="clearer"></div><?php
+					} else {
+						// Do nothing.
+					} ?>
 	
 					<div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. -->
 			
@@ -121,11 +127,11 @@ get_header(); ?>
 				<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
 			</div><!-- /section2-head -->
 			
-			<div id="section2-content">
+			<div id="section2-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4);
-				$img = array(5, 6, 7, 8);
+				$noimg = array(2, 3, 4, 9, 10);
+				$img = array(5, 6, 7, 8, 11, 12);
 				$sec2_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec2_children as $sec2_child ) : // foreach loop pulling the latest post in each child cat.
@@ -226,11 +232,11 @@ get_header(); ?>
 				<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>		
 			</div><!-- /section3-head -->
 		
-			<div id="section3-content">
+			<div id="section3-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4);
-				$img = array(5, 6, 7, 8);
+				$noimg = array(2, 3, 4, 9, 10);
+				$img = array(5, 6, 7, 8, 11, 12);
 				$sec3_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec3_children as $sec3_child ) : // foreach loop pulling the latest post in each child cat.
@@ -247,7 +253,13 @@ get_header(); ?>
 
 				if ( $query->have_posts() ) :
 	
-					while ( $query->have_posts() ) : $query->the_post(); ?>
+					while ( $query->have_posts() ) : $query->the_post();
+					
+					if ( $sec3_counter == 9 ) { ?>
+						<div class="clearer"></div><?php
+					} else {
+						// Do nothing.
+					} ?>
 	
 					<div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. -->
 			
