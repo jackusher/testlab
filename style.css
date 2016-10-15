@@ -4,7 +4,7 @@ Theme URI: http://jackusher.co.uk/projects
 Author: Jack Usher
 Author URI: http://jackusher.co.uk/
 Description: This theme is for Jack to learn how to code WP themes from scratch.
-Version: 0.8
+Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: test, jack, usher
@@ -321,8 +321,8 @@ img {
 
 
 /* SECTION III: FRONT PAGE STYLING. */
-/* III.a. Title section 1. */
-/* III.a.i. Title section 1 header (section title and blurb). */
+/* III.a. Latest columns. */
+/* III.a.i. Latest column headers (section title and blurb). */
 .front-head {
 	margin: 5px 0 5px 0;
 	padding: 0 0 5px 0;
@@ -334,7 +334,7 @@ img {
 	text-align: center;
 }
 
-/* III.a.ii. Title section 1 masonry area. */
+/* III.a.ii. Latest columns content area. */
 .front-wrapper {
 	float: left;
 	width: 358px;
@@ -463,8 +463,8 @@ ul.popular-list #popular-title a {
 	text-decoration: none;
 }
 
-/* III.a. Container element dimensions and their general styles. */
-.home-columns {
+/* III.c. Container element dimensions and their general styles. From here to III.g., archaic styles. */
+.home-columns { /* Container of News and Sport sections. */
 	width: 100%;
 	font-size: 85%;
 	/* padding-top: 20px; */
@@ -482,8 +482,8 @@ ul.popular-list #popular-title a {
 	float: left;
 }
 
-/* III.b. Post elements. */
-article.column-post {
+/* III.d. Post elements. */
+article.column-post { /* These are unique to the bottom of front-page.php, not global. */
 	border-bottom: 1px dashed #DDD;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
@@ -497,16 +497,12 @@ article.column-post p {
 article.column-post h4 {
 	clear: both;
 }
-/*
-.front-section1 article:first-of-type .column-thumbnail {
-	border: 50px solid #d3d3d3;
-}
-*/
+
 article.column-post:last-of-type {
 	border-bottom: none;
 }
 
-/* III.c. Text and titles. */
+/* III.e. Text and titles. */
 .home-columns h2 {
 	font-size: 2.5em;
 }
@@ -525,7 +521,7 @@ article.column-post:last-of-type {
 	text-decoration: none;
 }
 
-/* III.d. Post meta styles. */
+/* III.f. Post meta styles. */
 .subtle-date,
 .subtle-author,
 .subtle-category {
@@ -539,7 +535,7 @@ article.column-post:last-of-type {
 	display: inline-block;
 }
 
-/* III.e. Image dimensions and styling. */
+/* III.g. Image dimensions and styling. */
 .column-thumbnail {
 	float: left;
 	margin-right: 10px;
