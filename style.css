@@ -346,6 +346,16 @@ img {
 	padding-left: 0;
 }
 
+.front-content {
+	width: 100%;
+}
+
+.front-content:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
 #section3-wrap {
 	border-right: none;
 	padding-right: 0;
@@ -356,11 +366,11 @@ img {
 	margin: 0 8px 8px 0;
 	background-color: #F6F6F6;
 	padding: 0 0 0 0;
+	float: left;
 }
 
 .front-article.small {
 	width: 170px;
-	float: left;
 }
 
 .front-info {
