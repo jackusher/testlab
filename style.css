@@ -324,14 +324,29 @@ img {
 /* III.a. Latest columns. */
 /* III.a.i. Latest column headers (section title and blurb). */
 .front-head {
-	margin: 5px 0 5px 0;
-	padding: 0 0 5px 0;
+	margin: 5px 0 15px 0;
+	padding: 10px 0 10px 0;
+	border-radius: 3px;
+	background-color: #89abd2;
+	-webkit-transition: all 120ms ease;
+	-moz-transition: all 120ms ease;
+	-o-transition: all 120ms ease;
+	-ms-transition: all 120ms ease;
+	transition: all 120ms ease;
+}
+
+.front-title {
+	color: #fff;
 }
 
 .front-title h2 {
 	margin: 0; /* Exemption from global style. */
 	font-size: 2.5em;
 	text-align: center;
+}
+
+.front-head:hover {
+	background-color: #5284bd;
 }
 
 /* III.a.ii. Latest columns content area. */
@@ -342,16 +357,13 @@ img {
 .front-wrapper {
 	float: left;
 	width: 358px;
-	padding: 5px 15px 0 15px;
-	border-right: 2px solid #DDD;
-}
-
-.front-wrapper:first-of-type {
-	padding-left: 0;
+	padding: 5px 10px 0 10px;
 }
 
 .front-content {
 	width: 100%;
+	padding-right: 9px;
+	border-right: 2px solid #DDD;
 }
 
 .front-content:after {
@@ -360,13 +372,11 @@ img {
 	clear: both;
 }
 
-#section3-wrap {
+#section3-content {
 	border-right: none;
-	padding-right: 0;
 }
 
 .front-article {
-	width: 100%;
 	margin: 0 8px 8px 0;
 	background-color: #F6F6F6;
 	padding: 0 0 0 0;
