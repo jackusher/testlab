@@ -373,31 +373,6 @@ get_header(); ?>
 		</ul><!-- /popular-list -->
 
 	</div><!-- /popular-wrapper -->
-
-	<!-- main-column area -->
-	<div class="main-column">
-		
-		<!-- home-columns -->
-		<div class="home-columns clearfix">
-			
-			<!-- front-section2 -->
-			<div class="front-section2">
-				<?php // Reference to content-column-2.php to pull in the front page section 2 content.
-				get_template_part('content', 'column-2'); ?>
-			</div><!-- /front-section2 -->
-			
-			<!-- front-section3 -->
-			<div class="front-section3">
-				<?php // Reference to content-column-3.php to pull in the front page section 3 content.
-				get_template_part('content', 'column-3'); ?>
-			</div><!-- /front-section3 -->
-		
-		</div><!-- /home-columns clearfix -->
-
-	</div><!-- /main-column -->
-
-	<!-- Getting the secondary column. -->
-	<?php get_sidebar(); ?>
 	
 </div><!-- /site-content -->
 

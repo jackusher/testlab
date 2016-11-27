@@ -335,6 +335,10 @@ img {
 }
 
 /* III.a.ii. Latest columns content area. */
+#front-latest {
+	margin-bottom: 20px;
+}
+
 .front-wrapper {
 	float: left;
 	width: 358px;
@@ -417,8 +421,9 @@ img {
 /* III.b. Popular posts divider section. */
 #popular-wrapper {
 	max-width: 100%;
-	padding: 0 0 20px 0;
-	border-bottom: 1px solid #DDD;
+	padding: 0 0 25px 0;
+	margin: 0 0 17px 0;
+	border-top: 1px solid #DDD;
 }
 
 #popular-head {
@@ -450,7 +455,7 @@ ul.popular-list {
 
 ul.popular-list #popular-item {
 	float: left;
-	max-width: 200px;
+	width: 220px;
 	display: block;
 	margin: 0 8px 0 0;
 }
@@ -473,65 +478,7 @@ ul.popular-list #popular-title a {
 	text-decoration: none;
 }
 
-/* III.c. Container element dimensions and their general styles. From here to III.g., archaic styles. */
-.home-columns { /* Container of News and Sport sections. */
-	width: 100%;
-	font-size: 85%;
-	/* padding-top: 20px; */
-	display: inline-block;
-}
-
-.front-section2 {
-	width: 48%;
-	float: left;
-	margin: 0 20px 0 0;
-}
-
-.front-section3 {
-	width: 48%;
-	float: left;
-}
-
-/* III.d. Post elements. */
-article.column-post { /* These are unique to the bottom of front-page.php, not global. */
-	border-bottom: 1px dashed #DDD;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-}
-
-article.column-post h4,
-article.column-post p {
-	padding: 0 15px 0 0;
-}
-
-article.column-post h4 {
-	clear: both;
-}
-
-article.column-post:last-of-type {
-	border-bottom: none;
-}
-
-/* III.e. Text and titles. */
-.home-columns h2 {
-	font-size: 2.5em;
-}
-
-.front-section2,
-.front-section3 {
-	border-right: 2px solid #DDD;
-}
-
-.home-columns h4 a {
-	text-decoration: none;
-	font-size: 1.5em;
-}
-
-.home-columns a {
-	text-decoration: none;
-}
-
-/* III.f. Post meta styles. */
+/* III.c. Post meta styles. */
 .subtle-date,
 .subtle-author,
 .subtle-category {
@@ -543,16 +490,6 @@ article.column-post:last-of-type {
 	padding: 3px 7px;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, .33);
 	display: inline-block;
-}
-
-/* III.g. Image dimensions and styling. */
-.column-thumbnail {
-	float: left;
-	margin-right: 10px;
-}
-
-div.column-thumbnail:first-of-type {
-	margin-bottom: 10px;
 }
 
 
@@ -629,7 +566,7 @@ div.info-box p {
 
 /* IV.d. Archive page styles. */
 .cat-archive-title h2 {
-	color: #FF0000;
+	font-size: 2.5rem;
 }
 
 
@@ -681,17 +618,31 @@ article.post-gallery a {
 /* SECTION VII: SITE FOOTER. */
 /* VII.a. Intermediary footer category listing section. */
 .footer-widgets {
-  /* add in section padding (1.5rem) */
-  margin: 0 -601.5rem;
-  /* match section padding (1.5rem) */
-  padding: .25rem 1.5rem;
-  background: #484848;
-  /* border solid, not RGBa (Safari bug) */
-  /* 9600px or 10240px to avoid Chrome bug */
-  /* or equivalent in ems or rems (9600/16) */
-  border-left: 600rem solid #484848;
-  border-right: 600rem solid #484848;
-  color: white;
+	/* add in section padding (1.5rem) */
+	margin: 0 -601.5rem;
+	/* match section padding (1.5rem) */
+	padding: .25rem 1.5rem;
+	background: #565960;
+	/* border solid, not RGBa (Safari bug) */
+	/* 9600px or 10240px to avoid Chrome bug */
+	/* or equivalent in ems or rems (9600/16) */
+	border-left: 600rem solid #565960;
+	border-right: 600rem solid #565960;
+	color: white;
+}
+
+.footer-meta {
+	/* add in section padding (1.5rem) */
+	margin: 0 -601.5rem;
+	/* match section padding (1.5rem) */
+	padding: .25rem 1.5rem;
+	background: #2d3039;
+	/* border solid, not RGBa (Safari bug) */
+	/* 9600px or 10240px to avoid Chrome bug */
+	/* or equivalent in ems or rems (9600/16) */
+	border-left: 600rem solid #2d3039;
+	border-right: 600rem solid #2d3039;
+	color: white;
 }
 
 .meta-list li,

@@ -33,7 +33,7 @@
 				</div><!-- /header-login -->
 			</div><!-- /header-info -->
 			
-			<!-- Putting the main menu in place, and defining a WP admin menu location. --> 
+			<!-- Putting the main menu in place, and defining a WP admin menu location.
 			<nav class="site-nav">
 				<?php
 				$args = array(
@@ -54,11 +54,9 @@
     				$this_category = wp_list_categories('orderby=name&depth=1&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->cat_ID."&echo=0");
     			if ($this_category) { ?>
 					<nav id="site-subnav" class="site-nav"><!-- The container element for the submenu. -->
-						
 						<ul>
 							<?php echo $this_category; ?>
 						</ul>
-					
 					</nav><!-- /site-subnav --><?php
 				}
 			
@@ -69,6 +67,6 @@
 						display: none;
 					}
 					</style>';
-			} ?>
+			} ?> -->
 			
 		</header><!-- /site-header -->
