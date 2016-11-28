@@ -682,7 +682,8 @@ nav#site-sidenav ul {
 nav#site-sidenav ul li {
 	list-style: none;
 	display: inline-block;
-	padding: 10px 10px;
+	padding: 8px 7px;
+	margin: 3px;
 	border-radius: 3px;
 	font-size: 1rem;
 }
@@ -697,6 +698,24 @@ nav#site-sidenav ul li:hover > a {
 
 nav#site-sidenav ul li a {
 	text-decoration: none;
+}
+
+nav#site-sidenav ul li.current-menu-item,
+nav#site-sidenav ul li.current-menu-item, 
+nav#site-sidenav ul li.current-category-ancestor,
+nav#site-sidenav ul li.current-category-ancestor,
+nav#site-sidenav ul li.current-cat,
+nav#site-sidenav ul li.current-cat {
+	background-color: #9cc8d9;
+}
+
+nav#site-sidenav ul li.current-menu-item > a,
+nav#site-sidenav ul li.current-menu-item > a, 
+nav#site-sidenav ul li.current-category-ancestor > a,
+nav#site-sidenav ul li.current-category-ancestor > a,
+nav#site-sidenav ul li.current-cat > a,
+nav#site-sidenav ul li.current-cat > a {
+	color: #fff;
 }
 
 
