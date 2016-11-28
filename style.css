@@ -504,7 +504,7 @@ ul.popular-list #popular-title a {
 
 
 
-/* SECTION IV: PAGE STYLING. */
+/* SECTION IV: OTHER PAGE STYLING. */
 /* IV.a. Global page styles. */
 article.page h2 {
 	font-size: 225%;
@@ -581,8 +581,22 @@ div.info-box p {
 
 
 
-/* SECTION V: UNIQUE POST TYPE STYLES. */
-/* V.a. Post type: Gallery. */
+/* SECTION V: SINGLE POST STYLES. */
+/* V.a. Post type: Single normal. */
+.post-single h2 {
+	font-size: 2.5rem;
+	margin-bottom: 0.15rem;
+}
+
+p.post-info {
+	font-size: 1rem;
+}
+
+.post-single-thumbnail {
+	margin-bottom: 1.25rem;
+}
+
+/* V.b. Post type: Gallery. */
 article.post-gallery {
 	background-color: #222;
 	color: #FFF;
