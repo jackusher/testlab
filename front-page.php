@@ -22,6 +22,15 @@ get_header(); ?>
 	
 			<div id="section1-head" class="front-head clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
 				<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
+				<div id="section1-subcats" class="front-subcats"><?php
+					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
+						'orderby' => 'name',
+						'show_count' => false,
+						'title_li' => '',
+						'use_dec_for_title' => false,
+						'child_of' => $sec1_parentID
+					) );?>			
+				</div>
 			</div><!-- /section1-head -->
 		
 			<div id="section1-content" class="front-content">
@@ -125,6 +134,15 @@ get_header(); ?>
 	
 			<div id="section2-head" class="front-head clearfix">
 				<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
+				<div id="section1-subcats" class="front-subcats"><?php
+					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
+						'orderby' => 'name',
+						'show_count' => false,
+						'title_li' => '',
+						'use_dec_for_title' => false,
+						'child_of' => $sec2_parentID
+					) );?>			
+				</div>
 			</div><!-- /section2-head -->
 			
 			<div id="section2-content" class="front-content">
@@ -229,7 +247,16 @@ get_header(); ?>
 		<div id="section3-wrap" class="front-wrapper">
 	
 			<div id="section3-head" class="front-head clearfix">
-				<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>		
+				<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
+				<div id="section1-subcats" class="front-subcats"><?php
+					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
+						'orderby' => 'name',
+						'show_count' => false,
+						'title_li' => '',
+						'use_dec_for_title' => false,
+						'child_of' => $sec3_parentID
+					) );?>			
+				</div>		
 			</div><!-- /section3-head -->
 		
 			<div id="section3-content" class="front-content">
