@@ -33,7 +33,7 @@
 				</div><!-- /header-login -->
 			</div><!-- /header-info -->
 			
-			<!-- Putting the main menu in place, and defining a WP admin menu location.
+			<?php /* <!-- Putting the main menu in place, and defining a WP admin menu location. -->
 			<nav class="site-nav">
 				<?php
 				$args = array(
@@ -67,6 +67,6 @@
 						display: none;
 					}
 					</style>';
-			} ?> -->
+			} ?> */ ?>
 			
 		</header><!-- /site-header -->
