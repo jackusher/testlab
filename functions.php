@@ -34,6 +34,7 @@ function testlab_setup() {
 	// Support navigation menus
 		register_nav_menus(array(
 			'primary' => __( 'Primary Menu'),
+			'sidebar' => __( 'Sidebar Menu'),
 			'footer' => __( 'Footer Menu'),
 		));
 	
@@ -242,7 +243,7 @@ add_action('wp_head', 'shapeSpace_track_posts');
 // Custom WP menu walker class.
 class CSS_Menu_Walker extends Walker {
 
-	var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
+	var $db_fields = array('sidebar' => 'menu_item_parent', 'id' => 'db_id');
 	
 	function start_lvl(&$output, $depth = 0, $args = array()) {
 		$indent = str_repeat("\t", $depth);
