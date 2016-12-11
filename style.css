@@ -150,70 +150,6 @@ img {
 	font-size: 1.05em;
 }
 
-/* II.d. Header menu general styles. */
-.site-header nav {
-	margin-top: 10px;
-	z-index: 10;
-}
-
-.site-header nav ul {
-	list-style: none;
-}
-
-.site-header nav ul li {
-	margin-right: 5px;
-	display: inline;
-}
-
-.site-header nav ul li:hover { /* Universal hover li colour. */
-	background-color: #6e6e6e;
-	border-radius: 2px;
-}
-
-.site-header nav ul li a:link,
-.site-header nav ul li a:visited {
-	padding: 10px 17px;
-	text-decoration: none;
-	border-bottom: none;
-}
-
-.site-header nav ul li.current-menu-item a:link,
-.site-header nav ul li.current-menu-item a:visited, 
-.site-header nav ul li.current-category-ancestor a:link,
-.site-header nav ul li.current-category-ancestor a:visited {
-	font-weight: bold;
-	background-color: #9a9a9a;
-	color: #FFF;
-	border-radius: 2px;
-}
-
-.site-header nav ul li.current-cat a:link,
-.site-header nav ul li.current-cat a:visited {
-	background-color: #6e6e6e;
-	border-radius: 2px;
-}
-
-.site-header nav ul li:last-of-type {
-	margin-right: 0;
-}
-
-.site-header nav ul li a {
-	color: #ffffff;
-}
-
-/* II.e. Unique child category submenu styles. */
-#site-subnav {
-	background-color: #9a9a9a;
-	border-left: 600rem solid #9a9a9a;
-	border-right: 600rem solid #9a9a9a;
-	font-size: 1em;
-}
-
-#site-subnav ul li a:link,
-#site-subnav ul li a:visited {
-	padding: 10px 10px;
-}
-
 /* II.f. Child menu styling (page: Contact Us). */
 .children-links {
 	margin-bottom: 20px;
@@ -647,67 +583,10 @@ article.post-gallery a {
 }
 
 /* VI.b. Subcategory menu. */
-nav#sidenav-primary,
-nav#sidenav-secondary {
-	text-align: center;
-	background-color: red;
+#sidenav-primary {
+	display: block;
+	width: auto;
 }
-
-nav#sidenav-secondary {
-	margin-bottom: 25px;
-}
-
-nav#sidenav-primary ul,
-nav#sidenav-secondary ul {
-	padding: 0;
-	margin: 0;
-}
-
-nav#sidenav-primary ul li,
-nav#sidenav-secondary ul li {
-	list-style: none;
-	display: inline-block;
-	padding: 8px 7px;
-	margin: 3px;
-	border-radius: 3px;
-	font-size: 1rem;
-}
-
-nav#sidenav-primary ul li a,
-nav#sidenav-secondary ul li a {
-	text-decoration: none;
-}
-
-nav#site-sidenav ul li:hover {
-	background-color: #9cc8d9;
-}
-
-nav#site-sidenav ul li:hover > a {
-	color: #fff;
-}
-
-nav#site-sidenav ul li a {
-	text-decoration: none;
-}
-
-nav#site-sidenav ul li.current-menu-item,
-nav#site-sidenav ul li.current-menu-item, 
-nav#site-sidenav ul li.current-category-ancestor,
-nav#site-sidenav ul li.current-category-ancestor,
-nav#site-sidenav ul li.current-cat,
-nav#site-sidenav ul li.current-cat {
-	background-color: #9cc8d9;
-}
-
-nav#site-sidenav ul li.current-menu-item > a,
-nav#site-sidenav ul li.current-menu-item > a, 
-nav#site-sidenav ul li.current-category-ancestor > a,
-nav#site-sidenav ul li.current-category-ancestor > a,
-nav#site-sidenav ul li.current-cat > a,
-nav#site-sidenav ul li.current-cat > a {
-	color: #fff;
-}
-
 
 
 /* SECTION VII: SITE FOOTER. */

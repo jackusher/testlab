@@ -6,6 +6,7 @@
 				<?php
 				$args = array(
 					'theme_location' => 'sidebar',
+					'walker' => new CSS_Menu_Walker()
 				);
 				wp_nav_menu( $args ); ?>
 			</nav><?php
@@ -30,7 +31,7 @@
 			} else { // If page is NOT a category archive, container <nav> is hidden.
 			
 				echo '<style type="text/css">
-					#site-subnav {
+					nav#sidenav-secondary {
 						display: none;
 					}
 					</style>';
