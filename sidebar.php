@@ -9,7 +9,9 @@
 					'walker' => new CSS_Menu_Walker()
 				);
 				wp_nav_menu( $args ); ?>
-			</nav><?php
+			</nav>
+			
+			<div class="clearer"></div><?php
 			
 			// Implementing submenu to show subcategories on post and category pages.
 			/* if ( is_category() ) {

@@ -592,8 +592,29 @@ article.post-gallery a {
 
 /* VI.b. Subcategory menu. */
 #sidenav-primary {
+	margin: 0;
+	padding: 0;
+}
+
+#sidenav-primary ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#sidenav-primary ul li a {
+	text-decoration: none;
+	float: left;
+	font-size: 1rem;
+	margin: 10px;
+}
+
+#sidenav-primary ul li ul {
+	display: none;
+}
+
+#sidenav-primary ul li:hover > ul {
 	display: block;
-	width: auto;
 }
 
 
