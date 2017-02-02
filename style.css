@@ -51,7 +51,7 @@ body {
 .main-column {
 	width: 66%;
 	float: left;
-	margin: 20px 15px 0 0;
+	margin: 20px 0 0 0;
 }
 
 /* I.b. Global element styles. */
@@ -479,16 +479,6 @@ article.post h2 a:visited {
 	text-decoration: none;
 }
 
-p.post-info {
-	font-size: 87%;
-	color: #999;
-}
-
-p.post-info a:link,
-p.post-info a:visited {
-	color: #999;
-}
-
 article.post:last-of-type {
 	border-bottom: none;
 }
@@ -536,17 +526,48 @@ div.info-box p {
 
 /* SECTION V: SINGLE POST STYLES. */
 /* V.a. Post type: Single normal. */
+.post-single {
+	margin-bottom: 4rem;
+}
+
 .post-single h2 {
-	font-size: 2.5rem;
+	font-size: 3rem;
 	margin-bottom: 0.15rem;
 }
 
 p.post-info {
+	margin-top: 0.6rem;
 	font-size: 1rem;
+	color: #999;
+}
+
+p.post-info a {
+	background-color: #5284bd;
+	padding: 0.4rem 0;
+}
+
+p.post-info a:link,
+p.post-info a:visited {
+	color: #fff;
+	text-decoration: none;
 }
 
 .post-single-thumbnail {
 	margin-bottom: 1.25rem;
+}
+
+.post-single-content {
+	margin-top: 2.75rem;
+}
+
+.post-single-content p {
+	font-size: 1rem;
+}
+
+h2.story-body__crosshead {
+	padding-left: 0.15em;
+	margin: 0.65em 0 0.75em 0;
+	font-size: 2.2rem;
 }
 
 /* V.b. Post type: Gallery. */
@@ -574,7 +595,7 @@ article.post-gallery a {
 /* SECTION VI: SIDEBAR STYLING. */
 /* VI.a. Global styles. */
 .sidebar-column {
-	width: 32%;
+	width: 34%;
 	float: left;
 	font-size: 85%;
 	margin-top: 20px;

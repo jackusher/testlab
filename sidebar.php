@@ -1,7 +1,7 @@
 <!-- secondary-column area -->
 	<div class="sidebar-column">
 			
-			<!-- Putting the main menu in place, and defining a WP admin menu location. -->
+			<!-- Putting the main menu in place, and defining a WP admin menu location.
 			<nav id="sidenav-primary">
 				<?php
 				$args = array(
@@ -9,7 +9,7 @@
 					'walker' => new CSS_Menu_Walker()
 				);
 				wp_nav_menu( $args ); ?>
-			</nav>
+			</nav> -->
 			
 			<div class="clearer"></div><?php
 			
