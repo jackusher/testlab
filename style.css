@@ -673,6 +673,10 @@ article.post-gallery a {
 	color: white;
 }
 
+.meta-list {
+	margin: 10px 0 10px 0;
+}
+
 .meta-list li,
 .meta-list {
 	list-style: none;
@@ -688,10 +692,6 @@ article.post-gallery a {
 	float: left;
 }
 
-.meta-list {
-	margin: 10px 0 10px 0;
-}
-
 .meta-list h2 {
 	margin: 0 20px 0 0;
 	font-size: 1.5rem;
@@ -700,6 +700,15 @@ article.post-gallery a {
 .meta-list ul li {
 	padding: 8px 15px 0 0;
 	font-size: 0.85rem;
+}
+
+.meta-list a {
+	text-decoration: none;
+}
+
+.meta-list a h2,
+.meta-list ul li a {
+	color: #fff;
 }
 
 /* VII.b. Site footer menu. */

@@ -12,12 +12,12 @@
   				foreach ($categories as $category) {
     				if ( $first )
    					{
-       					echo '<li class="meta-list clearfix"><h2 class="meta-title">'.$category->cat_name.'</h2>';
+       					echo '<li class="meta-list clearfix"><a href="' . get_category_link($category->term_id) . '"><h2 class="meta-title">'.$category->cat_name.'</h2></a>';
     					$first = false;
     				}
     				else
     				{
-        				echo '<li class="meta-list clearfix"><h2 class="meta-title">'.$category->cat_name.'</h2>';
+        				echo '<li class="meta-list clearfix"><a href="' . get_category_link($category->term_id) . '"><h2 class="meta-title">'.$category->cat_name.'</h2></a>';
     				}
     				$theid = $category->term_id;
     				$children = $wpdb->get_results( "SELECT term_id FROM $wpdb->term_taxonomy WHERE parent=$theid" );
@@ -32,7 +32,7 @@
         				$categories2 = get_categories( $args2 );
         					foreach ($categories2 as $category2) {
 
-        						echo '<li>'.$category2->cat_name.'</li>';
+        						echo '<li><a href="' . get_category_link($category2->term_id) . '">'.$category2->cat_name.'</a></li>';
 
     						}
         					echo '</ul>';
