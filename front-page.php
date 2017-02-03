@@ -60,9 +60,13 @@ get_header(); ?>
 						<div class="clearer"></div><?php
 					} else {
 						// Do nothing.
+					}
+					
+					if ( in_category( 36 ) ) {
+						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+					} else {
+						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
-	
-					<div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. -->
 			
 						<div id="section1-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
 							if(in_array($sec1_counter, $noimg)) {
@@ -172,9 +176,13 @@ get_header(); ?>
 						<div class="clearer"></div><?php
 					} else {
 						// Do nothing.
-					} ?>
+					}
 	
-					<div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. -->
+					if ( in_category( 36 ) ) {
+						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+					} else {
+						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+					} ?>
 			
 						<div id="section2-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
 							if(in_array($sec2_counter, $noimg)) {
@@ -286,10 +294,14 @@ get_header(); ?>
 						<div class="clearer"></div><?php
 					} else {
 						// Do nothing.
+					}
+
+					if ( in_category( 36 ) ) {
+						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+					} else {
+						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
-	
-					<div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. -->
-			
+								
 						<div id="section3-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
 							if(in_array($sec3_counter, $noimg)) {
 								// Display no thumbnail.
