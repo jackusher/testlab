@@ -6,7 +6,7 @@
 		
 		<h2><?php the_title(); ?></h2>
 
-		<p class="post-info" id="single-info"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in
+		<p class="post-info" id="single-post-info"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in
 			<?php
 			$categories = get_the_category();
 			$separator = ", ";

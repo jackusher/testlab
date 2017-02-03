@@ -34,8 +34,7 @@ function testlab_setup() {
 	// Support navigation menus
 		register_nav_menus(array(
 			'primary' => __( 'Primary Menu'),
-			'sidebar' => __( 'Sidebar Menu'),
-			'footer' => __( 'Footer Menu'),
+			'footer' => __( 'Footer Menu')
 		));
 	
 	// Support featured images, and define the theme image pre-defined sizes.
