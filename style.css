@@ -119,6 +119,7 @@ img {
 	/* or equivalent in ems or rems (9600/16) */
 	border-left: 600rem solid #fff;
 	border-right: 600rem solid #fff;
+	border-bottom: 2px solid #a2a5ac;
 }
 
 /* II.b. Site name and blurb styles. */
