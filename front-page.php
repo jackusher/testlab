@@ -365,6 +365,22 @@ get_header(); ?>
 	
 	</div><!-- /front-latest -->
 	
+	<div id="front-full">
+	
+	</div>
+	
+	<div id="front-third1" class="front-third clearfix">
+	
+	</div>
+	
+	<div id="front-third2" class="front-third clearfix">
+	
+	</div>
+	
+	<div id="front-third3" class="front-third clearfix sponsorship">
+	
+	</div>
+	
 </div><!-- /site-content -->
 
 <?php
