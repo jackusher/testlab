@@ -430,7 +430,7 @@ ul.popular-list {
 ul.popular-list #popular-item {
 	float: left;
 	display: block;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 
 ul.popular-list #popular-rank {
