@@ -341,8 +341,13 @@ img {
 	background-color: #9ea1d1;
 }
 
-.editor-pick .front-info h4 a {
+.editor-pick .front-info h4 a,
+.editor-pick .front-info p {
 	color: #fff;
+}
+
+.editor-pick .front-info p a {
+	color: #dbdbdb;
 }
 
 .editor-pick .front-info {
