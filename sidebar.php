@@ -1,43 +1,53 @@
 <!-- secondary-column area -->
 	<div class="sidebar-column">
 			
-			<!-- Putting the main menu in place, and defining a WP admin menu location.
-			<nav id="sidenav-primary">
-				<?php
-				$args = array(
-					'theme_location' => 'sidebar',
-					'walker' => new CSS_Menu_Walker()
-				);
-				wp_nav_menu( $args ); ?>
-			</nav> -->
+		<div id="popular-wrapper" class="clearfix">
+
+		<div id="popular-head" class="clearfix"><!-- Header for popular section including title and description. -->
+			<span id="popular-headtit"><h2>Most Popular</h2></span>
+		</div><!-- /popular-head -->
+
+		<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
+	
+			$args = array( // The arguments for the popular WP_Query.
+				'posts_per_page'=>5,
+				'meta_key'=>'popular_posts',
+				'orderby'=>'meta_value_num',
+				'order'=>'DESC'
+			);
+	
+			$popular = new WP_Query( $args );
+		
+			if ( $popular->have_posts() ):
+		
+				$pop_counter=0; while ( $popular->have_posts() ) : $popular->the_post(); $pop_counter++;
 			
-			<div class="clearer"></div><?php
-			
-			// Implementing submenu to show subcategories on post and category pages.
-			/* if ( is_category() ) {
-				if ( is_category() ) {
-    				$this_category = get_category($cat);
-    				} 
-    			if($this_category->category_parent)
-    				$this_category = wp_list_categories('orderby=name&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->category_parent."&echo=0");
-    			else
-    				$this_category = wp_list_categories('orderby=name&depth=1&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->cat_ID."&echo=0");
-    			if ($this_category) { ?>
-					<nav id="sidenav-secondary" class=""><!-- The container element for the submenu. -->
-						<ul>
-							<?php echo $this_category; ?>
-						</ul>
-					</nav><!-- /site-subnav --><?php
-				}
-			
-			} else { // If page is NOT a category archive, container <nav> is hidden.
-			
-				echo '<style type="text/css">
-					nav#sidenav-secondary {
-						display: none;
+					$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
+					if(in_array($pop_counter, $checkcounter)){ ?>
+						<li id="popular-item">
+							<p id="popular-rank"><?php echo $pop_counter ?></p>
+							<p id="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						</li><?php
+					} else { ?>
+						<li id="popular-item">
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</li><?php
 					}
-					</style>';
-			} */
+		
+				endwhile;
+			
+				else :
+					echo '<p>Sorry, just loner posts here.</p>';
+		
+			endif;
+		
+			$pop_counter++;		
+			
+			wp_reset_postdata(); ?>
+	
+		</ul><!-- /popular-list -->
+
+	</div><!-- /popular-wrapper --><?php
 
 		dynamic_sidebar('sidebar1'); ?>
 

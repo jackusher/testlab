@@ -406,27 +406,16 @@ img {
 /* III.b. Popular posts divider section. */
 #popular-wrapper {
 	max-width: 100%;
-	padding: 0 0 25px 0;
-	margin: 0 0 17px 0;
-	border-top: 1px solid #DDD;
+	margin-left: 40px;
 }
 
 #popular-head {
 	padding: 18px 0 10px 0;
 }
 
-#popular-headtit {
-	float: left;
-}
-
 #popular-headtit h2 {
 	font-size: 2.5em;
 	margin: 0; /* Again... standardisation/global style conflict... */
-}
-
-#popular-blurb {
-	float: right;
-	padding: 15px 0 0 0;
 }
 
 ul.popular-list p {
@@ -440,9 +429,8 @@ ul.popular-list {
 
 ul.popular-list #popular-item {
 	float: left;
-	width: 220px;
 	display: block;
-	margin: 0 8px 0 0;
+	margin-bottom: 30px;
 }
 
 ul.popular-list #popular-rank {
@@ -454,9 +442,10 @@ ul.popular-list #popular-rank {
 }
 
 ul.popular-list #popular-title {
-	width: 160px;
+	width: 250px;
 	margin-left: 30px;
-	padding: 10px 0 0 10px;
+	padding: 5px 0 0 10px;
+	font-size: 1.15rem;
 }
 
 ul.popular-list #popular-title a {
