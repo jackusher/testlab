@@ -1,13 +1,15 @@
 <?php
-/* This file contains all of the self-contained elements that were built for testlab
-   during development. PLease refer to the table of contents below for reference.
-*/
+/* 
+   This file contains all of the self-contained elements that were built for testlab
+   during development. Please refer to the table of contents below for reference.
 
-/* TABLE OF CONTENTS
+TABLE OF CONTENTS
 	1. Featured image opacity effect rollover grid.
 	2. Full-width recent post loop, with unique styles for first post.
 	3. Loop to bring in WP-Admin-defined text content of isolated pages.
 	4. Old footer widgets.
+	5. Menu device to list subcategories of a parent category.
+	6. Walker menu displaying subcategories and their parents.
 */
 
 // 1.a. HTML: Featured image opacity rollover effect grid, capturing all recent posts.?>
@@ -372,3 +374,44 @@ register_sidebar( array(
 	text-decoration: none;
 }
 </style> <?php
+
+
+
+/* 6.a. PHP: Old menu attached to a deprecated walker class in functions.php that SHOULD
+   output parent categories with their subcategories. Original comments included. */ ?>
+
+<!-- Putting the main menu in place, and defining a WP admin menu location. -->
+<nav id="sidenav-primary">
+	<?php
+	$args = array(
+		'theme_location' => 'sidebar',
+		'walker' => new CSS_Menu_Walker()
+	);
+	wp_nav_menu( $args ); ?>
+</nav><?php
+
+// Implementing submenu to show subcategories on post and category pages.
+if ( is_category() ) {
+	if ( is_category() ) {
+		$this_category = get_category($cat);
+		} 
+	if($this_category->category_parent)
+		$this_category = wp_list_categories('orderby=name&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->category_parent."&echo=0");
+	else
+		$this_category = wp_list_categories('orderby=name&depth=1&show_count=0&title_li=&use_desc_for_title=1&show_option_none=&child_of='.$this_category->cat_ID."&echo=0");
+	if ($this_category) { ?>
+		<nav id="sidenav-secondary" class=""><!-- The container element for the submenu. -->
+			<ul>
+				<?php echo $this_category; ?>
+			</ul>
+		</nav><!-- /site-subnav --><?php
+	}
+
+} else { // If page is NOT a category archive, container <nav> is hidden.
+
+	echo '<style type="text/css">
+		nav#sidenav-secondary {
+			display: none;
+		}
+		</style>';
+}
