@@ -337,6 +337,22 @@ img {
 	float: left;
 }
 
+.editor-pick {
+	background-color: #9ea1d1;
+}
+
+.editor-pick .front-info h4 a {
+	color: #fff;
+}
+
+.editor-pick .front-info {
+	border-bottom: 2px solid #979797;
+}
+
+.editor-pick .front-artcat {
+	background-color: #d1d1d1;
+}
+
 .front-article.small {
 	width: 170px;
 }
