@@ -98,15 +98,20 @@ function testlab_customise_register( $wp_customize ) {
 		'transport' => 'refresh'
 	));
 	
-	$wp_customize->add_setting('front_cat_section2', array(
+	$wp_customize->add_setting('front_third_section1', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options'
 	));
 	
-	$wp_customize->add_setting('front_cat_section3', array(
+	$wp_customize->add_setting('front_third_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options'
 	));
+	
+	$wp_customize->add_setting('front_full', array(
+		'default' => 'uncategorized',
+		'capability' => 'edit_theme_options'
+	));	
 	
 	$wp_customize->add_setting('title_section1', array(
 		'default' => 'uncategorized',
@@ -147,21 +152,29 @@ function testlab_customise_register( $wp_customize ) {
 		'settings' => 'tl_button_color'
 	)));
 	
-	$wp_customize->add_control( 'front_cat_section2', array(
-		'settings' => 'front_cat_section2',
-		'label' => 'Section 2',
+	$wp_customize->add_control( 'front_third_section1', array(
+		'settings' => 'front_third_section1',
+		'label' => 'Third-Length Column 1',
 		'section' => 'tl_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
 	
-	$wp_customize->add_control( 'front_cat_section3', array(
-		'settings' => 'front_cat_section3',
-		'label' => 'Section 3',
+	$wp_customize->add_control( 'front_third_section2', array(
+		'settings' => 'front_third_section2',
+		'label' => 'Third-Length Column 2',
 		'section' => 'tl_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
+	
+	$wp_customize->add_control( 'front_full', array(
+		'settings' => 'front_full',
+		'label' => 'Full-Length Section',
+		'section' => 'tl_front_cats',
+		'type' => 'select',
+		'choices' => get_categories_select()
+	));	
 	
 	$wp_customize->add_control( 'title_section1', array(
 		'settings' => 'title_section1',

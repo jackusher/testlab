@@ -365,7 +365,29 @@ get_header(); ?>
 	
 	</div><!-- /front-latest -->
 	
-	<div id="front-full">
+	<div id="front-full" class="clearfix">
+	
+		<?php $args = array( // WP_Query args.
+			'category_name' => get_theme_mod( 'front_full' ),
+			'post_type' => 'post',
+			'posts_per_page' => 5,
+		);
+		
+		$query = new WP_Query( $args );
+		
+		if ( $query->have_posts() ) :
+		
+			while ( $query->have_posts() ) : $query->the_post(); ?>
+			
+				<div id="front-full-info">
+					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+				</div>
+			
+			<?php endwhile;
+			
+		else :
+			echo '<p>No content found!</p>';
+		endif; ?>
 	
 	</div>
 	

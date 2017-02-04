@@ -404,56 +404,31 @@ img {
 	text-decoration: none;
 }
 
-/* III.b. Popular posts divider section. */
-#popular-wrapper {
-	max-width: 100%;
-	margin-left: 40px;
+/* III.b. Full-length divider category section. */
+#front-full {
+	margin: 20px 0;
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #ddd;
 }
 
-#popular-head {
-	padding: 18px 0 10px 0;
-}
-
-#popular-headtit h2 {
-	font-size: 2.5em;
-	margin: 0; /* Again... standardisation/global style conflict... */
-}
-
-ul.popular-list p {
-	margin: 0;
-}
-
-ul.popular-list {
-	list-style: none;
-	padding: 0;
-}
-
-ul.popular-list #popular-item {
+/* III.c. Third-length bottom column styles. */
+.front-third {
+	width: 30%;
+	height: 200px;
+	background-color: #ddd;
 	float: left;
-	display: block;
-	margin-bottom: 25px;
+	margin-right: 50px;
+	margin-bottom: 30px;
+	margin-top: 10px;
 }
 
-ul.popular-list #popular-rank {
-	font-size: 2.75em;
-	float: left;
-	width: 28px;
-	text-align: center;
-	border-right: 2px solid #ddd;
+.front-third:last-of-type {
+	margin-right: 0;
+	padding-right: 0;
 }
 
-ul.popular-list #popular-title {
-	width: 250px;
-	margin-left: 30px;
-	padding: 5px 0 0 10px;
-	font-size: 1.15rem;
-}
 
-ul.popular-list #popular-title a {
-	text-decoration: none;
-}
-
-/* III.c. Post meta styles. */
+/* III.d. Post meta styles. */
 .subtle-date,
 .subtle-author,
 .subtle-category {
@@ -634,32 +609,55 @@ article.post-gallery a {
 	margin: 0;
 }
 
-/* VI.b. Subcategory menu. */
-#sidenav-primary {
-	margin: 0;
-	padding: 0;
+/* VI.b. Popular posts divider section. */
+#popular-wrapper {
+	max-width: 100%;
+	margin-left: 40px;
 }
 
-#sidenav-primary ul {
+#popular-head {
+	padding: 18px 0 10px 0;
+}
+
+#popular-headtit h2 {
+	font-size: 2.5em;
+	margin: 0; /* Again... standardisation/global style conflict... */
+}
+
+ul.popular-list p {
+	margin: 0;
+}
+
+ul.popular-list {
 	list-style: none;
 	padding: 0;
-	margin: 0;
 }
 
-#sidenav-primary ul li a {
-	text-decoration: none;
+ul.popular-list #popular-item {
 	float: left;
-	font-size: 1rem;
-	margin: 10px;
-}
-
-#sidenav-primary ul li ul {
-	display: none;
-}
-
-#sidenav-primary ul li:hover > ul {
 	display: block;
+	margin-bottom: 25px;
 }
+
+ul.popular-list #popular-rank {
+	font-size: 2.75em;
+	float: left;
+	width: 28px;
+	text-align: center;
+	border-right: 2px solid #ddd;
+}
+
+ul.popular-list #popular-title {
+	width: 250px;
+	margin-left: 30px;
+	padding: 5px 0 0 10px;
+	font-size: 1.15rem;
+}
+
+ul.popular-list #popular-title a {
+	text-decoration: none;
+}
+
 
 
 /* SECTION VII: SITE FOOTER. */
