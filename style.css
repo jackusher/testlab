@@ -621,6 +621,10 @@ article.post-gallery a {
 	font-size: 14px;
 }
 
+.sidebar-navi .current-cat {
+	background-color: #9cc8d9;
+}
+
 /* VI.c. Popular posts divider section. */
 #popular-wrapper {
 	max-width: 100%;
