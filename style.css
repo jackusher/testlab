@@ -617,6 +617,10 @@ article.post-gallery a {
 	margin-bottom: 25px;
 }
 
+.sidebar-menuitem .front-subcats {
+	font-size: 14px;
+}
+
 /* VI.c. Popular posts divider section. */
 #popular-wrapper {
 	max-width: 100%;
