@@ -367,6 +367,11 @@ get_header(); ?>
 	
 	<div id="front-full" class="clearfix">
 	
+		<div id="front-full-info" class="clearfix">
+			<span id="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
+			<span id="front-full-blurb"><h4>Static: The editors' weekly pick of articles.</h4></span>
+		</div>
+	
 		<?php $args = array( // WP_Query args.
 			'category_name' => get_theme_mod( 'front_full' ),
 			'post_type' => 'post',
@@ -379,8 +384,10 @@ get_header(); ?>
 		
 			while ( $query->have_posts() ) : $query->the_post(); ?>
 			
-				<div id="front-full-info">
-					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+				<div id="front-full-article">
+					<div id="front-full-article-title">
+						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+					</div>
 				</div>
 			
 			<?php endwhile;

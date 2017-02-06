@@ -411,6 +411,45 @@ img {
 	border-bottom: 1px solid #ddd;
 }
 
+#front-full-info {
+	margin-bottom: 30px;
+}
+
+#front-full-info #front-full-title {
+	float: left;
+	display: inline-block;
+}
+
+#front-full-info #front-full-title h2 {
+	font-size: 2.5em;
+	margin-bottom: 0;
+}
+
+#front-full-info #front-full-blurb {
+	float: right;
+	display: inline-block;
+}
+
+#front-full-info #front-full-blurb h4 {
+	padding-top: 12px;
+	font-size: 1.1em;
+}
+
+#front-full-article {
+	width: 225px;
+	float: left;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+#front-full-article-title {
+	font-size: 1.05rem;
+}
+
+#front-full-article-title a {
+	text-decoration: none;
+}
+
 /* III.c. Third-length bottom column styles. */
 .front-third {
 	width: 30%;
