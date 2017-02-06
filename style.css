@@ -608,10 +608,20 @@ article.post-gallery a {
 	margin: 0;
 }
 
-/* VI.b. Popular posts divider section. */
+/* VI.b. Sidebar category menu. */
+.sidebar-navi {
+	margin-left: 40px;
+}
+
+.sidebar-menuitem:last-of-type {
+	margin-bottom: 25px;
+}
+
+/* VI.c. Popular posts divider section. */
 #popular-wrapper {
 	max-width: 100%;
 	margin-left: 40px;
+	border-top: 1px solid #ddd;
 }
 
 #popular-head {
