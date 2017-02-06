@@ -1,7 +1,7 @@
 <!-- sidebar-column area -->
 <div class="sidebar-column">
 	
-	<div class="sidebar-navi">
+	<nav class="sidebar-navi">
 		<?php // Defining <section1> variables.
 		$sec1_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
 		$sec1_parentID = get_cat_ID( $sec1_parent ); // Getting the cat ID from the name we pulled in.
@@ -66,7 +66,7 @@
 			</div>		
 		</div><!-- /section3-head -->
 		
-	</div><!-- /sidebar-navi -->
+	</nav><!-- /sidebar-navi -->
 		
 	<div id="popular-wrapper" class="clearfix">
 
