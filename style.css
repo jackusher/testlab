@@ -457,6 +457,14 @@ img {
 	font-size: 1.05rem;
 }
 
+#front-full-article-title h4 {
+	display: inline;
+}
+
+#front-full-article-auth a {
+	color: black;
+}
+
 #front-full-article-title a {
 	text-decoration: none;
 }
