@@ -360,7 +360,8 @@ img {
 }
 
 .editor-pick .front-artcat a,
-.editor-pick .front-artcat span {
+.editor-pick .front-artcat span,
+.editor-pick .front-artcat p {
 	color: #fff;
 }
 
@@ -391,10 +392,6 @@ img {
 	display: inline;
 }
 
-.front-article p.front-auth {
-	font-style: italic;
-}
-
 .front-article:first-of-type .front-info p {
 	font-size: 1em;
 }
@@ -403,10 +400,19 @@ img {
 	background-color: #E9E9E9;
 	text-align: right;
 	padding: 5px 5px 5px 0;
+	font-size: 0.95rem;
 }
 
-.front-artcat span a {
+.front-artcat a {
 	text-decoration: none;
+}
+
+.front-auth {
+	display: inline;
+}
+
+.front-auth a {
+	font-style: normal;
 }
 
 /* III.b. Full-length divider category section. */

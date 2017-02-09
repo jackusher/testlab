@@ -86,13 +86,13 @@ get_header(); ?>
 							if(in_array($sec1_counter, $noimg)){
 								// Display no post excerpt.
 							} else {
-								the_excerpt(); ?>
-								<p id="section1-auth" class="front-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p> <?php
+								the_excerpt();
 							} ?>
 					
 						</div><!-- /section1-info -->
 			
 						<div id="section1-cat" class="front-artcat"><!-- Post categories. -->
+							<p id="section1-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
 							<span>
 								<?php
 								$categories = get_the_category();
@@ -202,13 +202,13 @@ get_header(); ?>
 							if(in_array($sec2_counter, $noimg)){
 								// Display no post excerpt.
 							} else {
-								the_excerpt(); ?>
-								<p id="section2-auth" class="front-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p> <?php
+								the_excerpt();
 							} ?>
 					
 						</div><!-- /section2-info -->
 			
 						<div id="section2-cat" class="front-artcat"><!-- Post categories. -->
+							<p id="section2-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
 							<span>
 								<?php
 								$categories = get_the_category();
@@ -320,13 +320,13 @@ get_header(); ?>
 							if(in_array($sec3_counter, $noimg)){
 								// Display no post excerpt.
 							} else {
-								the_excerpt(); ?>
-								<p id="section3-auth" class="front-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p> <?php
+								the_excerpt();
 							} ?>
 					
 						</div><!-- /section3-info -->
 			
 						<div id="section3-cat" class="front-artcat"><!-- Post categories. -->
+							<p id="section3-auth" class="front-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>							
 							<span>
 								<?php
 								$categories = get_the_category();
