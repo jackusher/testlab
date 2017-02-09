@@ -365,6 +365,10 @@ img {
 	color: #fff;
 }
 
+.editor-pick .front-artcat a {
+	text-decoration: underline;
+}
+
 .front-article.small {
 	width: 170px;
 }
