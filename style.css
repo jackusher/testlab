@@ -461,8 +461,14 @@ img {
 	display: inline;
 }
 
+#front-full-article-auth {
+	font-style: italic;
+}
+
 #front-full-article-auth a {
-	color: black;
+	color: white;
+	background-color: #008ed6;
+	padding: 0.05rem 0.2rem;
 }
 
 #front-full-article-title a {
