@@ -36,20 +36,7 @@ $arch_counter=1; // Creating a counter for the foreach loop.
 		</div><!-- /archive-info -->
 
 		<div id="archive-cat" class="front-artcat"><!-- Post categories. -->
-			<p id="archive-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
-			<span>
-				<?php
-				$categories = get_the_category();
-				$separator = ", ";
-				$output = '';
-				if ($categories) {
-					foreach ($categories as $category) {
-						$output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
-					}
-					echo trim($output, $separator);
-				}
-				?>
-			</span>
+			<p id="archive-auth" class="front-auth">by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
 		</div><!-- /archive-cat -->
 
 	</div><!-- /archive-article --><?php

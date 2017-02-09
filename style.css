@@ -591,8 +591,12 @@ div.info-box p {
 	border-right: 0;
 }
 
+#archive-article:first-of-type {
+	width: 492px;
+}
+
 #archive-article {
-	width: 200px;
+	width: 242px;
 }
 
 
