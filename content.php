@@ -1,51 +1,57 @@
-<!--
-content.php contains the main post article elements for post lists (index, article etc.), and single posts. Further types are marked by content-*.php.
--->
+<?php 
+$noimg = array(2, 3, 4, 9, 10);
+$img = array(5, 6, 7, 8, 11, 12);
+$noex = array(7, 8);
+$arch_counter=1; // Creating a counter for the foreach loop.
+	
+	if ( in_category( 36 ) ) {
+		?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+	} else {
+		?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+	} ?>
 
-<article class="post <?php if ( has_post_thumbnail() ) { ?> has-thumbnail clearfix<?php } ?>">
-		
-		<!-- post-thumbnail behaviour. Creating a div for the image, and calling a pre-defined image size. Putting a link in. -->
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
-		</div><!-- /post-thumbnail -->
-		
-		<!-- Using the title of the post as a link to its single.php -->
-		<h2><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
-		
-		<!-- Post meta inclusion. -->
-		<p class="post-info" id="archive-post-info"><?php the_time('F j, Y'); ?> | by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | Posted in
-			<?php
-			$categories = get_the_category();
-			$separator = ", ";
-			$output = '';
-			if ($categories) {
-				foreach ($categories as $category) {
-					$output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
+		<div id="archive-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
+			if(in_array($arch_counter, $noimg)) {
+				// Display no thumbnail.
+			} elseif(in_array($arch_counter, $img)) { ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
+			} elseif( $arch_counter == 1 ) { ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-top'); ?></a><?php
+			} else { ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
+			} ?>
+		</div><!-- /archive-thumb -->
+
+		<div id="archive-info" class="front-info"><!-- Post titles and excerpts. -->
+			<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
+
+			if(in_array($arch_counter, $noimg)){
+				// Display no post excerpt.
+			} elseif(in_array($arch_counter, $noex)){
+				// Display no post excerpt.
+			} else {
+				the_excerpt();
+			} ?>
+	
+		</div><!-- /archive-info -->
+
+		<div id="archive-cat" class="front-artcat"><!-- Post categories. -->
+			<p id="archive-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
+			<span>
+				<?php
+				$categories = get_the_category();
+				$separator = ", ";
+				$output = '';
+				if ($categories) {
+					foreach ($categories as $category) {
+						$output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
+					}
+					echo trim($output, $separator);
 				}
-				echo trim($output, $separator);
-			}
-			?>
-		</p>
-		
-		<!-- Conditional element inclusion based on what THE PAGE is. NOT post-type. -->
-		<!-- If search or archive page, manadtory excerpt display. -->
-		<?php if ( is_search() OR is_archive() ) { ?>
-			<p>
-			<?php echo get_the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>">Read more&raquo;</a>
-			</p>
-		<!-- Else, if the post has an excerpt, use it. If it doesn't, display the content. -->
-		<?php } else {
-			if ($post->post_excerpt) { ?>
-				<p>
-				<?php echo get_the_excerpt(); ?>
-				<a href="<?php the_permalink(); ?>">Read more&raquo;</a>
-				</p>
-			
-			<?php } else {
-				the_content();
-			}
-			
-		} ?>
-		
-</article>
+				?>
+			</span>
+		</div><!-- /archive-cat -->
+
+	</div><!-- /archive-article --><?php
+
+$arch_counter++;

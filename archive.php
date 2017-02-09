@@ -7,9 +7,8 @@ get_header(); ?>
 <div class="site-content clearfix">
 
 	<!-- main-column area -->
-	<div class="main-column">
-	
-	<?php
+	<div class="main-column"><?php
+
 		// Begin the PHP *if* statement, defining behaviour with/without posts. 
 		if (have_posts()) :
 
@@ -31,19 +30,27 @@ get_header(); ?>
 			} else {
 				echo 'Archives:';
 			}
+
+		// Pagination code here. ?>
 	
-		while (have_posts()) : the_post();
-	
-		// Reference to the content.php file. Post layout is pulled from content.php. If there are any special post types, e.g. galleries, the second argument pushes requests to the correct content-*.php file.
-		get_template_part('content', get_post_format());
-	
-		endwhile;
-	
-		// What to do if no posts exist in the archive.
-		else :
-			echo '<p>No content found!</p>';
-		
-		endif; ?>
+		<div id="archive-content" class="front-content"><?php
+
+			while (have_posts()) : the_post();
+
+			// Reference to the content.php file. Post layout is pulled from content.php. If there are any special post types, e.g. galleries, the second argument pushes requests to the correct content-*.php file.
+			get_template_part('content', get_post_format());
+
+			endwhile;
+
+			// What to do if no posts exist in the archive.
+			else :
+				echo '<p>No content found!</p>';
+
+			endif; 
+
+			wp_reset_postdata(); ?>
+
+		</div><!-- /front-content -->
 		
 	</div><!-- /main-column -->
 	

@@ -587,6 +587,14 @@ div.info-box p {
 	font-size: 2.5rem;
 }
 
+#archive-content {
+	border-right: 0;
+}
+
+#archive-article {
+	width: 200px;
+}
+
 
 
 /* SECTION V: SINGLE POST STYLES. */

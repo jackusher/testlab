@@ -18,4 +18,10 @@ var msnry = new Masonry(container, {
 	columnWidth: 1
 });
 
+var container = document.querySelector('#archive-content');
+var msnry = new Masonry(container, {
+	itemSelector: '.front-article',
+	columnWidth: 1
+});
+
 });
