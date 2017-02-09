@@ -407,7 +407,7 @@ img {
 /* III.b. Full-length divider category section. */
 #front-full {
 	margin: 20px 0;
-	padding: 0 0 10px 0;
+	padding: 0 0 30px 0;
 	border-bottom: 1px solid #ddd;
 }
 
@@ -436,10 +436,21 @@ img {
 }
 
 #front-full-article {
-	width: 225px;
+	width: 200px;
 	float: left;
 	display: inline-block;
-	margin-right: 30px;
+	padding-right: 12px;
+	padding-left: 14px;
+	border-right: 2px solid #ddd;
+}
+
+#front-full-article:first-of-type {
+	padding-left: 0;
+}
+
+#front-full-article:last-of-type {
+	padding-right: 0;
+	border-right: 0;
 }
 
 #front-full-article-title {
