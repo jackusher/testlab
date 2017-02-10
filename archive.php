@@ -46,9 +46,7 @@ get_header(); ?>
 			else :
 				echo '<p>No content found!</p>';
 
-			endif; 
-
-			wp_reset_postdata(); ?>
+			endif; ?>
 
 		</div><!-- /front-content -->
 		

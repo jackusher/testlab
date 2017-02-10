@@ -599,6 +599,14 @@ div.info-box p {
 	width: 242px;
 }
 
+#archive-article:first-of-type #archive-info h4 {
+	font-size: 2em;
+}
+
+#archive-article #archive-info h4 {
+	font-size: 1.65em;
+}
+
 
 
 /* SECTION V: SINGLE POST STYLES. */
