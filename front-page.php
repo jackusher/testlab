@@ -297,7 +297,7 @@ get_header(); ?>
 	
 					while ( $query->have_posts() ) : $query->the_post();
 					
-					if ( $sec3_counter == 9 ) { ?>
+					if ( $sec3_counter == 9 ) { // OR whatever happens to be the number of subsections, ie. the last article element. ?>
 						<div class="clearer"></div><?php
 					} else {
 						// Do nothing.
