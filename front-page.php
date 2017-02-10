@@ -36,8 +36,8 @@ get_header(); ?>
 			<div id="section1-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4, 9, 10);
-				$img = array(5, 6, 7, 8, 11, 12);
+				$noimg = array(2, 3, 4, 7, 8, 9, 10);
+				$img = array(5, 6, 11, 12);
 				$noex = array(7, 8);
 				$sec1_counter=1; // Creating a counter for the foreach loop.
 
@@ -64,9 +64,9 @@ get_header(); ?>
 					}
 					
 					if ( in_category( 36 ) ) {
-						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img) || (in_array($sec1_counter, $noex))) echo 'small'; ?> editor-pick"><?php
 					} else {
-						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img) || (in_array($sec1_counter, $noex))) echo 'small'; ?>"><?php
 					} ?>
 			
 						<div id="section1-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
@@ -155,8 +155,8 @@ get_header(); ?>
 			<div id="section2-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4, 9, 10);
-				$img = array(5, 6, 7, 8, 11, 12);
+				$noimg = array(2, 3, 4, 7, 8, 9, 10);
+				$img = array(5, 6, 11, 12);
 				$noex = array(7, 8);
 				$sec2_counter=1; // Creating a counter for the foreach loop.
 
@@ -183,9 +183,9 @@ get_header(); ?>
 					}
 	
 					if ( in_category( 36 ) ) {
-						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} else {
-						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
 			
 						<div id="section2-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
@@ -276,8 +276,8 @@ get_header(); ?>
 			<div id="section3-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4, 9, 10);
-				$img = array(5, 6, 7, 8, 11, 12);
+				$noimg = array(2, 3, 4, 7, 8, 9, 10);
+				$img = array(5, 6, 11, 12);
 				$noex = array(7, 8);
 				$sec3_counter=1; // Creating a counter for the foreach loop.
 
@@ -304,9 +304,9 @@ get_header(); ?>
 					}
 
 					if ( in_category( 36 ) ) {
-						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img) || (in_array($sec3_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} else {
-						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img) || (in_array($sec3_counter, $noex))) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
 								
 						<div id="section3-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
