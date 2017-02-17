@@ -683,49 +683,7 @@ article.post-gallery a {
 	color: #FFF;
 }
 
-
-
-/* SECTION VI: SIDEBAR STYLING. */
-/* VI.a. Global styles. */
-.sidebar-column {
-	width: 34%;
-	float: left;
-	font-size: 85%;
-	margin-top: 20px;
-}
-
-.sidebar-widget-title {
-	font-size: 2.5em;
-}
-
-.sidebar-widget-item {
-	margin-left: 40px;
-}
-
-.sidebar-widget-item ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-/* VI.b. Sidebar category menu. */
-.sidebar-navi {
-	margin-left: 40px;
-}
-
-.sidebar-menuitem:last-of-type {
-	margin-bottom: 25px;
-}
-
-.sidebar-menuitem .front-subcats {
-	font-size: 14px;
-}
-
-.sidebar-navi .current-cat {
-	background-color: #9cc8d9;
-}
-
-/* VI.c. Popular posts divider section. */
+/* V.c. Most read posts section. */
 #popular-wrapper {
 	max-width: 100%;
 	margin-left: 0px;
@@ -774,6 +732,48 @@ ul.popular-list #popular-title {
 
 ul.popular-list #popular-title a {
 	text-decoration: none;
+}
+
+
+
+/* SECTION VI: SIDEBAR STYLING. */
+/* VI.a. Global styles. */
+.sidebar-column {
+	width: 34%;
+	float: left;
+	font-size: 85%;
+	margin-top: 20px;
+}
+
+.sidebar-widget-title {
+	font-size: 2.5em;
+}
+
+.sidebar-widget-item {
+	margin-left: 40px;
+}
+
+.sidebar-widget-item ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* VI.b. Sidebar category menu. */
+.sidebar-navi {
+	margin-left: 40px;
+}
+
+.sidebar-menuitem:last-of-type {
+	margin-bottom: 25px;
+}
+
+.sidebar-menuitem .front-subcats {
+	font-size: 14px;
+}
+
+.sidebar-navi .current-cat {
+	background-color: #9cc8d9;
 }
 
 
