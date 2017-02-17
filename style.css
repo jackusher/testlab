@@ -728,12 +728,12 @@ article.post-gallery a {
 /* VI.c. Popular posts divider section. */
 #popular-wrapper {
 	max-width: 100%;
-	margin-left: 40px;
+	margin-left: 0px;
 	border-top: 1px solid #ddd;
 }
 
 #popular-head {
-	padding: 18px 0 10px 0;
+	padding: 25px 0 10px 0;
 }
 
 #popular-headtit h2 {
@@ -753,11 +753,11 @@ ul.popular-list {
 ul.popular-list #popular-item {
 	float: left;
 	display: block;
-	margin-bottom: 25px;
+	margin: 0 45px 20px 0;
 }
 
 ul.popular-list #popular-rank {
-	font-size: 2.75em;
+	font-size: 2.5em;
 	float: left;
 	width: 28px;
 	text-align: center;
@@ -765,7 +765,7 @@ ul.popular-list #popular-rank {
 }
 
 ul.popular-list #popular-title {
-	width: 250px;
+	width: 275px;
 	margin-left: 30px;
 	padding: 5px 0 0 10px;
 	font-size: 1.15rem;
