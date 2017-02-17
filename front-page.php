@@ -1,7 +1,6 @@
 <?php
 // The file defines the static home page behaviours.
 
-// Grab the header.
 get_header(); ?>
 
 <!-- site-content -->
@@ -421,7 +420,4 @@ get_header(); ?>
 	
 </div><!-- /site-content -->
 
-<?php
-// Grab the footer.
-get_footer();
-?>
+<?php get_footer(); ?>

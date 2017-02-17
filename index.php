@@ -32,7 +32,4 @@ get_header(); ?>
 	
 </div><!-- /site-content -->
 
-<?php
-// Grab the footer.
-get_footer();
-?>
+<?php get_footer(); ?>

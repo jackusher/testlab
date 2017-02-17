@@ -46,13 +46,11 @@ get_header(); ?>
 					?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 				} ?>
 
-					<!-- Problem: we need to use countpost logic to define thumbnail sizes. -->
-					<div id="archive-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. -->
+					<div id="archive-thumb" class="front-thumb">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-top'); ?></a>
 					</div><!-- /archive-thumb -->
 
-					<!-- Problem: we need to use coutpost logic to hide excerpts on posts other than 1-5. -->
-					<div id="archive-info" class="front-info"><!-- Post titles and excerpts. -->
+					<div id="archive-info" class="front-info">
 						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 					
 						if(in_array($arch_counter, $ex)) {

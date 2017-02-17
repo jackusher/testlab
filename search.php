@@ -1,7 +1,6 @@
 <?php
 //search.php defines the content and layout of a search results page. Essentially the output part of seachform.php.
 
-// Grab the header.
 get_header(); ?>
 
 <!-- site-content -->
@@ -36,7 +35,4 @@ get_header(); ?>
 	
 </div><!-- /site-content -->
 
-<?php
-// Grab the footer.
-get_footer();
-?>
+<?php get_footer(); ?>
