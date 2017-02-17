@@ -8,6 +8,9 @@ get_header(); ?>
 
 	<!-- main-column area -->
 	<div class="main-column"><?php
+	
+		$ex = array(1, 2);
+		$arch_counter=1;
 
 		// Begin the PHP *if* statement, defining behaviour with/without posts. 
 		if (have_posts()) :
@@ -36,9 +39,37 @@ get_header(); ?>
 		<div id="archive-content" class="front-content"><?php
 
 			while (have_posts()) : the_post();
+			
+				if ( in_category( 36 ) ) {
+					?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+				} else {
+					?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+				} ?>
 
-			// Reference to the content.php file. Post layout is pulled from content.php. If there are any special post types, e.g. galleries, the second argument pushes requests to the correct content-*.php file.
-			get_template_part('content', get_post_format());
+					<!-- Problem: we need to use countpost logic to define thumbnail sizes. -->
+					<div id="archive-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. -->
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-top'); ?></a>
+					</div><!-- /archive-thumb -->
+
+					<!-- Problem: we need to use coutpost logic to hide excerpts on posts other than 1-5. -->
+					<div id="archive-info" class="front-info"><!-- Post titles and excerpts. -->
+						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
+					
+						if(in_array($arch_counter, $ex)) {
+							the_excerpt();
+						} else {
+							// Display no excerpt.
+						} ?>
+					
+					</div><!-- /archive-info -->
+
+					<div id="archive-cat" class="front-artcat"><!-- Post categories. -->
+						<p id="archive-auth" class="front-auth">by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
+					</div><!-- /archive-cat -->
+
+				</div><!-- /archive-article --><?php
+	
+			$arch_counter++;
 
 			endwhile;
 
@@ -56,6 +87,4 @@ get_header(); ?>
 
 </div><!-- /site-content -->
 
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
