@@ -33,7 +33,7 @@ get_header(); ?>
 		<div id="popular-wrapper" class="clearfix">
 
 		<div id="popular-head" class="clearfix"><!-- Header for popular section including title and description. -->
-			<span id="popular-headtit"><h2>Most Popular</h2></span>
+			<span id="popular-headtit"><h2>Most Read</h2></span>
 		</div><!-- /popular-head -->
 
 			<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
