@@ -334,12 +334,17 @@ img {
 
 .front-article {
 	margin: 0 8px 13px 0;
-	background-color: #F6F6F6;
 	padding: 0 0 0 0;
 	float: left;
 }
 
-.editor-pick {
+.front-article:first-of-type {
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+
+.editor-pick .front-info {
 	background-color: #9ea1d1;
 }
 
@@ -377,6 +382,7 @@ img {
 .front-info {
 	padding: 3px 5px 5px 5px;
 	border-bottom: 2px solid #bdbdbd;
+	background-color: #F6F6F6;
 }
 
 .front-info a {
