@@ -63,6 +63,8 @@ get_header(); ?>
 					
 					if ( in_category( 36 ) ) {
 						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1 ) echo 'small'; ?> editor-pick"><?php
+					} elseif ( $sec1_counter == 1 ) {
+						?><div id="section1-article" class="front-article bottom-buffer"><?php
 					} else {
 						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1) echo 'small'; ?>"><?php
 					} ?>
@@ -154,6 +156,7 @@ get_header(); ?>
 				$noimg = array(2, 3, 4, 7, 8, 9, 10);
 				$img = array(5, 6, 11, 12);
 				$noex = array(7, 8);
+				$bottom_buffer = array(1, 4);
 				$sec2_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec2_children as $sec2_child ) : // foreach loop pulling the latest post in each child cat.
@@ -180,6 +183,8 @@ get_header(); ?>
 	
 					if ( in_category( 36 ) ) {
 						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+					} elseif ( in_array($sec2_counter, $bottom_buffer)) {
+						?><div id="section2-article" class="front-article bottom-buffer"><?php
 					} else {
 						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
@@ -298,6 +303,8 @@ get_header(); ?>
 
 					if ( in_category( 36 ) ) {
 						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+					} elseif ( $sec3_counter == 1 ) {
+						?><div id="section3-article" class="front-article bottom-buffer"><?php
 					} else {
 						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
