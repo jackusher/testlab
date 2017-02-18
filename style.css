@@ -593,11 +593,12 @@ div.info-box p {
 }
 
 #archive-article:first-of-type {
-	width: 492px;
+	width: 485px;
 }
 
 #archive-article {
-	width: 242px;
+	width: 235px;
+	margin: 0 15px 15px 0;
 }
 
 #archive-article:first-of-type #archive-info h4 {
