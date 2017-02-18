@@ -35,9 +35,8 @@ get_header(); ?>
 			<div id="section1-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4, 7, 8, 9, 10);
-				$img = array(5, 6, 11, 12);
-				$noex = array(7, 8);
+				$noimg = array(4, 5, 6, 7, 8, 9, 10);
+				$img = array(2, 3);
 				$sec1_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec1_children as $sec1_child ) : // foreach loop pulling the latest post in each child cat.
@@ -63,9 +62,9 @@ get_header(); ?>
 					}
 					
 					if ( in_category( 36 ) ) {
-						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img) || (in_array($sec1_counter, $noex))) echo 'small'; ?> editor-pick"><?php
+						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1 ) echo 'small'; ?> editor-pick"><?php
 					} else {
-						?><div id="section1-article" class="front-article <?php if (in_array($sec1_counter, $img) || (in_array($sec1_counter, $noex))) echo 'small'; ?>"><?php
+						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1) echo 'small'; ?>"><?php
 					} ?>
 			
 						<div id="section1-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
@@ -84,8 +83,6 @@ get_header(); ?>
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 
 							if(in_array($sec1_counter, $noimg)){
-								// Display no post excerpt.
-							} elseif(in_array($sec1_counter, $noex)){
 								// Display no post excerpt.
 							} else {
 								the_excerpt();
@@ -202,12 +199,10 @@ get_header(); ?>
 						<div id="section2-info" class="front-info"><!-- Post titles and excerpts. -->
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 
-							if(in_array($sec2_counter, $noimg)){
-								// Display no post excerpt.
-							} elseif(in_array($sec2_counter, $noex)) {
-								// Display no post excerpt.
-							} else {
+							if( $sec2_counter == 1 ){
 								the_excerpt();
+							} else {
+								// Display no post excerpt.
 							} ?>
 					
 						</div><!-- /section2-info -->
@@ -275,9 +270,8 @@ get_header(); ?>
 			<div id="section3-content" class="front-content">
 
 				<?php 
-				$noimg = array(2, 3, 4, 7, 8, 9, 10);
-				$img = array(5, 6, 11, 12);
-				$noex = array(7, 8);
+				$noimg = array(4, 5, 6, 7, 8, 9, 10);
+				$img = array(2, 3);
 				$sec3_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec3_children as $sec3_child ) : // foreach loop pulling the latest post in each child cat.
@@ -303,9 +297,9 @@ get_header(); ?>
 					}
 
 					if ( in_category( 36 ) ) {
-						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img) || (in_array($sec3_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} else {
-						?><div id="section3-article" class="front-article <?php if (in_array($sec3_counter, $img) || (in_array($sec3_counter, $noex))) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
 								
 						<div id="section3-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
@@ -325,8 +319,6 @@ get_header(); ?>
 
 							if(in_array($sec3_counter, $noimg)){
 								// Display no post excerpt.
-							} elseif(in_array($sec3_counter, $noex)){
-								// Display no excerpt.
 							} else {
 								the_excerpt();
 							} ?>
