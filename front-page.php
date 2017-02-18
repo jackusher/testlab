@@ -62,9 +62,11 @@ get_header(); ?>
 					}
 					
 					if ( in_category( 36 ) ) {
-						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1 ) echo 'small'; ?> editor-pick"><?php
+						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1 ) echo 'small'; if(in_array($sec1_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><?php
 					} elseif ( $sec1_counter == 1 ) {
 						?><div id="section1-article" class="front-article bottom-buffer"><?php
+					} elseif ( in_array($sec1_counter, $img) ) {
+						?><div id="section1-article" class="front-article small bottom-buffer"><?php
 					} else {
 						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1) echo 'small'; ?>"><?php
 					} ?>
@@ -302,9 +304,11 @@ get_header(); ?>
 					}
 
 					if ( in_category( 36 ) ) {
-						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; if(in_array($sec3_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} elseif ( $sec3_counter == 1 ) {
 						?><div id="section3-article" class="front-article bottom-buffer"><?php
+					} elseif ( in_array($sec3_counter, $img) ) {
+						?><div id="section3-article" class="front-article small bottom-buffer"><?php
 					} else {
 						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>

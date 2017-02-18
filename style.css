@@ -260,6 +260,7 @@ img {
 	-o-transition: all 120ms ease;
 	-ms-transition: all 120ms ease;
 	transition: all 120ms ease;
+	width: 350px;
 }
 
 .front-title {
@@ -332,7 +333,7 @@ img {
 }
 
 .front-article {
-	/* margin: 0 8px 13px 0; */
+	margin: 0 8px 13px 0;
 	padding: 0 0 0 0;
 	float: left;
 }
@@ -376,10 +377,6 @@ img {
 
 .front-article.small {
 	width: 170px;
-	padding-right: 5px;
-	border-right: 1px solid #ddd;
-	margin-right: 2px;
-	padding-bottom: 5px;
 }
 
 .front-info {
