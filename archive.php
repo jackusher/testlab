@@ -47,7 +47,13 @@ get_header(); ?>
 				} ?>
 
 					<div id="archive-thumb" class="front-thumb">
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-top'); ?></a>
+						<?php if( $arch_counter == 1 ) { ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-top'); ?></a><?php
+						} elseif( $arch_counter == 2 ) { ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-second'); ?></a><?php
+						} else { ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-article'); ?></a><?php
+						} ?>
 					</div><!-- /archive-thumb -->
 
 					<div id="archive-info" class="front-info">

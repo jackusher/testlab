@@ -48,6 +48,8 @@ function testlab_setup() {
 	add_image_size('standard-blog-thumbnail', 170, 124, true);
 	add_image_size('front-latest', 358, 240, true);
 	add_image_size('archive-top', 500, 240, true);
+	add_image_size('archive-article', 235, 170, true);
+	add_image_size('archive-second', 235, 240, true);
 	
 	// Support for post formats
 	add_theme_support('post-formats', array('gallery'));
