@@ -5,7 +5,8 @@
 			// Wonderful code from SimonStaton@stackexchange.
 			$args = array(
 				'orderby' => 'name',
-				'parent' => 0
+				'parent' => 0,
+				'include' => array(8, 7, 27)
 			);
 			$categories = get_categories( $args );
 			$first = true;
