@@ -856,6 +856,10 @@ ul.popular-list #popular-title a {
 	margin: 20px 0 10px 0;
 }
 
+.footer-meta nav a {
+	text-decoration: none;
+}
+
 .footer-meta nav ul li {
 	margin-right: 10px;
 	padding-right: 10px;

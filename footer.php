@@ -56,7 +56,7 @@
 
 			<!-- Creating the 'copyright' div location for copyright info. Define content. -->
 			<section class="copyright">
-				<p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y');?></p>
+				<p><?php bloginfo('name'); ?>, &copy; <?php echo date('Y');?></p>
 			</section>
 		</div>
 	
