@@ -129,7 +129,7 @@ get_header(); ?>
 			</div><!-- /section1-content -->
 
 		</div><!-- /section1-wrapper -->
-	
+			
 		<?php // Defining the <section2> variables.
 		$sec2_parent = get_theme_mod( 'title_section2' );
 		$sec2_parentID = get_cat_ID( $sec2_parent );
@@ -246,7 +246,7 @@ get_header(); ?>
 	
 				wp_reset_postdata(); ?>
 		
-			</div><!-- /section1-content -->
+			</div><!-- /section2-content -->
 	
 		</div><!-- /section2-wrapper -->
 	
@@ -368,7 +368,7 @@ get_header(); ?>
 	
 				wp_reset_postdata(); ?>
 		
-			</div><!-- /section1-content -->
+			</div><!-- /section3-content -->
 	
 		</div><!-- /section3-wrap -->
 		
