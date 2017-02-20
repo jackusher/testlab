@@ -145,7 +145,7 @@ img {
 	font-weight: lighter;
 }
 
-/* II.c. Login and register buttons. */
+/* II.c. Header menu. */
 .header-login {
 	float: right;
 	padding: 16px 0 16px 0;
@@ -155,11 +155,11 @@ img {
 	text-decoration: none;
 }
 
-.subtle-login {
-	font-size: 1.05em;
+#header-menu ul li {
+	margin: 0 1rem;
 }
 
-/* II.f. Child menu styling (page: Contact Us). */
+/* II.d. Child menu styling (page: Contact Us). */
 .children-links {
 	margin-bottom: 20px;
 	font-size: 80%;

@@ -29,7 +29,13 @@
 				</div><!-- /header-title -->
 				
 				<div class="header-login">
-					<span class="subtle-login"><a href="<?php echo get_home_url() . '/wp-login.php' ?>">Login</a></span>
+					<nav id="header-menu" class="site-nav">
+						<?php	
+						$args = array(
+							'theme_location' => 'header'
+						);	
+						wp_nav_menu( $args ); ?>
+					</nav>
 				</div><!-- /header-login -->
 			</div><!-- /header-info -->
 			

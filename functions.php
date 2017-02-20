@@ -33,7 +33,7 @@ function testlab_setup() {
 
 	// Support navigation menus
 		register_nav_menus(array(
-			'primary' => __( 'Primary Menu'),
+			'header' => __( 'Header Menu'),
 			'footer' => __( 'Footer Menu')
 		));
 	
