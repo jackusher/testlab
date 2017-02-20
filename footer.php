@@ -46,7 +46,7 @@
 		
 		<div class="footer-meta">
 			<!-- Creating a footer menu location for WP admin. -->
-			<nav class="site-nav">
+			<nav id="footer-menu" class="site-nav">
 				<?php	
 				$args = array(
 					'theme_location' => 'footer'
