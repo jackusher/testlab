@@ -29,10 +29,10 @@ get_header(); ?>
 	
 			endif; ?>
 			
-		<div id="popular-wrapper" class="clearfix">
+		<div id="popular-single" class="popular-wrapper clearfix">
 
-		<div id="popular-head" class="clearfix"><!-- Header for popular section including title and description. -->
-			<span id="popular-headtit"><h2>Most Read</h2></span>
+		<div id="popular-head-single" class="popular-head clearfix"><!-- Header for popular section including title and description. -->
+			<span class="popular-headtit"><h2>Most Read</h2></span>
 		</div><!-- /popular-head -->
 
 			<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
@@ -52,12 +52,12 @@ get_header(); ?>
 		
 						$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
 						if(in_array($pop_counter, $checkcounter)){ ?>
-							<li id="popular-item">
-								<p id="popular-rank"><?php echo $pop_counter ?></p>
-								<p id="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							<li class="popular-item">
+								<p class="popular-rank"><?php echo $pop_counter ?></p>
+								<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							</li><?php
 						} else { ?>
-							<li id="popular-item">
+							<li class="popular-item">
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</li><?php
 						}
