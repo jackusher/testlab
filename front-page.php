@@ -397,7 +397,8 @@ get_header(); ?>
 			
 				<div id="front-full-article">
 					<div id="front-full-article-title">
-						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>,</h4><h4 id="front-full-article-auth"> by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						<h4 id="front-full-article-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
 					</div>
 				</div>
 			
