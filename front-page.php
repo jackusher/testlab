@@ -408,14 +408,15 @@ get_header(); ?>
 			echo '<p>No content found!</p>';
 		endif; ?>
 	
-	</div>
+	</div><!-- /front-full -->
 	
 	<div id="front-full" class="clearfix">
+	
 		<div id="popular-front" class="popular-wrapper clearfix">
 
-		<div id="popular-head-front" class="popular-head clearfix"><!-- Header for popular section including title and description. -->
-			<span class="popular-headtit"><h2>Most Read</h2></span>
-		</div><!-- /popular-head -->
+			<div id="popular-head-front" class="popular-head clearfix"><!-- Header for popular section including title and description. -->
+				<span class="popular-headtit"><h2>Most Read</h2></span>
+			</div><!-- /popular-head -->
 
 			<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
 
@@ -427,11 +428,11 @@ get_header(); ?>
 				);
 
 				$popular = new WP_Query( $args );
-	
+
 				if ( $popular->have_posts() ):
-	
+
 					$pop_counter=0; while ( $popular->have_posts() ) : $popular->the_post(); $pop_counter++;
-		
+	
 						$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
 						if(in_array($pop_counter, $checkcounter)){ ?>
 							<li class="popular-item">
@@ -443,22 +444,23 @@ get_header(); ?>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</li><?php
 						}
-	
+
 					endwhile;
-		
+	
 					else :
 						echo '<p>Sorry, just loner posts here.</p>';
-	
+
 				endif;
-	
+
 				$pop_counter++;		
-		
+	
 				wp_reset_postdata(); ?>
 
 			</ul><!-- /popular-list -->
 
 		</div><!-- /popular-wrapper -->
-	</div>
+		
+	</div><!-- /front-full -->
 	
 	<div id="front-third1" class="front-third clearfix">
 	
