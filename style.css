@@ -492,13 +492,17 @@ img {
 	display: inline;
 }
 
+#front-full-article-title h4 a {
+	color: #cc0000;
+}
+
 #front-full-article-auth {
 	font-style: italic;
 }
 
-#front-full-article-auth a {
+#front-full-article-title h4#front-full-article-auth a {
 	color: white;
-	background-color: #008ed6;
+	background-color: #983232;
 	padding: 0.05rem 0.2rem;
 }
 
