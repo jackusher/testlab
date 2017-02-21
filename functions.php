@@ -315,3 +315,64 @@ class CSS_Menu_Walker extends Walker {
 		$output .= "</li>\n";
 	}
 }
+
+//
+
+# Get all the categories
+
+$category_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
+$category_ID = get_cat_ID( $category_parent ); // Getting the cat ID from the name we pulled in.
+$categories = get_categories( // Setting the cat as a PARENT cat.
+	array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
+		'parent' => $category_ID,
+	)
+);
+
+# I store sorted categories array as a global, as I need to use it
+# across different templates: to make a nav in header.php and to actually 
+# loop through the posts in index.php
+$GLOBALS['catsArray'] = array();
+
+# Loop through categories
+foreach($categories as $category ) {
+
+  $post_args = array(
+    'orderby' => 'post_date',
+    'order' => 'DESC',
+    'showposts' => 1,
+    'category__in' => array($category->term_id),
+    'ignore_sticky_posts' => true
+  );
+
+  # Retrieve latest post 
+  query_posts( $post_args );
+
+  # Cache latest posts data
+  # date in Unix format to sort by, post's category (current iteration)
+  # and the post itself
+  # this is done in order not to run loop twice
+  while ( have_posts() ) : the_post();
+    $GLOBALS['catsArray'][$category->slug] = array(
+      'date' => get_the_time('U'),
+      'category' => $category,
+      'post' => $post
+    );
+
+  endwhile;
+
+  # Resetting query
+  wp_reset_query();
+
+}
+
+# Compares two arrays by their "date" field
+function compareDates($a, $b) {
+  if ( $a['date'] == $b['date'] ) {
+    return 0;
+  }
+
+  return ($a['date'] < $b['date']) ? 1 : -1;
+}
+
+# Sort using defined function
+usort($GLOBALS['catsArray'], "compareDates");
