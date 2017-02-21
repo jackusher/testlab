@@ -21,6 +21,7 @@
 		
 			<!-- Behaviour of the text-based site title and tagline. -->		
 			<div class="header-info clearfix">
+			
 				<div class="header-title">	
 					<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 					<h5><?php bloginfo('description'); ?> <?php if (is_page('contact-us')) {?>
@@ -37,6 +38,7 @@
 						wp_nav_menu( $args ); ?>
 					</nav>
 				</div><!-- /header-login -->
+				
 			</div><!-- /header-info -->
 			
 		</header><!-- /site-header -->
