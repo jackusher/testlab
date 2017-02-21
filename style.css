@@ -146,11 +146,15 @@ ul.popular-list .popular-item {
 }
 
 #popular-front ul.popular-list .popular-item {
-	margin-right: 20px;
+	width: 200px;
+	padding: 0 12px;
+	margin: 0;
+	border-right: 2px solid #ddd;
 }
 
 #popular-front ul.popular-list .popular-item:last-of-type {
 	margin-right: 0;
+	border-right: 0;
 }
 
 ul.popular-list .popular-rank {
@@ -161,6 +165,10 @@ ul.popular-list .popular-rank {
 	border-right: 2px solid #ddd;
 }
 
+#popular-front ul.popular-list .popular-rank {
+	border-right: 0;
+}
+
 ul.popular-list .popular-title {
 	width: 275px;
 	margin-left: 30px;
@@ -169,7 +177,8 @@ ul.popular-list .popular-title {
 }
 
 #popular-front ul.popular-list .popular-title {
-	width: 172px;
+	width: 170px;
+	padding-top: 9px;
 }
 
 ul.popular-list .popular-title a {
@@ -540,18 +549,12 @@ ul.popular-list .popular-title a {
 	width: 200px;
 	float: left;
 	display: inline-block;
-	padding-right: 12px;
-	padding-left: 14px;
+	padding: 0 12px;
 	border-right: 2px solid #ddd;
 	text-align: center;
 }
 
-#front-full-article:first-of-type {
-	padding-left: 0;
-}
-
 #front-full-article:last-of-type {
-	padding-right: 0;
 	border-right: 0;
 }
 
