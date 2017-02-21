@@ -39,7 +39,7 @@ foreach ( $GLOBALS['catsArray'] as $cat ) : // foreach loop pulling the latest p
 						<div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1) echo 'small'; ?>">
 			
 						<div id="section1-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. -->
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
 						</div><!-- /section1-thumb -->
 				
 						<div id="section1-info" class="front-info"><!-- Post titles and excerpts. -->
