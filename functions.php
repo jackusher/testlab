@@ -1,7 +1,7 @@
 <?php
 // All theme functions are defined in this file.
 
-// Get theme stylesheets & scripts.
+/* SECTION I: Calling theme stylesheets and scripts. */
 function get_theme_scripts() {
 	wp_enqueue_style('style', get_stylesheet_uri());
 	wp_enqueue_script('masonry');
@@ -11,7 +11,9 @@ function get_theme_scripts() {
 }
 add_action('wp_enqueue_scripts', 'get_theme_scripts');
 
-// Get top ancestor function. Used within page submenus.
+
+
+/* SECTION II: Function to get categeory ancestor. Used in deprecated page submenus. */
 function get_top_ancestor_id() {
 	global $post;
 	if ($post->post_parent) {
@@ -21,23 +23,27 @@ function get_top_ancestor_id() {
 	return $post->ID;
 }
 
-// Does page have children? function. Used within page submenus.
+
+
+/* SECTION III: Does page have children? function. Used within deprecated page submenus. */
 function has_children() {
 	global $post;
 	$pages = get_pages('child_of=' . $post->ID);
 	return count($pages);
 }
 
-// Theme setup function. This implements all functions that are theme pre-requisites on setup.
+
+
+/* SECTION IV: Theme setup, implementing pre-requisites. */
 function testlab_setup() {
 
-	// Support navigation menus
+	/* IV.a. Registering navigation menu locations. */
 		register_nav_menus(array(
 			'header' => __( 'Header Menu'),
 			'footer' => __( 'Footer Menu')
 		));
 	
-	// Support featured images, and define the theme image pre-defined sizes.
+	/* IV.b. Adding image sizes. */
 	add_theme_support('post-thumbnails');
 	add_image_size('featured-level1-column-thumbnail', 920, 250, true);
 	add_image_size('featured-level2-column-thumbnail', 290, 150, true);
@@ -51,14 +57,16 @@ function testlab_setup() {
 	add_image_size('archive-article', 235, 170, true);
 	add_image_size('archive-second', 235, 240, true);
 	
-	// Support for post formats
+	/* IV.c. Adding post formats. */
 	add_theme_support('post-formats', array('gallery'));
 	
 }
 
 add_action('after_setup_theme', 'testlab_setup');
 
-// Add widget locations into the theme.
+
+
+/* SECTION V: Defining theme widget locations. */
 function testlab_widgets() {
 
 	register_sidebar( array(
@@ -73,7 +81,10 @@ function testlab_widgets() {
 
 add_action('widgets_init', 'testlab_widgets');
 
-// get_categories_select function to pull categories in for $wp_customize category setting usage.
+
+
+/* SECTION VI: WP_Customize API settings. */
+/* VI.a. Function to pull site categories in to substantiate Customize calls to categories. */
 function get_categories_select() {
  $teh_cats = get_categories();
     $results;
@@ -87,7 +98,7 @@ function get_categories_select() {
   return $results;
 }
 
-// Custom appearance options, using WP appearance API.
+/* VI.b. WP_Customize API settings, sections, controls. */
 function testlab_customise_register( $wp_customize ) {
 	
 	// WP appearance settings.
@@ -206,7 +217,7 @@ function testlab_customise_register( $wp_customize ) {
 
 add_action('customize_register', 'testlab_customise_register');
 
-// Define what CSS elements will targeted by $wp_customize settings above.
+/* VI.c. Defining the CSS elements targeted by $wp_customize settings. */
 function testlab_customise_css() { ?>
 	
 	<style type="text/css">
@@ -222,7 +233,9 @@ function testlab_customise_css() { ?>
 
 add_action('wp_head', 'testlab_customise_css');
 
-// Add support for menu search location (HTML5).
+
+
+/* SECTION VII: Add support for menu search location (HTML5). */
 add_theme_support('html5', array('search-form'));
 add_filter('wp_nav_menu_items', 'add_search_form_to_menu', 10, 2);
 
@@ -232,7 +245,10 @@ function add_search_form_to_menu($items, $args) { // Note that this function MAY
 	return $items . '<li class="my-nav-menu-search">' . get_search_form(false) . '</li>';
 }
 
-// DIY Popular Posts @ https://digwp.com/2016/03/diy-popular-posts/. Thanks to Jeff Starr.
+
+
+/* SECTION VIII: Popular posts widget. Thanks to Jeff Starr for the code:
+   DIY Popular Posts @ https://digwp.com/2016/03/diy-popular-posts/ */
 function shapeSpace_popular_posts($post_id) {
 	$count_key = 'popular_posts';
 	$count = get_post_meta($post_id, $count_key, true);
@@ -255,7 +271,9 @@ function shapeSpace_track_posts($post_id) {
 }
 add_action('wp_head', 'shapeSpace_track_posts');
 
-// Custom WP menu walker class.
+
+
+/* SECTION IX: Custom WP menu walker class. */
 class CSS_Menu_Walker extends Walker {
 
 	var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
@@ -316,63 +334,55 @@ class CSS_Menu_Walker extends Walker {
 	}
 }
 
-//
 
-# Get all the categories
 
+/* SECTION X: Storing most-recently updated subcatgeories of parents in a global array. */
 $category_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
-$category_ID = get_cat_ID( $category_parent ); // Getting the cat ID from the name we pulled in.
-$categories = get_categories( // Setting the cat as a PARENT cat.
-	array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
+$category_ID = get_cat_ID( $category_parent );
+$categories = get_categories(
+	array(
 		'parent' => $category_ID,
 	)
 );
 
-# I store sorted categories array as a global, as I need to use it
-# across different templates: to make a nav in header.php and to actually 
-# loop through the posts in index.php
 $GLOBALS['catsArray'] = array();
 
-# Loop through categories
+// Loop through categories.
 foreach($categories as $category ) {
 
-  $post_args = array(
-    'orderby' => 'post_date',
-    'order' => 'DESC',
-    'showposts' => 1,
-    'category__in' => array($category->term_id),
-    'ignore_sticky_posts' => true
-  );
+	$post_args = array(
+		'orderby' => 'post_date',
+    	'order' => 'DESC',
+    	'showposts' => 1,
+    	'category__in' => array($category->term_id),
+    	'ignore_sticky_posts' => true
+	);
 
-  # Retrieve latest post 
-  query_posts( $post_args );
+	// Retrieve the latest post.
+	query_posts( $post_args );
 
-  # Cache latest posts data
-  # date in Unix format to sort by, post's category (current iteration)
-  # and the post itself
-  # this is done in order not to run loop twice
-  while ( have_posts() ) : the_post();
-    $GLOBALS['catsArray'][$category->slug] = array(
-      'date' => get_the_time('U'),
-      'category' => $category,
-      'post' => $post
-    );
+	// Cache latest posts data.
+	while ( have_posts() ) : the_post();
+		$GLOBALS['catsArray'][$category->slug] = array(
+			'date' => get_the_time('U'),
+			'category' => $category,
+			'post' => $post
+		);
 
-  endwhile;
+	endwhile;
 
-  # Resetting query
-  wp_reset_query();
+	// Resetting query.
+	wp_reset_query();
 
 }
 
-# Compares two arrays by their "date" field
+// Compares two arrays by their "date" field.
 function compareDates($a, $b) {
-  if ( $a['date'] == $b['date'] ) {
-    return 0;
-  }
+	if ( $a['date'] == $b['date'] ) {
+		return 0;
+	}
+		return ($a['date'] < $b['date']) ? 1 : -1;
+	}
 
-  return ($a['date'] < $b['date']) ? 1 : -1;
-}
-
-# Sort using defined function
+// Sort using defined function.
 usort($GLOBALS['catsArray'], "compareDates");
