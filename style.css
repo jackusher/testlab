@@ -432,7 +432,7 @@ ul.popular-list .popular-title a {
 }
 
 .editor-pick .front-info {
-	background-color: #ab5858;
+	background-color: #ba7777;
 }
 
 .editor-pick .front-info h4 a,
@@ -449,7 +449,7 @@ ul.popular-list .popular-title a {
 }
 
 .editor-pick .front-artcat {
-	background-color: #983232;
+	background-color: #a24646;
 }
 
 .editor-pick .front-artcat a,
@@ -572,7 +572,7 @@ ul.popular-list .popular-title a {
 
 #front-full-article-title h4#front-full-article-auth a {
 	color: white;
-	background-color: #983232;
+	background-color: #a24646;
 	padding: 0.075rem 0.3rem;
 	border-radius: 5px;
 }
