@@ -35,8 +35,9 @@ get_header(); ?>
 			<div id="section1-content" class="front-content">
 
 				<?php 
-				$noimg = array(4, 5, 6, 7, 8, 9, 10);
-				$img = array(2, 3);
+				$noimg = array(4, 5, 8, 9, 10);
+				$img = array(2, 3, 6, 7);
+				$noex = array(6, 7);
 				$sec1_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec1_children as $sec1_child ) : // foreach loop pulling the latest post in each child cat.
@@ -88,6 +89,8 @@ get_header(); ?>
 
 							if(in_array($sec1_counter, $noimg)){
 								// Display no post excerpt.
+							} elseif(in_array($sec1_counter, $noex)) {
+								// No excerpt.
 							} else {
 								the_excerpt();
 							} ?>
@@ -277,8 +280,9 @@ get_header(); ?>
 			<div id="section3-content" class="front-content">
 
 				<?php 
-				$noimg = array(4, 5, 6, 7, 8, 9, 10);
-				$img = array(2, 3);
+				$noimg = array(4, 5, 8, 9, 10);
+				$img = array(2, 3, 6, 7);
+				$noex = array(6, 7);
 				$sec3_counter=1; // Creating a counter for the foreach loop.
 
 				foreach ( $sec3_children as $sec3_child ) : // foreach loop pulling the latest post in each child cat.
@@ -330,6 +334,8 @@ get_header(); ?>
 
 							if(in_array($sec3_counter, $noimg)){
 								// Display no post excerpt.
+							} elseif(in_array($sec3_counter, $noex)) {
+								// No excerpt.
 							} else {
 								the_excerpt();
 							} ?>
