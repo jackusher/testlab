@@ -573,7 +573,8 @@ ul.popular-list .popular-title a {
 #front-full-article-title h4#front-full-article-auth a {
 	color: white;
 	background-color: #983232;
-	padding: 0.05rem 0.2rem;
+	padding: 0.075rem 0.3rem;
+	border-radius: 5px;
 }
 
 #front-full-article-title a {
