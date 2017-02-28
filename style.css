@@ -448,7 +448,7 @@ ul.popular-list .popular-title a {
 	-o-transition: all 120ms ease;
 	-ms-transition: all 120ms ease;
 	transition: all 120ms ease;
-	width: 358px;
+	width: 347px;
 }
 
 .front-title {
@@ -501,12 +501,12 @@ ul.popular-list .popular-title a {
 
 .front-wrapper {
 	float: left;
-	width: 374px;
+	width: 363px;
 }
 
 #section1-wrap,
 #section2-wrap {
-	margin-right: 9px;
+	margin-right: 25px;
 }
 
 .front-content {
@@ -529,13 +529,13 @@ ul.popular-list .popular-title a {
 	margin: 0 0 13px 0;
 	padding: 0 0 0 0;
 	float: left;
-	width: 358px;
+	width: 347px;
 }
 
 .bottom-buffer {
-	padding-bottom: 15px;
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 15px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #bdbdbd;
+	margin-bottom: 20px;
 }
 
 .editor-pick .front-info {
@@ -570,7 +570,7 @@ ul.popular-list .popular-title a {
 }
 
 .front-article.small {
-	width: 170px;
+	width: 164px;
 	margin: 0 17px 17px 0;
 }
 
