@@ -6,9 +6,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width">
-		<title><?php bloginfo('name'); ?></title>
 		<?php wp_head(); ?>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/masonry-properties.js"></script><!-- The external masonry properies file. -->
+		<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/masonry-properties.js"></script><!-- The external masonry properies file. -->
 	</head>
 	
 <body <?php body_class(); ?>>

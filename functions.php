@@ -39,8 +39,8 @@ function testlab_setup() {
 
 	/* IV.a. Registering navigation menu locations. */
 		register_nav_menus(array(
-			'header' => __( 'Header Menu'),
-			'footer' => __( 'Footer Menu')
+			'header' => __( 'Header Menu', 'testbench'),
+			'footer' => __( 'Footer Menu', 'testbench')
 		));
 	
 	/* IV.b. Adding image sizes. */
@@ -59,6 +59,10 @@ function testlab_setup() {
 	
 	/* IV.c. Adding post formats. */
 	add_theme_support('post-formats', array('gallery'));
+	
+	add_theme_support( 'title-tag' );
+	
+	add_theme_support( 'automatic-feed-links' );
 	
 }
 
@@ -104,64 +108,72 @@ function testlab_customise_register( $wp_customize ) {
 	// WP appearance settings.
 	$wp_customize->add_setting('tl_link_color', array(
 		'default' => '#006ec3',
-		'transport' => 'refresh'
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('tl_button_color', array(
 		'default' => '#006ec3',
-		'transport' => 'refresh'
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('front_third_section1', array(
 		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('front_third_section2', array(
 		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('front_full', array(
 		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_string',
 	));	
 	
 	$wp_customize->add_setting('title_section1', array(
 		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('title_section2', array(
 		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('title_section3', array(
 		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options'
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_string',
 	));		
 	
 	// WP appearance sections.
 	$wp_customize->add_section('tl_standard_colors', array(
-		'title' => __('Standard Colours', 'testlab'),
+		'title' => __('Standard Colours', 'testbench'),
 		'priority' => 30
 	));
 	
 	$wp_customize->add_section('tl_front_cats', array(
-		'title' => __('Front Page Categories', 'testlab'),
+		'title' => __('Front Page Categories', 'testbench'),
 		'priority' => 120
 	));
 	
 	// WP appearance controls.
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tl_link_color_control', array (
-		'label' => __('Link Color', 'testlab'),
+		'label' => __('Link Color', 'testbench'),
 		'section' => 'tl_standard_colors',
 		'settings' => 'tl_link_color'
 	)));
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tl_button_color_control', array (
-		'label' => __('Button Color', 'testlab'),
+		'label' => __('Button Color', 'testbench'),
 		'section' => 'tl_standard_colors',
 		'settings' => 'tl_button_color'
 	)));

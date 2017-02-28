@@ -231,7 +231,7 @@ $wp_customize->add_setting('front_cat_section1', array(
 ));
 
 $wp_customize->add_section('tl_front_cats', array( // NB. COPY of section that's in place.
-	'title' => __('Front Page Categories', 'testlab'),
+	'title' => __('Front Page Categories', 'testbench'),
 	'priority' => 120
 ));
 
