@@ -382,7 +382,7 @@ get_header(); ?>
 	
 	</div><!-- /front-latest -->
 	
-	<div id="front-full" class="clearfix">
+	<div id="front-full1" class="front-full clearfix">
 	
 		<div id="front-full-info" class="clearfix">
 			<span id="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
@@ -416,7 +416,7 @@ get_header(); ?>
 	
 	</div><!-- /front-full -->
 	
-	<div id="front-full" class="clearfix">
+	<div id="front-full2" class="front-full clearfix">
 	
 		<div id="popular-front" class="popular-wrapper clearfix">
 

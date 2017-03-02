@@ -438,7 +438,8 @@ ul.popular-list .popular-title a {
 /* SECTION III: FRONT PAGE STYLING. */
 /* III.a. Latest columns. */
 /* III.a.i. Latest column headers (section title and blurb). */
-.front-head {
+.front-head,
+.sidebar-menuitem {
 	margin: 5px 0 15px 0;
 	padding: 10px 0 10px 0;
 	border-radius: 3px;
@@ -451,6 +452,23 @@ ul.popular-list .popular-title a {
 	width: 347px;
 }
 
+.front-head {
+	position: absolute;
+	z-index: 10;
+}
+
+.front-fixed {
+	position: fixed;
+	top: 0px;
+	margin-top: 0px;
+	border-top: 15px solid white;
+}
+
+.front-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
 .front-title {
 	color: #fff;
 }
@@ -461,7 +479,8 @@ ul.popular-list .popular-title a {
 	text-align: center;
 }
 
-.front-head:hover {
+.front-head:hover,
+.sidebar-menuitem:hover {
 	background-color: #5284bd;
 }
 
@@ -488,7 +507,8 @@ ul.popular-list .popular-title a {
 	text-decoration: none;
 }
 
-.front-head:hover > .front-subcats {
+.front-head:hover > .front-subcats,
+.sidebar-menuitem:hover > .front-subcats {
 	display: block;
 }
 
@@ -513,6 +533,7 @@ ul.popular-list .popular-title a {
 	width: 100%;
 	padding-right: 0;
 	border-right: 0;
+	margin-top: 85px;
 }
 
 .front-content:after {
@@ -622,7 +643,7 @@ ul.popular-list .popular-title a {
 }
 
 /* III.b. Full-length divider category section. */
-#front-full {
+.front-full {
 	margin: 25px 0;
 	padding: 0 0 30px 0;
 	border-bottom: 1px solid #ddd;
@@ -783,10 +804,12 @@ div.info-box p {
 /* IV.e. Archive page styles. */
 .cat-archive-title h2 {
 	font-size: 2.5rem;
+	margin-bottom: 35px;
 }
 
 #archive-content {
 	border-right: 0;
+	margin-top: 5px;
 }
 
 #archive-article:first-of-type {

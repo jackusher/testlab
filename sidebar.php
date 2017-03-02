@@ -11,7 +11,7 @@
 			)
 		); ?>
 
-		<div id="sidebar-menuitem1" class="front-head sidebar-menuitem clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
+		<div id="sidebar-menuitem1" class="sidebar-menuitem clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
 			<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
 			<div id="section1-subcats" class="front-subcats"><?php
 				wp_list_categories( array( // Creating an li for each of the subcats in the parent.
@@ -31,7 +31,7 @@
 			array( 'parent' => $sec2_parentID )
 		); ?>
 	
-		<div id="sidebar-menuitem2" class="front-head sidebar-menuitem clearfix">
+		<div id="sidebar-menuitem2" class="sidebar-menuitem clearfix">
 			<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
 			<div id="section1-subcats" class="front-subcats"><?php
 				wp_list_categories( array( // Creating an li for each of the subcats in the parent.
@@ -53,7 +53,7 @@
 			)
 		); ?>
 	
-		<div id="sidebar-menuitem3" class="front-head sidebar-menuitem clearfix">
+		<div id="sidebar-menuitem3" class="sidebar-menuitem clearfix">
 			<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
 			<div id="section1-subcats" class="front-subcats"><?php
 				wp_list_categories( array( // Creating an li for each of the subcats in the parent.
