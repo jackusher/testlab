@@ -462,6 +462,8 @@ ul.popular-list .popular-title a {
 	top: 0px;
 	margin-top: 0px;
 	border-top: 15px solid white;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
 
 .front-bottom {
