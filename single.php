@@ -53,7 +53,7 @@ get_header(); ?>
 						$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
 						if(in_array($pop_counter, $checkcounter)){ ?>
 							<li class="popular-item">
-								<p class="popular-rank"><?php echo $pop_counter ?></p>
+								<p class="popular-rank"><?php echo "$pop_counter." ?></p>
 								<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							</li><?php
 						} else { ?>
