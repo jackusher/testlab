@@ -398,3 +398,10 @@ function compareDates($a, $b) {
 
 // Sort using defined function.
 usort($GLOBALS['catsArray'], "compareDates");
+
+
+
+/* SECTION XI: Defining content width. */
+if ( ! isset( $content_width ) ) {
+	$content_width = 1140;
+}

@@ -41,9 +41,9 @@ get_header(); ?>
 			while (have_posts()) : the_post();
 			
 				if ( in_category( 36 ) ) {
-					?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+					?><div id="archive-article" class="front-article editor-pick"><!-- Start of looped post content. --><?php					
 				} else {
-					?><div id="archive-article" class="front-article <?php if (in_array($arch_counter, $img)) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+					?><div id="archive-article" class="front-article"><!-- Start of looped post content. --><?php
 				} ?>
 
 					<div id="archive-thumb" class="front-thumb">
