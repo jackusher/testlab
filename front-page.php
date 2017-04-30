@@ -468,17 +468,41 @@ get_header(); ?>
 		
 	</div><!-- /front-full -->
 	
-	<div id="front-third1" class="front-third clearfix">
+	<div class="front-columnists clearfix">
 	
-	</div>
+		<div id="front-full-info" class="clearfix">
+			<span id="front-full-title"><h2>Latest Columns</h2></span>
+		</div>
+		
+		<?php $args = array( // WP_Query args.
+			'category' => 36,
+			'post_type' => 'post',
+			'posts_per_page' => 5,
+		);
+		
+		$query = new WP_Query( $args );
+		
+		if ( $query->have_posts() ) :
+		
+			while ( $query->have_posts() ) : $query->the_post(); ?>
+			
+				<div id="columnist-article">
+					<div id="columnist-thumb">
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
+					</div>
+				</div>
+			
+			<?php endwhile;
+			
+		else :
+			echo '<p>No content found!</p>';
+		endif; ?>
 	
-	<div id="front-third2" class="front-third clearfix">
+	</div><!-- /front-columnists -->
 	
-	</div>
+	<div class="front-side">
 	
-	<div id="front-third3" class="front-third clearfix sponsorship">
-	
-	</div>
+	</div><!-- /front-side -->
 	
 </div><!-- /site-content -->
 

@@ -463,20 +463,6 @@ ul.popular-list .popular-title a {
 	width: 347px;
 }
 
-.front-head {
-	position: absolute;
-	z-index: 10;
-}
-
-.front-fixed {
-	position: fixed;
-	top: 0px;
-	margin-top: 0px;
-	border-top: 20px solid white;
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
-}
-
 .front-bottom {
 	position: absolute;
 	bottom: 0;
@@ -534,19 +520,20 @@ ul.popular-list .popular-title a {
 
 .front-wrapper {
 	float: left;
-	width: 363px;
+	width: 366px;
 }
 
 #section1-wrap,
 #section2-wrap {
-	margin-right: 25px;
+	margin-right: 20px;
 }
 
 .front-content {
 	width: 100%;
 	padding-right: 0;
 	border-right: 0;
-	margin-top: 85px;
+	margin-top: 20px;
+	border-right: 1px solid #bdbdbd;
 }
 
 .front-content:after {
@@ -568,7 +555,7 @@ ul.popular-list .popular-title a {
 
 .bottom-buffer {
 	padding-bottom: 20px;
-	border-bottom: 2px solid #bdbdbd;
+	border-bottom: 1px solid #bdbdbd;
 	margin-bottom: 20px;
 }
 
@@ -605,7 +592,7 @@ ul.popular-list .popular-title a {
 
 .front-article.small {
 	width: 164px;
-	margin: 0 17px 17px 0;
+	margin: 0 18.5px 18.5px 0;
 }
 
 .front-info {
@@ -619,7 +606,7 @@ ul.popular-list .popular-title a {
 }
 
 .front-info h4 { /* The title in each masonry brick. */
-	font-size: 1.3em;
+	font-size: 1.4em;
 	margin: 2px 0 5px 0;
 }
 
@@ -700,7 +687,7 @@ ul.popular-list .popular-title a {
 }
 
 #front-full-article-title {
-	font-size: 1.1rem;
+	font-size: 1.15rem;
 }
 
 #front-full-article-title h4 a {
@@ -723,19 +710,35 @@ ul.popular-list .popular-title a {
 }
 
 /* III.c. Third-length bottom column styles. */
-.front-third {
-	width: 30%;
+.front-columnists,
+.front-side {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.front-columnists {
+	width: 65%;
+	float: left;
+	padding-right: 24px;
+	margin-right: 25px;
+	border-right: 1px solid #ddd;
+}
+
+#columnist-article {
+	float: left;
+	margin-right: 20px;
+	display: inline-block;
+}
+
+#columnist-article:last-of-type {
+	margin-right: 0;
+}
+
+.front-side {
+	width: 30.5%;
 	height: 200px;
 	background-color: #ddd;
 	float: left;
-	margin-right: 50px;
-	margin-bottom: 30px;
-	margin-top: 10px;
-}
-
-.front-third:last-of-type {
-	margin-right: 0;
-	padding-right: 0;
 }
 
 /* III.d. Post meta styles. */

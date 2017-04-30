@@ -8,7 +8,6 @@
 		<meta name="viewport" content="width=device-width">
 		<?php wp_head(); ?>
 		<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/masonry-properties.js"></script><!-- The external masonry properies file. -->
-		<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/scroll.js"></script><!-- The external masonry properies file. -->
 	</head>
 	
 <body <?php body_class(); ?>>
