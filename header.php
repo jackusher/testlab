@@ -22,10 +22,9 @@
 			<div class="header-info clearfix">
 			
 				<div class="header-title">	
-					<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-					<h5><?php bloginfo('description'); ?> <?php if (is_page('contact-us')) {?>
-						- Learn how to contact me!
-					<?php }?></h5>
+					<?php if ( function_exists( 'the_custom_logo' ) ) {
+						the_custom_logo();
+					} ?>
 				</div><!-- /header-title -->
 				
 				<div class="header-login">

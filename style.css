@@ -311,19 +311,19 @@ ul.popular-list .popular-title a {
 	/* add in section padding (1.5rem) */
 	margin: 0 -601.5rem 15px -601.5rem;
 	/* match section padding (1.5rem) */
-	padding: 30px 1.5rem .25rem 1.5rem;
-	background: #f9f9f9;
+	padding: 20px 1.5rem 20px 1.5rem;
+	background: #f6f6f6;
 	/* border solid, not RGBa (Safari bug) */
 	/* 9600px or 10240px to avoid Chrome bug */
 	/* or equivalent in ems or rems (9600/16) */
-	border-left: 600rem solid #f9f9f9;
-	border-right: 600rem solid #f9f9f9;
+	border-left: 600rem solid #f6f6f6;
+	border-right: 600rem solid #f6f6f6;
 	border-bottom: 1px solid #ddd;
 }
 
 /* II.b. Site name and blurb styles. */
 .header-info {
-	margin: 0 0 30px 0;
+	margin: 0 0 0 0;
 }
 
 .header-title {
@@ -347,7 +347,7 @@ ul.popular-list .popular-title a {
 /* II.c. Header menu. */
 .header-login {
 	float: right;
-	padding: 16px 0 16px 0;
+	padding: 36px 0 36px 0;
 }
 
 .header-login a {
@@ -454,7 +454,7 @@ ul.popular-list .popular-title a {
 	margin: 5px 0 15px 0;
 	padding: 10px 0 10px 0;
 	border-radius: 3px;
-	background-color: #89abd2;
+	background-color: #01005e;
 	-webkit-transition: all 120ms ease;
 	-moz-transition: all 120ms ease;
 	-o-transition: all 120ms ease;
@@ -560,7 +560,7 @@ ul.popular-list .popular-title a {
 }
 
 .editor-pick .front-info {
-	background-color: #ba7777;
+	background-color: #f4a587;
 }
 
 .editor-pick .front-info h4 a,
@@ -577,7 +577,7 @@ ul.popular-list .popular-title a {
 }
 
 .editor-pick .front-artcat {
-	background-color: #a24646;
+	background-color: #f0825a;
 }
 
 .editor-pick .front-artcat a,
@@ -691,7 +691,7 @@ ul.popular-list .popular-title a {
 }
 
 #front-full-article-title h4 a {
-	color: #cc0000;
+	color: #f0825a;
 }
 
 #front-full-article-auth a {
@@ -700,7 +700,7 @@ ul.popular-list .popular-title a {
 
 #front-full-article-title h4#front-full-article-auth a {
 	color: white;
-	background-color: #a24646;
+	background-color: #bf0712;
 	padding: 0.075rem 0.3rem;
 	border-radius: 5px;
 }
@@ -713,7 +713,7 @@ ul.popular-list .popular-title a {
 .front-columnists,
 .front-side {
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 55px;
 }
 
 .front-columnists {
@@ -820,7 +820,9 @@ div.info-box p {
 /* IV.e. Archive page styles. */
 .cat-archive-title h2 {
 	font-size: 2.5rem;
-	margin-bottom: 35px;
+	margin-bottom: 25px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #bdbdbd;
 }
 
 #archive-content {
