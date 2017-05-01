@@ -580,13 +580,15 @@ ul.popular-list .popular-title a {
 	background-color: #f0825a;
 }
 
-.editor-pick .front-artcat a,
+.editor-pick .front-artcat a:link,
+.editor-pick .front-artcat a:visited,
 .editor-pick .front-artcat span,
 .editor-pick .front-artcat p {
 	color: #fff;
 }
 
-.editor-pick .front-artcat a {
+.editor-pick .front-artcat a:link,
+.editor-pick .front-artcat a:visited {
 	text-decoration: underline;
 }
 
@@ -597,12 +599,14 @@ ul.popular-list .popular-title a {
 
 .front-info {
 	padding: 3px 5px 5px 5px;
-	border-bottom: 2px solid #bdbdbd;
+	border-bottom: 2px solid #90c4e4;
 	background-color: #F6F6F6;
 }
 
-.front-info a {
+.front-info a:link,
+.front-info a:visited {
 	text-decoration: none;
+	color: #01005e;
 }
 
 .front-info h4 { /* The title in each masonry brick. */
@@ -630,8 +634,10 @@ ul.popular-list .popular-title a {
 	font-size: 0.95rem;
 }
 
-.front-artcat a {
+.front-artcat a:link,
+.front-artcat a:visited {
 	text-decoration: none;
+	color: #52a3d5;
 }
 
 .front-auth {

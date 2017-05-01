@@ -343,7 +343,7 @@ get_header(); ?>
 						</div><!-- /section3-info -->
 			
 						<div id="section3-cat" class="front-artcat"><!-- Post categories. -->
-							<p id="section3-auth" class="front-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>							
+							<p id="section3-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>							
 							<span>
 								<?php
 								$categories = get_the_category();
