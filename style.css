@@ -606,7 +606,7 @@ ul.popular-list .popular-title a {
 .front-info a:link,
 .front-info a:visited {
 	text-decoration: none;
-	color: #01005e;
+	color: #484848;
 }
 
 .front-info h4 { /* The title in each masonry brick. */
@@ -621,6 +621,7 @@ ul.popular-list .popular-title a {
 .front-info p { /* The excerpt in each masonry brick. */
 	font-size: 0.94em;
 	display: inline;
+	color: #515151;
 }
 
 .front-article:first-of-type .front-info p {
@@ -828,7 +829,6 @@ div.info-box p {
 	font-size: 2.5rem;
 	margin-bottom: 25px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid #bdbdbd;
 }
 
 #archive-content {
@@ -863,7 +863,7 @@ div.info-box p {
 
 .post-single h2 {
 	font-size: 3rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.25rem;
 }
 
 p.post-info {
