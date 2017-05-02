@@ -1,8 +1,8 @@
 	<article class="post-single">
 		
-		<section class="post-single-thumbnail">
+		<!-- <section class="post-single-thumbnail">
 			<?php the_post_thumbnail('banner-image'); ?>
-		</section>
+		</section> -->
 		
 		<h2><?php the_title(); ?></h2>
 
