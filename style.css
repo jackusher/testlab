@@ -614,14 +614,13 @@ ul.popular-list .popular-title a {
 
 .front-info {
 	padding: 3px 5px 5px 5px;
-	border-bottom: 2px solid #90c4e4;
+	border-bottom: 2px solid #bdbdbd;
 	background-color: #F6F6F6;
 }
 
 .front-info a:link,
 .front-info a:visited {
 	text-decoration: none;
-	color: #484848;
 }
 
 .front-info h4 { /* The title in each masonry brick. */
