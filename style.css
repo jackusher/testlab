@@ -848,6 +848,7 @@ div.info-box p {
 #archive-content {
 	border-right: 0;
 	margin-top: 5px;
+	margin-bottom: 2rem;
 }
 
 #archive-article:first-of-type {
