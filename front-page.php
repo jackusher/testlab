@@ -442,8 +442,9 @@ get_header(); ?>
 						$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
 						if(in_array($pop_counter, $checkcounter)){ ?>
 							<li class="popular-item">
-								<p class="popular-rank"><?php echo "$pop_counter." ?></p>
+								<!-- <p class="popular-rank"><?php echo "$pop_counter." ?></p> -->
 								<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+								<h4 id="popular-article-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
 							</li><?php
 						} else { ?>
 							<li class="popular-item">

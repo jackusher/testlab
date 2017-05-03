@@ -294,12 +294,27 @@ ul.popular-list .popular-title {
 }
 
 #popular-front ul.popular-list .popular-title {
-	width: 170px;
-	padding-top: 9px;
-	padding-left: 7px;
+	width: 100%;
+	text-align: center;
+	margin: 0 0 1em 0;
+	padding: 0;
 }
 
 ul.popular-list .popular-title a {
+	text-decoration: none;
+}
+
+#popular-front h4#popular-article-auth {
+	font-size: 1.15rem;
+	text-align: center;
+}
+
+#popular-front ul.popular-list h4#popular-article-auth a {
+	font-style: italic;
+	color: white;
+	background-color: #01005e;
+	padding: 0.075rem 0.3rem;
+	border-radius: 5px;
 	text-decoration: none;
 }
 
