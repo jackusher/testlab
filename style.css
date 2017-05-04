@@ -628,6 +628,11 @@ ul.popular-list .popular-title a {
 	color: #01005e;
 }
 
+.editor-pick:hover > .front-info a:link,
+.editor-pick:hover > .front-info a:visited {
+	color: #fff;
+}
+
 .front-info h4 { /* The title in each masonry brick. */
 	font-size: 1.4em;
 	margin: 2px 0 5px 0;
