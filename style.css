@@ -737,6 +737,13 @@ ul.popular-list .popular-title a {
 	margin-bottom: 55px;
 }
 
+.front-side {
+	width: 30.5%;
+	height: 204px;
+	background-color: #ddd;
+	float: left;
+}
+
 .front-columnists {
 	width: 65%;
 	float: left;
@@ -748,18 +755,62 @@ ul.popular-list .popular-title a {
 #columnist-article {
 	float: left;
 	margin-right: 20px;
-	display: inline-block;
+	display: block;
+	width: 170px;
+	height: 124px;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 #columnist-article:last-of-type {
 	margin-right: 0;
 }
 
-.front-side {
-	width: 30.5%;
-	height: 200px;
-	background-color: #ddd;
-	float: left;
+#columnist-article #columnist-thumb {
+	background-color: black;
+}
+
+#columnist-article #columnist-thumb {
+	position: absolute;
+	z-index: 20;
+}
+
+#columnist-article img {
+	opacity: 0.55;
+}
+
+#columnist-article #columnist-info {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 5px 5px 6px;
+	z-index: 25;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+#columnist-article #columnist-thumb img { /* Transition properties. */
+	-webkit-transition: all 0.275s ease; /* Safari and Chrome */
+  	-moz-transition: all 0.275s ease; /* Firefox */
+	-o-transition: all 0.275s ease; /* IE 9 */
+	-ms-transition: all 0.275s ease; /* Opera */
+	transition: all 0.275s ease;
+}
+
+#columnist-article:hover > #columnist-thumb img {
+	opacity: 0.25;
+}
+
+#columnist-article #columnist-title {
+	margin-bottom: 0;
+}
+
+#columnist-article #columnist-title a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3em;
 }
 
 /* III.d. Post meta styles. */

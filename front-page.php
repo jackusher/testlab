@@ -476,9 +476,9 @@ get_header(); ?>
 		</div>
 		
 		<?php $args = array( // WP_Query args.
-			'category' => 36,
+			'category_name' => 'columns',
 			'post_type' => 'post',
-			'posts_per_page' => 5,
+			'posts_per_page' => 4
 		);
 		
 		$query = new WP_Query( $args );
@@ -491,6 +491,11 @@ get_header(); ?>
 					<div id="columnist-thumb">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
 					</div>
+					
+					<div id="columnist-info">
+						<p id="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+					</div><!-- /columnist-info -->
+					
 				</div>
 			
 			<?php endwhile;
