@@ -32,9 +32,7 @@ get_header(); ?>
 				?><section class="year-archive-title"><h2><?php echo 'Yearly Archives: ' . get_the_date('Y'); ?></h2></section><?php
 			} else {
 				echo 'Archives:';
-			}
-
-		// Pagination code here. ?>
+			} ?>
 	
 		<div id="archive-content" class="front-content"><?php
 
@@ -83,7 +81,24 @@ get_header(); ?>
 
 			endif; ?>
 
-		</div><!-- /front-content -->
+		</div><!-- /archive-content -->
+		
+		<div class="archive-pagination"><?php
+		
+			global $wp_query;
+		
+			$big = 999999999;
+		
+			echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages,
+				'prev_text' => __('« Previous Page'),
+				'next_text' => __('Next Page »')
+			) ); ?>
+		
+		</div><!-- /archive-pagination -->
 		
 	</div><!-- /main-column -->
 	

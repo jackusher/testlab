@@ -929,6 +929,34 @@ div.info-box p {
 	font-size: 1.65em;
 }
 
+.archive-pagination {
+	position: relative;
+	margin-bottom: 2.25rem;
+}
+
+.archive-pagination a {
+	text-decoration: none;
+}
+
+.archive-pagination .page-numbers {
+	font-size: 1.25rem;
+	margin-right: 5px;
+}
+
+.archive-pagination a:hover {
+	color: #01005e;
+}
+
+.archive-pagination .next {
+	border-left: 2px solid #ddd;
+	padding-left: 10px;
+}
+
+.archive-pagination .prev {
+	border-right: 2px solid #ddd;
+	padding-right: 10px;
+}
+
 
 
 /* SECTION V: SINGLE POST STYLES. */
