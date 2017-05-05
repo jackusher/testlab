@@ -49,7 +49,7 @@ body {
 }
 
 .main-column {
-	width: 66%;
+	width: 69%;
 	float: left;
 	margin: 20px 0 0 0;
 }
@@ -913,12 +913,12 @@ div.info-box p {
 }
 
 #archive-article:first-of-type {
-	width: 485px;
+	width: 488px;
 }
 
 #archive-article {
 	width: 235px;
-	margin: 0 15px 15px 0;
+	margin: 0 18px 18px 0;
 }
 
 #archive-article:first-of-type #archive-info h4 {
@@ -1038,7 +1038,7 @@ article.post-gallery a {
 /* SECTION VI: SIDEBAR STYLING. */
 /* VI.a. Global styles. */
 .sidebar-column {
-	width: 34%;
+	width: 31%;
 	float: left;
 	font-size: 85%;
 	margin-top: 20px;
@@ -1060,7 +1060,7 @@ article.post-gallery a {
 
 /* VI.b. Sidebar category menu. */
 .sidebar-navi {
-	margin-left: 40px;
+	margin-left: 0;
 	border-bottom: 1px solid #ddd;
 }
 
