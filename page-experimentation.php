@@ -1,9 +1,8 @@
 <?php
 // The page-experimentation.php file controls the experimental experimentation page.
 
-get_header(); // Load in the WP header.?>
+get_header(); // Load in the WP header.
 
-<div><?php
     foreach( $GLOBALS['catsArray'] as $cat ) {
       echo '<section class="category">';
       echo '<h1>' . $cat['category']->name.'</h1>';
@@ -14,11 +13,7 @@ get_header(); // Load in the WP header.?>
       get_template_part( 'post-in-category' );
       wp_reset_postdata();
       echo '</section>';
-    }//foreach categories ?>
-    
-</div>
-
-<div> <?php
+    } //foreach categories
 
 foreach ( $GLOBALS['catsArray'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
