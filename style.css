@@ -963,6 +963,7 @@ div.info-box p {
 /* V.a. Post type: Single normal. */
 .post-single {
 	margin-bottom: 4rem;
+	margin-right: 5rem;
 }
 
 .post-single h2 {
