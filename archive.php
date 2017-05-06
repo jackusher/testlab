@@ -1,12 +1,7 @@
-<?php
-// The archive.php file. This file dictates the behaviour of all Wordpress archive files.
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<!-- site-content -->
 <div class="site-content clearfix">
 
-	<!-- main-column area -->
 	<div class="main-column"><?php
 	
 		$ex = array(1, 2);
@@ -39,9 +34,9 @@ get_header(); ?>
 			while (have_posts()) : the_post();
 			
 				if ( in_category( 36 ) ) {
-					?><div id="archive-article" class="front-article editor-pick"><!-- Start of looped post content. --><?php					
+					?><div id="archive-article" class="front-article editor-pick"><?php					
 				} else {
-					?><div id="archive-article" class="front-article"><!-- Start of looped post content. --><?php
+					?><div id="archive-article" class="front-article"><?php
 				} ?>
 
 					<div id="archive-thumb" class="front-thumb">
@@ -65,7 +60,7 @@ get_header(); ?>
 					
 					</div><!-- /archive-info -->
 
-					<div id="archive-cat" class="front-artcat"><!-- Post categories. -->
+					<div id="archive-cat" class="front-artcat">
 						<p id="archive-auth" class="front-auth">by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
 					</div><!-- /archive-cat -->
 
@@ -75,7 +70,6 @@ get_header(); ?>
 
 			endwhile;
 
-			// What to do if no posts exist in the archive.
 			else :
 				echo '<p>No content found!</p>';
 
@@ -94,8 +88,8 @@ get_header(); ?>
 				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var('paged') ),
 				'total' => $wp_query->max_num_pages,
-				'prev_text' => __('« Previous Page'),
-				'next_text' => __('Next Page »')
+				'prev_text' => __('« Previous Page', 'bubble3'),
+				'next_text' => __('Next Page »', 'bubble3')
 			) ); ?>
 		
 		</div><!-- /archive-pagination -->

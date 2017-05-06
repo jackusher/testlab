@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-	<!-- This file defines the content and behaviour of the theme header. -->
-	<!-- Putting header information in place, including fonts. -->
 	<head>
 		<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 		<meta charset="<?php bloginfo('charset'); ?>">
@@ -12,13 +10,10 @@
 	
 <body <?php body_class(); ?>>
 	
-	<!-- The div 'container' includes all visible site content inside the margins. -->
 	<div class="container">
 	
-		<!-- site-header begins. -->
 		<header class="site-header">
-		
-			<!-- Behaviour of the text-based site title and tagline. -->		
+			
 			<div class="header-info clearfix">
 			
 				<div class="header-title">	

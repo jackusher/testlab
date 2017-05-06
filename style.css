@@ -1,11 +1,11 @@
 /*
-Theme Name: TestBench
+Theme Name: bubble3
 Theme URI: http://jackusher.co.uk/projects
 Author: Jack Usher
 Author URI: http://jackusher.co.uk/
 Text Domain: testbench
-Description: This theme is for Jack to learn how to code WP themes from scratch.
-Version: 0.9
+Description: A new theme for The Bubble magazine.
+Version: 3.1 alpha
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -181,6 +181,10 @@ a img.aligncenter {
     padding: 0 4px 5px;
 }
 
+.sticky {
+
+}
+
 .size-auto, 
 .size-full,
 .size-large,
@@ -190,7 +194,6 @@ a img.aligncenter {
 	height: auto;
 }
 
-/* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -228,17 +231,8 @@ a img.aligncenter {
 	margin-bottom: 2rem;
 }
 
-#popular-front {
-	border-top: 0;
-	margin-bottom: 0;
-}
-
 .popular-head {
 	padding: 25px 0 10px 0;
-}
-
-#popular-head-front {
-	padding: 0 0 20px 0;
 }
 
 .popular-headtit h2 {
@@ -261,18 +255,6 @@ ul.popular-list .popular-item {
 	margin: 0 45px 20px 0;
 }
 
-#popular-front ul.popular-list .popular-item {
-	width: 200px;
-	padding: 0 12px;
-	margin: 0;
-	border-right: 2px solid #ddd;
-}
-
-#popular-front ul.popular-list .popular-item:last-of-type {
-	margin-right: 0;
-	border-right: 0;
-}
-
 ul.popular-list .popular-rank {
 	font-size: 2.5em;
 	float: left;
@@ -282,10 +264,6 @@ ul.popular-list .popular-rank {
 	border-right: 2px solid #ddd;
 }
 
-#popular-front ul.popular-list .popular-rank {
-	border-right: 0;
-}
-
 ul.popular-list .popular-title {
 	width: 275px;
 	margin-left: 35px;
@@ -293,28 +271,7 @@ ul.popular-list .popular-title {
 	font-size: 1.15rem;
 }
 
-#popular-front ul.popular-list .popular-title {
-	width: 100%;
-	text-align: center;
-	margin: 0 0 1em 0;
-	padding: 0;
-}
-
 ul.popular-list .popular-title a {
-	text-decoration: none;
-}
-
-#popular-front h4#popular-article-auth {
-	font-size: 1.15rem;
-	text-align: center;
-}
-
-#popular-front ul.popular-list h4#popular-article-auth a {
-	font-style: italic;
-	color: white;
-	background-color: #01005e;
-	padding: 0.075rem 0.3rem;
-	border-radius: 5px;
 	text-decoration: none;
 }
 
@@ -373,47 +330,7 @@ ul.popular-list .popular-title a {
 	margin: 0 1rem;
 }
 
-/* II.d. Child menu styling (page: Contact Us). */
-.children-links {
-	margin-bottom: 20px;
-	font-size: 80%;
-}
-
-.children-links a:link,
-.children-links a:visited {
-	text-decoration: none;
-}
-
-.children-links ul {
-	float: left;
-}
-
-.children-links li {
-	margin-right: 20px;
-}
-
-.children-links .parent-link {
-	float: left;
-	margin-right: 20px;
-	padding-right: 20px;
-	border-right: 1px solid #DDD;
-	font-size: 120%;
-	font-weight: bold;
-}
-
-.children-links .parent-link a:link,
-.children-links .parent-link a:visited {
-	color: #333;
-}
-
-.children-links .current_page_item a:link,
-.children-links .current_page_item a:visited {
-	border-bottom: 1px solid #DDD;
-	color: #333;
-	cursor: default;
-}
-
-/* II.e. Fluid search box styling (currently deprecated). */
+/* II.d. Fluid search box styling (currently deprecated). */
 .my-nav-menu-search {
 	position: absolute;
 	right: 0;
@@ -430,7 +347,7 @@ ul.popular-list .popular-title a {
 
 .my-nav-menu-search .search-field {
 	background-color: transparent;
-	background-image: url("/wp-content/themes/testlab/search-icon2.png");
+	background-image: url("/wp-content/themes/bubble3/search-icon2.png");
 	background-position: 5px center;
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
@@ -674,12 +591,14 @@ ul.popular-list .popular-title a {
 }
 
 /* III.b. Full-length divider category section. */
+/* III.b.i Full-length global styles. */
 .front-full {
 	margin: 25px 0;
 	padding: 0 0 30px 0;
 	border-bottom: 1px solid #ddd;
 }
 
+/* III.b.ii Full-length 1 styles. */
 #front-full-info {
 	margin-bottom: 35px;
 }
@@ -737,6 +656,53 @@ ul.popular-list .popular-title a {
 }
 
 #front-full-article-title a {
+	text-decoration: none;
+}
+
+/* III.b.iii Full length 2 (most popular) styles. */
+#popular-front {
+	border-top: 0;
+	margin-bottom: 0;
+}
+
+#popular-head-front {
+	padding: 0 0 20px 0;
+}
+
+#popular-front ul.popular-list .popular-item {
+	width: 200px;
+	padding: 0 12px;
+	margin: 0;
+	border-right: 2px solid #ddd;
+}
+
+#popular-front ul.popular-list .popular-item:last-of-type {
+	margin-right: 0;
+	border-right: 0;
+}
+
+#popular-front ul.popular-list .popular-rank {
+	border-right: 0;
+}
+
+#popular-front ul.popular-list .popular-title {
+	width: 100%;
+	text-align: center;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+
+#popular-front h4#popular-article-auth {
+	font-size: 1.15rem;
+	text-align: center;
+}
+
+#popular-front ul.popular-list h4#popular-article-auth a {
+	font-style: italic;
+	color: white;
+	background-color: #01005e;
+	padding: 0.075rem 0.3rem;
+	border-radius: 5px;
 	text-decoration: none;
 }
 
@@ -846,32 +812,7 @@ article.page h2 {
 	margin-bottom: 15px;
 }
 
-/* IV.b. index.php: The 'blog' page, functioning as a recent posts list (currently deprecated). */
-article.post {
-	border-bottom: 1px dotted #DDD;
-	margin-bottom: 20px;
-}
-
-article.post h2 {
-	margin-bottom: 0;
-}
-
-article.post h2 a:link,
-article.post h2 a:visited {
-	text-decoration: none;
-}
-
-article.post:last-of-type {
-	border-bottom: none;
-}
-
-.post-thumbnail {
-	float: left;
-	margin-right: 20px;
-	padding-bottom: 20px;
-}
-
-/* IV.c. page-contact-us.php. */
+/* IV.b. page-contact-us.php. */
 div.title-column {
 	width: 30%;
 	float: left;
@@ -882,7 +823,7 @@ div.text-column {
 	float: right;
 }
 
-/* IV.d. special-template.php. */
+/* IV.c. special-template.php. */
 div.info-box {
 	width: 30%;
 	float: right;
@@ -899,7 +840,7 @@ div.info-box p {
 	font-size: 100%;
 }
 
-/* IV.e. Archive page styles. */
+/* IV.d. Archive page styles. */
 .cat-archive-title h2 {
 	font-size: 2.5rem;
 	margin-bottom: 25px;

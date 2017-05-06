@@ -1,7 +1,4 @@
-<?php
-// The page-experimentation.php file controls the experimental experimentation page.
-
-get_header(); // Load in the WP header.
+<?php get_header();
 
     foreach( $GLOBALS['catsArray'] as $cat ) {
       echo '<section class="category">';
@@ -55,7 +52,6 @@ foreach ( $GLOBALS['catsArray'] as $cat ) : // foreach loop pulling the latest p
 	
 				wp_reset_postdata(); ?>
 				
-		</div><?php
-				
-get_footer(); // Load in the WP footer.
-?>
+		</div>
+
+<?php get_footer(); ?>

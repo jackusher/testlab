@@ -1,4 +1,3 @@
-	<!-- Defining the footer class and content in this file. -->
 	<footer class="site-footer">
 		
 		<div class="footer-widgets clearfix"><?php
@@ -45,7 +44,7 @@
 		</div>
 		
 		<div class="footer-meta">
-			<!-- Creating a footer menu location for WP admin. -->
+
 			<nav id="footer-menu" class="site-nav">
 				<?php	
 				$args = array(
@@ -54,13 +53,13 @@
 				wp_nav_menu( $args ); ?>
 			</nav>
 
-			<!-- Creating the 'copyright' div location for copyright info. Define content. -->
 			<section class="copyright">
 				<p><?php bloginfo('name'); ?>, &copy; <?php echo date('Y');?></p>
 			</section>
-		</div>
+			
+		</div><!-- /footer-meta -->
 	
-	</footer>
+	</footer><!-- /site-footer -->
 
 </div><!-- /container -->
 

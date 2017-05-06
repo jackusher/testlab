@@ -35,12 +35,12 @@ function has_children() {
 
 
 /* SECTION IV: Theme setup, implementing pre-requisites. */
-function testlab_setup() {
+function bubble_setup() {
 
 	/* IV.a. Registering navigation menu locations. */
 		register_nav_menus(array(
-			'header' => __( 'Header Menu', 'testbench'),
-			'footer' => __( 'Footer Menu', 'testbench')
+			'header' => __( 'Header Menu', 'bubble3'),
+			'footer' => __( 'Footer Menu', 'bubble3')
 		));
 	
 	/* IV.b. Adding image sizes. */
@@ -66,12 +66,12 @@ function testlab_setup() {
 	
 }
 
-add_action('after_setup_theme', 'testlab_setup');
+add_action('after_setup_theme', 'bubble_setup');
 
 
 
 /* SECTION V: Defining theme widget locations. */
-function testlab_widgets() {
+function bubble_widgets() {
 
 	register_sidebar( array(
 		'name' => 'Sidebar',
@@ -83,36 +83,36 @@ function testlab_widgets() {
 	));
 }
 
-add_action('widgets_init', 'testlab_widgets');
+add_action('widgets_init', 'bubble_widgets');
 
 
 
 /* SECTION VI: WP_Customize API settings. */
 /* VI.a. Function to pull site categories in to substantiate Customize calls to categories. */
 function get_categories_select() {
- $teh_cats = get_categories();
-    $results;
-    $count = count($teh_cats);
-    for ($i=0; $i < $count; $i++) {
-      if (isset($teh_cats[$i]))
-        $results[$teh_cats[$i]->slug] = $teh_cats[$i]->name;
-      else
-        $count++;
-    }
-  return $results;
+	$teh_cats = get_categories();
+	$results;
+	$count = count($teh_cats);
+	for ($i=0; $i < $count; $i++) {
+		if (isset($teh_cats[$i]))
+			$results[$teh_cats[$i]->slug] = $teh_cats[$i]->name;
+		else
+			$count++;
+		}
+	return $results;
 }
 
 /* VI.b. WP_Customize API settings, sections, controls. */
-function testlab_customise_register( $wp_customize ) {
+function bubble_customise_register( $wp_customize ) {
 	
 	// WP appearance settings.
-	$wp_customize->add_setting('tl_link_color', array(
+	$wp_customize->add_setting('bubble_link_color', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
-	$wp_customize->add_setting('tl_button_color', array(
+	$wp_customize->add_setting('bubble_button_color', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -121,67 +121,61 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_setting('front_third_section1', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('front_third_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('front_full', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_string',
 	));	
 	
 	$wp_customize->add_setting('title_section1', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('title_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_string',
 	));
 	
 	$wp_customize->add_setting('title_section3', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_string',
 	));		
 	
 	// WP appearance sections.
-	$wp_customize->add_section('tl_standard_colors', array(
-		'title' => __('Standard Colours', 'testbench'),
+	$wp_customize->add_section('bubble_standard_colors', array(
+		'title' => __('Standard Colours', 'bubble3'),
 		'priority' => 30
 	));
 	
-	$wp_customize->add_section('tl_front_cats', array(
-		'title' => __('Front Page Categories', 'testbench'),
+	$wp_customize->add_section('bubble_front_cats', array(
+		'title' => __('Front Page Categories', 'bubble3'),
 		'priority' => 120
 	));
 	
 	// WP appearance controls.
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tl_link_color_control', array (
-		'label' => __('Link Color', 'testbench'),
-		'section' => 'tl_standard_colors',
-		'settings' => 'tl_link_color'
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bubble_link_color_control', array (
+		'label' => __('Link Color', 'bubble3'),
+		'section' => 'bubble_standard_colors',
+		'settings' => 'bubble_link_color'
 	)));
 	
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tl_button_color_control', array (
-		'label' => __('Button Color', 'testbench'),
-		'section' => 'tl_standard_colors',
-		'settings' => 'tl_button_color'
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bubble_button_color_control', array (
+		'label' => __('Button Color', 'bubble3'),
+		'section' => 'bubble_standard_colors',
+		'settings' => 'bubble_button_color'
 	)));
 	
 	$wp_customize->add_control( 'front_third_section1', array(
 		'settings' => 'front_third_section1',
 		'label' => 'Third-Length Column 1',
-		'section' => 'tl_front_cats',
+		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
@@ -189,7 +183,7 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_control( 'front_third_section2', array(
 		'settings' => 'front_third_section2',
 		'label' => 'Third-Length Column 2',
-		'section' => 'tl_front_cats',
+		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
@@ -197,7 +191,7 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_control( 'front_full', array(
 		'settings' => 'front_full',
 		'label' => 'Full-Length Section',
-		'section' => 'tl_front_cats',
+		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));	
@@ -205,7 +199,7 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_control( 'title_section1', array(
 		'settings' => 'title_section1',
 		'label' => 'Title Section 1',
-		'section' => 'tl_front_cats',
+		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
@@ -213,7 +207,7 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_control( 'title_section2', array(
 		'settings' => 'title_section2',
 		'label' => 'Title Section 2',
-		'section' => 'tl_front_cats',
+		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));
@@ -221,29 +215,29 @@ function testlab_customise_register( $wp_customize ) {
 	$wp_customize->add_control( 'title_section3', array(
 		'settings' => 'title_section3',
 		'label' => 'Title Section 3',
-		'section' => 'tl_front_cats',
+		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
 	));		
 }
 
-add_action('customize_register', 'testlab_customise_register');
+add_action('customize_register', 'bubble_customise_register');
 
 /* VI.c. Defining the CSS elements targeted by $wp_customize settings. */
-function testlab_customise_css() { ?>
+function bubble_customise_css() { ?>
 	
 	<style type="text/css">
 		
 		a:link,
 		a:visited {
-			color: <?php echo get_theme_mod('tl_link_color'); ?>;
+			color: <?php echo get_theme_mod('bubble_link_color'); ?>;
 		}
 		
 	</style>
 	
 <?php }
 
-add_action('wp_head', 'testlab_customise_css');
+add_action('wp_head', 'bubble_customise_css');
 
 
 
@@ -285,70 +279,7 @@ add_action('wp_head', 'shapeSpace_track_posts');
 
 
 
-/* SECTION IX: Custom WP menu walker class. */
-class CSS_Menu_Walker extends Walker {
-
-	var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
-	
-	function start_lvl(&$output, $depth = 0, $args = array()) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul>\n";
-	}
-	
-	function end_lvl(&$output, $depth = 0, $args = array()) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "$indent</ul>\n";
-	}
-	
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-	
-		global $wp_query;
-		$indent = ($depth) ? str_repeat("\t", $depth) : '';
-		$class_names = $value = '';
-		$classes = empty($item->classes) ? array() : (array) $item->classes;
-		
-		/* Add active class */
-		if (in_array('current-menu-item', $classes)) {
-			$classes[] = 'active';
-			unset($classes['current-menu-item']);
-		}
-		
-		/* Check for children */
-		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
-		if (!empty($children)) {
-			$classes[] = 'has-sub';
-		}
-		
-		$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-		$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-		
-		$id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
-		$id = $id ? ' id="' . esc_attr($id) . '"' : '';
-		
-		$output .= $indent . '<li' . $id . $value . $class_names .'>';
-		
-		$attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"' : '';
-		$attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target    ) .'"' : '';
-		$attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn       ) .'"' : '';
-		$attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"' : '';
-		
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'><span>';
-		$item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-		$item_output .= '</span></a>';
-		$item_output .= $args->after;
-		
-		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-	}
-	
-	function end_el(&$output, $item, $depth = 0, $args = array()) {
-		$output .= "</li>\n";
-	}
-}
-
-
-
-/* SECTION X: Storing most-recently updated subcatgeories of parents in a global array. */
+/* SECTION IX: Storing most-recently updated subcatgeories of parents in a global array. */
 $category_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
 $category_ID = get_cat_ID( $category_parent );
 $categories = get_categories(
@@ -401,15 +332,15 @@ usort($GLOBALS['catsArray'], "compareDates");
 
 
 
-/* SECTION XI: Defining content width. */
+/* SECTION X: Defining content width. */
 if ( ! isset( $content_width ) ) {
 	$content_width = 1140;
 }
 
 
 
-/* SECTION XII: Adding custom logo support. */
-function testlab_custom_logo_setup() {
+/* SECTION XI: Adding custom logo support. */
+function bubble_custom_logo_setup() {
     $defaults = array(
         'height'      => 90,
         'width'       => 311,
@@ -419,4 +350,4 @@ function testlab_custom_logo_setup() {
     );
     add_theme_support( 'custom-logo', $defaults );
 }
-add_action( 'after_setup_theme', 'testlab_custom_logo_setup' );
+add_action( 'after_setup_theme', 'bubble_custom_logo_setup' );

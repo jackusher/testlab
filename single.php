@@ -1,20 +1,12 @@
-<?php
-// single.php defines what to do with single post pages.
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<!-- site-content -->
 <div class="site-content clearfix">
 
-	<!-- main-column area -->
 	<div class="main-column">
 
-		<?php
-		if (have_posts()) :
+		<?php if (have_posts()) :
 			while (have_posts()) : the_post();
 	
-			// Reference to the content.php file. Post layout is pulled from content-single.php. If there are any special post types, e.g. galleries, the second argument pushes requests to the correct content-*.php file.
-			// *if* logic: If the post is non-formatted, go to content-single.php. If the post is formatted, then go to respective content-*.php.
 			if (get_post_format() == false) {
 				get_template_part('content', 'single');
 			} else {
@@ -23,7 +15,6 @@ get_header(); ?>
 	
 			endwhile;
 	
-			// What to do if there are no posts.
 			else :
 				echo '<p>No content found</p>';
 	
@@ -31,11 +22,11 @@ get_header(); ?>
 			
 		<div id="popular-single" class="popular-wrapper clearfix">
 
-			<div id="popular-head-single" class="popular-head clearfix"><!-- Header for popular section including title and description. -->
+			<div id="popular-head-single" class="popular-head clearfix">
 				<span class="popular-headtit"><h2>Most Read</h2></span>
 			</div><!-- /popular-head -->
 
-			<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
+			<ul class="popular-list"><?php
 
 				$args = array( // The arguments for the popular WP_Query.
 					'posts_per_page'=>5,
@@ -50,7 +41,7 @@ get_header(); ?>
 	
 					$pop_counter=0; while ( $popular->have_posts() ) : $popular->the_post(); $pop_counter++;
 		
-						$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
+						$checkcounter = array(1, 2, 3, 4, 5); // Countpost mechanism to put the ranking number next to the post title.
 						if(in_array($pop_counter, $checkcounter)){ ?>
 							<li class="popular-item">
 								<p class="popular-rank"><?php echo "$pop_counter." ?></p>

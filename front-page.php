@@ -1,23 +1,19 @@
-<?php
-// The file defines the static home page behaviours.
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<!-- site-content -->
 <div class="site-content clearfix">
 
 	<div id="front-latest">
 
-		<?php // Defining <section1> variables.
-		$sec1_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
-		$sec1_parentID = get_cat_ID( $sec1_parent ); // Getting the cat ID from the name we pulled in.
-		$sec1_children = get_categories( // Setting the cat as a PARENT cat.
-			array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
+		<?php
+		$sec1_parent = get_theme_mod( 'title_section1' );
+		$sec1_parentID = get_cat_ID( $sec1_parent );
+		$sec1_children = get_categories(
+			array(
 				'parent' => $sec1_parentID,
 			)
 		); ?>
 
-		<div id="section1-wrap" class="front-wrapper"><!-- The masonry container. -->
+		<div id="section1-wrap" class="front-wrapper">
 	
 			<div id="section1-head" class="front-head clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
 				<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
@@ -84,7 +80,7 @@ get_header(); ?>
 							} ?>
 						</div><!-- /section1-thumb -->
 				
-						<div id="section1-info" class="front-info"><!-- Post titles and excerpts. -->
+						<div id="section1-info" class="front-info">
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 
 							if(in_array($sec1_counter, $noimg)){
@@ -97,7 +93,7 @@ get_header(); ?>
 					
 						</div><!-- /section1-info -->
 			
-						<div id="section1-cat" class="front-artcat"><!-- Post categories. -->
+						<div id="section1-cat" class="front-artcat">
 							<p id="section1-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
 							<span>
 								<?php
@@ -133,7 +129,7 @@ get_header(); ?>
 
 		</div><!-- /section1-wrapper -->
 			
-		<?php // Defining the <section2> variables.
+		<?php
 		$sec2_parent = get_theme_mod( 'title_section2' );
 		$sec2_parentID = get_cat_ID( $sec2_parent );
 		$sec2_children = get_categories(
@@ -253,20 +249,20 @@ get_header(); ?>
 	
 		</div><!-- /section2-wrapper -->
 	
-		<?php // Defining <section3> variables.
-		$sec3_parent = get_theme_mod( 'title_section3' ); // Pulling in the parent catgeory set in the WP appearance api.
-		$sec3_parentID = get_cat_ID( $sec3_parent ); // Getting the cat ID from the name we pulled in.
-		$sec3_children = get_categories( // Setting the cat as a PARENT cat.
-			array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
+		<?php
+		$sec3_parent = get_theme_mod( 'title_section3' );
+		$sec3_parentID = get_cat_ID( $sec3_parent );
+		$sec3_children = get_categories(
+			array(
 				'parent' => $sec3_parentID,
 			)
-		); ?>	
+		); ?>
 
 		<div id="section3-wrap" class="front-wrapper">
 	
 			<div id="section3-head" class="front-head clearfix">
 				<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
-				<div id="section1-subcats" class="front-subcats"><?php
+				<div id="section3-subcats" class="front-subcats"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
@@ -314,7 +310,7 @@ get_header(); ?>
 					} elseif ( in_array($sec3_counter, $img) ) {
 						?><div id="section3-article" class="front-article small bottom-buffer"><?php
 					} else {
-						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><?php
 					} ?>
 								
 						<div id="section3-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
@@ -414,17 +410,17 @@ get_header(); ?>
 			echo '<p>No content found!</p>';
 		endif; ?>
 	
-	</div><!-- /front-full -->
+	</div><!-- /front-full1 -->
 	
 	<div id="front-full2" class="front-full clearfix">
 	
 		<div id="popular-front" class="popular-wrapper clearfix">
 
-			<div id="popular-head-front" class="popular-head clearfix"><!-- Header for popular section including title and description. -->
+			<div id="popular-head-front" class="popular-head clearfix">
 				<span class="popular-headtit"><h2>Most Read</h2></span>
 			</div><!-- /popular-head -->
 
-			<ul class="popular-list"><!-- The <ul> tied to visit-monitoring function in functions.php. --><?php
+			<ul class="popular-list"><?php
 
 				$args = array( // The arguments for the popular WP_Query.
 					'posts_per_page'=>5,
@@ -437,29 +433,19 @@ get_header(); ?>
 
 				if ( $popular->have_posts() ):
 
-					$pop_counter=0; while ( $popular->have_posts() ) : $popular->the_post(); $pop_counter++;
+					while ( $popular->have_posts() ) : $popular->the_post(); ?>
 	
-						$checkcounter = array(1, 2, 3, 4, 5); // countpost mechanism to put the ranking number next to the post title.
-						if(in_array($pop_counter, $checkcounter)){ ?>
-							<li class="popular-item">
-								<!-- <p class="popular-rank"><?php echo "$pop_counter." ?></p> -->
-								<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-								<h4 id="popular-article-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
-							</li><?php
-						} else { ?>
-							<li class="popular-item">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</li><?php
-						}
+						<li class="popular-item">
+							<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							<h4 id="popular-article-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+						</li><?php
 
 					endwhile;
 	
 					else :
 						echo '<p>Sorry, just loner posts here.</p>';
 
-				endif;
-
-				$pop_counter++;		
+				endif;	
 	
 				wp_reset_postdata(); ?>
 
@@ -467,7 +453,7 @@ get_header(); ?>
 
 		</div><!-- /popular-wrapper -->
 		
-	</div><!-- /front-full -->
+	</div><!-- /front-full2 -->
 	
 	<div class="front-columnists clearfix">
 	
