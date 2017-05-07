@@ -1,4 +1,15 @@
-<?php get_header();
+<?php
+/**
+ * The template for the Contact Us page.
+ *
+ * This file is a template for a single page.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+ 
+get_header();
 
 if (have_posts()) :
 	while (have_posts()) : the_post(); ?>

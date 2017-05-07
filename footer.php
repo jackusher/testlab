@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for the site footer.
+ *
+ * The area of the page that contains the sitemap, meta links, and the copyright notice.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+?>
 	<footer class="site-footer">
 		
 		<div class="footer-widgets clearfix"><?php

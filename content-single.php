@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for the content on single post pages.
+ *
+ * The content file referenced from single.php.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+?>	
 	<article class="post-single">
 		
 		<h2><?php the_title(); ?></h2>

@@ -1,3 +1,15 @@
+<?php
+/**
+ * The template for displaying the header.
+ *
+ * The area of the page that contains links to fonts & scripts, the logo, and header menu.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>

@@ -1,3 +1,15 @@
+<?php
+/**
+ * The template for the sidebar.
+ *
+ * The area of the page that contains the category navigation, and user-defined content.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+?>
+ 
 <div class="sidebar-column">
 	
 	<nav class="sidebar-navi">

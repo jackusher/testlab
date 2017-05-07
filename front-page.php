@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * The template for the front page.
+ *
+ * The static homepage of the website.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+ 
+get_header(); ?>
 
 <div class="site-content clearfix">
 

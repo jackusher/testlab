@@ -1,5 +1,13 @@
 <?php
-// All theme functions are defined in this file.
+/**
+ * The theme functions file.
+ *
+ * The file that contains all functions for additional template features.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
 
 /* SECTION I: Calling theme stylesheets and scripts. */
 function get_theme_scripts() {

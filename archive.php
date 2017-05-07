@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for all archive pages.
+ *
+ * Includes category, tag, author and date archives.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ */
+ 
+get_header(); ?>
 
 <div class="site-content clearfix">
 

@@ -1,16 +1,19 @@
 <?php
-/* 
-   This file contains all of the self-contained elements that were built for testlab
-   during development. Please refer to the table of contents below for reference.
-
-TABLE OF CONTENTS
-	1. Featured image opacity effect rollover grid.
-	2. Full-width recent post loop, with unique styles for first post.
-	3. Loop to bring in WP-Admin-defined text content of isolated pages.
-	4. Old footer widgets.
-	5. Menu device to list subcategories of a parent category.
-	6. Walker menu displaying subcategories and their parents.
-	7. Old archive page markup.
+/**
+ * The file for all old site code that may be useful in the future.
+ *
+ * @package WordPress
+ * @subpackage Bubble3
+ * @since Bubble3 0.1 alpha
+ *
+ * TABLE OF CONTENTS
+ *  	1. Featured image opacity effect rollover grid.
+ *	    2. Full-width recent post loop, with unique styles for first post.
+ *   	3. Loop to bring in WP-Admin-defined text content of isolated pages.
+ *  	4. Old footer widgets.
+ *  	5. Menu device to list subcategories of a parent category.
+ *  	6. Walker menu displaying subcategories and their parents.
+ *  	7. Old archive page markup.
 */
 
 // 1.a. HTML: Featured image opacity rollover effect grid, capturing all recent posts.?>
