@@ -228,7 +228,7 @@ a img.aligncenter {
 	max-width: 100%;
 	margin-left: 0px;
 	border-top: 1px solid #ddd;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .popular-head {
@@ -978,8 +978,67 @@ article.post-gallery a {
 
 
 
-/* SECTION VI: SIDEBAR STYLING. */
-/* VI.a. Global styles. */
+/* SECTION VI: COMMENTS STYLING. */
+/* VI.a. General <div> styles. */
+.comments {
+	border-top: 1px solid #ddd;
+	padding-top: 25px;
+}
+
+/* VI.b. Comment list styles. */
+.comments h2.comments-title {
+	font-size: 2.4em;
+}
+
+.comments .comment-list a {
+	text-decoration: none;
+}
+
+.comments .comment-list .comment .comment-author .fn a:link,
+.comments .comment-list .comment .comment-author .fn a:visited {
+	color: #01005e;
+}
+
+/* VI.c. Reply form styles. */
+.comment-respond {
+	border-top: 1px solid #ddd;
+	padding-top: 25px;
+	margin-top: 25px;
+}
+
+.comment-respond h3#reply-title {
+	font-size: 2.4em;
+	margin-bottom: 20px;
+}
+
+.comment-form .logged-in-as {
+	font-size: 1.15rem;
+}
+
+.comment-form .logged-in-as a {
+	text-decoration: none;
+}
+
+.comment-form .logged-in-as a:last-of-type {
+	margin-left: 7.5px;
+	border-left: 2px solid #ddd;
+	padding-left: 12.5px;
+	color: #01005e;
+}
+
+.comment-form .comment-form-comment label {
+	display: none;
+}
+
+.comment-form .comment-form-comment textarea {
+	height: 110px;
+	width: 778px;
+}
+
+
+
+/* SECTION VII: SIDEBAR STYLING. */
+/* VII.a. Global styles. */
 .sidebar-column {
 	width: 31%;
 	float: left;
@@ -1001,7 +1060,7 @@ article.post-gallery a {
 	margin: 0;
 }
 
-/* VI.b. Sidebar category menu. */
+/* VII.b. Sidebar category menu. */
 .sidebar-navi {
 	margin-left: 0;
 	border-bottom: 1px solid #ddd;
@@ -1021,8 +1080,8 @@ article.post-gallery a {
 
 
 
-/* SECTION VII: SITE FOOTER. */
-/* VII.a. Intermediary footer category listing section. */
+/* SECTION VIII: SITE FOOTER. */
+/* VIII.a. Intermediary footer category listing section. */
 .footer-widgets {
 	/* add in section padding (1.5rem) */
 	margin: 0 -601.5rem;
@@ -1089,7 +1148,7 @@ article.post-gallery a {
 	color: #fff;
 }
 
-/* VII.b. Site footer menu. */
+/* VIII.b. Site footer menu. */
 .footer-meta {
 	font-size: 84%;
 }

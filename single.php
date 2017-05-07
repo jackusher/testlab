@@ -67,6 +67,14 @@
 			</ul><!-- /popular-list -->
 
 		</div><!-- /popular-wrapper -->
+		
+		<div id="comments-single" class="comments">
+		
+			<?php if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif; ?>
+		
+		</div><!-- /comments -->
 			
 	</div><!-- /main-column -->
 
