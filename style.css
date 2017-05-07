@@ -999,13 +999,13 @@ article.post-gallery a {
 	color: #01005e;
 }
 
-/* VI.c. Reply form styles. */
-.comment-respond {
-	border-top: 1px solid #ddd;
-	padding-top: 25px;
-	margin-top: 25px;
+.comment-list {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
 }
 
+/* VI.c. Reply form styles. */
 .comment-respond h3#reply-title {
 	font-size: 2.4em;
 	margin-bottom: 20px;
