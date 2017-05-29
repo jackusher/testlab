@@ -13,7 +13,7 @@ get_header(); ?>
 
 <div class="site-content clearfix">
 
-	<div class="main-column"><?php
+	<div class="main-column" id="archive-main-column"><?php
 	
 		$ex = array(1, 2);
 		$arch_counter=1;

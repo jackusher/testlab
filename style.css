@@ -55,6 +55,11 @@ body {
 	margin-right: 5rem;
 }
 
+#archive-main-column {
+	width: 69%;
+	margin-right: 0;
+}
+
 /* I.b. Global element styles. */
 a:link,
 a:visited {
