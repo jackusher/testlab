@@ -289,46 +289,8 @@ add_action('wp_head', 'shapeSpace_track_posts');
 
 
 /* SECTION IX: Storing most-recently updated subcatgeories of parents in a global array. */
-$category_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
-$category_ID = get_cat_ID( $category_parent );
-$categories = get_categories(
-	array(
-		'parent' => $category_ID,
-	)
-);
 
-$GLOBALS['catsArray'] = array();
-
-// Loop through categories.
-foreach($categories as $category ) {
-
-	$post_args = array(
-		'orderby' => 'post_date',
-    	'order' => 'DESC',
-    	'showposts' => 1,
-    	'category__in' => array($category->term_id),
-    	'ignore_sticky_posts' => true
-	);
-
-	// Retrieve the latest post.
-	query_posts( $post_args );
-
-	// Cache latest posts data.
-	while ( have_posts() ) : the_post();
-		$GLOBALS['catsArray'][$category->slug] = array(
-			'date' => get_the_time('U'),
-			'category' => $category,
-			'post' => $post
-		);
-
-	endwhile;
-
-	// Resetting query.
-	wp_reset_query();
-
-}
-
-// Compares two arrays by their "date" field.
+/* SECTION IX.i: Function to compares two arrays by their "date" field. */
 function compareDates($a, $b) {
 	if ( $a['date'] == $b['date'] ) {
 		return 0;
@@ -336,9 +298,61 @@ function compareDates($a, $b) {
 		return ($a['date'] < $b['date']) ? 1 : -1;
 	}
 
-// Sort using defined function.
-usort($GLOBALS['catsArray'], "compareDates");
+/* SECTION IX.ii: Looping through the parent categories and their subcategories to populate
+				  global arrays with the parents' subcategories ordered by recency of their updates. */
+$category_parents = array(
+		get_theme_mod( 'title_section1' ),
+		get_theme_mod( 'title_section2' ),
+		get_theme_mod( 'title_section3' )
+	);
 
+foreach($category_parents as $category_parent) {
+
+	$category_ID = get_cat_ID( $category_parent );
+	$categories = get_categories(
+		array(
+			'parent' => $category_ID,
+		)
+	);
+
+	$GLOBALS[$category_parent] = array();
+
+	// Loop through categories.
+	foreach($categories as $category ) {
+
+		$post_args = array(
+			'orderby' => 'post_date',
+			'order' => 'DESC',
+			'showposts' => 1,
+			'category__in' => array($category->term_id),
+			'ignore_sticky_posts' => true
+		);
+
+		// Retrieve the latest post.
+		query_posts( $post_args );
+
+		// Cache latest posts data.
+		while ( have_posts() ) : the_post();
+			$GLOBALS[$category_parent][$category->slug] = array(
+				'date' => get_the_time('U'),
+				'category' => $category,
+				'post' => $post
+			);
+
+		endwhile;
+
+		// Resetting query.
+		wp_reset_query();
+
+	}
+	
+	// Sort the category arrays using our function.
+	usort($GLOBALS[$category_parent], "compareDates");
+	
+	// Resetting query.
+	wp_reset_query();
+	
+}
 
 
 /* SECTION X: Defining content width. */

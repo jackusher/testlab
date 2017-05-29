@@ -11,7 +11,7 @@
  
 get_header();
 
-foreach ( $GLOBALS['catsArray'] as $cat ) : // foreach loop pulling the latest post in each child cat.
+foreach ( $GLOBALS['lifestyle'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 	$args = array( // args for the WP_Query.
 		'cat' => $cat['category']->term_id,
@@ -36,6 +36,19 @@ foreach ( $GLOBALS['catsArray'] as $cat ) : // foreach loop pulling the latest p
 				<div id="section1-info" class="front-info"><!-- Post titles and excerpts. -->
 					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 					the_excerpt(); ?>
+					<span>
+								<?php
+								$categories = get_the_category();
+								$separator = ", ";
+								$output = '';
+								if ($categories) {
+									foreach ($categories as $category) {
+										$output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
+									}
+									echo trim($output, $separator);
+								}
+								?>
+							</span>
 				</div><!-- /section1-info -->
 
 			</div><!-- /exp-article --><?php
