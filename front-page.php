@@ -15,18 +15,12 @@ get_header(); ?>
 
 	<div id="front-latest">
 
-		<?php
-		$sec1_parent = get_theme_mod( 'title_section1' );
-		$sec1_parentID = get_cat_ID( $sec1_parent );
-		$sec1_children = get_categories(
-			array(
-				'parent' => $sec1_parentID,
-			)
-		); ?>
-
 		<div id="section1-wrap" class="front-wrapper">
 	
 			<div id="section1-head" class="front-head clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
+				<?php $sec1_parent = get_theme_mod( 'title_section1' );
+				$sec1_parentID = get_cat_ID( $sec1_parent ); ?>
+				
 				<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
 				<div id="section1-subcats" class="front-subcats"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
@@ -47,10 +41,10 @@ get_header(); ?>
 				$noex = array(6, 7);
 				$sec1_counter=1; // Creating a counter for the foreach loop.
 
-				foreach ( $sec1_children as $sec1_child ) : // foreach loop pulling the latest post in each child cat.
+				foreach ( $GLOBALS['comment'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 				$args = array( // args for the WP_Query.
-					'cat' => $sec1_child->term_id,
+					'cat' => $cat['category']->term_id,
 					'post_type' => 'post',
 					'posts_per_page' => 1,
 					'no_found_rows' => true,
@@ -139,17 +133,13 @@ get_header(); ?>
 			</div><!-- /section1-content -->
 
 		</div><!-- /section1-wrapper -->
-			
-		<?php
-		$sec2_parent = get_theme_mod( 'title_section2' );
-		$sec2_parentID = get_cat_ID( $sec2_parent );
-		$sec2_children = get_categories(
-			array( 'parent' => $sec2_parentID )
-		); ?>
 	
 		<div id="section2-wrap" class="front-wrapper">
 	
 			<div id="section2-head" class="front-head clearfix">
+				<?php $sec2_parent = get_theme_mod( 'title_section2' );
+				$sec2_parentID = get_cat_ID( $sec2_parent ); ?>
+				
 				<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
 				<div id="section1-subcats" class="front-subcats"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
@@ -171,10 +161,10 @@ get_header(); ?>
 				$bottom_buffer = array(1, 4);
 				$sec2_counter=1; // Creating a counter for the foreach loop.
 
-				foreach ( $sec2_children as $sec2_child ) : // foreach loop pulling the latest post in each child cat.
+				foreach ( $GLOBALS['lifestyle'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 				$args = array( // args for the WP_Query.
-					'cat' => $sec2_child->term_id,
+					'cat' => $cat['category']->term_id,
 					'post_type' => 'post',
 					'posts_per_page' => 1,
 					'no_found_rows' => true,
@@ -259,19 +249,13 @@ get_header(); ?>
 			</div><!-- /section2-content -->
 	
 		</div><!-- /section2-wrapper -->
-	
-		<?php
-		$sec3_parent = get_theme_mod( 'title_section3' );
-		$sec3_parentID = get_cat_ID( $sec3_parent );
-		$sec3_children = get_categories(
-			array(
-				'parent' => $sec3_parentID,
-			)
-		); ?>
 
 		<div id="section3-wrap" class="front-wrapper">
 	
 			<div id="section3-head" class="front-head clearfix">
+				<?php $sec3_parent = get_theme_mod( 'title_section3' );
+				$sec3_parentID = get_cat_ID( $sec3_parent ); ?>
+				
 				<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
 				<div id="section3-subcats" class="front-subcats"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
@@ -292,10 +276,10 @@ get_header(); ?>
 				$noex = array(6, 7);
 				$sec3_counter=1; // Creating a counter for the foreach loop.
 
-				foreach ( $sec3_children as $sec3_child ) : // foreach loop pulling the latest post in each child cat.
+				foreach ( $GLOBALS['science'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 				$args = array( // args for the WP_Query.
-					'cat' => $sec3_child->term_id,
+					'cat' => $cat['category']->term_id,
 					'post_type' => 'post',
 					'posts_per_page' => 1,
 					'no_found_rows' => true,
