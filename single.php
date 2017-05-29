@@ -89,7 +89,7 @@ get_header(); ?>
 			
 	</div><!-- /main-column -->
 
-	<?php get_sidebar(); ?>
+	<?php get_sidebar('singlepage'); ?>
 	
 </div><!-- /site-content -->
 

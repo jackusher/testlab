@@ -78,7 +78,9 @@
 		</div><!-- /section3-head -->
 		
 	</nav><!-- /sidebar-navi -->
-		
-	<?php dynamic_sidebar('sidebar1'); ?>
+	
+	<ul>
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-single') ) : endif; ?>
+	</ul>
 
 </div><!-- /sidebar-column -->

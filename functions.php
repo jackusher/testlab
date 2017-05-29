@@ -81,14 +81,28 @@ add_action('after_setup_theme', 'bubble_setup');
 /* SECTION V: Defining theme widget locations. */
 function bubble_widgets() {
 
-	register_sidebar( array(
-		'name' => 'Sidebar',
-		'id' => 'sidebar1',
-		'before_widget' => '<div class = "sidebar-widget-item">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class = "sidebar-widget-title">',
-		'after_title' => '</h4>'
-	));
+	if( function_exists('register_sidebar') ) {
+
+		register_sidebar( array(
+			'name' => 'Front Page Sidebar',
+			'id' => 'sidebar-front',
+			'before_widget' => '<div class = "sidebar-widgetitem">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class = "sidebar-widgettitle">',
+			'after_title' => '</h4>'
+		));
+		
+		register_sidebar( array(
+			'name' => 'Single Page Sidebar',
+			'id' => 'sidebar-single',
+			'before_widget' => '<div class = "sidebar-widgetitem">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class = "sidebar-widgettitle">',
+			'after_title' => '</h4>'
+		));
+			
+	}
+	
 }
 
 add_action('widgets_init', 'bubble_widgets');

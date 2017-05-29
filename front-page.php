@@ -489,7 +489,7 @@ get_header(); ?>
 	
 	<div class="front-side">
 	
-
+		<?php get_sidebar('frontpage'); ?>
 	
 	</div><!-- /front-side -->
 	
