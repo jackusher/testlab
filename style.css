@@ -1010,6 +1010,10 @@ article.post-gallery a {
 }
 
 /* VI.c. Reply form styles. */
+.comment-respond {
+	margin-bottom: 30px;
+}
+
 .comment-respond h3#reply-title {
 	font-size: 2.5em;
 	margin-bottom: 20px;
