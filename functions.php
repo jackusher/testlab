@@ -355,6 +355,7 @@ foreach($category_parents as $category_parent) {
 }
 
 
+
 /* SECTION X: Defining content width. */
 if ( ! isset( $content_width ) ) {
 	$content_width = 1140;
