@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for the sidebar.
+ * The template for the archive and single post page sidebar.
  *
  * The area of the page that contains the category navigation, and user-defined content.
  *
