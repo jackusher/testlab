@@ -79,7 +79,7 @@
 		
 	</nav><!-- /sidebar-navi -->
 	
-	<ul>
+	<ul class="sidebar-single-widgets">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-single') ) : endif; ?>
 	</ul>
 

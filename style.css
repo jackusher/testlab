@@ -717,7 +717,6 @@ ul.popular-list .popular-title a {
 .front-side {
 	width: 30.5%;
 	height: 204px;
-	background-color: #ddd;
 	float: left;
 }
 
@@ -1054,21 +1053,36 @@ article.post-gallery a {
 	margin-top: 20px;
 }
 
-.sidebar-widget-title {
+.sidebar-widgetitem {
+	padding-bottom: 17px;
+	margin-bottom: 17px;
+	border-bottom: 1px solid #ddd;
+}
+
+.sidebar-widgettitle {
 	font-size: 2.5em;
+	margin-bottom: 20px;
 }
 
-.sidebar-widget-item {
-	margin-left: 40px;
-}
-
-.sidebar-widget-item ul {
+.sidebar-widgetitem ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-/* VII.b. Sidebar category menu. */
+.textwidget,
+.textwidget a,
+.textwidget p {
+	font-size: 0.825rem;
+}
+
+/* VII.b. sidebar-frontpage styles. */
+.front-side ul {
+	padding: 0;
+	margin: 0;
+}
+
+/* VII.c. sidebar-singlepage styles. */
 .sidebar-navi {
 	margin-left: 0;
 	border-bottom: 1px solid #ddd;
@@ -1084,6 +1098,11 @@ article.post-gallery a {
 
 .sidebar-navi .current-cat {
 	background-color: #9cc8d9;
+}
+
+.sidebar-single-widgets {
+	padding: 0;
+	margin: 15px 0;
 }
 
 
