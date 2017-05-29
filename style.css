@@ -268,7 +268,7 @@ ul.popular-list .popular-title {
 	width: 275px;
 	margin-left: 35px;
 	padding-left: 10px;
-	font-size: 1.15rem;
+	font-size: 1.09rem;
 	min-height: 61px;
 }
 
@@ -947,7 +947,7 @@ p#single-post-info a:visited {
 }
 
 .post-single-content p {
-	font-size: 1.15rem;
+	font-size: 1.09rem;
 }
 
 h2.story-body__crosshead {
@@ -987,7 +987,7 @@ article.post-gallery a {
 
 /* VI.b. Comment list styles. */
 .comments h2.comments-title {
-	font-size: 2.4em;
+	font-size: 2.5em;
 }
 
 .comments .comment-list a {
@@ -1005,9 +1005,13 @@ article.post-gallery a {
 	margin-bottom: 25px;
 }
 
+.comment-body {
+	font-size: 16px;
+}
+
 /* VI.c. Reply form styles. */
 .comment-respond h3#reply-title {
-	font-size: 2.4em;
+	font-size: 2.5em;
 	margin-bottom: 20px;
 }
 
