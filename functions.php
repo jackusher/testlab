@@ -48,6 +48,7 @@ function bubble_setup() {
 	/* IV.a. Registering navigation menu locations. */
 		register_nav_menus(array(
 			'header' => __( 'Header Menu', 'bubble3'),
+			'home-sidebar' => __( 'Home Sidebar Menu', 'bubble3'),
 			'footer' => __( 'Footer Menu', 'bubble3')
 		));
 	

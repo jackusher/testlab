@@ -505,6 +505,14 @@ get_header(); ?>
 	
 	<div class="front-side">
 	
+		<nav id="home-sidebar-menu" class="site-nav">
+			<?php	
+			$args = array(
+				'theme_location' => 'home-sidebar'
+			);	
+			wp_nav_menu( $args ); ?>
+		</nav>
+	
 	</div><!-- /front-side -->
 	
 </div><!-- /site-content -->
