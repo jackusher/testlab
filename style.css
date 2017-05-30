@@ -321,11 +321,17 @@ ul.popular-list .popular-title a {
 /* II.c. Header menu. */
 .header-login {
 	float: right;
-	padding: 36px 0 36px 0;
+	padding: 23.5px 0;
 }
 
 .header-login a {
 	text-decoration: none;
+}
+
+#header-menu {
+	float: right;
+	margin-top: 12px;
+	margin-right: 12px;
 }
 
 #header-menu ul li {
@@ -333,40 +339,28 @@ ul.popular-list .popular-title a {
 }
 
 /* II.d. Fluid search box styling (currently deprecated). */
-.my-nav-menu-search {
-	position: absolute;
-	right: 0;
-	top: 50%;
-	height: 38px;
-	margin-top: -19px;
+.searching {
+	float: right;
 }
 
-.my-nav-menu-search .search-form .screen-reader-text {
-	position: absolute;
-	left: -9999px;
-	overflow: hidden;
-}
-
-.my-nav-menu-search .search-field {
+.site-header .search-field {
 	background-color: transparent;
-	background-image: url("/wp-content/themes/bubble3/search-icon2.png");
+	background-image: url("http://localhost:8888/bubble/wp-content/themes/bubble3/search-icon2.png");
 	background-position: 5px center;
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
 	border: none;
 	cursor: pointer;
-	height: 38px;
+	height: 37px;
+	margin: 3px 0;
 	padding: 0 0 0 34px;
 	position: relative;
-	-webkit-transition: width 250ms ease, background 250ms ease;
-	-moz-transition: width 250ms ease, background 250ms ease;
-	-o-transition: width 250ms ease, background 250ms ease;
-	-ms-transition: width 250ms ease, background 250ms ease;
-	transition: width 250ms ease, background 250ms ease;
+	-webkit-transition: width 400ms ease, background 400ms ease;
+	transition: width 400ms ease, background 400ms ease;
 	width: 0;
 }
 
-.my-nav-menu-search .search-field:focus {
+.search-field:focus {
 	background-color: #fff;
 	border-radius: 3px;
 	cursor: text;
@@ -374,8 +368,8 @@ ul.popular-list .popular-title a {
 	width: 230px;
 }
 
-.my-nav-menu-search .search-submit { 
-	display:none;
+.search-submit {
+	display: none;
 }
 
 

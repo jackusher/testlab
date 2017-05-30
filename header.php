@@ -35,6 +35,9 @@
 				</div><!-- /header-title -->
 				
 				<div class="header-login">
+					<div class="searching">
+						<?php get_search_form(); ?>
+					</div>
 					<nav id="header-menu" class="site-nav">
 						<?php	
 						$args = array(
