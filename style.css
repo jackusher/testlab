@@ -61,11 +61,6 @@ body {
 }
 
 /* I.b. Global element styles. */
-a:link,
-a:visited {
-	color: #006ec3;
-}
-
 p {
 	line-height: 1.65em;
 	margin: 0 0 1em 0;
@@ -393,7 +388,6 @@ ul.popular-list .popular-title a {
 	margin: 5px 0 15px 0;
 	padding: 10px 0 10px 0;
 	border-radius: 3px;
-	background-color: #01005e;
 	-webkit-transition: all 120ms ease;
 	-moz-transition: all 120ms ease;
 	-o-transition: all 120ms ease;
@@ -498,10 +492,6 @@ ul.popular-list .popular-title a {
 	margin-bottom: 20px;
 }
 
-.editor-pick .front-info {
-	background-color: #f4a587;
-}
-
 .editor-pick .front-info h4 a,
 .editor-pick .front-info p {
 	color: #fff;
@@ -513,10 +503,6 @@ ul.popular-list .popular-title a {
 
 .editor-pick .front-info {
 	border-bottom: 0;
-}
-
-.editor-pick .front-artcat {
-	background-color: #f0825a;
 }
 
 .editor-pick .front-artcat a:link,
@@ -657,7 +643,6 @@ ul.popular-list .popular-title a {
 
 #front-full-article-title h4#front-full-article-auth a {
 	color: white;
-	background-color: #bf0712;
 	padding: 0.075rem 0.4rem;
 	border-radius: 5px;
 }
@@ -847,7 +832,7 @@ div.info-box p {
 }
 
 /* IV.d. Archive page styles. */
-.cat-archive-title h2 {
+.archive-title h2 {
 	font-size: 2.5rem;
 	margin-bottom: 25px;
 	padding-bottom: 5px;

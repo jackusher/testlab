@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for the content on single post pages.
+ * The template for the body content on single post pages.
  *
  * The content file referenced from single.php.
  *

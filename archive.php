@@ -23,19 +23,19 @@ get_header(); ?>
 
 			// Defining what to do (ie. the title) with each type of category archive.	
 			if ( is_category() ) {
-				?><section class="cat-archive-title"><h2><?php single_cat_title(); ?></h2></section><?php
+				?><section class="archive-title"><h2><?php single_cat_title(); ?></h2></section><?php
 			} elseif ( is_tag () ) {
-				?><section class="tag-archive-title"><h2><?php single_tag_title(); ?></h2></section><?php
+				?><section class="archive-title"><h2><?php single_tag_title(); ?></h2></section><?php
 			} elseif ( is_author() ) {
 				the_post();
-				?><section class="author-archive-title"><h2><?php echo 'Author Archives: ' . get_the_author(); ?></h2></section><?php
+				?><section class="archive-title"><h2><?php echo 'Author Archives: ' . get_the_author(); ?></h2></section><?php
 				rewind_posts();
 			} elseif ( is_day() ) {
-				?><section class="day-archive-title"><h2><?php echo 'Daily Archives: ' . get_the_date(); ?></h2></section><?php
+				?><section class="archive-title"><h2><?php echo 'Daily Archives: ' . get_the_date(); ?></h2></section><?php
 			} elseif ( is_month() ) {
-				?><section class="month-archive-title"><h2><?php echo 'Monthly Archives: ' . get_the_date('F Y'); ?></h2></section><?php
+				?><section class="archive-title"><h2><?php echo 'Monthly Archives: ' . get_the_date('F Y'); ?></h2></section><?php
 			} elseif ( is_year() ) {
-				?><section class="year-archive-title"><h2><?php echo 'Yearly Archives: ' . get_the_date('Y'); ?></h2></section><?php
+				?><section class="archive-title"><h2><?php echo 'Yearly Archives: ' . get_the_date('Y'); ?></h2></section><?php
 			} else {
 				echo 'Archives:';
 			} ?>

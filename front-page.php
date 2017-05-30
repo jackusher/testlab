@@ -456,8 +456,10 @@ get_header(); ?>
 			<span id="front-full-title"><h2>Latest Columns</h2></span>
 		</div>
 		
-		<?php $args = array( // WP_Query args.
-			'category_name' => 'columns',
+		<?php $bottom_cat = get_theme_mod( 'bottom_section' );
+		
+		$args = array( // WP_Query args.
+			'category_name' => $bottom_cat,
 			'post_type' => 'post',
 			'posts_per_page' => 4
 		);

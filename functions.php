@@ -128,26 +128,34 @@ function get_categories_select() {
 function bubble_customise_register( $wp_customize ) {
 	
 	// WP appearance settings.
-	$wp_customize->add_setting('bubble_link_color', array(
+	$wp_customize->add_setting('bubble_global_link_color', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
-	$wp_customize->add_setting('bubble_button_color', array(
+	$wp_customize->add_setting('bubble_menu_button_color', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
-	$wp_customize->add_setting('front_third_section1', array(
-		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options',
+	$wp_customize->add_setting('editor_pick_accent', array(
+		'default' => '#006ec3',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
-	$wp_customize->add_setting('front_third_section2', array(
-		'default' => 'uncategorized',
-		'capability' => 'edit_theme_options',
+	$wp_customize->add_setting('editor_pick_dark_accent', array(
+		'default' => '#006ec3',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	
+	$wp_customize->add_setting('editor_pick_author_accent', array(
+		'default' => '#006ec3',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('front_full', array(
@@ -168,11 +176,16 @@ function bubble_customise_register( $wp_customize ) {
 	$wp_customize->add_setting('title_section3', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-	));		
+	));
+	
+	$wp_customize->add_setting('bottom_section', array(
+		'default' => 'uncategorized',
+		'capability' => 'edit_theme_options',
+	));			
 	
 	// WP appearance sections.
-	$wp_customize->add_section('bubble_standard_colors', array(
-		'title' => __('Standard Colours', 'bubble3'),
+	$wp_customize->add_section('bubble_site_colors', array(
+		'title' => __('Site Colours', 'bubble3'),
 		'priority' => 30
 	));
 	
@@ -182,37 +195,39 @@ function bubble_customise_register( $wp_customize ) {
 	));
 	
 	// WP appearance controls.
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bubble_link_color_control', array (
-		'label' => __('Link Color', 'bubble3'),
-		'section' => 'bubble_standard_colors',
-		'settings' => 'bubble_link_color'
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bubble_global_link_color_control', array (
+		'label' => __('Global Link Color', 'bubble3'),
+		'section' => 'bubble_site_colors',
+		'settings' => 'bubble_global_link_color'
 	)));
 	
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bubble_button_color_control', array (
-		'label' => __('Button Color', 'bubble3'),
-		'section' => 'bubble_standard_colors',
-		'settings' => 'bubble_button_color'
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bubble_menu_button_color_control', array (
+		'label' => __('Menu Button Color', 'bubble3'),
+		'section' => 'bubble_site_colors',
+		'settings' => 'bubble_menu_button_color'
 	)));
 	
-	$wp_customize->add_control( 'front_third_section1', array(
-		'settings' => 'front_third_section1',
-		'label' => 'Third-Length Column 1',
-		'section' => 'bubble_front_cats',
-		'type' => 'select',
-		'choices' => get_categories_select()
-	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'editor_pick_accent_color_control', array (
+		'label' => __('Editors Picks Accent', 'bubble3'),
+		'section' => 'bubble_site_colors',
+		'settings' => 'editor_pick_accent'
+	)));
 	
-	$wp_customize->add_control( 'front_third_section2', array(
-		'settings' => 'front_third_section2',
-		'label' => 'Third-Length Column 2',
-		'section' => 'bubble_front_cats',
-		'type' => 'select',
-		'choices' => get_categories_select()
-	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'editor_pick_dark_accent_color_control', array (
+		'label' => __('Editors Picks Dark Accent', 'bubble3'),
+		'section' => 'bubble_site_colors',
+		'settings' => 'editor_pick_dark_accent'
+	)));
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'editor_pick_author_accent_color_control', array (
+		'label' => __('Editors Picks Author Accent', 'bubble3'),
+		'section' => 'bubble_site_colors',
+		'settings' => 'editor_pick_author_accent'
+	)));
 	
 	$wp_customize->add_control( 'front_full', array(
 		'settings' => 'front_full',
-		'label' => 'Full-Length Section',
+		'label' => 'Full-Length Section 1',
 		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
@@ -240,7 +255,15 @@ function bubble_customise_register( $wp_customize ) {
 		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()
-	));		
+	));
+	
+	$wp_customize->add_control( 'bottom_section', array(
+		'settings' => 'bottom_section',
+		'label' => 'Bottom Section',
+		'section' => 'bubble_front_cats',
+		'type' => 'select',
+		'choices' => get_categories_select()
+	));			
 }
 
 add_action('customize_register', 'bubble_customise_register');
@@ -252,7 +275,24 @@ function bubble_customise_css() { ?>
 		
 		a:link,
 		a:visited {
-			color: <?php echo get_theme_mod('bubble_link_color'); ?>;
+			color: <?php echo get_theme_mod('bubble_global_link_color'); ?>;
+		}
+		
+		.front-head,
+		.sidebar-menuitem {
+			background-color: <?php echo get_theme_mod('bubble_menu_button_color'); ?>;
+		}
+		
+		.editor-pick .front-info {
+			background-color: <?php echo get_theme_mod('editor_pick_accent'); ?>;
+		}
+		
+		.editor-pick .front-artcat {
+			background-color: <?php echo get_theme_mod('editor_pick_dark_accent'); ?>;
+		}
+		
+		#front-full-article-title h4#front-full-article-auth a {
+			background-color: <?php echo get_theme_mod('editor_pick_author_accent'); ?>;
 		}
 		
 	</style>
