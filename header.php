@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width">
 		<?php wp_head(); ?>

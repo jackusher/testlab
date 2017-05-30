@@ -20,7 +20,7 @@ html {
 body {
     padding: 0;
 	margin: 0;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: #333;
 }
@@ -927,6 +927,7 @@ p#single-post-info a:visited {
 
 .post-single-content {
 	margin-top: 2.75rem;
+	font-family: 'Raleway', sans-serif;
 }
 
 .post-single-content p {
