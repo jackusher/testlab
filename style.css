@@ -548,6 +548,7 @@ ul.popular-list .popular-title a {
 
 .front-info p { /* The excerpt in each masonry brick. */
 	font-size: 0.94em;
+	font-family: 'Raleway', sans-serif;
 	display: inline;
 	color: #515151;
 }
