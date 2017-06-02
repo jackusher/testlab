@@ -1229,14 +1229,17 @@ p.must-log-in {
 		padding-top: 20px;
 		border-top: 1px solid #bdbdbd;
 		margin-top: 20px;
+		margin-left: 5%;
 	}
 
 	#section3-article {
+		max-width: 347px;
 		width: 55.25%;
 		margin: 0 2.5% 2.5% 0;
 	}
 	
 	#section3-article.small {
+		max-width: 164px;
 		width: 26.35%;
 	}
 	
@@ -1288,6 +1291,7 @@ p.must-log-in {
 	
 	#section3-wrap {
 		margin-top: 10px;
+		margin-left: 0;
 	}	
 
 }
