@@ -450,7 +450,7 @@ ul.popular-list .popular-title a {
 .front-wrapper {
 	float: left;
 	width: 32.16%;
-	min-width: 300px;
+	min-width: 270px;
 }
 
 #section1-wrap,
@@ -1203,5 +1203,91 @@ p.must-log-in {
 
 
 
-/* SECTION ALPHA: MOBILE STYLES. */
-/* alpha.a. Variable CSS for decreasing browser widths */
+/* SECTION IX: Responsive design. */
+/* IX.a. Homepage cascading columns. */
+@media screen and (max-width: 879px) {
+
+	#section1-wrap,
+	#section2-wrap {
+		width: 45%;
+		min-width: 245px;
+	}
+	
+	#section1-wrap {
+		margin-right: 2.64%;
+		margin-left: 5%;
+	}
+		
+	#section2-content {
+		border-right: none;
+		margin-right: none;
+	}
+	
+	#section3-wrap {
+		float: clear;
+		width: 100%;
+		padding-top: 20px;
+		border-top: 1px solid #bdbdbd;
+		margin-top: 20px;
+	}
+
+	#section3-article {
+		width: 55.25%;
+		margin: 0 2.5% 2.5% 0;
+	}
+	
+	#section3-article.small {
+		width: 26.35%;
+	}
+	
+	#section3-article.bottom-buffer {
+		border-bottom: none;
+		padding-bottom: 0;
+	}	
+
+}
+
+@media screen and (max-width: 580px) {
+
+	#section1-wrap,
+	#section2-wrap {
+		width: 100%;
+	}
+	
+	#section1-wrap {
+		margin-left: 0;
+	}
+	
+	#section1-content {
+		border-right: none;
+		margin-right: none;
+	}
+	
+	#section1-article,
+	#section2-article {
+		width: 55.25%;
+		margin: 0 2.5% 2.5% 0;
+	}
+	
+	#section1-article.small,
+	#section2-article.small {
+		width: 26.35%;
+	}
+	
+	#section1-article.bottom-buffer,
+	#section2-article.bottom-buffer {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+	
+	#section2-wrap {
+		padding-top: 20px;
+		border-top: 1px solid #bdbdbd;
+		margin-top: 10px;
+	}
+	
+	#section3-wrap {
+		margin-top: 10px;
+	}	
+
+}

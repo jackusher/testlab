@@ -249,7 +249,7 @@ get_header(); ?>
 			</div><!-- /section2-content -->
 	
 		</div><!-- /section2-wrapper -->
-
+		
 		<div id="section3-wrap" class="front-wrapper">
 	
 			<div id="section3-head" class="front-head clearfix">
