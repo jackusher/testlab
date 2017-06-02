@@ -705,15 +705,14 @@ ul.popular-list .popular-title a {
 
 .front-side {
 	width: 30.5%;
-	height: 204px;
-	float: left;
+	float: right;
+	min-width: 220px;
 }
 
 .front-columnists {
 	width: 65%;
 	float: left;
 	padding-right: 24px;
-	margin-right: 25px;
 	border-right: 1px solid #ddd;
 }
 
@@ -1247,6 +1246,28 @@ p.must-log-in {
 		border-bottom: none;
 		padding-bottom: 0;
 	}	
+
+}
+
+@media screen and (max-width: 740px) {
+
+	.front-columnists {
+		width: 100%;
+		padding-right: 0;
+		border-right: none;
+		padding-bottom: 25px;
+		border-bottom: 1px solid #bdbdbd;
+		margin-bottom: 20px;
+	}
+	
+	.front-columnists #columnist-article {
+		margin-bottom: 20px;
+	}
+	
+	.front-side {
+		float: clear;
+		width: 100%;
+	}
 
 }
 
