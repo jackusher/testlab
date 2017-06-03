@@ -842,12 +842,12 @@ div.info-box p {
 }
 
 #archive-article:first-of-type {
-	width: 488px;
+	width: 63%;
 }
 
 #archive-article {
-	width: 235px;
-	margin: 0 18px 18px 0;
+	width: 29.88%;
+	margin: 0 2.89% 2.89% 0;
 }
 
 #archive-article:first-of-type #archive-info h4 {
@@ -1041,7 +1041,7 @@ p.must-log-in {
 /* VII.a. Global styles. */
 .sidebar-column {
 	width: 31%;
-	min-width: 260px;
+	min-width: 180px;
 	float: right;
 	font-size: 85%;
 	margin-top: 20px;
@@ -1262,7 +1262,9 @@ p.must-log-in {
 	#section3-article.bottom-buffer {
 		border-bottom: none;
 		padding-bottom: 0;
-	}	
+	}
+	
+	
 
 }
 
@@ -1280,6 +1282,34 @@ p.must-log-in {
 	.front-side {
 		float: clear;
 		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 620px) {
+
+	.main-column,
+	#archive-main-column {
+		width: 100%;
+	}
+	
+	.main-column {
+		min-width: 280px;
+	}
+	
+	.sidebar-column {
+		float: clear;
+		width: 100%;
+		border-top: 1px solid #bdbdbd;
+		padding-top: 10px;
+	}
+	
+	#archive-article:first-of-type {
+		min-width: 273px;
+	}
+	
+	#archive-article {
+		min-width: 130px;
 	}
 
 }
