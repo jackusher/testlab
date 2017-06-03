@@ -720,7 +720,7 @@ ul.popular-list .popular-title a {
 	float: left;
 	margin-right: 20px;
 	display: block;
-	width: 170px;
+	width: 22.19%;
 	height: 124px;
 	position: relative;
 	box-sizing: border-box;
@@ -1204,6 +1204,23 @@ p.must-log-in {
 
 /* SECTION IX: Responsive design. */
 /* IX.a. Homepage cascading columns. */
+@media screen and (max-width: 1178px) {
+
+	.front-columnists #columnist-article {
+		margin-bottom: 20px;
+	}
+
+}
+
+@media screen and (max-width: 916px) {
+
+	.front-columnists #columnist-article {
+		min-width: 170px;
+	}
+
+}
+
+
 @media screen and (max-width: 879px) {
 
 	#section1-wrap,
@@ -1260,10 +1277,6 @@ p.must-log-in {
 		margin-bottom: 20px;
 	}
 	
-	.front-columnists #columnist-article {
-		margin-bottom: 20px;
-	}
-	
 	.front-side {
 		float: clear;
 		width: 100%;
@@ -1314,5 +1327,13 @@ p.must-log-in {
 		margin-top: 10px;
 		margin-left: 0;
 	}	
+	
+	.front-article {
+		min-width: 298px;
+	}
+	
+	.front-article.small {
+		min-width: 140px;
+	}
 
 }
