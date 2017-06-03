@@ -1202,8 +1202,8 @@ p.must-log-in {
 
 
 
-/* SECTION IX: Responsive design. */
-/* IX.a. Homepage cascading columns. */
+/* SECTION IX: Responsive design for varied browser widths. */
+/* IX.a. At 1170px browser width. */
 @media screen and (max-width: 1178px) {
 
 	.front-columnists #columnist-article {
@@ -1212,6 +1212,7 @@ p.must-log-in {
 
 }
 
+/* IX.b. At 916px browser width. */
 @media screen and (max-width: 916px) {
 
 	.front-columnists #columnist-article {
@@ -1220,7 +1221,7 @@ p.must-log-in {
 
 }
 
-
+/* IX.c. At 879px browser width. */
 @media screen and (max-width: 879px) {
 
 	#section1-wrap,
@@ -1264,10 +1265,9 @@ p.must-log-in {
 		padding-bottom: 0;
 	}
 	
-	
-
 }
 
+/* IX.d. At 740px browser width. */
 @media screen and (max-width: 740px) {
 
 	.front-columnists {
@@ -1286,6 +1286,7 @@ p.must-log-in {
 
 }
 
+/* IX.e. At 620px browser width. */
 @media screen and (max-width: 620px) {
 
 	.main-column,
@@ -1314,6 +1315,7 @@ p.must-log-in {
 
 }
 
+/* IX.f. At 580px browser width. */
 @media screen and (max-width: 580px) {
 
 	#section1-wrap,
