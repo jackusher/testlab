@@ -31,6 +31,25 @@ get_header(); ?>
 	
 			endif; ?>
 			
+		<div class="link-pages">
+		
+			<?php $defaults = array(
+				'before'           => '<p>' . __( 'Pages:', 'bubble3' ),
+				'after'            => '</p>',
+				'link_before'      => '',
+				'link_after'       => '',
+				'next_or_number'   => 'number',
+				'separator'        => ' ',
+				'nextpagelink'     => __( 'Next page', 'bubble3' ),
+				'previouspagelink' => __( 'Previous page', 'bubble3' ),
+				'pagelink'         => '%',
+				'echo'             => 1
+			);
+
+			wp_link_pages( $defaults ); ?>
+		
+		</div><!-- /link-pages -->
+			
 		<div id="popular-single" class="popular-wrapper clearfix">
 
 			<div id="popular-head-single" class="popular-head clearfix">

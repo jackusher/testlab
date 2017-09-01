@@ -231,6 +231,7 @@ wp_reset_postdata();?>
 $wp_customize->add_setting('front_cat_section1', array(
 	'default' => 'uncategorized',
 	'capability' => 'edit_theme_options'
+	'sanitize_callback' => 'sanitize_relic',
 ));
 
 $wp_customize->add_section('tl_front_cats', array( // NB. COPY of section that's in place.

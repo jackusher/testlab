@@ -161,26 +161,31 @@ function bubble_customise_register( $wp_customize ) {
 	$wp_customize->add_setting('front_full', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_category',
 	));	
 	
 	$wp_customize->add_setting('title_section1', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_category',
 	));
 	
 	$wp_customize->add_setting('title_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_category',
 	));
 	
 	$wp_customize->add_setting('title_section3', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_category',
 	));
 	
 	$wp_customize->add_setting('bottom_section', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_category',
 	));			
 	
 	// WP appearance sections.
