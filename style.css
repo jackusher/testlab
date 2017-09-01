@@ -42,7 +42,7 @@ body {
 	clear: both;
 }
 
-/* I.a.i. Main column area proportions. NB. These are legacy styles from index.php. */
+/* I.a.i. Global column area proportions. */
 .content {
 	max-width: 100%;
 }
@@ -52,6 +52,14 @@ body {
 	float: left;
 	margin-top: 20px;
 	min-width: 400px;
+}
+
+.right {
+	width: 31%;
+	min-width: 180px;
+	float: right;
+	font-size: 85%;
+	margin-top: 20px;
 }
 
 #archive-left {
@@ -313,7 +321,7 @@ ul.popular-list .popular-article-title a {
 	margin: 0 1rem;
 }
 
-/* II.d. Fluid search box styling (currently deprecated). */
+/* II.d. Fluid search box styling. */
 .header-search {
 	float: right;
 }
@@ -557,8 +565,7 @@ ul.popular-list .popular-article-title a {
 	font-style: normal;
 }
 
-/* III.b. Full-length divider category section. */
-/* III.b.i Full-width global styles. */
+/* III.b. Full-width sections. */
 .front-full {
 	margin: 25px 0;
 	padding: 0 0 30px 0;
@@ -572,7 +579,6 @@ ul.popular-list .popular-article-title a {
 	text-align: center;
 }
 
-/* III.b.ii Full-width section styles. */
 .front-full-info {
 	margin-bottom: 35px;
 }
@@ -647,7 +653,7 @@ h4.front-full-article-author a {
 	text-decoration: none;
 }
 
-/* III.c. Third-length bottom column styles. */
+/* III.c. Third-width bottom column styles. */
 .front-columnists,
 .front-side {
 	margin-top: 10px;
@@ -751,35 +757,7 @@ article.page h2 {
 	margin-bottom: 15px;
 }
 
-/* IV.b. page-contact-us.php. */
-div.title-column {
-	width: 30%;
-	float: left;
-}
-
-div.text-column {
-	width: 70%;
-	float: right;
-}
-
-/* IV.c. special-template.php. */
-div.info-box {
-	width: 30%;
-	float: right;
-	margin: 0 0 30px 30px;
-	padding: 20px;
-	background-color: #EEE;
-}
-
-div.info-box h4 {
-	margin-bottom: 6px;
-}
-
-div.info-box p {
-	font-size: 100%;
-}
-
-/* IV.d. Archive page styles. */
+/* IV.b. Archive page styles. */
 .archive-title h2 {
 	font-size: 2.5rem;
 	margin-bottom: 25px;
@@ -987,14 +965,6 @@ p.must-log-in {
 
 /* SECTION VII: SIDEBAR STYLING. */
 /* VII.a. Global styles. */
-.right {
-	width: 31%;
-	min-width: 180px;
-	float: right;
-	font-size: 85%;
-	margin-top: 20px;
-}
-
 .widget:first-of-type {
 	margin-top: 15px;
 }
