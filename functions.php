@@ -86,18 +86,18 @@ function bubble_widgets() {
 		register_sidebar( array(
 			'name' => 'Front Page Sidebar',
 			'id' => 'sidebar-front',
-			'before_widget' => '<div class = "sidebar-widgetitem">',
+			'before_widget' => '<div class = "widget">',
 			'after_widget' => '</div>',
-			'before_title' => '<h4 class = "sidebar-widgettitle">',
+			'before_title' => '<h4 class = "widget-title">',
 			'after_title' => '</h4>'
 		));
 		
 		register_sidebar( array(
 			'name' => 'Single Page Sidebar',
 			'id' => 'sidebar-single',
-			'before_widget' => '<div class = "sidebar-widgetitem">',
+			'before_widget' => '<div class = "widget">',
 			'after_widget' => '</div>',
-			'before_title' => '<h4 class = "sidebar-widgettitle">',
+			'before_title' => '<h4 class = "widget-title">',
 			'after_title' => '</h4>'
 		));
 			
@@ -283,20 +283,20 @@ function bubble_customise_css() { ?>
 			color: <?php echo get_theme_mod('bubble_global_link_color'); ?>;
 		}
 		
-		.front-head,
+		.recent-head,
 		.sidebar-menuitem {
 			background-color: <?php echo get_theme_mod('bubble_menu_button_color'); ?>;
 		}
 		
-		.editor-pick .front-info {
+		.editor-pick .recent-blurb {
 			background-color: <?php echo get_theme_mod('editor_pick_accent'); ?>;
 		}
 		
-		.editor-pick .front-artcat {
+		.editor-pick .recent-meta {
 			background-color: <?php echo get_theme_mod('editor_pick_dark_accent'); ?>;
 		}
 		
-		#front-full-article-title h4#front-full-article-auth a {
+		h4.front-full-article-author a {
 			background-color: <?php echo get_theme_mod('editor_pick_author_accent'); ?>;
 		}
 		

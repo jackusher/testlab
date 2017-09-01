@@ -25,29 +25,25 @@
 	
 	<div class="container">
 	
-		<header class="site-header">
+		<header class="header clearfix">
 			
-			<div class="header-info clearfix">
+			<div class="header-title">	
+				<?php if ( function_exists( 'the_custom_logo' ) ) {
+					the_custom_logo();
+				} ?>
+			</div><!-- /header-title -->
 			
-				<div class="header-title">	
-					<?php if ( function_exists( 'the_custom_logo' ) ) {
-						the_custom_logo();
-					} ?>
-				</div><!-- /header-title -->
-				
-				<div class="header-login">
-					<div class="searching">
-						<?php get_search_form(); ?>
-					</div>
-					<nav id="header-menu" class="site-nav">
-						<?php	
-						$args = array(
-							'theme_location' => 'header'
-						);	
-						wp_nav_menu( $args ); ?>
-					</nav>
-				</div><!-- /header-login -->
-				
-			</div><!-- /header-info -->
+			<div class="header-meta">
+				<div class="header-search">
+					<?php get_search_form(); ?>
+				</div>
+				<nav id="header-menu" class="site-nav">
+					<?php	
+					$args = array(
+						'theme_location' => 'header'
+					);	
+					wp_nav_menu( $args ); ?>
+				</nav>
+			</div><!-- /header-login -->
 			
-		</header><!-- /site-header -->
+		</header><!-- /header -->

@@ -11,18 +11,18 @@
  
 get_header(); ?>
 
-<div class="site-content clearfix">
+<div class="content clearfix">
 
-	<div class="main-column">
+	<div class="left">
 
 		<?php
 		if (have_posts()) :
 			while (have_posts()) : the_post(); ?>
 	
-			<article class="post page">
+			<article class="page">
 		
 				<h2 class="page-title"><?php the_title(); ?></h2>
-				<div class="page-body">
+				<div class="page-content">
 					<?php the_content(); ?>
 				</div><!-- /page-body -->
 				
@@ -35,10 +35,10 @@ get_header(); ?>
 		
 			endif; ?>
 
-	</div><!-- /main-column -->
+	</div><!-- /left -->
 
 	<?php get_sidebar(); ?>
 	
-</div><!-- /site-content -->
+</div><!-- /content -->
 
 <?php get_footer(); ?>

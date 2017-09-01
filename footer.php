@@ -9,9 +9,9 @@
  * @since Bubble3 0.1 alpha
  */
 ?>
-	<footer class="site-footer">
+	<footer class="footer">
 		
-		<div class="footer-widgets clearfix"><?php
+		<div class="sitemap clearfix"><?php
 			// Wonderful code from SimonStaton@stackexchange.
 			$args = array(
 				'orderby' => 'name',
@@ -52,7 +52,7 @@
 						}
 
 					} ?>
-		</div>
+		</div><!-- /footer-sitemap -->
 		
 		<div class="footer-meta">
 
@@ -70,7 +70,7 @@
 			
 		</div><!-- /footer-meta -->
 	
-	</footer><!-- /site-footer -->
+	</footer><!-- /footer -->
 
 </div><!-- /container -->
 

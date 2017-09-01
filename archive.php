@@ -11,9 +11,9 @@
  
 get_header(); ?>
 
-<div class="site-content clearfix">
+<div class="content clearfix">
 
-	<div class="main-column" id="archive-main-column"><?php
+	<div class="left" id="archive-left"><?php
 	
 		$ex = array(1, 2);
 		$arch_counter=1;
@@ -40,17 +40,17 @@ get_header(); ?>
 				echo 'Archives:';
 			} ?>
 	
-		<div id="archive-content" class="front-content"><?php
+		<div id="archive-content" class="recent-content"><?php
 
 			while (have_posts()) : the_post();
 			
 				if ( in_category( 36 ) ) {
-					?><div id="archive-article" class="front-article editor-pick"><?php					
+					?><div id="archive-article" class="recent-article editor-pick"><?php					
 				} else {
-					?><div id="archive-article" class="front-article"><?php
+					?><div id="archive-article" class="recent-article"><?php
 				} ?>
 
-					<div id="archive-thumb" class="front-thumb">
+					<div id="archive-thumb" class="recent-thumb">
 						<?php if( $arch_counter == 1 ) { ?>
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive-top'); ?></a><?php
 						} elseif( $arch_counter == 2 ) { ?>
@@ -60,7 +60,7 @@ get_header(); ?>
 						} ?>
 					</div><!-- /archive-thumb -->
 
-					<div id="archive-info" class="front-info">
+					<div id="archive-blurb" class="recent-blurb">
 						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 					
 						if(in_array($arch_counter, $ex)) {
@@ -71,8 +71,8 @@ get_header(); ?>
 					
 					</div><!-- /archive-info -->
 
-					<div id="archive-cat" class="front-artcat">
-						<p id="archive-auth" class="front-auth">by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
+					<div id="archive-meta" class="recent-meta">
+						<p id="archive-author" class="recent-author">by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
 					</div><!-- /archive-cat -->
 
 				</div><!-- /archive-article --><?php
@@ -105,7 +105,7 @@ get_header(); ?>
 		
 		</div><!-- /archive-pagination -->
 		
-	</div><!-- /main-column -->
+	</div><!-- /left -->
 	
 	<?php get_sidebar('singlepage'); ?>
 

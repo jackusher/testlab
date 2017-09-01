@@ -43,18 +43,18 @@ body {
 }
 
 /* I.a.i. Main column area proportions. NB. These are legacy styles from index.php. */
-.site-content {
+.content {
 	max-width: 100%;
 }
 
-.main-column {
+.left {
 	width: 61%;
 	float: left;
 	margin-top: 20px;
 	min-width: 400px;
 }
 
-#archive-main-column {
+#archive-left {
 	width: 69%;
 }
 
@@ -224,20 +224,14 @@ a img.aligncenter {
 }
 
 /* I.f. Popular posts widget. */
-.popular-wrapper {
-	max-width: 100%;
-	margin-left: 0px;
+.popular-widget {
 	border-top: 1px solid #ddd;
-	margin-bottom: 1rem;
+	padding-top: 25px;
 }
 
-.popular-head {
-	padding: 25px 0 10px 0;
-}
-
-.popular-headtit h2 {
-	font-size: 2.5em;
-	margin: 0; /* Again... standardisation/global style conflict... */
+.popular-title h2 {
+	font-size: 2.25rem;
+	margin-bottom: 0.3em;
 }
 
 ul.popular-list p {
@@ -249,7 +243,7 @@ ul.popular-list {
 	padding: 0;
 }
 
-ul.popular-list .popular-item {
+ul.popular-list .popular-article {
 	float: left;
 	display: block;
 	margin: 0 27px 20px 0;
@@ -264,7 +258,7 @@ ul.popular-list .popular-rank {
 	border-right: 2px solid #ddd;
 }
 
-ul.popular-list .popular-title {
+ul.popular-list .popular-article-title {
 	width: 275px;
 	margin-left: 35px;
 	padding-left: 10px;
@@ -272,7 +266,7 @@ ul.popular-list .popular-title {
 	min-height: 61px;
 }
 
-ul.popular-list .popular-title a {
+ul.popular-list .popular-article-title a {
 	text-decoration: none;
 }
 
@@ -280,7 +274,7 @@ ul.popular-list .popular-title a {
 
 /* SECTION II: HEADER AND HEADER CHILD ELEMENT STYLES. */
 /* II.a. Header standards and proportions. */
-.site-header {
+.header {
 	/* add in section padding (1.5rem) */
 	margin: 0 -601.5rem 15px -601.5rem;
 	/* match section padding (1.5rem) */
@@ -295,35 +289,17 @@ ul.popular-list .popular-title a {
 }
 
 /* II.b. Site name and blurb styles. */
-.header-info {
-	margin: 0 0 0 0;
-}
-
 .header-title {
 	float: left;
 }
 
-.header-info h1 {
-	margin: 0;
-}
-
-.header-info h1 a:link,
-.header-info h1 a:visited {
-	text-decoration: none;
-}
-
-.header-info h5 {
-	margin: 0;
-	font-weight: lighter;
-}
-
 /* II.c. Header menu. */
-.header-login {
+.header-meta {
 	float: right;
 	padding: 23.5px 0;
 }
 
-.header-login a {
+.header-meta a {
 	text-decoration: none;
 }
 
@@ -338,11 +314,11 @@ ul.popular-list .popular-title a {
 }
 
 /* II.d. Fluid search box styling (currently deprecated). */
-.searching {
+.header-search {
 	float: right;
 }
 
-.site-header .search-field {
+.header .search-field {
 	background-color: transparent;
 	background-image: url("http://localhost:8888/bubble/wp-content/themes/bubble3/search-icon2.png");
 	background-position: 5px center;
@@ -376,7 +352,7 @@ ul.popular-list .popular-title a {
 /* SECTION III: FRONT PAGE STYLING. */
 /* III.a. Latest columns. */
 /* III.a.i. Latest column headers (section title and blurb). */
-.front-head,
+.recent-head,
 .sidebar-menuitem {
 	margin: 5px 0 15px 0;
 	padding: 10px 0 10px 0;
@@ -388,7 +364,7 @@ ul.popular-list .popular-title a {
 	transition: all 120ms ease;
 }
 
-.front-head {
+.recent-head {
 	width: 94.65%;
 }
 
@@ -397,46 +373,46 @@ ul.popular-list .popular-title a {
 	bottom: 0;
 }
 
-.front-title {
+.recent-title {
 	color: #fff;
 }
 
-.front-title h2 {
+.recent-title h2 {
 	margin: 0; /* Exemption from global style. */
 	font-size: 2.5em;
 	text-align: center;
 }
 
-.front-head:hover,
+.recent-head:hover,
 .sidebar-menuitem:hover {
 	background-color: #52a3d5;
 }
 
-.front-subcats {
+.recent-nav {
 	display: none;
 	padding: 0 20px 0 20px;
 	margin: 10px 0 10px 0;
 	text-align: center;
 }
 
-.front-subcats li {
+.recent-nav li {
 	list-style: none;
 	display: inline-block;
 	padding: 10px 7px;
 	border-radius: 3px;
 }
 
-.front-subcats li:hover {
+.recent-nav li:hover {
 	background-color: #3671B8;
 }
 
-.front-subcats li a {
+.recent-nav li a {
 	color: #fff;
 	text-decoration: none;
 }
 
-.front-head:hover > .front-subcats,
-.sidebar-menuitem:hover > .front-subcats {
+.recent-head:hover > .recent-nav,
+.sidebar-menuitem:hover > .recent-nav {
 	display: block;
 }
 
@@ -447,18 +423,18 @@ ul.popular-list .popular-title a {
 	margin-top: 15px;
 }
 
-.front-wrapper {
+.recent-section {
 	float: left;
 	width: 32.16%;
 	min-width: 270px;
 }
 
-#section1-wrap,
-#section2-wrap {
+#recent-front1,
+#recent-front2 {
 	margin-right: 1.76%;
 }
 
-.front-content {
+.recent-content {
 	width: 100%;
 	padding-right: 0;
 	border-right: 0;
@@ -466,17 +442,17 @@ ul.popular-list .popular-title a {
 	border-right: 1px solid #bdbdbd;
 }
 
-.front-content:after {
+.recent-content:after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
-#section3-content {
+#front3-content {
 	border-right: none;
 }
 
-.front-article {
+.recent-article {
 	margin: 0 0 13px 0;
 	padding: 0 0 0 0;
 	float: left;
@@ -489,210 +465,185 @@ ul.popular-list .popular-title a {
 	margin-bottom: 20px;
 }
 
-.editor-pick .front-info h4 a,
-.editor-pick .front-info p {
+.editor-pick .recent-blurb h4 a,
+.editor-pick .recent-blurb p {
 	color: #fff;
 }
 
-.editor-pick .front-info p a {
+.editor-pick .recent-blurb p a {
 	color: #dbdbdb;
 }
 
-.editor-pick .front-info {
+.editor-pick .recent-blurb {
 	border-bottom: 0;
 }
 
-.editor-pick .front-artcat a:link,
-.editor-pick .front-artcat a:visited,
-.editor-pick .front-artcat span,
-.editor-pick .front-artcat p {
+.editor-pick .recent-meta a:link,
+.editor-pick .recent-meta a:visited,
+.editor-pick .recent-meta span,
+.editor-pick .recent-meta p {
 	color: #fff;
 }
 
-.editor-pick .front-artcat a:link,
-.editor-pick .front-artcat a:visited {
+.editor-pick .recent-meta a:link,
+.editor-pick .recent-meta a:visited {
 	text-decoration: underline;
 }
 
-.front-article.small {
+.recent-article.small {
 	width: 44.735%;
 	margin: 0 5.2% 5.2% 0;
 }
 
-.front-info {
+.recent-blurb {
 	padding: 3px 5px 5px 5px;
 	border-bottom: 2px solid #bdbdbd;
 	background-color: #F6F6F6;
 }
 
-.front-info a:link,
-.front-info a:visited {
+.recent-blurb a:link,
+.recent-blurb a:visited {
 	text-decoration: none;
 }
 
-.front-article:hover > .front-info a:link,
-.front-article:hover > .front-info a:visited {
+.recent-article:hover > .recent-blurb a:link,
+.recent-article:hover > .recent-blurb a:visited {
 	color: #01005e;
 }
 
-.editor-pick:hover > .front-info a:link,
-.editor-pick:hover > .front-info a:visited {
+.editor-pick:hover > .recent-blurb a:link,
+.editor-pick:hover > .recent-blurb a:visited {
 	color: #fff;
 }
 
-.front-info h4 { /* The title in each masonry brick. */
+.recent-blurb h4 { /* The title in each masonry brick. */
 	font-size: 1.4em;
 	margin: 2px 0 5px 0;
 }
 
-.front-article:first-of-type .front-info h4 {
+.recent-article:first-of-type .recent-blurb h4 {
 	font-size: 2em;
 }
 
-.front-info p { /* The excerpt in each masonry brick. */
+.recent-blurb p { /* The excerpt in each masonry brick. */
 	font-size: 0.94em;
 	font-family: 'Raleway', sans-serif;
 	display: inline;
 	color: #515151;
 }
 
-.front-article:first-of-type .front-info p {
+.recent-article:first-of-type .recent-blurb p {
 	font-size: 1em;
 }
 
-.front-artcat {
+.recent-meta {
 	background-color: #E9E9E9;
 	text-align: right;
 	padding: 5px 5px 5px 0;
 	font-size: 0.95rem;
 }
 
-.front-artcat a:link,
-.front-artcat a:visited {
+.recent-meta a:link,
+.recent-meta a:visited {
 	text-decoration: none;
 	color: #52a3d5;
 }
 
-.front-auth {
+.recent-author {
 	display: inline;
 }
 
-.front-auth a {
+.recent-author a {
 	font-style: normal;
 }
 
 /* III.b. Full-length divider category section. */
-/* III.b.i Full-length global styles. */
+/* III.b.i Full-width global styles. */
 .front-full {
 	margin: 25px 0;
 	padding: 0 0 30px 0;
 	border-bottom: 1px solid #ddd;
+	max-width: 100%;
 }
 
-/* III.b.ii Full-length 1 styles. */
-#front-full-info {
+.front-full-content {
+	max-width: 100%;
+	padding-left: 0;
+	text-align: center;
+}
+
+/* III.b.ii Full-width section styles. */
+.front-full-info {
 	margin-bottom: 35px;
 }
 
-#front-full-info #front-full-title {
+.front-full-info .front-full-title {
 	float: left;
 	display: inline-block;
 }
 
-#front-full-info #front-full-title h2 {
+.front-full-info .front-full-title h2 {
 	font-size: 2.5em;
 	margin-bottom: 0;
 }
 
-#front-full-info #front-full-blurb {
+.front-full-info .front-full-blurb {
 	float: right;
 	display: inline-block;
 }
 
-#front-full-info #front-full-blurb h4 {
+.front-full-info .front-full-blurb h4 {
 	padding-top: 12px;
 	font-size: 1.1em;
 }
 
-#front-full-article {
-	width: 200px;
-	float: left;
+.front-full-article {
+	width: 199px;
 	display: inline-block;
 	padding: 0 12px;
 	border-right: 2px solid #ddd;
 	text-align: center;
+	vertical-align: top;
 }
 
-#front-full-article:last-of-type {
+.front-full-article:first-of-type {
+	padding-left: 0;
+}
+
+.front-full-article:last-of-type {
 	border-right: 0;
+	padding-right: 0;
 }
 
-#front-full-article-title {
-	font-size: 1.15rem;
+.front-full-article-title {
+	font-size: 1.2rem;
 }
 
-#front-full-article-title h4 a {
+h4.front-full-article-title a {
 	color: #f0825a;
 }
 
-#front-full-article-auth a {
-	font-style: italic;
+h4#front-popular-article-title a {
+	color: #52a3d5;
 }
 
-#front-full-article-title h4#front-full-article-auth a {
-	color: white;
-	padding: 0.075rem 0.4rem;
-	border-radius: 5px;
-}
-
-#front-full-article-title a {
-	text-decoration: none;
-}
-
-/* III.b.iii Full length 2 (most popular) styles. */
-#popular-front {
-	border-top: 0;
-	margin-bottom: 0;
-}
-
-#popular-head-front {
-	padding: 0 0 20px 0;
-}
-
-#popular-front ul.popular-list .popular-item {
-	width: 200px;
-	padding: 0 12px;
-	margin: 0;
-	border-right: 2px solid #ddd;
-}
-
-#popular-front ul.popular-list .popular-item:last-of-type {
-	margin-right: 0;
-	border-right: 0;
-}
-
-#popular-front ul.popular-list .popular-rank {
-	border-right: 0;
-}
-
-#popular-front ul.popular-list .popular-title {
-	width: 100%;
-	text-align: center;
-	margin: 0 0 1em 0;
-	padding: 0;
-}
-
-#popular-front h4#popular-article-auth {
-	font-size: 1.15rem;
-	text-align: center;
-}
-
-#popular-front ul.popular-list h4#popular-article-auth a {
-	font-style: italic;
-	color: white;
+h4#front-popular-article-author a {
 	background-color: #01005e;
+}
+
+h4.front-full-article-author {
+	font-size: 1.05rem;
+}
+
+h4.front-full-article-author a {
+	font-style: italic;
 	padding: 0.075rem 0.4rem;
 	border-radius: 5px;
+	color: white;
+}
+
+.front-full-article-title a,
+.front-full-article-author a {
 	text-decoration: none;
 }
 
@@ -850,11 +801,11 @@ div.info-box p {
 	margin: 0 2.89% 2.89% 0;
 }
 
-#archive-article:first-of-type #archive-info h4 {
+#archive-article:first-of-type #archive-blurb h4 {
 	font-size: 2em;
 }
 
-#archive-article #archive-info h4 {
+#archive-article #archive-blurb h4 {
 	font-size: 1.65em;
 }
 
@@ -890,51 +841,48 @@ div.info-box p {
 
 /* SECTION V: SINGLE POST STYLES. */
 /* V.a. Post type: Single normal. */
-.post-single {
+.article {
 	margin-bottom: 4rem;
 	width: 100%;
 }
 
-.post-single h2 {
+.article h2 {
 	font-size: 3rem;
 	margin-bottom: 1.25rem;
 }
 
-p.post-info {
+p.article-meta {
 	font-size: 1rem;
 	color: #999;
-}
-
-p#single-post-info {
 	margin-top: 0.6rem;
 }
 
-p#single-post-info a {
+p.article-meta a {
 	background-color: #01005e;
 	border-radius: 7px;
 	padding: 0.4rem 0.2rem;
 }
 
-p.post-info a:link,
-p.post-info a:visited {
+p.article-meta a:link,
+p.article-meta a:visited {
 	text-decoration: none;
 }
 
-p#single-post-info a:link,
-p#single-post-info a:visited {
+p.article-meta a:link,
+p.article-meta a:visited {
 	color: #fff;
 }
 
-.post-single-thumbnail {
+.article-thumbnail {
 	margin-bottom: 1.25rem;
 }
 
-.post-single-content {
+.article-content {
 	margin-top: 2.75rem;
 	font-family: 'Raleway', sans-serif;
 }
 
-.post-single-content p {
+.article-content p {
 	font-size: 1.09rem;
 }
 
@@ -1039,7 +987,7 @@ p.must-log-in {
 
 /* SECTION VII: SIDEBAR STYLING. */
 /* VII.a. Global styles. */
-.sidebar-column {
+.right {
 	width: 31%;
 	min-width: 180px;
 	float: right;
@@ -1047,22 +995,26 @@ p.must-log-in {
 	margin-top: 20px;
 }
 
-.sidebar-widgetitem {
-	padding-bottom: 17px;
-	margin-bottom: 17px;
+.widget:first-of-type {
+	margin-top: 15px;
+}
+
+.widget {
+	padding: 0 0 17px 0;
+	margin: 0 0 17px 0;
 	border-bottom: 1px solid #ddd;
 }
 
-.sidebar-widgetitem:last-of-type {
+.widget:last-of-type {
 	border-bottom: none;
 }
 
-.sidebar-widgettitle {
+.widget-title {
 	font-size: 2.5em;
 	margin-bottom: 20px;
 }
 
-.sidebar-widgetitem ul {
+.widget ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
@@ -1081,7 +1033,7 @@ p.must-log-in {
 }
 
 /* VII.c. sidebar-singlepage styles. */
-.sidebar-navi {
+.sidebar-menu {
 	margin-left: 0;
 	border-bottom: 1px solid #ddd;
 }
@@ -1094,24 +1046,19 @@ p.must-log-in {
 	margin-bottom: 15px;
 }
 
-.sidebar-menuitem .front-subcats {
+.sidebar-menuitem .recent-nav {
 	font-size: 14px;
 }
 
-.sidebar-navi .current-cat {
+.sidebar-menu .current-cat {
 	background-color: #9cc8d9;
-}
-
-.sidebar-single-widgets {
-	padding: 0;
-	margin: 15px 0;
 }
 
 
 
 /* SECTION VIII: SITE FOOTER. */
 /* VIII.a. Intermediary footer category listing section. */
-.footer-widgets {
+.sitemap {
 	/* add in section padding (1.5rem) */
 	margin: 0 -601.5rem;
 	/* match section padding (1.5rem) */
@@ -1224,23 +1171,23 @@ p.must-log-in {
 /* IX.c. At 879px browser width. */
 @media screen and (max-width: 879px) {
 
-	#section1-wrap,
-	#section2-wrap {
+	#recent-front1,
+	#recent-front2 {
 		width: 45%;
 		min-width: 245px;
 	}
 	
-	#section1-wrap {
+	#recent-front1 {
 		margin-right: 2.64%;
 		margin-left: 5%;
 	}
 		
-	#section2-content {
+	#front2-content {
 		border-right: none;
 		margin-right: none;
 	}
 	
-	#section3-wrap {
+	#recent-front3 {
 		float: clear;
 		width: 100%;
 		padding-top: 20px;
@@ -1249,18 +1196,18 @@ p.must-log-in {
 		margin-left: 5%;
 	}
 
-	#section3-article {
+	#front3-article {
 		max-width: 347px;
 		width: 55.25%;
 		margin: 0 2.5% 2.5% 0;
 	}
 	
-	#section3-article.small {
+	#front3-article.small {
 		max-width: 164px;
 		width: 26.35%;
 	}
 	
-	#section3-article.bottom-buffer {
+	#front3-article.bottom-buffer {
 		border-bottom: none;
 		padding-bottom: 0;
 	}
@@ -1289,16 +1236,16 @@ p.must-log-in {
 /* IX.e. At 620px browser width. */
 @media screen and (max-width: 620px) {
 
-	.main-column,
-	#archive-main-column {
+	.left,
+	#archive-left {
 		width: 100%;
 	}
 	
-	.main-column {
+	.left {
 		min-width: 280px;
 	}
 	
-	.sidebar-column {
+	.right {
 		float: clear;
 		width: 100%;
 		border-top: 1px solid #bdbdbd;
@@ -1318,53 +1265,53 @@ p.must-log-in {
 /* IX.f. At 580px browser width. */
 @media screen and (max-width: 580px) {
 
-	#section1-wrap,
-	#section2-wrap {
+	#recent-front1,
+	#recent-front2 {
 		width: 100%;
 	}
 	
-	#section1-wrap {
+	#recent-front1 {
 		margin-left: 0;
 	}
 	
-	#section1-content {
+	#front1-content {
 		border-right: none;
 		margin-right: none;
 	}
 	
-	#section1-article,
-	#section2-article {
+	#front1-article,
+	#front2-article {
 		width: 55.25%;
 		margin: 0 2.5% 2.5% 0;
 	}
 	
-	#section1-article.small,
-	#section2-article.small {
+	#front1-article.small,
+	#front2-article.small {
 		width: 26.35%;
 	}
 	
-	#section1-article.bottom-buffer,
-	#section2-article.bottom-buffer {
+	#front1-article.bottom-buffer,
+	#front2-article.bottom-buffer {
 		border-bottom: none;
 		padding-bottom: 0;
 	}
 	
-	#section2-wrap {
+	#recent-front2 {
 		padding-top: 20px;
 		border-top: 1px solid #bdbdbd;
 		margin-top: 10px;
 	}
 	
-	#section3-wrap {
+	#recent-front3 {
 		margin-top: 10px;
 		margin-left: 0;
 	}	
 	
-	.front-article {
+	.recent-article {
 		min-width: 298px;
 	}
 	
-	.front-article.small {
+	.recent-article.small {
 		min-width: 140px;
 	}
 

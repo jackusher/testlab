@@ -11,15 +11,15 @@
 
 get_header(); ?>
 
-<div class="site-content clearfix">
+<div class="content clearfix">
 
-	<div class="main-column">
+	<div class="left">
 
 		<?php if (have_posts()) :
 			while (have_posts()) : the_post();
 	
 			if (get_post_format() == false) {
-				get_template_part('content', 'single');
+				get_template_part('content', 'article');
 			} else {
 				get_template_part('content', get_post_format());
 			}
@@ -31,7 +31,7 @@ get_header(); ?>
 	
 			endif; ?>
 			
-		<div class="link-pages">
+		<div class="article-pagination">
 		
 			<?php $defaults = array(
 				'before'           => '<p>' . __( 'Pages:', 'bubble3' ),
@@ -50,13 +50,13 @@ get_header(); ?>
 		
 		</div><!-- /link-pages -->
 			
-		<div id="popular-single" class="popular-wrapper clearfix">
+		<div id="article-popular" class="popular-widget clearfix">
 
-			<div id="popular-head-single" class="popular-head clearfix">
-				<span class="popular-headtit"><h2>Most Read</h2></span>
+			<div class="popular-info clearfix">
+				<span class="popular-title"><h2>Most Read</h2></span>
 			</div><!-- /popular-head -->
 
-			<ul class="popular-list"><?php
+			<ul class="popular-list clearfix"><?php
 
 				$args = array( // The arguments for the popular WP_Query.
 					'posts_per_page'=>5,
@@ -73,12 +73,12 @@ get_header(); ?>
 		
 						$checkcounter = array(1, 2, 3, 4, 5); // Countpost mechanism to put the ranking number next to the post title.
 						if(in_array($pop_counter, $checkcounter)){ ?>
-							<li class="popular-item clearfix">
+							<li class="popular-article clearfix">
 								<p class="popular-rank"><?php echo "$pop_counter." ?></p>
-								<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+								<p class="popular-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							</li><?php
 						} else { ?>
-							<li class="popular-item clearfix">
+							<li class="popular-article clearfix">
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</li><?php
 						}
@@ -98,7 +98,7 @@ get_header(); ?>
 
 		</div><!-- /popular-wrapper -->
 		
-		<div id="comments-single" class="comments">
+		<div id="article-comments" class="comments">
 		
 			<?php if ( comments_open() || get_comments_number() ) :
 				comments_template();
@@ -106,10 +106,10 @@ get_header(); ?>
 		
 		</div><!-- /comments -->
 			
-	</div><!-- /main-column -->
+	</div><!-- /left -->
 
 	<?php get_sidebar('singlepage'); ?>
 	
-</div><!-- /site-content -->
+</div><!-- /content -->
 
 <?php get_footer(); ?>

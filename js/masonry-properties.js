@@ -1,26 +1,26 @@
 jQuery(window).load(function () {
 
-var container = document.querySelector('#section1-content');
+var container = document.querySelector('#front1-content');
 var msnry = new Masonry(container, {
-	itemSelector: '.front-article',
+	itemSelector: '.recent-article',
 	columnWidth: 1
 });
 
-var container = document.querySelector('#section2-content');
+var container = document.querySelector('#front2-content');
 var msnry = new Masonry(container, {
-	itemSelector: '.front-article',
+	itemSelector: '.recent-article',
 	columnWidth: 1
 });
 
-var container = document.querySelector('#section3-content');
+var container = document.querySelector('#front3-content');
 var msnry = new Masonry(container, {
-	itemSelector: '.front-article',
+	itemSelector: '.recent-article',
 	columnWidth: 1
 });
 
 var container = document.querySelector('#archive-content');
 var msnry = new Masonry(container, {
-	itemSelector: '.front-article',
+	itemSelector: '.recent-article',
 	columnWidth: 1
 });
 

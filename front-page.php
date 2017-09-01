@@ -11,18 +11,18 @@
  
 get_header(); ?>
 
-<div class="site-content clearfix">
+<div class="content clearfix">
 
 	<div id="front-latest">
 
-		<div id="section1-wrap" class="front-wrapper">
+		<div id="recent-front1" class="recent-section">
 	
-			<div id="section1-head" class="front-head clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
+			<div id="front1-head" class="recent-head clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
 				<?php $sec1_parent = get_theme_mod( 'title_section1' );
 				$sec1_parentID = get_cat_ID( $sec1_parent ); ?>
 				
-				<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
-				<div id="section1-subcats" class="front-subcats"><?php
+				<div id="front1-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
+				<div id="front1-nav" class="recent-nav"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
@@ -31,9 +31,9 @@ get_header(); ?>
 						'child_of' => $sec1_parentID
 					) );?>			
 				</div>
-			</div><!-- /section1-head -->
+			</div><!-- /front1-head -->
 		
-			<div id="section1-content" class="front-content">
+			<div id="front1-content" class="recent-content">
 
 				<?php 
 				$noimg = array(4, 5, 8, 9, 10);
@@ -64,16 +64,16 @@ get_header(); ?>
 					}
 					
 					if ( in_category( 36 ) ) {
-						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1 ) echo 'small'; if(in_array($sec1_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><?php
+						?><div id="front1-article" class="recent-article <?php if ( $sec1_counter !== 1 ) echo 'small'; if(in_array($sec1_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><?php
 					} elseif ( $sec1_counter == 1 ) {
-						?><div id="section1-article" class="front-article bottom-buffer"><?php
+						?><div id="front1-article" class="recent-article bottom-buffer"><?php
 					} elseif ( in_array($sec1_counter, $img) ) {
-						?><div id="section1-article" class="front-article small bottom-buffer"><?php
+						?><div id="front1-article" class="recent-article small bottom-buffer"><?php
 					} else {
-						?><div id="section1-article" class="front-article <?php if ( $sec1_counter !== 1) echo 'small'; ?>"><?php
+						?><div id="front1-article" class="recent-article <?php if ( $sec1_counter !== 1) echo 'small'; ?>"><?php
 					} ?>
 			
-						<div id="section1-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
+						<div id="front1-thumb" class="recent-thumb"><!-- Thumbnails, including countpost logic. --><?php
 							if(in_array($sec1_counter, $noimg)) {
 								// Display no thumbnail.
 							} elseif(in_array($sec1_counter, $img)) { ?>
@@ -83,9 +83,9 @@ get_header(); ?>
 							} else { ?>
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
 							} ?>
-						</div><!-- /section1-thumb -->
+						</div><!-- /front1-thumb -->
 				
-						<div id="section1-info" class="front-info">
+						<div id="front1-blurb" class="recent-blurb">
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 
 							if(in_array($sec1_counter, $noimg)){
@@ -96,10 +96,10 @@ get_header(); ?>
 								the_excerpt();
 							} ?>
 					
-						</div><!-- /section1-info -->
+						</div><!-- /front1-blurb -->
 			
-						<div id="section1-cat" class="front-artcat">
-							<p id="section1-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
+						<div id="front1-meta" class="recent-meta">
+							<p id="front1-author" class="recent-author"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
 							<span>
 								<?php
 								$categories = get_the_category();
@@ -113,9 +113,9 @@ get_header(); ?>
 								}
 								?>
 							</span>
-						</div><!-- /section1-cat -->
+						</div><!-- /front1-meta -->
 			
-					</div><!-- /section1-article --><?php
+					</div><!-- /front1-article --><?php
 		
 					endwhile;
 	
@@ -130,18 +130,18 @@ get_header(); ?>
 	
 				wp_reset_postdata(); ?>
 		
-			</div><!-- /section1-content -->
+			</div><!-- /front1-content -->
 
-		</div><!-- /section1-wrapper -->
+		</div><!-- /recent-front1 -->
 	
-		<div id="section2-wrap" class="front-wrapper">
+		<div id="recent-front2" class="recent-section">
 	
-			<div id="section2-head" class="front-head clearfix">
+			<div id="front2-head" class="recent-head clearfix">
 				<?php $sec2_parent = get_theme_mod( 'title_section2' );
 				$sec2_parentID = get_cat_ID( $sec2_parent ); ?>
 				
-				<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
-				<div id="section1-subcats" class="front-subcats"><?php
+				<div id="front2-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
+				<div id="front2-nav" class="recent-nav"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
@@ -150,9 +150,9 @@ get_header(); ?>
 						'child_of' => $sec2_parentID
 					) );?>			
 				</div>
-			</div><!-- /section2-head -->
+			</div><!-- /front2-head -->
 			
-			<div id="section2-content" class="front-content">
+			<div id="front2-content" class="recent-content">
 
 				<?php 
 				$noimg = array(2, 3, 4, 7, 8, 9, 10);
@@ -184,14 +184,14 @@ get_header(); ?>
 					}
 	
 					if ( in_category( 36 ) ) {
-						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="front2-article" class="recent-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} elseif ( in_array($sec2_counter, $bottom_buffer)) {
-						?><div id="section2-article" class="front-article bottom-buffer"><?php
+						?><div id="front2-article" class="recent-article bottom-buffer"><?php
 					} else {
-						?><div id="section2-article" class="front-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?>"><!-- Start of looped post content. --><?php
+						?><div id="front2-article" class="recent-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?>"><!-- Start of looped post content. --><?php
 					} ?>
 			
-						<div id="section2-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
+						<div id="front2-thumb" class="recent-thumb"><!-- Thumbnails, including countpost logic. --><?php
 							if(in_array($sec2_counter, $noimg)) {
 								// Display no thumbnail.
 							} elseif(in_array($sec2_counter, $img)) { ?>
@@ -201,9 +201,9 @@ get_header(); ?>
 							} else { ?>
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
 							} ?>
-						</div><!-- /section2-thumb -->
+						</div><!-- /front2-thumb -->
 				
-						<div id="section2-info" class="front-info"><!-- Post titles and excerpts. -->
+						<div id="front2-blurb" class="recent-blurb"><!-- Post titles and excerpts. -->
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 
 							if( $sec2_counter == 1 ){
@@ -212,10 +212,10 @@ get_header(); ?>
 								// Display no post excerpt.
 							} ?>
 					
-						</div><!-- /section2-info -->
+						</div><!-- /front2-blurb -->
 			
-						<div id="section2-cat" class="front-artcat"><!-- Post categories. -->
-							<p id="section2-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
+						<div id="front2-meta" class="recent-meta"><!-- Post categories. -->
+							<p id="front2-author" class="recent-author"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>
 							<span>
 								<?php
 								$categories = get_the_category();
@@ -229,9 +229,9 @@ get_header(); ?>
 								}
 								?>
 							</span>
-						</div><!-- /section2-cat -->
+						</div><!-- /front2-meta -->
 			
-					</div><!-- /section2-article --><?php
+					</div><!-- /front2-article --><?php
 		
 					endwhile;
 	
@@ -246,18 +246,18 @@ get_header(); ?>
 	
 				wp_reset_postdata(); ?>
 		
-			</div><!-- /section2-content -->
+			</div><!-- /front2-content -->
 	
-		</div><!-- /section2-wrapper -->
+		</div><!-- /recent-front2 -->
 		
-		<div id="section3-wrap" class="front-wrapper">
+		<div id="recent-front3" class="recent-section">
 	
-			<div id="section3-head" class="front-head clearfix">
+			<div id="front3-head" class="recent-head clearfix">
 				<?php $sec3_parent = get_theme_mod( 'title_section3' );
 				$sec3_parentID = get_cat_ID( $sec3_parent ); ?>
 				
-				<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
-				<div id="section3-subcats" class="front-subcats"><?php
+				<div id="front3-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
+				<div id="front3-nav" class="recent-nav"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
@@ -266,9 +266,9 @@ get_header(); ?>
 						'child_of' => $sec3_parentID
 					) );?>			
 				</div>		
-			</div><!-- /section3-head -->
+			</div><!-- /front3-head -->
 		
-			<div id="section3-content" class="front-content">
+			<div id="front3-content" class="recent-content">
 
 				<?php 
 				$noimg = array(4, 5, 8, 9, 10);
@@ -299,16 +299,16 @@ get_header(); ?>
 					}
 
 					if ( in_category( 36 ) ) {
-						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; if(in_array($sec3_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><!-- Start of looped post content. --><?php					
+						?><div id="front3-article" class="recent-article <?php if ( $sec3_counter !== 1 ) echo 'small'; if(in_array($sec3_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} elseif ( $sec3_counter == 1 ) {
-						?><div id="section3-article" class="front-article bottom-buffer"><?php
+						?><div id="front3-article" class="recent-article bottom-buffer"><?php
 					} elseif ( in_array($sec3_counter, $img) ) {
-						?><div id="section3-article" class="front-article small bottom-buffer"><?php
+						?><div id="front3-article" class="recent-article small bottom-buffer"><?php
 					} else {
-						?><div id="section3-article" class="front-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><?php
+						?><div id="front3-article" class="recent-article <?php if ( $sec3_counter !== 1 ) echo 'small'; ?>"><?php
 					} ?>
 								
-						<div id="section3-thumb" class="front-thumb"><!-- Thumbnails, including countpost logic. --><?php
+						<div id="front3-thumb" class="recent-thumb"><!-- Thumbnails, including countpost logic. --><?php
 							if(in_array($sec3_counter, $noimg)) {
 								// Display no thumbnail.
 							} elseif(in_array($sec3_counter, $img)) { ?>
@@ -318,9 +318,9 @@ get_header(); ?>
 							} else { ?>
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a><?php
 							} ?>
-						</div><!-- /section3-thumb -->
+						</div><!-- /front3-thumb -->
 				
-						<div id="section3-info" class="front-info"><!-- Post titles and excerpts. -->
+						<div id="front3-blurb" class="recent-blurb"><!-- Post titles and excerpts. -->
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
 
 							if(in_array($sec3_counter, $noimg)){
@@ -331,10 +331,10 @@ get_header(); ?>
 								the_excerpt();
 							} ?>
 					
-						</div><!-- /section3-info -->
+						</div><!-- /front3-blurb -->
 			
-						<div id="section3-cat" class="front-artcat"><!-- Post categories. -->
-							<p id="section3-auth" class="front-auth"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>							
+						<div id="front3-meta" class="recent-meta"><!-- Post categories. -->
+							<p id="front3-author" class="recent-author"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in </p>							
 							<span>
 								<?php
 								$categories = get_the_category();
@@ -348,9 +348,9 @@ get_header(); ?>
 								}
 								?>
 							</span>
-						</div><!-- /section3-cat -->
+						</div><!-- /front3-meta -->
 			
-					</div><!-- /section3-article --><?php
+					</div><!-- /front3-article --><?php
 		
 					endwhile;
 	
@@ -365,90 +365,90 @@ get_header(); ?>
 	
 				wp_reset_postdata(); ?>
 		
-			</div><!-- /section3-content -->
+			</div><!-- /front3-content -->
 	
-		</div><!-- /section3-wrap -->
+		</div><!-- /recent-front3 -->
 		
 		<div class="clearer"></div>
 	
 	</div><!-- /front-latest -->
 	
-	<div id="front-full1" class="front-full clearfix">
+	<div class="front-full clearfix">
 	
-		<div id="front-full-info" class="clearfix">
-			<span id="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
-			<span id="front-full-blurb"><h4>Static: The editors' weekly pick of articles.</h4></span>
+		<div class="front-full-info clearfix">
+			<span class="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
+			<span class="front-full-blurb"><h4>Static: The editors' weekly pick of articles.</h4></span>
 		</div>
+		
+		<ul class="front-full-content clearfix">
 	
-		<?php $args = array( // WP_Query args.
-			'category_name' => get_theme_mod( 'front_full' ),
-			'post_type' => 'post',
-			'posts_per_page' => 5,
-		);
+			<?php $args = array( // WP_Query args.
+				'category_name' => get_theme_mod( 'front_full' ),
+				'post_type' => 'post',
+				'posts_per_page' => 5,
+			);
 		
-		$query = new WP_Query( $args );
+			$query = new WP_Query( $args );
 		
-		if ( $query->have_posts() ) :
+			if ( $query->have_posts() ) :
 		
-			while ( $query->have_posts() ) : $query->the_post(); ?>
+				while ( $query->have_posts() ) : $query->the_post(); ?>
+					
+					<li class="front-full-article">
+						<h4 class="front-full-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						<h4 class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+					</li>
 			
-				<div id="front-full-article">
-					<div id="front-full-article-title">
-						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-						<h4 id="front-full-article-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
-					</div>
-				</div>
+				<?php endwhile;
 			
-			<?php endwhile;
-			
-		else :
-			echo '<p>No content found!</p>';
-		endif; ?>
-	
-	</div><!-- /front-full1 -->
-	
-	<div id="front-full2" class="front-full clearfix">
-	
-		<div id="popular-front" class="popular-wrapper clearfix">
-
-			<div id="popular-head-front" class="popular-head clearfix">
-				<span class="popular-headtit"><h2>Most Read</h2></span>
-			</div><!-- /popular-head -->
-
-			<ul class="popular-list"><?php
-
-				$args = array( // The arguments for the popular WP_Query.
-					'posts_per_page'=>5,
-					'meta_key'=>'popular_posts',
-					'orderby'=>'meta_value_num',
-					'order'=>'DESC'
-				);
-
-				$popular = new WP_Query( $args );
-
-				if ( $popular->have_posts() ):
-
-					while ( $popular->have_posts() ) : $popular->the_post(); ?>
-	
-						<li class="popular-item">
-							<p class="popular-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-							<h4 id="popular-article-auth">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
-						</li><?php
-
-					endwhile;
-	
-					else :
-						echo '<p>Sorry, just loner posts here.</p>';
-
-				endif;	
-	
-				wp_reset_postdata(); ?>
-
-			</ul><!-- /popular-list -->
-
-		</div><!-- /popular-wrapper -->
+			else :
+				echo '<p>No content found!</p>';
+			endif;
 		
-	</div><!-- /front-full2 -->
+			wp_reset_postdata(); ?>
+		
+		</ul><!-- /front-full-content -->
+	
+	</div><!-- /front-full -->
+	
+	<div id="front-popular" class="front-full clearfix">
+	
+		<div class="front-full-info clearfix">
+			<span class="front-full-title"><h2>Most Popular</h2></span>
+		</div>
+
+		<ul class="front-full-content clearfix"><?php
+
+			$args = array( // The arguments for the popular WP_Query.
+				'posts_per_page'=>5,
+				'meta_key'=>'popular_posts',
+				'orderby'=>'meta_value_num',
+				'order'=>'DESC'
+			);
+
+			$popular = new WP_Query( $args );
+
+			if ( $popular->have_posts() ):
+
+				while ( $popular->have_posts() ) : $popular->the_post(); ?>
+
+					<li class="front-full-article front-popular-article">
+						<h4 id="front-popular-article-title" class="front-full-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						<h4 id="front-popular-article-author" class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+					</li><?php
+
+				endwhile;
+
+				else :
+					echo '<p>Sorry, just loner posts here.</p>';
+
+			endif;	
+
+			wp_reset_postdata(); ?>
+
+		</ul><!-- /front-full-content -->
+		
+	</div><!-- /front-full -->
 	
 	<div class="front-columnists clearfix">
 	

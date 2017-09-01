@@ -9,11 +9,11 @@
  * @since Bubble3 0.1 alpha
  */
 ?>	
-	<article class="post-single">
+	<article class="article">
 		
 		<h2><?php the_title(); ?></h2>
 
-		<p class="post-info" id="single-post-info"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in
+		<p class="article-meta"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in
 			<?php
 			$categories = get_the_category();
 			$separator = ", ";
@@ -27,8 +27,8 @@
 			} ?> on <?php the_time('j F, Y'); ?>.
 		</p>
 
-		<section class="post-single-content">
+		<section class="article-content">
 			<?php the_content(); ?>
 		</section>
 		
-	</article><!-- /post-single -->
+	</article><!-- /article -->

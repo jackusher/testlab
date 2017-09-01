@@ -10,9 +10,9 @@
  */
 ?>
  
-<div class="sidebar-column">
+<div class="right">
 	
-	<nav class="sidebar-navi">
+	<nav class="sidebar-menu">
 		<?php // Defining <section1> variables.
 		$sec1_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
 		$sec1_parentID = get_cat_ID( $sec1_parent ); // Getting the cat ID from the name we pulled in.
@@ -23,8 +23,8 @@
 		); ?>
 
 		<div id="sidebar-menuitem1" class="sidebar-menuitem clearfix">
-			<div id="section1-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
-			<div id="section1-subcats" class="front-subcats"><?php
+			<div class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
+			<div class="recent-nav"><?php
 				wp_list_categories( array(
 					'orderby' => 'name',
 					'show_count' => false,
@@ -43,8 +43,8 @@
 		); ?>
 	
 		<div id="sidebar-menuitem2" class="sidebar-menuitem clearfix">
-			<div id="section2-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
-			<div id="section1-subcats" class="front-subcats"><?php
+			<div class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
+			<div class="recent-nav"><?php
 				wp_list_categories( array(
 					'orderby' => 'name',
 					'show_count' => false,
@@ -65,8 +65,8 @@
 		); ?>
 	
 		<div id="sidebar-menuitem3" class="sidebar-menuitem clearfix">
-			<div id="section3-title" class="front-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
-			<div id="section1-subcats" class="front-subcats"><?php
+			<div class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
+			<div class="recent-nav"><?php
 				wp_list_categories( array(
 					'orderby' => 'name',
 					'show_count' => false,
@@ -77,10 +77,8 @@
 			</div>		
 		</div><!-- /section3-head -->
 		
-	</nav><!-- /sidebar-navi -->
+	</nav><!-- /sidebar-menu -->
 	
-	<ul class="sidebar-single-widgets">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-single') ) : endif; ?>
-	</ul>
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-single') ) : endif; ?>
 
-</div><!-- /sidebar-column -->
+</div><!-- /right -->

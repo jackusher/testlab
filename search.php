@@ -11,9 +11,9 @@
  
 get_header(); ?>
 
-<div class="site-content clearfix">
+<div class="content clearfix">
 
-	<div class="main-column">
+	<div class="left">
 
 		<?php if (have_posts()) : ?>
 	
@@ -30,10 +30,10 @@ get_header(); ?>
 		
 			endif;?>
 			
-	</div><!-- /main-column -->
+	</div><!-- /left -->
 
 	<?php get_sidebar('singlepage'); ?>
 	
-</div><!-- /site-content -->
+</div><!-- /content -->
 
 <?php get_footer(); ?>

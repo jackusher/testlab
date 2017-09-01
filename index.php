@@ -11,9 +11,9 @@
  
 get_header(); ?>
 
-<div class="site-content clearfix">
+<div class="content clearfix">
 
-	<div class="main-column">
+	<div class="left">
 	
 		<?php
 
@@ -29,10 +29,10 @@ get_header(); ?>
 		
 		endif; ?>
 		
-	</div><!-- /main-column -->
+	</div><!-- /left -->
 
 <?php get_sidebar(); ?>
 	
-</div><!-- /site-content -->
+</div><!-- /content -->
 
 <?php get_footer(); ?>
