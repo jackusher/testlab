@@ -62,7 +62,8 @@ get_header(); ?>
 					'posts_per_page'=>5,
 					'meta_key'=>'popular_posts',
 					'orderby'=>'meta_value_num',
-					'order'=>'DESC'
+					'order'=>'DESC',
+					'ignore_sticky_posts' => 1
 				);
 
 				$popular = new WP_Query( $args );
