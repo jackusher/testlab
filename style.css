@@ -653,20 +653,9 @@ h4.front-full-article-author a {
 	text-decoration: none;
 }
 
-/* III.c. Third-width bottom column styles. */
-.front-columnists,
-.front-side {
-	margin-top: 10px;
-	margin-bottom: 50px;
-}
-
-.front-side {
-	width: 30.5%;
-	float: right;
-	min-width: 220px;
-}
-
+/* III.c. Two-thirds-width columnist area. */
 .front-columnists {
+	margin-bottom: 45px;
 	width: 65%;
 	float: left;
 	padding-right: 24px;
@@ -734,7 +723,19 @@ h4.front-full-article-author a {
 	font-size: 1.3em;
 }
 
-/* III.d. Post meta styles. */
+/* III.d. Front page sidebar. */
+.front-side {
+	width: 30.5%;
+	float: right;
+	min-width: 220px;
+	margin-bottom: 45px;
+}
+
+.front-side ul .widget:first-of-type {
+	margin-top: 0;
+}
+
+/* III.e. Post meta styles. */
 .subtle-date,
 .subtle-author,
 .subtle-category {
