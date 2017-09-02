@@ -452,8 +452,8 @@ get_header(); ?>
 	
 	<div class="front-columnists clearfix">
 	
-		<div id="front-full-info" class="clearfix">
-			<span id="front-full-title"><h2>Latest Columns</h2></span>
+		<div class="front-full-info clearfix">
+			<span class="front-full-title"><h2>Latest Columns</h2></span>
 		</div>
 		
 		<?php $bottom_cat = get_theme_mod( 'bottom_section' );
@@ -470,16 +470,17 @@ get_header(); ?>
 		
 			while ( $query->have_posts() ) : $query->the_post(); ?>
 			
-				<div id="columnist-article">
-					<div id="columnist-thumb">
+				<div class="columnist-article">
+				
+					<div class="columnist-thumb">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
 					</div>
 					
-					<div id="columnist-info">
-						<p id="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+					<div class="columnist-info">
+						<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 					</div><!-- /columnist-info -->
 					
-				</div>
+				</div><!-- /columnist-article -->
 			
 			<?php endwhile;
 			

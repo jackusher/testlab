@@ -673,35 +673,35 @@ h4.front-full-article-author a {
 	border-right: 1px solid #ddd;
 }
 
-#columnist-article {
+.columnist-article {
 	float: left;
-	margin-right: 20px;
+	margin-right: 8px;
 	display: block;
-	width: 22.19%;
-	height: 124px;
+	width: 24.12%;
+	height: 132px;
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;
 }
 
-#columnist-article:last-of-type {
+.columnist-article:last-of-type {
 	margin-right: 0;
 }
 
-#columnist-article #columnist-thumb {
+.columnist-article .columnist-thumb {
 	background-color: black;
 }
 
-#columnist-article #columnist-thumb {
+.columnist-article .columnist-thumb {
 	position: absolute;
 	z-index: 20;
 }
 
-#columnist-article img {
-	opacity: 0.55;
+.columnist-article img {
+	opacity: 0.45;
 }
 
-#columnist-article #columnist-info {
+.columnist-article .columnist-info {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -712,7 +712,7 @@ h4.front-full-article-author a {
 	box-sizing: border-box;
 }
 
-#columnist-article #columnist-thumb img { /* Transition properties. */
+.columnist-article .columnist-thumb img { /* Transition properties. */
 	-webkit-transition: all 0.275s ease; /* Safari and Chrome */
   	-moz-transition: all 0.275s ease; /* Firefox */
 	-o-transition: all 0.275s ease; /* IE 9 */
@@ -720,15 +720,15 @@ h4.front-full-article-author a {
 	transition: all 0.275s ease;
 }
 
-#columnist-article:hover > #columnist-thumb img {
+.columnist-article:hover > .columnist-thumb img {
 	opacity: 0.25;
 }
 
-#columnist-article #columnist-title {
+.columnist-article .columnist-title {
 	margin-bottom: 0;
 }
 
-#columnist-article #columnist-title a {
+.columnist-article .columnist-title a {
 	text-decoration: none;
 	color: #fff;
 	font-size: 1.3em;

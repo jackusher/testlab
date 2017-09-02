@@ -59,7 +59,7 @@ function bubble_setup() {
 	add_image_size('title-list-thumbnail', 163, 123, true);
 	add_image_size('column-thumbnail', 120, 100, true);
 	add_image_size('banner-image', 920, 210, true);
-	add_image_size('standard-blog-thumbnail', 170, 124, true);
+	add_image_size('standard-blog-thumbnail', 178, 132, true);
 	add_image_size('front-latest', 358, 240, true);
 	add_image_size('archive-top', 500, 240, true);
 	add_image_size('archive-article', 235, 170, true);
