@@ -55,49 +55,23 @@ get_header(); ?>
 			<div class="popular-info clearfix">
 				<span class="popular-title"><h2>Most Read</h2></span>
 			</div><!-- /popular-head -->
-
-			<ul class="popular-list clearfix"><?php
-
-				$args = array( // The arguments for the popular WP_Query.
-					'posts_per_page'=>5,
-					'meta_key'=>'popular_posts',
-					'orderby'=>'meta_value_num',
-					'order'=>'DESC',
-					'ignore_sticky_posts' => 1
-				);
-
-				$popular = new WP_Query( $args );
-	
-				if ( $popular->have_posts() ):
-	
-					$pop_counter=0; while ( $popular->have_posts() ) : $popular->the_post(); $pop_counter++;
+			
+			<?php $args = array(
+				'limit' => 5,
+				// 'range' => 'weekly',
+				// 'freshness' => 1,
+				'order_by' => 'views',
+				'post_type' => 'post',
+				'stats_views' => 0,
+				'stats_author' => 1,
+				'wpp_start' => '<ol class="popular-list clearfix">',
+				'wpp_end' => '</ul>',
+				'post_html' => '<li class="popular-article clearfix"><p class="popular-article-title">{title}</p></li>'
+			);
 		
-						$checkcounter = array(1, 2, 3, 4, 5); // Countpost mechanism to put the ranking number next to the post title.
-						if(in_array($pop_counter, $checkcounter)){ ?>
-							<li class="popular-article clearfix">
-								<p class="popular-rank"><?php echo "$pop_counter." ?></p>
-								<p class="popular-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-							</li><?php
-						} else { ?>
-							<li class="popular-article clearfix">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</li><?php
-						}
-	
-					endwhile;
-		
-					else :
-						echo '<p>Sorry, just loner posts here.</p>';
-	
-				endif;
-	
-				$pop_counter++;		
-		
-				wp_reset_postdata(); ?>
+			wpp_get_mostpopular( $args ); ?>
 
-			</ul><!-- /popular-list -->
-
-		</div><!-- /popular-wrapper -->
+		</div><!-- /popular-widget -->
 		
 		<div id="article-comments" class="comments">
 		

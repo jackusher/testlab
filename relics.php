@@ -348,6 +348,7 @@ register_sidebar( array(
 
 
 // 5.a. HTML: Listing the subcategories of a parent category, with pre-defined variables. ?>
+
 <div id="section1-subcats" class="front-subcats"><?php
 	wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 		'orderby' => 'name',
@@ -359,6 +360,7 @@ register_sidebar( array(
 ?></div> <?php
 
 // 5.b. CSS: Styles for subcats in a comma-separated list. ?>
+
 <style>
 .front-subcats {
 	padding: 15px 0 0 0; /* Remove this hack in favour of dynamic vertical centring for the subcats div. */
@@ -424,6 +426,7 @@ if ( is_category() ) {
 
 
 // 7.a. Old archive page markup. ?>
+
 <article class="post <?php if ( has_post_thumbnail() ) { ?> has-thumbnail clearfix<?php } ?>">
 		
 		<!-- post-thumbnail behaviour. Creating a div for the image, and calling a pre-defined image size. Putting a link in. -->
@@ -470,4 +473,65 @@ if ( is_category() ) {
 			
 		} ?>
 		
-</article>
+</article><?php
+
+
+
+/* 8.a. Old popular posts widget from functions.php. From Jeff Starr at:
+   https://digwp.com/2016/03/diy-popular-posts/. */
+
+function shapeSpace_popular_posts($post_id) {
+	$count_key = 'popular_posts';
+	$count = get_post_meta($post_id, $count_key, true);
+	if ($count == '') {
+		$count = 0;
+		delete_post_meta($post_id, $count_key);
+		add_post_meta($post_id, $count_key, '0');
+	} else {
+		$count++;
+		update_post_meta($post_id, $count_key, $count);
+	}
+}
+function shapeSpace_track_posts($post_id) {
+	if (!is_single()) return;
+	if (empty($post_id)) {
+		global $post;
+		$post_id = $post->ID;
+	}
+	shapeSpace_popular_posts($post_id);
+}
+add_action('wp_head', 'shapeSpace_track_posts');
+
+// 8.b. Integrating popular posts widget into HTML. ?>
+
+<ul class="front-full-content clearfix"><?php
+
+	$args = array( // The arguments for the popular WP_Query.
+		'posts_per_page'=>5,
+		'meta_key'=>'popular_posts',
+		'orderby'=>'meta_value_num',
+		'order'=>'DESC',
+		'ignore_sticky_posts' => 1
+	);
+
+	$popular = new WP_Query( $args );
+
+	if ( $popular->have_posts() ):
+
+		while ( $popular->have_posts() ) : $popular->the_post(); ?>
+
+			<li class="front-full-article front-popular-article">
+				<h4 id="front-popular-article-title" class="front-full-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+				<h4 id="front-popular-article-author" class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+			</li><?php
+
+		endwhile;
+
+		else :
+			echo '<p>Sorry, just loner posts here.</p>';
+
+	endif;	
+
+	wp_reset_postdata(); ?>
+
+</ul><!-- /front-full-content -->

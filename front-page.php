@@ -416,38 +416,21 @@ get_header(); ?>
 		<div class="front-full-info clearfix">
 			<span class="front-full-title"><h2>Most Popular</h2></span>
 		</div>
-
-		<ul class="front-full-content clearfix"><?php
-
-			$args = array( // The arguments for the popular WP_Query.
-				'posts_per_page'=>5,
-				'meta_key'=>'popular_posts',
-				'orderby'=>'meta_value_num',
-				'order'=>'DESC',
-				'ignore_sticky_posts' => 1
-			);
-
-			$popular = new WP_Query( $args );
-
-			if ( $popular->have_posts() ):
-
-				while ( $popular->have_posts() ) : $popular->the_post(); ?>
-
-					<li class="front-full-article front-popular-article">
-						<h4 id="front-popular-article-title" class="front-full-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-						<h4 id="front-popular-article-author" class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
-					</li><?php
-
-				endwhile;
-
-				else :
-					echo '<p>Sorry, just loner posts here.</p>';
-
-			endif;	
-
-			wp_reset_postdata(); ?>
-
-		</ul><!-- /front-full-content -->
+		
+		<?php $args = array(
+			'limit' => 5,
+			// 'range' => 'weekly',
+			// 'freshness' => 1,
+			'order_by' => 'views',
+			'post_type' => 'post',
+			'stats_views' => 0,
+			'stats_author' => 1,
+			'wpp_start' => '<ul class="front-full-content clearfix">',
+			'wpp_end' => '</ul>',
+			'post_html' => '<li class="front-full-article front-popular-article"><h4 id="front-popular-article-title" class="front-full-article-title">{title}</h4><h4 id="front-popular-article-author" class="front-full-article-author">{author}</h4></li>'
+		);
+		
+		wpp_get_mostpopular( $args ); ?>
 		
 	</div><!-- /front-full -->
 	

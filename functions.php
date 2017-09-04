@@ -313,35 +313,9 @@ add_theme_support('html5', array('search-form'));
 
 
 
-/* SECTION VIII: Popular posts widget. Thanks to Jeff Starr for the code:
-   DIY Popular Posts @ https://digwp.com/2016/03/diy-popular-posts/ */
-function shapeSpace_popular_posts($post_id) {
-	$count_key = 'popular_posts';
-	$count = get_post_meta($post_id, $count_key, true);
-	if ($count == '') {
-		$count = 0;
-		delete_post_meta($post_id, $count_key);
-		add_post_meta($post_id, $count_key, '0');
-	} else {
-		$count++;
-		update_post_meta($post_id, $count_key, $count);
-	}
-}
-function shapeSpace_track_posts($post_id) {
-	if (!is_single()) return;
-	if (empty($post_id)) {
-		global $post;
-		$post_id = $post->ID;
-	}
-	shapeSpace_popular_posts($post_id);
-}
-add_action('wp_head', 'shapeSpace_track_posts');
+/* SECTION VIII: Storing most-recently updated subcatgeories of parents in a global array. */
 
-
-
-/* SECTION IX: Storing most-recently updated subcatgeories of parents in a global array. */
-
-/* SECTION IX.i: Function to compares two arrays by their "date" field. */
+/* SECTION VIII.i: Function to compares two arrays by their "date" field. */
 function compareDates($a, $b) {
 	if ( $a['date'] == $b['date'] ) {
 		return 0;
@@ -349,7 +323,7 @@ function compareDates($a, $b) {
 		return ($a['date'] < $b['date']) ? 1 : -1;
 	}
 
-/* SECTION IX.ii: Looping through the parent categories and their subcategories to populate
+/* SECTION VIII.ii: Looping through the parent categories and their subcategories to populate
 				  global arrays with the parents' subcategories ordered by recency of their updates. */
 $category_parents = array(
 		get_theme_mod( 'title_section1' ),
@@ -407,14 +381,14 @@ foreach($category_parents as $category_parent) {
 
 
 
-/* SECTION X: Defining content width. */
+/* SECTION IX: Defining content width. */
 if ( ! isset( $content_width ) ) {
 	$content_width = 1140;
 }
 
 
 
-/* SECTION XI: Adding custom logo support. */
+/* SECTION X: Adding custom logo support. */
 function bubble_custom_logo_setup() {
     $defaults = array(
         'height'      => 90,

@@ -242,23 +242,26 @@ a img.aligncenter {
 	margin-bottom: 0.3em;
 }
 
-ul.popular-list p {
-	margin: 0;
-}
-
-ul.popular-list {
+ol.popular-list {
 	list-style: none;
+	counter-reset: item;
 	padding: 0;
 }
 
-ul.popular-list .popular-article {
+ol.popular-list p {
+	margin: 0;
+}
+
+ol.popular-list .popular-article {
 	float: left;
 	display: block;
 	margin: 0 27px 20px 0;
+	counter-increment: item;
 }
 
-ul.popular-list .popular-rank {
+ol.popular-list .popular-article:before {
 	font-size: 2.5em;
+	content: counter(item)'.';
 	width: 28px;
 	float: left;
 	padding-right: 5px;
@@ -266,7 +269,7 @@ ul.popular-list .popular-rank {
 	border-right: 2px solid #ddd;
 }
 
-ul.popular-list .popular-article-title {
+ol.popular-list .popular-article-title {
 	width: 275px;
 	margin-left: 35px;
 	padding-left: 10px;
@@ -274,7 +277,7 @@ ul.popular-list .popular-article-title {
 	min-height: 61px;
 }
 
-ul.popular-list .popular-article-title a {
+ol.popular-list .popular-article-title a {
 	text-decoration: none;
 }
 
