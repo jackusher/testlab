@@ -20,7 +20,7 @@ html {
 body {
     padding: 0;
 	margin: 0;
-	font-family: 'Roboto', sans-serif;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
 	font-size: 14px;
 	color: #333;
 }
@@ -530,6 +530,7 @@ ol.popular-list .popular-article-title a {
 .recent-blurb h4 { /* The title in each masonry brick. */
 	font-size: 1.4em;
 	margin: 2px 0 5px 0;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
 }
 
 .recent-article:first-of-type .recent-blurb h4 {
@@ -538,7 +539,7 @@ ol.popular-list .popular-article-title a {
 
 .recent-blurb p { /* The excerpt in each masonry brick. */
 	font-size: 0.94em;
-	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
 	display: inline;
 	color: #515151;
 }
@@ -552,6 +553,7 @@ ol.popular-list .popular-article-title a {
 	text-align: right;
 	padding: 5px 5px 5px 0;
 	font-size: 0.95rem;
+	font-weight: 400;
 }
 
 .recent-meta a:link,
@@ -838,12 +840,14 @@ article.page h2 {
 }
 
 .article h2 {
-	font-size: 3rem;
+	font-size: 2.45rem;
 	margin-bottom: 1.25rem;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+	font-weight: 700;
 }
 
 p.article-meta {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	color: #999;
 	margin-top: 0.6rem;
 }
@@ -870,11 +874,15 @@ p.article-meta a:visited {
 
 .article-content {
 	margin-top: 2.75rem;
-	font-family: 'Raleway', sans-serif;
 }
 
 .article-content p {
-	font-size: 1.09rem;
+	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
 }
 
 h2.story-body__crosshead {
