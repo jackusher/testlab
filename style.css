@@ -934,25 +934,39 @@ article.post-gallery a {
 	padding-left: 0;
 }
 
-.comment-body {
-	font-size: 16px;
-	margin-bottom: 35px;
-	border-left: 2px solid #ddd;
-	padding-left: 15px;
-}
-
-.comment-body p:first-of-type {
-	margin-top: 1em;
-}
-
 .comment-author,
 .comment-meta {
 	display: inline-block;
 }
 
-.reply {
-	display: inline-block;
+.comment-meta {
 	float: right;
+}
+
+.comment-body {
+	font-size: 16px;
+	border: 1px solid #c6c6c6;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.04);
+	margin-bottom: 20px;
+	padding: 15px;
+	background-color: #f8f8f8;
+}
+
+.parent .comment-body {
+	margin-bottom: 0;
+}
+
+.depth-1.parent {
+	margin-bottom: 20px;
+}
+
+.depth-2 .comment-body {
+	border-top: 0;
+}
+
+.comment-body p:first-of-type {
+	margin-top: 1em;
 }
 
 .children {
