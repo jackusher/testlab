@@ -1090,7 +1090,7 @@ p.must-log-in {
 	/* add in section padding (1.5rem) */
 	margin: 0 -601.5rem;
 	/* match section padding (1.5rem) */
-	padding: .25rem 1.5rem;
+	padding: .3rem 1.5rem;
 	background: #565960;
 	/* border solid, not RGBa (Safari bug) */
 	/* 9600px or 10240px to avoid Chrome bug */
@@ -1114,42 +1114,50 @@ p.must-log-in {
 	color: white;
 }
 
-.meta-list {
-	margin: 10px 0 10px 0;
-}
-
-.meta-list li,
-.meta-list {
+.sitemap ul {
 	list-style: none;
 }
 
-.meta-list ul {
+#menu-sitemap {
+	margin: 0;
 	padding: 0;
-	margin: 0
 }
 
-.meta-list li,
-.meta-list h2 {
+#menu-sitemap .menu-item-has-children {
+	margin: 10px 0 10px 0;
+}
+
+#menu-sitemap .sub-menu {
+	padding-left: 0;
+}
+
+#menu-sitemap .sub-menu,
+.sub-menu li,
+#menu-sitemap li a {
 	float: left;
 }
 
-.meta-list h2 {
-	margin: 0 20px 0 0;
+#menu-sitemap li a {
+	margin: 0 25px 0 0;
 	font-size: 1.5rem;
 }
 
-.meta-list ul li {
-	padding: 8px 15px 0 0;
+#menu-sitemap .sub-menu li a {
+	margin: 8px 18px 0 0;
 	font-size: 0.85rem;
 }
 
-.meta-list a {
+#menu-sitemap a {
 	text-decoration: none;
+	color: #fff;
 }
 
-.meta-list a h2,
-.meta-list ul li a {
-	color: #fff;
+#menu-sitemap .current-menu-item a {
+	border-bottom: 2px solid #52a3d5;
+}
+
+#menu-sitemap .current-menu-item.menu-item-has-children a {
+	border-bottom: none;
 }
 
 /* VIII.b. Site footer menu. */
