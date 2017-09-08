@@ -63,7 +63,7 @@ body {
 }
 
 #archive-left {
-	width: 69%;
+	width: 67%;
 }
 
 /* I.b. Global element styles. */
@@ -779,7 +779,7 @@ article.page h2 {
 #archive-content {
 	border-right: 0;
 	margin-top: 5px;
-	margin-bottom: 1.6rem;
+	margin-bottom: 1.1rem;
 }
 
 #archive-article:first-of-type {
@@ -880,7 +880,7 @@ p.article-meta a:visited {
 	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 21px;
+	font-size: 20px;
     line-height: 1.58;
     letter-spacing: -.003em;
 }
