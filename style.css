@@ -531,6 +531,8 @@ ol.popular-list .popular-article-title a {
 	font-size: 1.4em;
 	margin: 2px 0 5px 0;
 	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .recent-article:first-of-type .recent-blurb h4 {
@@ -628,6 +630,8 @@ ol.popular-list .popular-article-title a {
 
 .front-full-article-title {
 	font-size: 1.2rem;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 h4.front-full-article-title a {
@@ -915,13 +919,12 @@ article.post-gallery a {
 
 /* SECTION VI: COMMENTS STYLING. */
 /* VI.a. General <div> styles. */
-.comments {
-	border-top: 1px solid #ddd;
-	padding-top: 25px;
-}
+
 
 /* VI.b. Comment list styles. */
 .comments h2.comments-title {
+	border-top: 1px solid #ddd;
+	padding-top: 25px;
 	font-size: 2em;
 }
 
@@ -979,6 +982,11 @@ article.post-gallery a {
 
 .children {
 	list-style: none;
+}
+
+.no-comments {
+	margin-bottom: 1.5em;
+	font-size: 16px;
 }
 
 /* VI.c. Reply form styles. */
