@@ -37,7 +37,7 @@ get_header(); ?>
 
 	</div><!-- /left -->
 
-	<?php get_sidebar(); ?>
+	<?php get_sidebar('singlepage'); ?>
 	
 </div><!-- /content -->
 
