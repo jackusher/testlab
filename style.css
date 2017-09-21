@@ -55,7 +55,7 @@ body {
 }
 
 .right {
-	width: 31%;
+	width: 29%;
 	min-width: 180px;
 	float: right;
 	font-size: 85%;
@@ -632,6 +632,7 @@ ol.popular-list .popular-article-title a {
 	font-size: 1.2rem;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
 }
 
 h4.front-full-article-title a {
@@ -724,6 +725,7 @@ h4.front-full-article-author a {
 
 .columnist-article .columnist-title {
 	margin-bottom: 0;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
 }
 
 .columnist-article .columnist-title a {
@@ -862,6 +864,10 @@ p.article-meta a {
 	padding: 0.4rem 0.2rem;
 }
 
+p.article-meta a:first-of-type {
+	background-color: #bf0712;
+}
+
 p.article-meta a:link,
 p.article-meta a:visited {
 	text-decoration: none;
@@ -880,6 +886,75 @@ p.article-meta a:visited {
 	margin-top: 2.75rem;
 }
 
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+
+.article-content h1 {
+    display: block;
+    font-size: 2.25rem;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h2 {
+    display: block;
+    font-size: 1.75rem;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h3 {
+    display: block;
+    font-size: 1.42rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h4 {
+    display: block;
+    font-size: 1.25rem;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h5 {
+    display: block;
+    font-size: 1.08rem;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h6 {
+    display: block;
+    font-size: .92rem;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
 .article-content p {
 	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
 	font-weight: 400;
@@ -887,6 +962,10 @@ p.article-meta a:visited {
 	font-size: 20px;
     line-height: 1.58;
     letter-spacing: -.003em;
+}
+
+.article-content blockquote p {
+	font-style: italic;
 }
 
 h2.story-body__crosshead {
@@ -922,7 +1001,8 @@ article.post-gallery a {
 
 
 /* VI.b. Comment list styles. */
-.comments h2.comments-title {
+.comments h2.comments-title,
+.comments h3.comment-reply-title {
 	border-top: 1px solid #ddd;
 	padding-top: 25px;
 	font-size: 2em;
@@ -938,9 +1018,7 @@ article.post-gallery a {
 }
 
 .comment-list {
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 25px;
-	margin-bottom: 25px;
+	margin-bottom: 35px;
 	list-style: none;
 	padding-left: 0;
 }
@@ -1160,7 +1238,8 @@ p.must-log-in {
 	color: #fff;
 }
 
-#menu-sitemap .current-menu-item a {
+#menu-sitemap .current-menu-item a,
+#menu-sitemap .current-post-parent a {
 	border-bottom: 2px solid #52a3d5;
 }
 

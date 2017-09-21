@@ -377,7 +377,7 @@ get_header(); ?>
 	
 		<div class="front-full-info clearfix">
 			<span class="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
-			<span class="front-full-blurb"><h4>Static: The editors' weekly pick of articles.</h4></span>
+			<span class="front-full-blurb"><h4><?php echo category_description( get_category_by_slug( get_theme_mod( 'front_full' ))->term_id ); ?></h4></span>
 		</div>
 		
 		<ul class="front-full-content clearfix">
@@ -396,7 +396,7 @@ get_header(); ?>
 					
 					<li class="front-full-article">
 						<h4 class="front-full-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-						<h4 class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+						<h4 class="front-full-article-author"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
 					</li>
 			
 				<?php endwhile;
@@ -415,6 +415,7 @@ get_header(); ?>
 	
 		<div class="front-full-info clearfix">
 			<span class="front-full-title"><h2>Most Popular</h2></span>
+			<span class="front-full-blurb"><h4>The most read articles on The Bubble this week.</h4></span>
 		</div>
 		
 		<?php $args = array(
