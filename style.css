@@ -394,6 +394,31 @@ ol.popular-list .popular-article-title a {
 	text-align: center;
 }
 
+#front1-title,
+#front3-title {
+	display: inline-block;
+}
+
+#front1-title {
+	padding-left: 12px;
+}
+
+#front3-title {
+	padding-right: 12px;
+	float: right;
+}
+
+.recent-chevron {
+	display: inline-block;
+	color: #fff;
+	float: right;
+	padding: 12px;
+}
+
+#front3-head .recent-chevron {
+	float: left;
+}
+
 .recent-head:hover,
 .sidebar-menuitem:hover {
 	background-color: #52a3d5;

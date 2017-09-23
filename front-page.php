@@ -84,6 +84,7 @@ get_header(); ?>
 				$sec1_parentID = get_cat_ID( $sec1_parent ); ?>
 				
 				<div id="front1-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
+				<i class="fa fa-chevron-down fa-lg recent-chevron" aria-hidden="true"></i>
 				<div id="front1-nav" class="recent-nav"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
@@ -319,6 +320,8 @@ get_header(); ?>
 				$sec3_parentID = get_cat_ID( $sec3_parent ); ?>
 				
 				<div id="front3-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
+				<i class="fa fa-chevron-down fa-lg recent-chevron" aria-hidden="true"></i>
+				<div class="clearer"></div>
 				<div id="front3-nav" class="recent-nav"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',

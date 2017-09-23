@@ -13,11 +13,11 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width">
 		<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 		<?php wp_head(); ?>
+		<script src="https://use.fontawesome.com/b5ba9501bd.js"></script>
 		<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/append-classes.js"></script><!-- The external class adding file. -->
 		<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/masonry-properties.js"></script><!-- The external masonry properies file. -->
 	</head>
