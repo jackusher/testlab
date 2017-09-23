@@ -20,7 +20,7 @@ get_header(); ?>
 			<span class="front-full-blurb"><h4><?php echo category_description( get_category_by_slug( get_theme_mod( 'front_full' ))->term_id ); ?></h4></span>
 		</div>
 		
-		<ul class="front-full-content clearfix">
+		<ul id="editors-picks" class="front-full-content clearfix">
 	
 			<?php $args = array( // WP_Query args.
 				'category_name' => get_theme_mod( 'front_full' ),
@@ -34,9 +34,19 @@ get_header(); ?>
 		
 				while ( $query->have_posts() ) : $query->the_post(); ?>
 					
-					<li class="front-full-article">
-						<h4 class="front-full-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-						<h4 class="front-full-article-author"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+					<li id="editors-pick" class="front-full-article">
+						
+						<div class="columnist-thumb">
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('editors-picks-thumbnail'); ?></a>
+						</div>
+					
+						<div class="columnist-info">
+							<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						</div><!-- /columnist-info -->
+					
+						<div class="authauth">
+							<h4 class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
+						</div>
 					</li>
 			
 				<?php endwhile;
@@ -49,30 +59,6 @@ get_header(); ?>
 		
 		</ul><!-- /front-full-content -->
 	
-	</div><!-- /front-full -->
-	
-	<div id="front-popular" class="front-full clearfix">
-	
-		<div class="front-full-info clearfix">
-			<span class="front-full-title"><h2>Most Popular</h2></span>
-			<span class="front-full-blurb"><h4>The most read articles on The Bubble this week.</h4></span>
-		</div>
-		
-		<?php $args = array(
-			'limit' => 5,
-			// 'range' => 'weekly',
-			// 'freshness' => 1,
-			'order_by' => 'views',
-			'post_type' => 'post',
-			'stats_views' => 0,
-			'stats_author' => 1,
-			'wpp_start' => '<ul class="front-full-content clearfix">',
-			'wpp_end' => '</ul>',
-			'post_html' => '<li class="front-full-article front-popular-article"><h4 id="front-popular-article-title" class="front-full-article-title">{title}</h4><h4 id="front-popular-article-author" class="front-full-article-author">{author}</h4></li>'
-		);
-		
-		wpp_get_mostpopular( $args ); ?>
-		
 	</div><!-- /front-full -->
 	
 	<div id="front-latest">
@@ -437,6 +423,30 @@ get_header(); ?>
 		<div class="clearer"></div>
 	
 	</div><!-- /front-latest -->
+	
+	<div id="front-popular" class="front-full clearfix">
+	
+		<div class="front-full-info clearfix">
+			<span class="front-full-title"><h2>Most Popular</h2></span>
+			<span class="front-full-blurb"><h4>The most read articles on The Bubble this week.</h4></span>
+		</div>
+		
+		<?php $args = array(
+			'limit' => 5,
+			// 'range' => 'weekly',
+			// 'freshness' => 1,
+			'order_by' => 'views',
+			'post_type' => 'post',
+			'stats_views' => 0,
+			'stats_author' => 1,
+			'wpp_start' => '<ul class="front-full-content clearfix">',
+			'wpp_end' => '</ul>',
+			'post_html' => '<li class="front-full-article front-popular-article"><h4 id="front-popular-article-title" class="front-full-article-title">{title}</h4><h4 id="front-popular-article-author" class="front-full-article-author">{author}</h4></li>'
+		);
+		
+		wpp_get_mostpopular( $args ); ?>
+		
+	</div><!-- /front-full -->
 	
 	<div class="front-columnists clearfix">
 	

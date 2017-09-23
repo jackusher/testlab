@@ -65,6 +65,7 @@ function bubble_setup() {
 	add_image_size('archive-top', 500, 240, true);
 	add_image_size('archive-article', 235, 170, true);
 	add_image_size('archive-second', 235, 240, true);
+	add_image_size('editors-picks-thumbnail', 199, 150, true);
 	
 	/* IV.c. Adding post formats. */
 	add_theme_support('post-formats', array('gallery'));

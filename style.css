@@ -689,7 +689,95 @@ h4.front-full-article-author a {
 	text-decoration: none;
 }
 
-/* III.c. Two-thirds-width columnist area. */
+/* III.c. Editor's picks full-width section-specific styles. */
+#editors-pick {
+	float: left;
+	display: block;
+	width: 214px;
+	height: 191px;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 0;
+	margin-right: 14px;
+}
+
+#editors-pick:first-of-type {
+	margin-left: 14px;
+}
+
+#editors-pick:last-of-type {
+	margin-right: 0;
+}
+
+#editors-pick .columnist-thumb {
+	background-color: black;
+}
+
+#editors-pick .columnist-thumb {
+	position: absolute;
+	z-index: 20;
+}
+
+#editors-pick img {
+	opacity: 0.55;
+}
+
+#editors-pick .columnist-info {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 41px;
+	padding: 0 5px 5px 6px;
+	z-index: 25;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+.authauth {
+	width: 199px;
+}
+
+#editors-pick h4.front-full-article-author {
+	margin-top: 150px;
+	margin-bottom: 0;
+	width: 100%;
+	background-color: #f0825a;
+	padding: 10px 0;
+	color: #fff;
+}
+
+#editors-pick h4.front-full-article-author a {
+	padding: 0;
+	background-color: transparent;
+	border-radius: 0;
+	text-decoration: underline;
+}
+
+#editors-pick .columnist-thumb img { /* Transition properties. */
+	-webkit-transition: all 0.275s ease; /* Safari and Chrome */
+  	-moz-transition: all 0.275s ease; /* Firefox */
+	-o-transition: all 0.275s ease; /* IE 9 */
+	-ms-transition: all 0.275s ease; /* Opera */
+	transition: all 0.275s ease;
+}
+
+#editors-pick:hover > .columnist-thumb img {
+	opacity: 0.25;
+}
+
+#editors-pick .columnist-title {
+	margin-bottom: 0;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+
+#editors-pick .columnist-title a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3em;
+}
+
+/* III.d. Two-thirds-width columnist area. */
 .front-columnists {
 	margin-bottom: 45px;
 	width: 65%;
@@ -760,7 +848,7 @@ h4.front-full-article-author a {
 	font-size: 1.3em;
 }
 
-/* III.d. Front page sidebar. */
+/* III.e. Front page sidebar. */
 .front-side {
 	width: 30.5%;
 	float: right;
@@ -772,7 +860,7 @@ h4.front-full-article-author a {
 	margin-top: 0;
 }
 
-/* III.e. Post meta styles. */
+/* III.f. Post meta styles. */
 .subtle-date,
 .subtle-author,
 .subtle-category {
