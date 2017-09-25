@@ -643,6 +643,11 @@ ol.popular-list .popular-article-title a {
 	border-right: 2px solid #ddd;
 	text-align: center;
 	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+#front-popular {
+	padding-bottom: 10px;
 }
 
 .front-full-article:first-of-type {
@@ -690,20 +695,25 @@ h4.front-full-article-author a {
 }
 
 /* III.c. Editor's picks full-width section-specific styles. */
+#editors-picks-container {
+	margin-top: 20px;
+	padding-bottom: 15px;
+}
+
 #editors-pick {
-	float: left;
-	display: block;
-	width: 214px;
-	height: 191px;
+	display: inline-block;
+	text-align: left;
+	width: 212px;
+	height: 188px;
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;
 	padding: 0;
-	margin-right: 14px;
+	margin-right: 7px;
+	margin-bottom: 15px;
 }
 
 #editors-pick:first-of-type {
-	margin-left: 14px;
 }
 
 #editors-pick:last-of-type {
@@ -734,8 +744,9 @@ h4.front-full-article-author a {
 	box-sizing: border-box;
 }
 
-.authauth {
+.columnist-author {
 	width: 199px;
+	text-align: center;
 }
 
 #editors-pick h4.front-full-article-author {
@@ -779,18 +790,23 @@ h4.front-full-article-author a {
 
 /* III.d. Two-thirds-width columnist area. */
 .front-columnists {
-	margin-bottom: 45px;
+	margin-bottom: 41px;
 	width: 65%;
 	float: left;
 	padding-right: 24px;
 	border-right: 1px solid #ddd;
 }
 
+.columnist-content {
+	text-align: center;
+}
+
 .columnist-article {
-	float: left;
-	margin-right: 8px;
-	display: block;
-	width: 24.12%;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	display: inline-block;
+	text-align: left;
+	width: 178px;
 	height: 132px;
 	position: relative;
 	box-sizing: border-box;

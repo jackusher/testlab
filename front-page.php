@@ -13,14 +13,14 @@ get_header(); ?>
 
 <div class="content clearfix">
 
-	<div class="front-full clearfix">
+	<div id="editors-picks-container" class="front-full clearfix">
 	
 		<div class="front-full-info clearfix">
 			<span class="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
 			<span class="front-full-blurb"><h4><?php echo category_description( get_category_by_slug( get_theme_mod( 'front_full' ))->term_id ); ?></h4></span>
 		</div>
 		
-		<ul id="editors-picks" class="front-full-content clearfix">
+		<ul class="front-full-content clearfix">
 	
 			<?php $args = array( // WP_Query args.
 				'category_name' => get_theme_mod( 'front_full' ),
@@ -44,7 +44,7 @@ get_header(); ?>
 							<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 						</div><!-- /columnist-info -->
 					
-						<div class="authauth">
+						<div class="columnist-author">
 							<h4 class="front-full-article-author">By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></h4>
 						</div>
 					</li>
@@ -454,37 +454,39 @@ get_header(); ?>
 			<span class="front-full-title"><h2>Latest Columns</h2></span>
 		</div>
 		
-		<?php $bottom_cat = get_theme_mod( 'bottom_section' );
+		<div class="columnist-content front-full-content clearfix">
+			<?php $bottom_cat = get_theme_mod( 'bottom_section' );
 		
-		$args = array( // WP_Query args.
-			'category_name' => $bottom_cat,
-			'post_type' => 'post',
-			'posts_per_page' => 4
-		);
+			$args = array( // WP_Query args.
+				'category_name' => $bottom_cat,
+				'post_type' => 'post',
+				'posts_per_page' => 4
+			);
 		
-		$query = new WP_Query( $args );
+			$query = new WP_Query( $args );
 		
-		if ( $query->have_posts() ) :
+			if ( $query->have_posts() ) :
 		
-			while ( $query->have_posts() ) : $query->the_post(); ?>
+				while ( $query->have_posts() ) : $query->the_post(); ?>
 			
-				<div class="columnist-article">
+					<div class="columnist-article">
 				
-					<div class="columnist-thumb">
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
-					</div>
+						<div class="columnist-thumb">
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('standard-blog-thumbnail'); ?></a>
+						</div>
 					
-					<div class="columnist-info">
-						<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-					</div><!-- /columnist-info -->
+						<div class="columnist-info">
+							<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						</div><!-- /columnist-info -->
 					
-				</div><!-- /columnist-article -->
+					</div><!-- /columnist-article -->
 			
-			<?php endwhile;
+				<?php endwhile;
 			
-		else :
-			echo '<p>No content found!</p>';
-		endif; ?>
+			else :
+				echo '<p>No content found!</p>';
+			endif; ?>
+		</div>
 	
 	</div><!-- /front-columnists -->
 	
