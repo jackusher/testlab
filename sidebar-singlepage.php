@@ -14,8 +14,9 @@
 	
 	<nav class="sidebar-menu">
 		<?php // Defining <section1> variables.
-		$sec1_parent = get_theme_mod( 'title_section1' ); // Pulling in the parent catgeory set in the WP appearance api.
-		$sec1_parentID = get_cat_ID( $sec1_parent ); // Getting the cat ID from the name we pulled in.
+		$sec1_parent = get_theme_mod( 'title_section1' );
+		$sec1_parentSlug = get_category_by_slug ( $sec1_parent );
+		$sec1_parentID = $sec1_parentSlug->term_id;
 		$sec1_children = get_categories( // Setting the cat as a PARENT cat.
 			array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
 				'parent' => $sec1_parentID,
@@ -28,6 +29,7 @@
 				wp_list_categories( array(
 					'orderby' => 'name',
 					'show_count' => false,
+					'depth' => 1,
 					'title_li' => '',
 					'use_dec_for_title' => false,
 					'child_of' => $sec1_parentID
@@ -37,7 +39,8 @@
 		
 		<?php // Defining the <section2> variables.
 		$sec2_parent = get_theme_mod( 'title_section2' );
-		$sec2_parentID = get_cat_ID( $sec2_parent );
+		$sec2_parentSlug = get_category_by_slug ( $sec2_parent );
+		$sec2_parentID = $sec2_parentSlug->term_id;
 		$sec2_children = get_categories(
 			array( 'parent' => $sec2_parentID )
 		); ?>
@@ -48,6 +51,7 @@
 				wp_list_categories( array(
 					'orderby' => 'name',
 					'show_count' => false,
+					'depth' => 1,
 					'title_li' => '',
 					'use_dec_for_title' => false,
 					'child_of' => $sec2_parentID
@@ -56,8 +60,9 @@
 		</div><!-- /section2-head -->
 		
 		<?php // Defining <section3> variables.
-		$sec3_parent = get_theme_mod( 'title_section3' ); // Pulling in the parent catgeory set in the WP appearance api.
-		$sec3_parentID = get_cat_ID( $sec3_parent ); // Getting the cat ID from the name we pulled in.
+		$sec3_parent = get_theme_mod( 'title_section3' );
+		$sec3_parentSlug = get_category_by_slug ( $sec3_parent );
+		$sec3_parentID = $sec3_parentSlug->term_id;
 		$sec3_children = get_categories( // Setting the cat as a PARENT cat.
 			array( // There's something we can use from Misha Reyzlin to order cats by recency of their updates (left in bookmarks).
 				'parent' => $sec3_parentID,
@@ -70,6 +75,7 @@
 				wp_list_categories( array(
 					'orderby' => 'name',
 					'show_count' => false,
+					'depth' => 1,
 					'title_li' => '',
 					'use_dec_for_title' => false,
 					'child_of' => $sec3_parentID

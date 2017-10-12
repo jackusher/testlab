@@ -133,61 +133,51 @@ function bubble_customise_register( $wp_customize ) {
 	$wp_customize->add_setting('bubble_global_link_color', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('bubble_menu_button_color', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('editor_pick_accent', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('editor_pick_dark_accent', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('editor_pick_author_accent', array(
 		'default' => '#006ec3',
 		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
 	));
 	
 	$wp_customize->add_setting('front_full', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_category',
 	));	
 	
 	$wp_customize->add_setting('title_section1', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_category',
 	));
 	
 	$wp_customize->add_setting('title_section2', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_category',
 	));
 	
 	$wp_customize->add_setting('title_section3', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_category',
 	));
 	
 	$wp_customize->add_setting('bottom_section', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_category',
 	));			
 	
 	// WP appearance sections.
@@ -335,7 +325,8 @@ $category_parents = array(
 
 foreach($category_parents as $category_parent) {
 
-	$category_ID = get_cat_ID( $category_parent );
+	$category_slug = get_category_by_slug ( $category_parent );
+	$category_ID = $category_slug->term_id;
 	$categories = get_categories(
 		array(
 			'parent' => $category_ID,

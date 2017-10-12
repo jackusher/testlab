@@ -17,7 +17,7 @@ get_header(); ?>
 	
 		<div class="front-full-info clearfix">
 			<span class="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
-			<span class="front-full-blurb"><h4><?php echo category_description( get_category_by_slug( get_theme_mod( 'front_full' ))->term_id ); ?></h4></span>
+			<div class="front-full-blurb search-container"><?php get_search_form(); ?><h2 class="search-title">Search</h2></div>
 		</div>
 		
 		<ul class="front-full-content clearfix">
@@ -67,7 +67,8 @@ get_header(); ?>
 	
 			<div id="front1-head" class="recent-head clearfix"><!-- Outputs the title of the parent cat before the masonry container (from WP app. api again). -->
 				<?php $sec1_parent = get_theme_mod( 'title_section1' );
-				$sec1_parentID = get_cat_ID( $sec1_parent ); ?>
+				$sec1_parentSlug = get_category_by_slug ( $sec1_parent );
+				$sec1_parentID = $sec1_parentSlug->term_id; ?>
 				
 				<div id="front1-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec1_parent)->name . "</h2>"; ?></div>
 				<i class="fa fa-chevron-down fa-lg recent-chevron" aria-hidden="true"></i>
@@ -75,6 +76,7 @@ get_header(); ?>
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
+						'depth' => 1,
 						'title_li' => '',
 						'use_dec_for_title' => false,
 						'child_of' => $sec1_parentID
@@ -90,7 +92,7 @@ get_header(); ?>
 				$noex = array(6, 7);
 				$sec1_counter=1; // Creating a counter for the foreach loop.
 
-				foreach ( $GLOBALS['comment'] as $cat ) : // foreach loop pulling the latest post in each child cat.
+				foreach ( $GLOBALS['culture'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 				$args = array( // args for the WP_Query.
 					'cat' => $cat['category']->term_id,
@@ -112,7 +114,7 @@ get_header(); ?>
 						// Do nothing.
 					}
 					
-					if ( in_category( 36 ) ) {
+					if ( in_category( 1041 ) ) {
 						?><div id="front1-article" class="recent-article <?php if ( $sec1_counter !== 1 ) echo 'small'; if(in_array($sec1_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><?php
 					} elseif ( $sec1_counter == 1 ) {
 						?><div id="front1-article" class="recent-article bottom-buffer"><?php
@@ -187,13 +189,16 @@ get_header(); ?>
 	
 			<div id="front2-head" class="recent-head clearfix">
 				<?php $sec2_parent = get_theme_mod( 'title_section2' );
-				$sec2_parentID = get_cat_ID( $sec2_parent ); ?>
+				$sec2_parentSlug = get_category_by_slug ( $sec2_parent );
+				$sec2_parentID = $sec2_parentSlug->term_id;
+				?>
 				
 				<div id="front2-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec2_parent)->name . "</h2>"; ?></div>
 				<div id="front2-nav" class="recent-nav"><?php
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
+						'depth' => 1,
 						'title_li' => '',
 						'use_dec_for_title' => false,
 						'child_of' => $sec2_parentID
@@ -210,7 +215,7 @@ get_header(); ?>
 				$bottom_buffer = array(1, 4);
 				$sec2_counter=1; // Creating a counter for the foreach loop.
 
-				foreach ( $GLOBALS['lifestyle'] as $cat ) : // foreach loop pulling the latest post in each child cat.
+				foreach ( $GLOBALS['current-affairs'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 				$args = array( // args for the WP_Query.
 					'cat' => $cat['category']->term_id,
@@ -232,7 +237,7 @@ get_header(); ?>
 						// Do nothing.
 					}
 	
-					if ( in_category( 36 ) ) {
+					if ( in_category( 1041 ) ) {
 						?><div id="front2-article" class="recent-article <?php if (in_array($sec2_counter, $img) || (in_array($sec2_counter, $noex))) echo 'small'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} elseif ( in_array($sec2_counter, $bottom_buffer)) {
 						?><div id="front2-article" class="recent-article bottom-buffer"><?php
@@ -303,7 +308,8 @@ get_header(); ?>
 	
 			<div id="front3-head" class="recent-head clearfix">
 				<?php $sec3_parent = get_theme_mod( 'title_section3' );
-				$sec3_parentID = get_cat_ID( $sec3_parent ); ?>
+				$sec3_parentSlug = get_category_by_slug ( $sec3_parent );
+				$sec3_parentID = $sec3_parentSlug->term_id; ?>
 				
 				<div id="front3-title" class="recent-title"><?php echo "<h2>" . get_category_by_slug($sec3_parent)->name . "</h2>"; ?></div>
 				<i class="fa fa-chevron-down fa-lg recent-chevron" aria-hidden="true"></i>
@@ -312,6 +318,7 @@ get_header(); ?>
 					wp_list_categories( array( // Creating an li for each of the subcats in the parent.
 						'orderby' => 'name',
 						'show_count' => false,
+						'depth' => 1,
 						'title_li' => '',
 						'use_dec_for_title' => false,
 						'child_of' => $sec3_parentID
@@ -327,7 +334,7 @@ get_header(); ?>
 				$noex = array(6, 7);
 				$sec3_counter=1; // Creating a counter for the foreach loop.
 
-				foreach ( $GLOBALS['science'] as $cat ) : // foreach loop pulling the latest post in each child cat.
+				foreach ( $GLOBALS['lifestyle'] as $cat ) : // foreach loop pulling the latest post in each child cat.
 	
 				$args = array( // args for the WP_Query.
 					'cat' => $cat['category']->term_id,
@@ -349,7 +356,7 @@ get_header(); ?>
 						// Do nothing.
 					}
 
-					if ( in_category( 36 ) ) {
+					if ( in_category( 1041 ) ) {
 						?><div id="front3-article" class="recent-article <?php if ( $sec3_counter !== 1 ) echo 'small'; if(in_array($sec3_counter, $img)) echo ' bottom-buffer'; ?> editor-pick"><!-- Start of looped post content. --><?php					
 					} elseif ( $sec3_counter == 1 ) {
 						?><div id="front3-article" class="recent-article bottom-buffer"><?php
@@ -449,15 +456,18 @@ get_header(); ?>
 	</div><!-- /front-full -->
 	
 	<div class="front-columnists clearfix">
-	
+		
+		<?php $bottom_cat = get_theme_mod( 'bottom_section' );
+		$bottom_catSlug = get_category_by_slug ( $bottom_cat );
+		$bottom_catID = $bottom_catSlug->term_id; ?>
+		
 		<div class="front-full-info clearfix">
-			<span class="front-full-title"><h2>Latest Columns</h2></span>
+			<span class="front-full-title"><a href="<?php get_category_link( $bottom_catID ) ?>"><h2>Latest Columns</h2></a></span>
 		</div>
 		
 		<div class="columnist-content front-full-content clearfix">
-			<?php $bottom_cat = get_theme_mod( 'bottom_section' );
 		
-			$args = array( // WP_Query args.
+			<?php $args = array( // WP_Query args.
 				'category_name' => $bottom_cat,
 				'post_type' => 'post',
 				'posts_per_page' => 4
@@ -476,7 +486,7 @@ get_header(); ?>
 						</div>
 					
 						<div class="columnist-info">
-							<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							<p class="columnist-title"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 10, '...' ); ?></a></p>
 						</div><!-- /columnist-info -->
 					
 					</div><!-- /columnist-article -->

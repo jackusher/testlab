@@ -120,7 +120,7 @@ img {
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    margin: 5px auto 25px auto;
 }
 
 .alignright {
@@ -156,8 +156,9 @@ a img.aligncenter {
 .wp-caption {
     background: #fff;
     border: 1px solid #f0f0f0;
+    border-radius: 5px;
     max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
+    padding: 5px 3px;
     text-align: center;
 }
 
@@ -183,10 +184,13 @@ a img.aligncenter {
 }
 
 .wp-caption p.wp-caption-text {
-    font-size: 11px;
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
     line-height: 17px;
     margin: 0;
-    padding: 0 4px 5px;
+    padding: 4px 5px;
+    font-style: italic;
+    color: #6b6b6b;
 }
 
 .sticky {
@@ -307,7 +311,7 @@ ol.popular-list .popular-article-title a {
 /* II.c. Header menu. */
 .header-meta {
 	float: right;
-	padding: 23.5px 0;
+	padding: 1.5px 0;
 }
 
 .header-meta a {
@@ -325,13 +329,23 @@ ol.popular-list .popular-article-title a {
 }
 
 /* II.d. Fluid search box styling. */
-.header-search {
-	float: right;
+.search-form {
+	padding-right: 8px;
+	margin-right: 8px;
+	border-right: 2px solid #ddd;
+	display: inline-block;
 }
 
-.header .search-field {
+.search-title {
+	display: inline-block;
+	margin: 0;
+	font-size: 1.3em;
+	vertical-align: middle;
+}
+
+.front-full-blurb .search-field {
 	background-color: transparent;
-	background-image: url("http://localhost:8888/bubble/wp-content/themes/bubble3/search-icon2.png");
+	background-image: url("https://www.thebubble.org.uk/wp-content/themes/bubble3/search-icon2.png");
 	background-position: 5px center;
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
@@ -347,7 +361,7 @@ ol.popular-list .popular-article-title a {
 }
 
 .search-field:focus {
-	background-color: #fff;
+	background-color: #f6f6f6;
 	border-radius: 3px;
 	cursor: text;
 	outline: 0;
@@ -636,6 +650,19 @@ ol.popular-list .popular-article-title a {
 	font-size: 1.1em;
 }
 
+.front-full-info a {
+	text-decoration: none;
+	-webkit-transition: all 120ms ease;
+	-moz-transition: all 120ms ease;
+	-o-transition: all 120ms ease;
+	-ms-transition: all 120ms ease;
+	transition: all 120ms ease;
+}
+
+.front-full-info a:hover {
+	color: #01005e;
+}
+
 .front-full-article {
 	width: 199px;
 	display: inline-block;
@@ -703,8 +730,9 @@ h4.front-full-article-author a {
 #editors-pick {
 	display: inline-block;
 	text-align: left;
-	width: 212px;
-	height: 188px;
+	width: 18.5%;
+	min-width: 190px;
+	height: 92.6%;
 	position: relative;
 	box-sizing: border-box;
 	overflow: hidden;
@@ -747,10 +775,10 @@ h4.front-full-article-author a {
 .columnist-author {
 	width: 199px;
 	text-align: center;
+	margin-top: 70%;
 }
 
 #editors-pick h4.front-full-article-author {
-	margin-top: 149px;
 	margin-bottom: 0;
 	width: 100%;
 	background-color: #f0825a;
@@ -790,11 +818,9 @@ h4.front-full-article-author a {
 
 /* III.d. Two-thirds-width columnist area. */
 .front-columnists {
-	margin-bottom: 41px;
+	margin-bottom: 35px;
 	width: 65%;
 	float: left;
-	padding-right: 24px;
-	border-right: 1px solid #ddd;
 }
 
 .columnist-content {
@@ -869,7 +895,14 @@ h4.front-full-article-author a {
 	width: 30.5%;
 	float: right;
 	min-width: 220px;
-	margin-bottom: 45px;
+	padding-left: 26px;
+	border-left: 1px solid #ddd;
+	margin-bottom: 30px;
+}
+
+.front-side ul .widget {
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .front-side ul .widget:first-of-type {
@@ -1404,10 +1437,41 @@ p.must-log-in {
 
 /* SECTION IX: Responsive design for varied browser widths. */
 /* IX.a. At 1170px browser width. */
+@media screen and (max-width: 1179px) {
+
+	#editors-pick {
+		border-right: none;
+	}
+
+}
+
 @media screen and (max-width: 1178px) {
 
 	.front-columnists #columnist-article {
 		margin-bottom: 20px;
+	}
+
+}
+
+@media screen and (max-width: 1135px) {
+
+	.columnist-author {
+		margin-top: 74%;
+	}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+	.header-meta,
+	.header-title {
+		float: none;
+		text-align: center;
+	}
+	
+	.header-meta img,
+	.header-title img {
+		display: inline-block;
 	}
 
 }

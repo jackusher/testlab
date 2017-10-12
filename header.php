@@ -35,16 +35,14 @@
 			</div><!-- /header-title -->
 			
 			<div class="header-meta">
-				<div class="header-search">
-					<?php get_search_form(); ?>
-				</div>
-				<nav id="header-menu" class="site-nav">
+				<a href="http://www.billfreehomes.com/?utm_source=bubble-header"><img src="https://www.thebubble.org.uk/wp-content/uploads/2017/04/image022.jpg" height="87" width="700"></a>
+				<!-- <nav id="header-menu" class="site-nav">
 					<?php	
 					$args = array(
 						'theme_location' => 'header'
 					);	
 					wp_nav_menu( $args ); ?>
-				</nav>
-			</div><!-- /header-login -->
+				</nav> -->
+			</div><!-- /header-meta -->
 			
 		</header><!-- /header -->
