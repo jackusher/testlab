@@ -459,10 +459,11 @@ get_header(); ?>
 		
 		<?php $bottom_cat = get_theme_mod( 'bottom_section' );
 		$bottom_catSlug = get_category_by_slug ( $bottom_cat );
-		$bottom_catID = $bottom_catSlug->term_id; ?>
+		$bottom_catID = $bottom_catSlug->term_id;
+		$bottom_catURL = get_category_link( $bottom_catID ); ?>
 		
 		<div class="front-full-info clearfix">
-			<span class="front-full-title"><a href="<?php get_category_link( $bottom_catID ) ?>"><h2>Latest Columns</h2></a></span>
+			<span class="front-full-title"><a href="<?php echo esc_url( $bottom_catURL ); ?>"><h2>Latest Columns</h2></a></span>
 		</div>
 		
 		<div class="columnist-content front-full-content clearfix">
