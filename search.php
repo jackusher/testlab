@@ -63,8 +63,16 @@ get_header(); ?>
 
 			endwhile;
 
-			else :
-				echo '<p>No content found!</p>';
+			else : ?>
+
+				<div class="message-404">
+					<h1 class="message-404-title">Oh no!</h1>
+					<i class="fa fa-question fa-5x fa-spin" aria-hidden="true"></i>
+					<h2>We're not sure what you meant by "<?php the_search_query(); ?>". Have another go.<h2>
+					<?php get_search_form(); ?>
+				</div>
+				
+				<div> <?php
 
 			endif; ?>
 

@@ -329,43 +329,62 @@ ol.popular-list .popular-article-title a {
 }
 
 /* II.d. Fluid search box styling. */
-.search-form {
-	padding-right: 8px;
-	margin-right: 8px;
-	border-right: 2px solid #ddd;
-	display: inline-block;
+input.search-field {
+	outline: none;
 }
 
-.search-title {
-	display: inline-block;
-	margin: 0;
-	font-size: 1.3em;
-	vertical-align: middle;
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
 }
 
-.front-full-blurb .search-field {
-	background-color: transparent;
-	background-image: url("https://www.thebubble.org.uk/wp-content/themes/bubble3/search-icon2.png");
-	background-position: 5px center;
-	background-repeat: no-repeat;
-	background-size: 24px 24px;
-	border: none;
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 10px;
+	width: 15px;
+	color: transparent;
 	cursor: pointer;
-	height: 37px;
-	margin: 3px 0;
-	padding: 0 0 0 34px;
-	position: relative;
-	-webkit-transition: width 400ms ease, background 400ms ease;
-	transition: width 400ms ease, background 400ms ease;
-	width: 0;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
 }
 
-.search-field:focus {
-	background-color: #f6f6f6;
-	border-radius: 3px;
-	cursor: text;
-	outline: 0;
-	width: 230px;
+input[type=search]:hover {
+	background-color: #fff;
+}
+
+input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	background-color: #fff;
+	color: #000;
+	border-color: #01005e;
+	cursor: auto;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+input:-moz-placeholder {
+	color: transparent;
+}
+
+input::-webkit-input-placeholder {
+	color: transparent;
 }
 
 .search-submit {
@@ -766,7 +785,7 @@ h4.front-full-article-author a {
 	left: 0;
 	right: 0;
 	bottom: 41px;
-	padding: 0 5px 5px 6px;
+	padding: 0 15px 5px 6px;
 	z-index: 25;
 	text-align: left;
 	box-sizing: border-box;
@@ -1160,10 +1179,7 @@ article.post-gallery a {
 
 
 /* SECTION VI: COMMENTS STYLING. */
-/* VI.a. General <div> styles. */
-
-
-/* VI.b. Comment list styles. */
+/* VI.a. Comment list styles. */
 .comments h2.comments-title,
 .comments h3.comment-reply-title {
 	border-top: 1px solid #ddd;
@@ -1230,7 +1246,7 @@ article.post-gallery a {
 	font-size: 16px;
 }
 
-/* VI.c. Reply form styles. */
+/* VI.b. Reply form styles. */
 .comment-respond {
 	margin-bottom: 30px;
 }
@@ -1401,8 +1417,8 @@ p.must-log-in {
 	color: #fff;
 }
 
-#menu-sitemap .current-menu-item a,
-#menu-sitemap .current-post-parent a {
+#menu-sitemap .sub-menu .current-menu-item a,
+#menu-sitemap .sub-menu .current-post-parent a {
 	border-bottom: 2px solid #52a3d5;
 }
 
@@ -1435,8 +1451,28 @@ p.must-log-in {
 
 
 
-/* SECTION IX: Responsive design for varied browser widths. */
-/* IX.a. At 1170px browser width. */
+/* SECTION IX: 404 pages. */
+/* IX.a. No search results found. */
+.message-404 {
+	text-align: center;
+}
+
+.message-404-title {
+	font-size: 2.5em;
+}
+
+.message-404 i {
+	margin-bottom: 0.5em;
+	color: #bf0712;
+}
+
+.message-404 h2 {
+	margin-bottom: 2em;
+}
+
+
+/* SECTION X: Responsive design for varied browser widths. */
+/* X.a. At 1170px browser width. */
 @media screen and (max-width: 1179px) {
 
 	#editors-pick {
@@ -1476,7 +1512,7 @@ p.must-log-in {
 
 }
 
-/* IX.b. At 916px browser width. */
+/* X.b. At 916px browser width. */
 @media screen and (max-width: 916px) {
 
 	.front-columnists #columnist-article {
@@ -1485,7 +1521,7 @@ p.must-log-in {
 
 }
 
-/* IX.c. At 879px browser width. */
+/* X.c. At 879px browser width. */
 @media screen and (max-width: 879px) {
 
 	#recent-front1,
@@ -1531,7 +1567,7 @@ p.must-log-in {
 	
 }
 
-/* IX.d. At 740px browser width. */
+/* X.d. At 740px browser width. */
 @media screen and (max-width: 740px) {
 
 	.front-columnists {
@@ -1550,7 +1586,7 @@ p.must-log-in {
 
 }
 
-/* IX.e. At 620px browser width. */
+/* X.e. At 620px browser width. */
 @media screen and (max-width: 620px) {
 
 	.left,
@@ -1579,7 +1615,7 @@ p.must-log-in {
 
 }
 
-/* IX.f. At 580px browser width. */
+/* X.f. At 580px browser width. */
 @media screen and (max-width: 580px) {
 
 	#recent-front1,

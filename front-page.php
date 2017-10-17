@@ -17,7 +17,7 @@ get_header(); ?>
 	
 		<div class="front-full-info clearfix">
 			<span class="front-full-title"><h2><?php echo get_category_by_slug( get_theme_mod( 'front_full' ) )->name ?></h2></span>
-			<div class="front-full-blurb search-container"><?php get_search_form(); ?><h2 class="search-title">Search</h2></div>
+			<div class="front-full-blurb search-container"><?php get_search_form(); ?></div>
 		</div>
 		
 		<ul class="front-full-content clearfix">
