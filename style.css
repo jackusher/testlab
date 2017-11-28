@@ -1347,6 +1347,21 @@ p.must-log-in {
 	background-color: #9cc8d9;
 }
 
+/* VII.d. 'Bubble Trouble' widget. */
+.textwidget .contact-form textarea {
+	width: 331px !important;
+	font-family: inherit;
+}
+
+.textwidget .contact-submit input[type="submit"] {
+	width: 100%;
+	background-color: #01005e;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	padding: 3px 0;
+}
+
 
 
 /* SECTION VIII: SITE FOOTER. */
