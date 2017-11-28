@@ -425,6 +425,7 @@ input::-webkit-input-placeholder {
 	margin: 0; /* Exemption from global style. */
 	font-size: 2.5em;
 	text-align: center;
+	cursor: default;
 }
 
 #front1-title,
@@ -481,7 +482,9 @@ input::-webkit-input-placeholder {
 }
 
 .recent-head:hover > .recent-nav,
-.sidebar-menuitem:hover > .recent-nav {
+.recent-head:focus > .recent-nav,
+.sidebar-menuitem:hover > .recent-nav,
+.sidebar-menuitem:focus > .recent-nav {
 	display: block;
 }
 
@@ -701,7 +704,7 @@ input::-webkit-input-placeholder {
 }
 
 .front-full-article:last-of-type {
-	border-right: 0;
+	border-color: #fff;
 	padding-right: 0;
 }
 
@@ -743,7 +746,7 @@ h4.front-full-article-author a {
 /* III.c. Editor's picks full-width section-specific styles. */
 #editors-picks-container {
 	margin-top: 20px;
-	padding-bottom: 15px;
+	padding-bottom: 9px;
 }
 
 #editors-pick {
@@ -757,10 +760,7 @@ h4.front-full-article-author a {
 	overflow: hidden;
 	padding: 0;
 	margin-right: 7px;
-	margin-bottom: 15px;
-}
-
-#editors-pick:first-of-type {
+	margin-bottom: 10px;
 }
 
 #editors-pick:last-of-type {

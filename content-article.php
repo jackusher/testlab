@@ -16,7 +16,7 @@
 		<p class="article-meta"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> in
 			<?php
 			$categories = get_the_category();
-			$separator = ", ";
+			$separator = " ";
 			$output = '';
 
 			if ($categories) {
