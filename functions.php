@@ -54,13 +54,6 @@ function bubble_setup() {
 	
 	/* IV.b. Adding image sizes. */
 	add_theme_support('post-thumbnails');
-	add_image_size('featured-level1-column-thumbnail', 920, 250, true);
-	add_image_size('featured-level2-column-thumbnail', 290, 150, true);
-	add_image_size('masonry-thumbnail', 245, 184, true);
-	add_image_size('title-list-thumbnail', 163, 123, true);
-	add_image_size('column-thumbnail', 120, 100, true);
-	add_image_size('banner-image', 920, 210, true);
-	add_image_size('standard-blog-thumbnail', 178, 132, true);
 	add_image_size('front-latest', 358, 240, true);
 	add_image_size('archive-top', 500, 240, true);
 	add_image_size('archive-article', 235, 170, true);
