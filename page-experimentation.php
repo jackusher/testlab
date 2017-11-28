@@ -11,8 +11,6 @@
  
 get_header();
 
-phpinfo();		
-
 get_footer();
 
 ?>
