@@ -1676,11 +1676,11 @@ p.must-log-in {
 	}	
 	
 	.recent-article {
-		min-width: 298px;
+		min-width: 273px;
 	}
 	
 	.recent-article.small {
-		min-width: 140px;
+		min-width: 130px;
 	}
 
 }
