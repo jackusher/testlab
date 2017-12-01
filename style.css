@@ -494,6 +494,7 @@ input::-webkit-input-placeholder {
 	margin-bottom: 25px; /* ED1: Created new 25px margin. */
 	border-bottom: 1px solid #ddd;
 	margin-top: 15px;
+	position: relative;
 }
 
 .recent-section {
@@ -940,6 +941,57 @@ h4.front-full-article-author a {
 	padding: 3px 7px;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, .33);
 	display: inline-block;
+}
+
+/* III.g. Editorial section styles. */
+.editorial {
+	position: absolute;
+	bottom: 25px;
+	right: 0px;
+	margin-right: 1.67%;
+	padding-left: 1.76%;
+	border-left: 1px solid #bdbdbd;
+	width: 30.35%;
+}
+
+#editorial-head,
+#editorial-article {
+	width: 100%;
+}
+
+#editorial-head {
+	margin-top: 0;
+	background-color: #f0825a;
+}
+
+#editorial-title h2 {
+	cursor: auto;
+	color: #fff;
+}
+
+#editorial-title a {
+	text-decoration: none;
+}
+
+.editorial-description {
+	text-align: center;
+}
+
+.editorial-description p {
+	margin-top: 3px;
+	text-align: right;
+}
+
+.editorial-description i {
+	float: left;
+}
+
+#editorial-article {
+	margin-bottom: 0;
+}
+
+#editorial-blurb {
+	border-bottom: 2px solid #f4a587;
 }
 
 

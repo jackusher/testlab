@@ -168,6 +168,11 @@ function bubble_customise_register( $wp_customize ) {
 		'capability' => 'edit_theme_options',
 	));
 	
+	$wp_customize->add_setting('title_section4', array(
+		'default' => 'uncategorized',
+		'capability' => 'edit_theme_options',
+	));
+	
 	$wp_customize->add_setting('bottom_section', array(
 		'default' => 'uncategorized',
 		'capability' => 'edit_theme_options',
@@ -242,6 +247,14 @@ function bubble_customise_register( $wp_customize ) {
 	$wp_customize->add_control( 'title_section3', array(
 		'settings' => 'title_section3',
 		'label' => 'Title Section 3',
+		'section' => 'bubble_front_cats',
+		'type' => 'select',
+		'choices' => get_categories_select()
+	));
+	
+	$wp_customize->add_control( 'title_section4', array(
+		'settings' => 'title_section4',
+		'label' => 'Title Section 4',
 		'section' => 'bubble_front_cats',
 		'type' => 'select',
 		'choices' => get_categories_select()

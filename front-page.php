@@ -427,6 +427,61 @@ get_header(); ?>
 	
 		</div><!-- /recent-front3 -->
 		
+		<div class="editorial">
+			
+			<div id="editorial-head" class="recent-head clearfix">
+			
+				<?php $sec4_category = get_theme_mod( 'title_section4' );
+				$sec4_catSlug = get_category_by_slug ( $sec4_category );
+				$sec4_catID = $sec4_catSlug->term_id; ?>
+				
+				<div id="editorial-title" class="recent-title"><?php echo '<a href="' . get_category_link($sec4_catID) . '">' . "<h2>" . get_category_by_slug($sec4_category)->name . "</h2>" . '</a>'; ?></div>
+						
+			</div><!-- /editorial-head -->
+			
+			<?php $args = array( // WP_Query args.
+				'category_name' => get_theme_mod( 'title_section4' ),
+				'post_type' => 'post',
+				'posts_per_page' => 1,
+			);
+	
+			$query = new WP_Query( $args );
+	
+			if ( $query->have_posts() ) :
+	
+				while ( $query->have_posts() ) : $query->the_post(); ?>
+				
+					<div class="editorial-description">
+						<i class="fa fa-quote-left fa-2x" aria-hidden="true"></i>
+						<?php echo category_description( $sec4_catID ); ?>
+					</div>
+					
+					<div id="editorial-article" class="recent-article">
+				
+						<div id="editorial-blurb" class="recent-blurb"><!-- Post titles and excerpts. -->
+						
+							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4><?php
+							
+							the_excerpt(); ?>
+					
+						</div><!-- /editorial-blurb -->
+						
+						<div id="editorial-meta" class="recent-meta"><!-- Post categories. -->
+							<p id="editorial-author" class="recent-author"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></p>
+						</div><!-- /editorial-meta -->
+					
+					</div><!-- /editorial-article -->	
+		
+				<?php endwhile;
+		
+			else :
+				echo '<p>No content found!</p>';
+			endif;
+	
+			wp_reset_postdata(); ?>
+		
+		</div><!-- /editorial -->
+		
 		<div class="clearer"></div>
 	
 	</div><!-- /front-latest -->
