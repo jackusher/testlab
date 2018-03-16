@@ -427,9 +427,11 @@ get_header(); ?>
 	
 		</div><!-- /recent-front3 -->
 		
+		<div class="clearer"></div>
+				
 		<div class="editorial">
 			
-			<div id="editorial-head" class="recent-head clearfix">
+			<div id="editorial-head" class="recent-head">
 			
 				<?php $sec4_category = get_theme_mod( 'title_section4' );
 				$sec4_catSlug = get_category_by_slug ( $sec4_category );

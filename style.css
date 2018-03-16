@@ -1608,12 +1608,15 @@ p.must-log-in {
 	}
 	
 	#recent-front3 {
-		float: clear;
-		width: 100%;
+		width: 90%;
 		padding-top: 20px;
 		border-top: 1px solid #bdbdbd;
 		margin-top: 20px;
 		margin-left: 5%;
+	}
+	
+	#front3-head {
+		width: 100%;
 	}
 
 	#front3-article {
@@ -1630,6 +1633,18 @@ p.must-log-in {
 	#front3-article.bottom-buffer {
 		border-bottom: none;
 		padding-bottom: 0;
+	}
+	
+	.editorial {
+		position: initial;
+		padding-left: 0;
+		border-left: 0;
+		margin-right: 0;
+		margin-left: 5%;
+		width: 90%;
+		padding-top: 25px;
+		margin-top: 8px;
+		border-top: 1px solid #bdbdbd;
 	}
 	
 }
